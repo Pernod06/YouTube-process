@@ -1,0 +1,11 @@
+google-api-python-client==2.108.0
+google-auth==2.25.2
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+youtube-transcript-api==0.6.1
+reportlab>=3.6.0
+flask>=2.0.0
+flask-cors>=3.0.10
+openai>=1.0.0
+yt-dlp>=2023.0.0
+

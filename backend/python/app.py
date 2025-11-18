@@ -1,0 +1,421 @@
+"""
+Python + Flask 后端示例
+安装依赖: pip install flask flask-cors
+"""
+
+from flask import Flask, jsonify, request, send_from_directory, send_file
+from flask_cors import CORS
+import json
+import os
+from datetime import date, datetime
+from pathlib import Path
+from pdf_generator import generate_video_pdf
+from video_frame_extractor import extract_frame_at_timestamp
+
+app = Flask(__name__)
+CORS(app)  # 允许跨域请求
+
+# 配置
+BASE_DIR = Path(__file__).parent.parent.parent
+DATA_DIR = BASE_DIR / 'data'
+STATIC_DIR = BASE_DIR
+
+# 内存存储（生产环境应使用数据库）
+comments_db = {}
+progress_db = {}
+
+
+def load_video_data():
+    """加载视频数据"""
+    data_path = DATA_DIR / 'video-data.json'
+    with open(data_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+@app.route('/api/videos/<video_id>', methods=['GET'])
+def get_video(video_id):
+    """获取视频数据"""
+    try:
+        video_data = load_video_data()
+        # 可以根据 video_id 过滤数据
+        return jsonify(video_data)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/videos', methods=['GET'])
+def get_videos():
+    """获取视频列表"""
+    videos = [
+        {
+            'videoId': 'lQHK61IDFH4',
+            'title': 'NVIDIA GTC Washington D.C. Keynote',
+            'description': 'CEO Jensen Huang keynote',
+            'thumbnail': 'https://img.youtube.com/vi/lQHK61IDFH4/maxresdefault.jpg',
+            'duration': '01:42:25',
+            'uploadDate': '2024-03-18'
+        }
+    ]
+    return jsonify(videos)
+
+
+@app.route('/api/videos/<video_id>/comments', methods=['GET'])
+def get_comments(video_id):
+    """获取YouTube评论"""
+    try:
+        # 尝试导入 youtube_client
+        import sys
+        import traceback
+        sys.path.append(str(BASE_DIR))
+        
+        print(f"[INFO] 正在获取视频 {video_id} 的评论...")
+        
+        from youtube_client import YouTubeClient
+        
+        # 创建 YouTube 客户端
+        print("[INFO] 正在初始化 YouTube 客户端...")
+        client = YouTubeClient()
+        
+        # 获取评论数量参数（默认20条）
+        max_results = request.args.get('maxResults', 20, type=int)
+        max_results = min(max_results, 100)  # 限制最大100条
+        
+        print(f"[INFO] 正在调用 YouTube API 获取 {max_results} 条评论...")
+        # 调用 YouTube API 获取评论
+        comments = client.get_video_comments(video_id, max_results=max_results)
+        
+        if comments:
+            print(f"[SUCCESS] 成功获取 {len(comments)} 条评论")
+            return jsonify({
+                'success': True,
+                'videoId': video_id,
+                'comments': comments,
+                'total': len(comments)
+            })
+        else:
+            # 如果获取失败，返回空列表
+            print("[WARNING] 未获取到评论")
+            return jsonify({
+                'success': True,
+                'videoId': video_id,
+                'comments': [],
+                'total': 0,
+                'message': '该视频没有评论或评论已关闭'
+            })
+    except ImportError as e:
+        # 如果无法导入 youtube_client，返回模拟数据
+        print(f"[ERROR] 导入错误: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'success': False,
+            'videoId': video_id,
+            'comments': [],
+            'total': 0,
+            'error': str(e),
+            'message': 'YouTube API 客户端导入失败'
+        }), 500
+    except ValueError as e:
+        # YouTube API 密钥未配置
+        print(f"[ERROR] 配置错误: {str(e)}")
+        return jsonify({
+            'success': False,
+            'videoId': video_id,
+            'comments': [],
+            'total': 0,
+            'error': str(e),
+            'message': 'YouTube API 密钥未配置或无效，请检查 config.py'
+        }), 500
+    except Exception as e:
+        print(f"[ERROR] 未知错误: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'success': False,
+            'videoId': video_id,
+            'error': str(e),
+            'error_type': type(e).__name__,
+            'message': '获取评论失败，请查看后端日志'
+        }), 500
+
+
+@app.route('/api/videos/<video_id>/comments', methods=['POST'])
+def post_comment(video_id):
+    """发布评论"""
+    data = request.get_json()
+    
+    if not data or 'comment' not in data:
+        return jsonify({'error': 'Comment is required'}), 400
+    
+    if video_id not in comments_db:
+        comments_db[video_id] = []
+    
+    new_comment = {
+        'id': str(int(datetime.now().timestamp() * 1000)),
+        'author': data.get('author', 'Anonymous'),
+        'text': data['comment'],
+        'timestamp': datetime.now().isoformat()
+    }
+    
+    comments_db[video_id].append(new_comment)
+    return jsonify(new_comment), 201
+
+
+@app.route('/api/videos/<video_id>/progress', methods=['GET'])
+def get_progress(video_id):
+    """获取播放进度"""
+    user_progress = progress_db.get(video_id, {'timestamp': 0})
+    return jsonify(user_progress)
+
+
+@app.route('/api/videos/<video_id>/progress', methods=['PUT'])
+def update_progress(video_id):
+    """更新播放进度"""
+    data = request.get_json()
+    
+    if not data or 'timestamp' not in data:
+        return jsonify({'error': 'Timestamp is required'}), 400
+    
+    if not isinstance(data['timestamp'], (int, float)):
+        return jsonify({'error': 'Invalid timestamp'}), 400
+    
+    progress_db[video_id] = {
+        'timestamp': data['timestamp'],
+        'updatedAt': datetime.now().isoformat()
+    }
+    
+    return jsonify({
+        'success': True,
+        'progress': progress_db[video_id]
+    })
+
+
+@app.route('/api/search', methods=['GET'])
+def search():
+    """搜索内容"""
+    query = request.args.get('q', '').lower()
+    
+    if not query:
+        return jsonify({'error': 'Query parameter "q" is required'}), 400
+    
+    try:
+        video_data = load_video_data()
+        results = []
+        
+        for section in video_data.get('sections', []):
+            title = section['title'].lower()
+            content = section['content'].lower()
+            
+            if query in title or query in content:
+                # 提取匹配片段
+                index = content.find(query)
+                if index != -1:
+                    snippet_start = max(0, index - 50)
+                    snippet_end = min(len(section['content']), index + len(query) + 50)
+                    snippet = '...' + section['content'][snippet_start:snippet_end] + '...'
+                else:
+                    snippet = section['content'][:100] + '...'
+                
+                results.append({
+                    'videoId': video_data['videoInfo']['videoId'],
+                    'sectionId': section['id'],
+                    'title': section['title'],
+                    'snippet': snippet,
+                    'timestamp': section['timestampStart']
+                })
+        
+        return jsonify({
+            'results': results,
+            'total': len(results)
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """健康检查"""
+    return jsonify({
+        'status': 'ok',
+        'timestamp': datetime.now().isoformat(),
+        'version': '1.0.0'
+    })
+
+
+# 提供静态文件
+@app.route('/')
+def index():
+    return send_from_directory(STATIC_DIR, 'index.html')
+
+
+@app.route('/<path:path>')
+def static_files(path):
+    return send_from_directory(STATIC_DIR, path)
+
+
+# 错误处理
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({'error': 'Not found'}), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify({'error': 'Internal server error'}), 500
+
+
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    """
+    LLM 聊天接口
+    """
+    data = request.get_json()
+
+    if not data or 'message' not in data:
+        return jsonify({'error': 'Message is required'}), 400
+    
+    user_message = data['message']
+    video_context = data.get('video_context', None)
+
+    try:
+        # 调用 Claude API 进行聊天
+        response = chat_with_openai(user_message, video_context)
+
+        return jsonify({
+            'success': True,
+            'response': response,
+            'timestamp': datetime.now().isoformat()
+        })
+
+    except Exception as e:
+        return jsonify({
+            'error': str(e),
+            'response': 'sorry, please try again later.'
+        }), 500
+
+
+@app.route('/api/generate-pdf', methods=['GET'])
+def generate_pdf():
+    """
+    生成视频数据的 PDF 文档
+    """
+    try:
+        print('[INFO] 开始生成 PDF...')
+        
+        # 加载视频数据
+        video_data = load_video_data()
+        
+        # 生成 PDF（在内存中）
+        pdf_buffer = generate_video_pdf(video_data, output_path=None)
+        
+        # 生成文件名
+        video_title = video_data.get('videoInfo', {}).get('title', 'video')
+        # 清理文件名中的特殊字符
+        safe_title = "".join(c for c in video_title if c.isalnum() or c in (' ', '-', '_')).strip()
+        safe_title = safe_title[:50]  # 限制长度
+        filename = f"{safe_title}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+        
+        print(f'[SUCCESS] PDF 生成成功: {filename}')
+        
+        # 返回 PDF 文件
+        return send_file(
+            pdf_buffer,
+            mimetype='application/pdf',
+            as_attachment=True,
+            download_name=filename
+        )
+        
+    except Exception as e:
+        print(f'[ERROR] PDF 生成失败: {str(e)}')
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'message': 'PDF 生成失败'
+        }), 500
+
+@app.route('/api/video-frame/<video_id>', methods=['GET'])
+def get_video_frame(video_id):
+    """
+    获取视频指定时间戳的帧图片
+    
+    Query Parameters:
+        - timestamp: 时间戳（秒），默认为 0
+    
+    Example:
+        GET /api/video-frame/EF8C4v7JIbA?timestamp=1794
+    """
+    timestamp = request.args.get('timestamp', 0, type=int)
+    
+    try:
+        print(f"[INFO] 收到帧提取请求 - 视频ID: {video_id}, 时间戳: {timestamp}")
+        
+        # 提取帧
+        frame_path = extract_frame_at_timestamp(video_id, timestamp)
+        
+        # 返回图片文件
+        return send_file(
+            frame_path,
+            mimetype='image/jpeg',
+            as_attachment=False,
+            download_name=f"frame_{video_id}_{timestamp}.jpg"
+        )
+        
+    except Exception as e:
+        print(f"[ERROR] 帧提取失败: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'message': '无法提取视频帧'
+        }), 500
+
+
+def chat_with_openai(user_message, video_context):
+    """
+    使用Open AI (新版 API >= 1.0.0)
+    """
+    from openai import OpenAI
+    import os
+
+    # 初始化客户端
+    client = OpenAI(
+        api_key=os.getenv('OPENAI_API_KEY')
+    )
+    
+    system_prompt = """你是一个视频助手，帮助用户理解和查找视频内容。
+当前视频是关于 NVIDIA GTC 大会的主题演讲，涵盖了 AI、加速计算、量子计算等主题。
+请用简洁、友好的方式回答用户问题。"""
+    
+    messages = [
+        {"role": "system", "content": system_prompt}
+    ]
+    
+    if video_context:
+        messages.append({
+            "role": "system",
+            "content": f"视频信息：{json.dumps(video_context, ensure_ascii=False)}"
+        })
+    
+    # 添加用户消息
+    messages.append({"role": "user", "content": user_message})
+    
+    # 调用 OpenAI API (新版)
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=messages,
+        max_tokens=500,
+        temperature=0.7
+    )
+    
+    return response.choices[0].message.content
+
+if __name__ == '__main__':
+    print('🚀 Server is running on http://localhost:5000')
+    print('📊 API endpoint: http://localhost:5000/api')
+    print('🌐 Frontend: http://localhost:5000/index.html')
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
