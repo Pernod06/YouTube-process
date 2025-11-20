@@ -1,9 +1,11 @@
 // API服务层 - 统一管理所有数据请求
+// Version: 2024-11-19 with getVideoChapters
 class APIService {
     constructor(config) {
         this.config = config;
         this.baseUrl = config.getAPIConfig().BASE_URL;
         this.useLocalData = config.APP.USE_LOCAL_DATA;
+        console.log('[API] APIService initialized with getVideoChapters method');
     }
 
     /**
@@ -95,6 +97,92 @@ class APIService {
                 throw new Error('plase try later');
             }
             console.error('Chat API failed:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * 获取 YouTube 视频详细信息
+     * @param {string} videoId - 视频ID
+     * @returns {Promise} - 返回视频详细信息
+     */
+    async getYouTubeVideoInfo(videoId) {
+        const endpoint = `/video-info/${videoId}`;
+        
+        try {
+            const response = await fetch(`${this.baseUrl}${endpoint}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Get video info API failed:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * 获取视频章节列表
+     * @param {string} videoId - 视频ID
+     * @returns {Promise} - 返回章节数据
+     */
+    async getVideoChapters(videoId) {
+        const endpoint = `/video-chapters/${videoId}`;
+        
+        try {
+            const response = await fetch(`${this.baseUrl}${endpoint}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Get chapters API failed:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * 批量提取视频关键帧
+     * @param {string} videoId - 视频ID
+     * @param {number[]} timestamps - 时间戳数组（秒）
+     * @returns {Promise} - 返回关键帧数据
+     */
+    async extractVideoFrames(videoId, timestamps) {
+        const endpoint = `/video-frames/${videoId}`;
+        
+        try {
+            const response = await fetch(`${this.baseUrl}${endpoint}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ timestamps })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Extract frames API failed:', error);
             throw error;
         }
     }

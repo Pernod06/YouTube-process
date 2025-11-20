@@ -23,10 +23,6 @@
             <div class="views-section">
                 <h3>Views</h3>
                 <div class="views-container">
-                    <div class="view-item" data-view="wiki">
-                        <span class="view-icon">📚</span>
-                        <span class="view-label">Wiki</span>
-                    </div>
                     <div class="view-item" data-view="pdf">
                         <span class="view-icon">📄</span>
                         <span class="view-label">PDF</span>
@@ -39,26 +35,49 @@
                         <span class="view-icon">💬</span>
                         <span class="view-label">Comments</span>
                     </div>
+                    <div class="view-item" data-view="wiki">
+                        <span class="view-icon">🔗</span>
+                        <span class="view-label">Related</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- 主内容区 -->
         <div class="main-content">
+            <!-- 交换按钮 -->
+            <button id="swap-layout-btn" class="swap-layout-btn" title="交换布局">
+                <span class="swap-icon">⭕</span>
+            </button>
+            
             <!-- 视频头部区域 -->
             <div class="video-header">
-                <div class="video-thumbnail">
-                    <img id="video-thumbnail-img" 
-                         src="https://img.youtube.com/vi/lQHK61IDFH4/maxresdefault.jpg" 
-                         alt="视频缩略图"
-                         onerror="this.src='https://img.youtube.com/vi/lQHK61IDFH4/hqdefault.jpg'">
+                <div class="video-info-block">
+                    <div class="video-thumbnail">
+                        <img id="video-thumbnail-img" 
+                             src="https://img.youtube.com/vi/lQHK61IDFH4/maxresdefault.jpg" 
+                             alt="视频缩略图"
+                             onerror="this.src='https://img.youtube.com/vi/lQHK61IDFH4/hqdefault.jpg'">
+                    </div>
+                    <h1 id="video-title">加载中...</h1>
+                    <div class="video-description" id="video-description">
+                        <p>正在加载视频描述...</p>
+                    </div>
                 </div>
-                <h1 id="video-title">加载中...</h1>
             </div>
             
-            <div id="sections-container">
-                <!-- 章节内容将通过 JavaScript 动态生成 -->
+            <!-- 章节切换区域 -->
+            <div class="sections-carousel">
+                <div id="sections-container" class="sections-container-carousel">
+                    <!-- 章节内容将通过 JavaScript 动态生成 -->
+                    <!-- 使用鼠标滚轮切换章节：向下滚动→下一章，向上滚动→上一章 -->
+                </div>
             </div>
+            
+            <!-- 章节指示器 -->
+            <!-- <div class="section-indicators" id="section-indicators">
+                指示点将动态生成
+            </div> -->
         </div>
 
         <!-- 右侧边栏（视频和聊天） -->
@@ -69,9 +88,34 @@
                         allowfullscreen>
                 </iframe>
             </div>
+            
+            <!-- Chapter 关键帧区域 -->
+            <div class="chapter-section">
+                <div class="chapter-header">
+                    <h4>Chapter</h4>
+                    <button id="extract-frames-btn" class="extract-frames-btn">
+                        <span class="btn-icon">🎬</span>
+                        <span>Show</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chapter 弹窗 -->
+            <div id="chapter-modal" class="chapter-modal">
+                <div class="chapter-modal-content">
+                    <div class="chapter-modal-header">
+                        <h3>Video Chapters</h3>
+                        <button class="chapter-modal-close" id="chapter-modal-close">&times;</button>
+                    </div>
+                    <div class="chapter-modal-body" id="chapter-modal-body">
+                        <div class="chapter-loading">Loading...</div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="chat-window">
-                <h3>Chat/Dialogue Window</h3>
-                <div id="chat-content">
+                <!-- <h3>Chat/Dialogue Window</h3> -->
+                <!-- <div id="chat-content"> -->
                     <!-- 消息显示区域 -->
                     <div class="chat-messages" id="chat-messages">
                         <div class="chat-message bot">
@@ -95,7 +139,7 @@
                             <span class="send-icon">📤</span>
                         </button>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>

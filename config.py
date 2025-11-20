@@ -4,15 +4,26 @@
 """
 
 import os
+from pathlib import Path
+
+# 尝试加载 .env 文件（如果存在）
+try:
+    from dotenv import load_dotenv
+    env_path = Path(__file__).parent / '.env'
+    load_dotenv(dotenv_path=env_path)
+    print(f"[Config] .env 文件已加载: {env_path}")
+except ImportError:
+    print("[Config] python-dotenv 未安装，使用系统环境变量")
 
 # YouTube API配置
-# 方式1: 直接在这里设置（不推荐用于生产环境）
+# 从 .env 文件或系统环境变量读取
 YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
 
-# 方式2: 从环境变量读取（推荐）
-# 如果设置了环境变量，优先使用环境变量
-if os.getenv('YOUTUBE_API_KEY'):
-    YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
+if not YOUTUBE_API_KEY or YOUTUBE_API_KEY == 'YOUR_API_KEY_HERE':
+    print("[WARNING] YouTube API 密钥未配置！")
+    print("[提示] 请在 .env 文件中设置: YOUTUBE_API_KEY=你的密钥")
+else:
+    print(f"[Config] YouTube API 密钥已加载（长度: {len(YOUTUBE_API_KEY)}）")
 
 # API配置
 API_SERVICE_NAME = "youtube"

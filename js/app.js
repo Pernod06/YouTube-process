@@ -5,6 +5,8 @@ class VideoPageApp {
         this.apiService = new APIService(config);
         this.currentVideoData = null;
         this.player = null;
+        this.currentSectionIndex = 0;
+        this.totalSections = 0;
     }
 
     /**
@@ -32,6 +34,18 @@ class VideoPageApp {
             
             // 初始化 Views 模块
             this.initViews();
+            
+            // 初始化关键帧提取功能
+            this.initChapterFrames();
+            
+            // 初始化章节弹窗
+            this.initChapterModal();
+            
+            // 加载视频描述
+            await this.loadVideoDescription();
+            
+            // 初始化布局交换按钮
+            this.initLayoutSwap();
         } catch (error) {
             this.showError('加载数据失败: ' + error.message);
         }
@@ -103,10 +117,19 @@ class VideoPageApp {
             sectionsContainer.innerHTML = '';
             
             // 渲染各个章节
-            sections.forEach(section => {
+            sections.forEach((section, index) => {
                 const sectionElement = this.createSectionElement(section);
+                // 只显示第一个章节
+                if (index === 0) {
+                    sectionElement.classList.add('active');
+                }
                 sectionsContainer.appendChild(sectionElement);
             });
+            
+            // 保存总章节数并初始化轮播
+            this.totalSections = sections.length;
+            this.currentSectionIndex = 0;
+            this.initSectionCarousel();
         }
     }
 
@@ -174,11 +197,13 @@ class VideoPageApp {
      */
     bindNavigationEvents() {
         const navLinks = document.querySelectorAll('.sidebar-left nav a');
-        navLinks.forEach(link => {
+        navLinks.forEach((link, index) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const sectionId = link.getAttribute('data-section-id');
-                this.scrollToSection(sectionId);
+                
+                // 切换到对应的章节
+                this.currentSectionIndex = index;
+                this.showSection(index);
                 
                 // 更新active状态
                 navLinks.forEach(l => l.classList.remove('active'));
@@ -264,17 +289,8 @@ class VideoPageApp {
         // 将时间字符串转换为秒数
         const seconds = this.timeStringToSeconds(timeString);
         
-        // 如果使用YouTube IFrame API
-        if (this.player && this.player.seekTo) {
-            this.player.seekTo(seconds, true);
-        } else {
-            // 简单方式：更新iframe src
-            const iframe = document.querySelector('.video-player iframe');
-            const currentSrc = iframe.src.split('?')[0];
-            const params = new URLSearchParams(this.config.YOUTUBE.DEFAULT_PARAMS);
-            params.set('start', seconds);
-            iframe.src = `${currentSrc}?${params.toString()}`;
-        }
+        // 使用统一的跳转方法
+        this.seekToTimestamp(seconds);
     }
 
     /**
@@ -575,7 +591,7 @@ class VideoPageApp {
     showWikiView() {
         // TODO: 实现 Wiki 视图
         console.log('Wiki view activated');
-        this.showViewPlaceholder('Wiki', '📚', '维基百科式的内容展示');
+        this.showViewPlaceholder('Related', '🔗', 'Related Videos');
     }
 
     /**
@@ -908,6 +924,624 @@ class VideoPageApp {
         
         // 重新绑定事件
         this.bindEvents();
+    }
+
+    /**
+     * 初始化关键帧提取功能
+     */
+    initChapterFrames() {
+        const extractBtn = document.getElementById('extract-frames-btn');
+        if (!extractBtn) return;
+
+        extractBtn.addEventListener('click', async () => {
+            await this.extractKeyFrames();
+        });
+    }
+
+    /**
+     * 提取视频关键帧
+     */
+    async extractKeyFrames() {
+        const extractBtn = document.getElementById('extract-frames-btn');
+        const framesContainer = document.getElementById('chapter-frames');
+        
+        if (!framesContainer) return;
+
+        try {
+            // 禁用按钮
+            extractBtn.disabled = true;
+            extractBtn.innerHTML = '<span class="btn-icon">⏳</span><span>提取中...</span>';
+
+            // 显示加载状态
+            framesContainer.innerHTML = '<div class="frames-loading">正在提取关键帧，请稍候</div>';
+
+            // 获取视频ID
+            const videoId = this.currentVideoData?.videoInfo?.videoId || 'lQHK61IDFH4';
+            
+            // 根据视频章节生成时间戳
+            const timestamps = this.generateKeyTimestamps();
+            
+            console.log('[INFO] 开始提取关键帧:', { videoId, timestamps });
+
+            // 调用API提取关键帧
+            const result = await this.apiService.extractVideoFrames(videoId, timestamps);
+
+            if (result.success) {
+                console.log('[SUCCESS] 关键帧提取成功:', result);
+                this.renderKeyFrames(result.frames);
+            } else {
+                throw new Error(result.error || '提取失败');
+            }
+
+        } catch (error) {
+            console.error('[ERROR] 提取关键帧失败:', error);
+            framesContainer.innerHTML = `
+                <div class="frame-error">
+                    ❌ 提取失败: ${error.message}
+                </div>
+            `;
+        } finally {
+            // 恢复按钮状态
+            extractBtn.disabled = false;
+            extractBtn.innerHTML = '<span class="btn-icon">🎬</span><span>提取关键帧</span>';
+        }
+    }
+
+    /**
+     * 生成关键时间戳
+     * 基于视频章节的开始时间
+     */
+    generateKeyTimestamps() {
+        const sections = this.currentVideoData?.sections || [];
+        
+        // 如果有章节数据，使用章节的开始时间
+        if (sections.length > 0) {
+            return sections
+                .map(section => section.timestampStart)
+                .filter(ts => ts !== undefined && ts !== null)
+                .slice(0, 10); // 最多提取10个关键帧
+        }
+        
+        // 如果没有章节数据，使用固定间隔（每30秒一帧，最多10个）
+        return [0, 30, 60, 120, 180, 300, 450, 600, 900, 1200];
+    }
+
+    /**
+     * 渲染关键帧
+     */
+    renderKeyFrames(frames) {
+        const framesContainer = document.getElementById('chapter-frames');
+        if (!framesContainer) return;
+
+        const successFrames = frames.filter(f => f.success);
+        
+        if (successFrames.length === 0) {
+            framesContainer.innerHTML = `
+                <div class="frame-error">
+                    ⚠️ 没有成功提取到关键帧
+                </div>
+            `;
+            return;
+        }
+
+        // 创建网格布局
+        const gridHtml = `
+            <div class="frames-grid">
+                ${successFrames.map(frame => this.createFrameItemHtml(frame)).join('')}
+            </div>
+        `;
+
+        framesContainer.innerHTML = gridHtml;
+
+        // 绑定点击事件 - 点击帧跳转到对应时间
+        this.bindFrameClickEvents(successFrames);
+    }
+
+    /**
+     * 创建单个帧项的HTML
+     */
+    createFrameItemHtml(frame) {
+        const timestamp = frame.timestamp;
+        const timeStr = this.formatTime(timestamp);
+        const imageUrl = `${this.config.getAPIConfig().BASE_URL}${frame.url}`;
+        
+        // 查找对应的章节标题
+        const section = this.findSectionByTimestamp(timestamp);
+        const title = section ? section.title : `Frame at ${timeStr}`;
+
+        return `
+            <div class="frame-item" data-timestamp="${timestamp}">
+                <img src="${imageUrl}" 
+                     alt="${title}" 
+                     class="frame-thumbnail"
+                     loading="lazy">
+                <div class="frame-info">
+                    <div class="frame-timestamp">${timeStr}</div>
+                    <div class="frame-title">${this.escapeHtml(title)}</div>
+                </div>
+            </div>
+        `;
+    }
+
+    /**
+     * 根据时间戳查找对应的章节
+     */
+    findSectionByTimestamp(timestamp) {
+        const sections = this.currentVideoData?.sections || [];
+        return sections.find(section => section.timestampStart === timestamp);
+    }
+
+    /**
+     * 绑定帧点击事件
+     */
+    bindFrameClickEvents(frames) {
+        const frameItems = document.querySelectorAll('.frame-item');
+        
+        frameItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const timestamp = parseInt(item.dataset.timestamp);
+                this.seekToTimestamp(timestamp);
+            });
+        });
+    }
+
+    /**
+     * 跳转到指定时间戳
+     */
+    seekToTimestamp(timestamp) {
+        console.log('[INFO] 跳转到时间:', timestamp);
+        
+        const videoId = this.currentVideoData?.videoInfo?.videoId || 'lQHK61IDFH4';
+        
+        // 动态查找 iframe（尝试多个可能的位置）
+        let iframe = document.getElementById('video-iframe') ||
+                     document.querySelector('.video-player-embedded iframe') ||
+                     document.querySelector('.video-player iframe') ||
+                     document.querySelector('iframe[src*="youtube.com/embed"]');
+        
+        if (iframe) {
+            // 更新 iframe src，跳转到指定时间
+            const newSrc = `https://www.youtube.com/embed/${videoId}?start=${timestamp}&autoplay=1`;
+            console.log('[INFO] 找到 iframe，更新 src:', newSrc);
+            iframe.src = newSrc;
+        } else {
+            console.error('[ERROR] 未找到视频 iframe，尝试的选择器都失败了');
+        }
+    }
+
+    /**
+     * 格式化时间（秒 -> HH:MM:SS 或 MM:SS）
+     */
+    formatTime(seconds) {
+        const hrs = Math.floor(seconds / 3600);
+        const mins = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+
+        if (hrs > 0) {
+            return `${hrs}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+        return `${mins}:${String(secs).padStart(2, '0')}`;
+    }
+
+    /**
+     * 初始化布局交换功能
+     */
+    initLayoutSwap() {
+        const swapBtn = document.getElementById('swap-layout-btn');
+        if (!swapBtn) return;
+
+        let isSwapped = false;
+
+        swapBtn.addEventListener('click', () => {
+            this.swapLayout(isSwapped);
+            isSwapped = !isSwapped;
+        });
+    }
+
+    /**
+     * 交换布局
+     */
+    swapLayout(isCurrentlySwapped) {
+        const swapBtn = document.getElementById('swap-layout-btn');
+        const videoInfoBlock = document.querySelector('.video-info-block');
+        const videoPlayer = document.querySelector('.video-player');
+        const videoHeader = document.querySelector('.video-header');
+        
+        if (!videoInfoBlock || !videoPlayer || !videoHeader) return;
+
+        // 添加旋转动画
+        swapBtn.classList.add('swapping');
+        
+        if (!isCurrentlySwapped) {
+            // 正常 → 交换
+            this.performSwap(videoHeader, videoPlayer, videoInfoBlock);
+        } else {
+            // 交换 → 正常
+            this.performSwapBack(videoHeader, videoPlayer);
+        }
+        
+        // 移除动画类
+        setTimeout(() => {
+            swapBtn.classList.remove('swapping');
+        }, 600);
+    }
+
+    /**
+     * 执行交换（info → sidebar, player → main）
+     */
+    performSwap(videoHeader, videoPlayer, videoInfoBlock) {
+        // 保存内容
+        const infoHTML = videoInfoBlock.outerHTML;
+        const playerHTML = videoPlayer.innerHTML;
+        
+        // 淡出
+        videoHeader.style.opacity = '0';
+        videoPlayer.style.opacity = '0';
+        
+        setTimeout(() => {
+            // video-header 放入播放器
+            videoHeader.innerHTML = `
+                <div class="video-player-embedded">
+                    ${playerHTML}
+                </div>
+            `;
+            
+            // sidebar 放入信息块
+            videoPlayer.innerHTML = infoHTML;
+            videoPlayer.style.backgroundColor = '#f8f9fa';
+            videoPlayer.style.overflow = 'auto';
+            
+            // 淡入
+            setTimeout(() => {
+                videoHeader.style.opacity = '1';
+                videoPlayer.style.opacity = '1';
+                
+                const embedded = videoHeader.querySelector('.video-player-embedded');
+                if (embedded) embedded.style.opacity = '1';
+                
+                // 重新绑定事件（因为 DOM 被重新创建）
+                this.bindTimestampEvents();
+            }, 50);
+        }, 300);
+    }
+
+    /**
+     * 恢复原始布局
+     */
+    performSwapBack(videoHeader, videoPlayer) {
+        // 保存当前内容
+        const infoBlock = videoPlayer.querySelector('.video-info-block');
+        const playerEmbedded = videoHeader.querySelector('.video-player-embedded');
+        
+        if (!infoBlock || !playerEmbedded) return;
+        
+        const infoHTML = infoBlock.outerHTML;
+        const playerHTML = playerEmbedded.innerHTML;
+        
+        // 淡出
+        videoHeader.style.opacity = '0';
+        videoPlayer.style.opacity = '0';
+        
+        setTimeout(() => {
+            // 恢复 video-header
+            videoHeader.innerHTML = infoHTML;
+            
+            // 恢复 video-player
+            videoPlayer.innerHTML = playerHTML;
+            videoPlayer.style.backgroundColor = '#000';
+            videoPlayer.style.overflow = 'hidden';
+            
+            // 淡入
+            setTimeout(() => {
+                videoHeader.style.opacity = '1';
+                videoPlayer.style.opacity = '1';
+                
+                // 重新绑定事件
+                this.bindTimestampEvents();
+            }, 50);
+        }, 300);
+    }
+
+    /**
+     * 初始化章节轮播
+     */
+    initSectionCarousel() {
+        const sectionsCarousel = document.querySelector('.sections-carousel');
+        const sectionsContainer = document.querySelector('.sections-container-carousel');
+        
+        if (!sectionsCarousel || !sectionsContainer) return;
+
+        // 鼠标滚轮事件（在 sections-carousel 区域）
+        let wheelTimeout = null;
+        sectionsCarousel.addEventListener('wheel', (e) => {
+            // 防止过快触发
+            if (wheelTimeout) return;
+            
+            e.preventDefault();
+            
+            // 添加视觉反馈
+            sectionsCarousel.classList.add('switching');
+            setTimeout(() => {
+                sectionsCarousel.classList.remove('switching');
+            }, 400);
+            
+            if (e.deltaY > 0) {
+                // 向下滚动 → 下一章
+                this.goToNextSection();
+            } else if (e.deltaY < 0) {
+                // 向上滚动 → 上一章
+                this.goToPrevSection();
+            }
+            
+            // 节流：500ms 内只触发一次
+            wheelTimeout = setTimeout(() => {
+                wheelTimeout = null;
+            }, 500);
+        }, { passive: false });
+
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                this.goToPrevSection();
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                this.goToNextSection();
+            }
+        });
+
+        // 渲染指示器
+        this.renderSectionIndicators();
+    }
+
+    /**
+     * 跳转到上一个章节
+     */
+    goToPrevSection() {
+        if (this.currentSectionIndex > 0) {
+            this.currentSectionIndex--;
+            this.showSection(this.currentSectionIndex);
+        }
+    }
+
+    /**
+     * 跳转到下一个章节
+     */
+    goToNextSection() {
+        if (this.currentSectionIndex < this.totalSections - 1) {
+            this.currentSectionIndex++;
+            this.showSection(this.currentSectionIndex);
+        }
+    }
+
+    /**
+     * 显示指定索引的章节
+     */
+    showSection(index) {
+        const sections = document.querySelectorAll('.section');
+        
+        // 隐藏所有章节
+        sections.forEach((section, i) => {
+            if (i === index) {
+                section.classList.add('active');
+            } else {
+                section.classList.remove('active');
+            }
+        });
+
+        // 更新左侧导航的 active 状态
+        const navLinks = document.querySelectorAll('.sidebar-left nav a');
+        navLinks.forEach((link, i) => {
+            if (i === index) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // 更新指示器
+        this.updateSectionIndicators();
+
+        // 滚动到顶部
+        const mainContent = document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.scrollTop = 0;
+        }
+    }
+
+    /**
+     * 渲染章节指示器
+     */
+    renderSectionIndicators() {
+        const container = document.getElementById('section-indicators');
+        if (!container) return;
+
+        container.innerHTML = '';
+        
+        for (let i = 0; i < this.totalSections; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'section-indicator';
+            if (i === this.currentSectionIndex) {
+                indicator.classList.add('active');
+            }
+            
+            indicator.addEventListener('click', () => {
+                this.currentSectionIndex = i;
+                this.showSection(i);
+            });
+            
+            container.appendChild(indicator);
+        }
+    }
+
+    /**
+     * 更新章节指示器
+     */
+    updateSectionIndicators() {
+        const indicators = document.querySelectorAll('.section-indicator');
+        indicators.forEach((indicator, i) => {
+            if (i === this.currentSectionIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    }
+
+    /**
+     * 更新轮播按钮状态（已移除按钮，保留方法以兼容）
+     */
+    updateCarouselButtons() {
+        // 按钮已移除，使用滚轮切换
+        // 该方法保留以避免其他地方调用时出错
+    }
+
+    /**
+     * 加载视频描述
+     */
+    async loadVideoDescription() {
+        const descriptionEl = document.getElementById('video-description');
+        if (!descriptionEl) return;
+
+        try {
+            const videoId = this.currentVideoData?.videoInfo?.videoId || 'lQHK61IDFH4';
+            console.log('[INFO] 正在加载视频描述:', videoId);
+
+            const result = await this.apiService.getYouTubeVideoInfo(videoId);
+
+            if (result.success && result.description) {
+                console.log('[SUCCESS] 视频描述加载成功');
+                
+                // 将换行符转换为 <br>，处理 URL 链接
+                const formattedDesc = this.formatDescription(result.description);
+                descriptionEl.innerHTML = formattedDesc;
+            } else {
+                descriptionEl.innerHTML = '<p style="color: #999;">暂无描述</p>';
+            }
+        } catch (error) {
+            console.error('[ERROR] 加载视频描述失败:', error);
+            descriptionEl.innerHTML = '<p style="color: #999;">加载描述失败</p>';
+        }
+    }
+
+    /**
+     * 格式化描述文本
+     */
+    formatDescription(text) {
+        if (!text) return '';
+        
+        // 转义 HTML
+        text = this.escapeHtml(text);
+        
+        // 将换行符转换为 <br>
+        text = text.replace(/\n/g, '<br>');
+        
+        // 将 URL 转换为链接
+        const urlPattern = /(https?:\/\/[^\s<]+)/g;
+        text = text.replace(urlPattern, '<a href="$1" target="_blank">$1</a>');
+        
+        return text;
+    }
+
+    /**
+     * 初始化章节弹窗
+     */
+    initChapterModal() {
+        console.log('[Chapter] Initializing chapter modal');
+        console.log('[Chapter] apiService.getVideoChapters:', typeof this.apiService.getVideoChapters);
+        
+        const extractBtn = document.getElementById('extract-frames-btn');
+        const closeBtn = document.getElementById('chapter-modal-close');
+        
+        if (!extractBtn) {
+            console.error('[Chapter] Extract button not found!');
+            return;
+        }
+
+        // 点击 Get 按钮显示弹窗
+        extractBtn.addEventListener('click', async () => {
+            await this.showChapterModal();
+        });
+
+        // 点击关闭按钮
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                this.hideChapterModal();
+            });
+        }
+    }
+
+    /**
+     * 显示章节弹窗
+     */
+    async showChapterModal() {
+        const modal = document.getElementById('chapter-modal');
+        const modalBody = document.getElementById('chapter-modal-body');
+        
+        if (!modal || !modalBody) return;
+
+        // 显示弹窗和加载状态
+        modal.classList.add('show');
+        modalBody.innerHTML = '<div class="chapter-loading">Loading chapters...</div>';
+
+        try {
+            const videoId = this.currentVideoData?.videoInfo?.videoId || 'lQHK61IDFH4';
+            console.log('[INFO] 获取章节:', videoId);
+
+            // 调用 API
+            const result = await this.apiService.getVideoChapters(videoId);
+
+            if (result.success && result.chapters?.length > 0) {
+                console.log('[SUCCESS] 获取到', result.chapters.length, '个章节');
+                this.renderChapters(result.chapters);
+            } else {
+                throw new Error('没有找到章节');
+            }
+        } catch (error) {
+            console.error('[ERROR]', error);
+            modalBody.innerHTML = `<div class="chapter-error">⚠️ ${error.message}</div>`;
+        }
+    }
+
+    /**
+     * 隐藏章节弹窗
+     */
+    hideChapterModal() {
+        const modal = document.getElementById('chapter-modal');
+        if (modal) modal.classList.remove('show');
+    }
+
+    /**
+     * 渲染章节
+     */
+    renderChapters(chapters) {
+        const modalBody = document.getElementById('chapter-modal-body');
+        if (!modalBody) return;
+
+        const html = `
+            <div class="chapter-grid">
+                ${chapters.map(ch => `
+                    <div class="chapter-item" data-time="${ch.timestamp}">
+                        <img src="${ch.thumbnail_url || 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22%3E%3Crect fill=%22%23e0e0e0%22 width=%22320%22 height=%22180%22/%3E%3C/svg%3E'}" 
+                             class="chapter-item-thumbnail" 
+                             alt="${this.escapeHtml(ch.title)}">
+                        <div class="chapter-item-info">
+                            <div class="chapter-item-time">${this.formatTime(ch.timestamp)}</div>
+                            <div class="chapter-item-title">${this.escapeHtml(ch.title)}</div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+
+        modalBody.innerHTML = html;
+
+        // 绑定点击事件
+        modalBody.querySelectorAll('.chapter-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const timestamp = parseInt(item.dataset.time);
+                this.seekToTimestamp(timestamp);
+                // this.hideChapterModal();
+            });
+        });
     }
 }
 

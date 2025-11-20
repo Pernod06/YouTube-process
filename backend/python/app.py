@@ -12,6 +12,15 @@ from pathlib import Path
 from pdf_generator import generate_video_pdf
 from video_frame_extractor import extract_frame_at_timestamp
 
+# 添加以下代码来加载 .env 文件
+try:
+    from dotenv import load_dotenv
+    env_path = Path(__file__).parent.parent.parent / '.env'
+    load_dotenv(dotenv_path=env_path)
+    print(f"[App] .env 文件已加载")
+except ImportError:
+    print("[App] python-dotenv 未安装")
+
 app = Flask(__name__)
 CORS(app)  # 允许跨域请求
 
@@ -371,6 +380,150 @@ def get_video_frame(video_id):
             'success': False,
             'error': str(e),
             'message': '无法提取视频帧'
+        }), 500
+
+
+@app.route('/api/video-info/<video_id>', methods=['GET'])
+def get_video_info(video_id):
+    """获取 YouTube 视频信息（标题、描述等）"""
+    try:
+        print(f"[INFO] 获取视频信息 - 视频ID: {video_id}")
+        
+        import sys
+        sys.path.append(str(BASE_DIR))
+        from youtube_get_video_information import get_video_information
+        
+        # 获取视频信息
+        video_info = get_video_information(video_id)
+        
+        if not video_info:
+            return jsonify({'success': False, 'message': '无法获取视频信息'}), 404
+        
+        print(f"[SUCCESS] 视频信息获取成功")
+        
+        return jsonify({
+            'success': True,
+            'videoId': video_id,
+            'title': video_info.get('title', ''),
+            'description': video_info.get('description', ''),
+            'channelTitle': video_info.get('channel_title', ''),
+            'publishedAt': video_info.get('published_at', ''),
+            'duration': video_info.get('duration', ''),
+            'viewCount': video_info.get('view_count', 0),
+            'likeCount': video_info.get('like_count', 0),
+            'thumbnail': video_info.get('thumbnails', {}).get('maxres', '')
+        })
+        
+    except Exception as e:
+        print(f"[ERROR] 获取视频信息失败: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/video-chapters/<video_id>', methods=['GET'])
+def get_video_chapters(video_id):
+    """获取视频章节列表（直接调用现有函数）"""
+    try:
+        from video_frame_extractor import extract_youtube_chapters
+        chapters = extract_youtube_chapters(video_id)
+        
+        if not chapters:
+            return jsonify({'success': False, 'message': '未找到章节'}), 404
+        
+        return jsonify({'success': True, 'chapters': chapters, 'total': len(chapters)})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/video-frames/<video_id>', methods=['POST'])
+def get_video_frames_batch(video_id):
+    """
+    批量获取视频多个时间戳的帧图片
+    
+    Request Body:
+        {
+            "timestamps": [10, 30, 60, 120, 180]  // 时间戳数组（秒）
+        }
+    
+    Response:
+        {
+            "success": true,
+            "videoId": "xxx",
+            "frames": [
+                {
+                    "timestamp": 10,
+                    "success": true,
+                    "url": "/api/video-frame/xxx?timestamp=10"
+                },
+                ...
+            ]
+        }
+    
+    Example:
+        POST /api/video-frames/EF8C4v7JIbA
+        Body: {"timestamps": [10, 30, 60]}
+    """
+    data = request.get_json()
+    
+    if not data or 'timestamps' not in data:
+        return jsonify({
+            'success': False,
+            'error': 'timestamps array is required'
+        }), 400
+    
+    timestamps = data['timestamps']
+    
+    if not isinstance(timestamps, list):
+        return jsonify({
+            'success': False,
+            'error': 'timestamps must be an array'
+        }), 400
+    
+    try:
+        print(f"[INFO] 收到批量帧提取请求 - 视频ID: {video_id}, 时间戳数量: {len(timestamps)}")
+        
+        from video_frame_extractor import extract_multiple_frames
+        
+        # 提取多个帧
+        results = extract_multiple_frames(video_id, timestamps)
+        
+        # 转换结果格式，添加 URL
+        frames = []
+        for result in results:
+            if result['success']:
+                frames.append({
+                    'timestamp': result['timestamp'],
+                    'success': True,
+                    'url': f"/api/video-frame/{video_id}?timestamp={result['timestamp']}"
+                })
+            else:
+                frames.append({
+                    'timestamp': result['timestamp'],
+                    'success': False,
+                    'error': result.get('error', 'Unknown error')
+                })
+        
+        success_count = sum(1 for f in frames if f['success'])
+        print(f"[SUCCESS] 批量帧提取完成 - 成功: {success_count}/{len(timestamps)}")
+        
+        return jsonify({
+            'success': True,
+            'videoId': video_id,
+            'frames': frames,
+            'total': len(frames),
+            'successCount': success_count
+        })
+        
+    except Exception as e:
+        print(f"[ERROR] 批量帧提取失败: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'message': '批量提取视频帧失败'
         }), 500
 
 
