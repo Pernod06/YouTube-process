@@ -40,14 +40,20 @@ class APIService {
      * 获取视频数据
      */
     async getVideoData(videoId = null) {
+        // 如果提供了 videoId，从 API 获取
+        if (videoId) {
+            console.log('[API] Fetching video data from API for:', videoId);
+            const endpoint = `/videos/${videoId}`;
+            return this.request(endpoint);
+        }
+        
+        // 否则使用本地数据（开发模式）
         if (this.useLocalData) {
             // 开发模式：从本地JSON文件加载
             return this.loadLocalData();
         } else {
             // 生产模式：从API获取
-            const endpoint = videoId 
-                ? `${this.config.getAPIConfig().VIDEO_ENDPOINT}/${videoId}`
-                : this.config.getAPIConfig().VIDEO_ENDPOINT;
+            const endpoint = this.config.getAPIConfig().VIDEO_ENDPOINT;
             return this.request(endpoint);
         }
     }

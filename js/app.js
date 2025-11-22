@@ -14,10 +14,20 @@ class VideoPageApp {
      */
     async init() {
         try {
+            // 检查是否有视频 ID，如果没有则跳转到输入页面
+            const videoId = sessionStorage.getItem('currentVideoId');
+            if (!videoId) {
+                console.log('[App] No video ID found, redirecting to input page');
+                window.location.href = 'input.html';
+                return;
+            }
+            
+            console.log('[App] Loading video:', videoId);
+            
             this.showLoading();
             
             // 加载视频数据
-            this.currentVideoData = await this.apiService.getVideoData();
+            this.currentVideoData = await this.apiService.getVideoData(videoId);
             
             // 渲染页面
             this.render();
@@ -190,6 +200,23 @@ class VideoPageApp {
         
         // 滚动事件（高亮当前章节）
         this.bindScrollEvents();
+        
+        // 分析新视频按钮
+        this.bindNewVideoButton();
+    }
+    
+    /**
+     * 分析新视频按钮事件
+     */
+    bindNewVideoButton() {
+        const newVideoBtn = document.getElementById('new-video-btn');
+        if (newVideoBtn) {
+            newVideoBtn.addEventListener('click', () => {
+                if (confirm('确定要分析新视频吗？当前页面将跳转到视频输入页面。')) {
+                    window.location.href = 'input.html';
+                }
+            });
+        }
     }
 
     /**

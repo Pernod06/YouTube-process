@@ -219,6 +219,45 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+/* 分析新视频按钮 */
+.new-video-btn {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.new-video-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+}
+
+.new-video-btn:active {
+    transform: translateY(0);
+}
+
+.new-video-icon {
+    font-size: 18px;
+}
+
+.new-video-text {
+    font-weight: 600;
+}
+
 /* 视频头部区域 */
 .video-header {
     flex: 0 0 auto;
