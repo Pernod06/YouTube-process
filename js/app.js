@@ -42,7 +42,7 @@ class VideoPageApp {
             this.initChapterModal();
             
             // 加载视频描述
-            await this.loadVideoDescription();
+            // await this.loadVideoDescription();
             
             // 初始化布局交换按钮
             this.initLayoutSwap();
@@ -85,6 +85,12 @@ class VideoPageApp {
         if (thumbnailImg && videoInfo.thumbnail) {
             thumbnailImg.src = videoInfo.thumbnail;
         }
+        
+        // 加载视频摘要
+        const descriptionEl = document.getElementById('video-description');
+        if (descriptionEl && videoInfo.summary) {
+            descriptionEl.innerHTML = `<p>${videoInfo.summary}</p>`;
+        }
     }
 
     /**
@@ -116,20 +122,15 @@ class VideoPageApp {
         if (sectionsContainer) {
             sectionsContainer.innerHTML = '';
             
-            // 渲染各个章节
+            // 渲染所有章节，直接展示
             sections.forEach((section, index) => {
                 const sectionElement = this.createSectionElement(section);
-                // 只显示第一个章节
-                if (index === 0) {
-                    sectionElement.classList.add('active');
-                }
+                // 所有章节都显示，不需要 active 类
                 sectionsContainer.appendChild(sectionElement);
             });
             
-            // 保存总章节数并初始化轮播
+            // 保存总章节数（用于其他功能）
             this.totalSections = sections.length;
-            this.currentSectionIndex = 0;
-            this.initSectionCarousel();
         }
     }
 
@@ -201,9 +202,17 @@ class VideoPageApp {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                // 切换到对应的章节
-                this.currentSectionIndex = index;
-                this.showSection(index);
+                // 获取目标章节ID
+                const sectionId = link.getAttribute('data-section-id');
+                const targetSection = document.getElementById(sectionId);
+                
+                if (targetSection) {
+                    // 平滑滚动到目标章节
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }
                 
                 // 更新active状态
                 navLinks.forEach(l => l.classList.remove('active'));
@@ -231,8 +240,12 @@ class VideoPageApp {
     bindScrollEvents() {
         if (!this.config.APP.ENABLE_AUTO_SCROLL) return;
         
+        // 监听章节容器的滚动
+        const sectionsContainer = document.querySelector('.sections-container-carousel');
+        if (!sectionsContainer) return;
+        
         let ticking = false;
-        window.addEventListener('scroll', () => {
+        sectionsContainer.addEventListener('scroll', () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
                     this.updateActiveSection();
@@ -1243,156 +1256,24 @@ class VideoPageApp {
     }
 
     /**
-     * 初始化章节轮播
+     * 初始化章节轮播 - 已移除，现在所有章节都直接展示
+     * 保留这些方法注释以供参考
      */
-    initSectionCarousel() {
-        const sectionsCarousel = document.querySelector('.sections-carousel');
-        const sectionsContainer = document.querySelector('.sections-container-carousel');
-        
-        if (!sectionsCarousel || !sectionsContainer) return;
-
-        // 鼠标滚轮事件（在 sections-carousel 区域）
-        let wheelTimeout = null;
-        sectionsCarousel.addEventListener('wheel', (e) => {
-            // 防止过快触发
-            if (wheelTimeout) return;
-            
-            e.preventDefault();
-            
-            // 添加视觉反馈
-            sectionsCarousel.classList.add('switching');
-            setTimeout(() => {
-                sectionsCarousel.classList.remove('switching');
-            }, 400);
-            
-            if (e.deltaY > 0) {
-                // 向下滚动 → 下一章
-                this.goToNextSection();
-            } else if (e.deltaY < 0) {
-                // 向上滚动 → 上一章
-                this.goToPrevSection();
-            }
-            
-            // 节流：500ms 内只触发一次
-            wheelTimeout = setTimeout(() => {
-                wheelTimeout = null;
-            }, 500);
-        }, { passive: false });
-
-        // 键盘导航
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                this.goToPrevSection();
-            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                this.goToNextSection();
-            }
-        });
-
-        // 渲染指示器
-        this.renderSectionIndicators();
-    }
-
-    /**
-     * 跳转到上一个章节
-     */
-    goToPrevSection() {
-        if (this.currentSectionIndex > 0) {
-            this.currentSectionIndex--;
-            this.showSection(this.currentSectionIndex);
-        }
-    }
-
-    /**
-     * 跳转到下一个章节
-     */
-    goToNextSection() {
-        if (this.currentSectionIndex < this.totalSections - 1) {
-            this.currentSectionIndex++;
-            this.showSection(this.currentSectionIndex);
-        }
-    }
-
-    /**
-     * 显示指定索引的章节
-     */
-    showSection(index) {
-        const sections = document.querySelectorAll('.section');
-        
-        // 隐藏所有章节
-        sections.forEach((section, i) => {
-            if (i === index) {
-                section.classList.add('active');
-            } else {
-                section.classList.remove('active');
-            }
-        });
-
-        // 更新左侧导航的 active 状态
-        const navLinks = document.querySelectorAll('.sidebar-left nav a');
-        navLinks.forEach((link, i) => {
-            if (i === index) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-
-        // 更新指示器
-        this.updateSectionIndicators();
-
-        // 滚动到顶部
-        const mainContent = document.querySelector('.main-content');
-        if (mainContent) {
-            mainContent.scrollTop = 0;
-        }
-    }
+    // initSectionCarousel() { ... }
+    // goToPrevSection() { ... }
+    // goToNextSection() { ... }
+    // showSection(index) { ... }
 
     /**
      * 渲染章节指示器
      */
-    renderSectionIndicators() {
-        const container = document.getElementById('section-indicators');
-        if (!container) return;
-
-        container.innerHTML = '';
-        
-        for (let i = 0; i < this.totalSections; i++) {
-            const indicator = document.createElement('div');
-            indicator.className = 'section-indicator';
-            if (i === this.currentSectionIndex) {
-                indicator.classList.add('active');
-            }
-            
-            indicator.addEventListener('click', () => {
-                this.currentSectionIndex = i;
-                this.showSection(i);
-            });
-            
-            container.appendChild(indicator);
-        }
-    }
-
     /**
-     * 更新章节指示器
+     * 章节指示器和轮播相关方法 - 已移除
+     * 现在所有章节都直接展示，不需要指示器和轮播功能
      */
-    updateSectionIndicators() {
-        const indicators = document.querySelectorAll('.section-indicator');
-        indicators.forEach((indicator, i) => {
-            if (i === this.currentSectionIndex) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
-        });
-    }
-
-    /**
-     * 更新轮播按钮状态（已移除按钮，保留方法以兼容）
-     */
-    updateCarouselButtons() {
-        // 按钮已移除，使用滚轮切换
-        // 该方法保留以避免其他地方调用时出错
-    }
+    // renderSectionIndicators() { ... }
+    // updateSectionIndicators() { ... }
+    // updateCarouselButtons() { ... }
 
     /**
      * 加载视频描述
@@ -1545,11 +1426,174 @@ class VideoPageApp {
     }
 }
 
+// 可调整大小的面板处理类
+class ResizablePanels {
+    constructor() {
+        this.sidebarLeft = document.getElementById('sidebar-left');
+        this.mainContent = document.getElementById('main-content');
+        this.sidebarRight = document.getElementById('sidebar-right');
+        this.resizerLeft = document.getElementById('resizer-left');
+        this.resizerRight = document.getElementById('resizer-right');
+        this.swapBtn = document.getElementById('swap-layout-btn');
+        
+        this.isResizing = false;
+        this.currentResizer = null;
+        
+        this.minWidth = 15; // 最小宽度百分比
+        this.maxWidth = 45; // 最大宽度百分比
+        
+        // 从localStorage加载保存的宽度，如果没有则使用默认值
+        this.leftWidth = parseFloat(localStorage.getItem('panelLeftWidth')) || 20;
+        this.rightWidth = parseFloat(localStorage.getItem('panelRightWidth')) || 28;
+    }
+    
+    init() {
+        if (!this.resizerLeft || !this.resizerRight) {
+            console.error('Resizer elements not found!');
+            return;
+        }
+        
+        console.log('ResizablePanels initialized successfully');
+        console.log(`Initial widths: left=${this.leftWidth}%, right=${this.rightWidth}%`);
+        
+        // 绑定左侧分隔线事件
+        this.resizerLeft.addEventListener('mousedown', (e) => {
+            console.log('Left resizer mousedown');
+            this.startResize(e, 'left');
+        });
+        
+        // 双击左侧分隔线重置为默认宽度
+        this.resizerLeft.addEventListener('dblclick', () => {
+            console.log('Left resizer double-clicked, resetting to 20%');
+            this.leftWidth = 20;
+            this.updateLayout();
+            this.saveToLocalStorage();
+        });
+        
+        // 绑定右侧分隔线事件
+        this.resizerRight.addEventListener('mousedown', (e) => {
+            console.log('Right resizer mousedown');
+            this.startResize(e, 'right');
+        });
+        
+        // 双击右侧分隔线重置为默认宽度
+        this.resizerRight.addEventListener('dblclick', () => {
+            console.log('Right resizer double-clicked, resetting to 28%');
+            this.rightWidth = 28;
+            this.updateLayout();
+            this.saveToLocalStorage();
+        });
+        
+        // 全局鼠标移动和释放事件
+        document.addEventListener('mousemove', (e) => this.resize(e));
+        document.addEventListener('mouseup', () => this.stopResize());
+        
+        // 初始化位置
+        this.updateLayout();
+    }
+    
+    saveToLocalStorage() {
+        localStorage.setItem('panelLeftWidth', this.leftWidth);
+        localStorage.setItem('panelRightWidth', this.rightWidth);
+    }
+    
+    startResize(e, side) {
+        e.preventDefault();
+        this.isResizing = true;
+        this.currentResizer = side;
+        this.resizerLeft.classList.add('dragging');
+        this.resizerRight.classList.add('dragging');
+        document.body.classList.add('resizing');
+    }
+    
+    resize(e) {
+        if (!this.isResizing) return;
+        
+        e.preventDefault();
+        
+        const windowWidth = window.innerWidth;
+        const mouseX = e.clientX;
+        const percentage = (mouseX / windowWidth) * 100;
+        
+        if (this.currentResizer === 'left') {
+            // 调整左侧宽度
+            const newLeftWidth = Math.max(this.minWidth, Math.min(percentage, this.maxWidth));
+            this.leftWidth = newLeftWidth;
+            console.log(`Resizing left panel to ${this.leftWidth.toFixed(2)}%`);
+        } else if (this.currentResizer === 'right') {
+            // 调整右侧宽度（从右边计算）
+            const newRightWidth = Math.max(this.minWidth, Math.min(100 - percentage, this.maxWidth));
+            this.rightWidth = newRightWidth;
+            console.log(`Resizing right panel to ${this.rightWidth.toFixed(2)}%`);
+        }
+        
+        this.updateLayout();
+    }
+    
+    stopResize() {
+        if (!this.isResizing) return;
+        
+        console.log('Stop resizing');
+        
+        // 移除所有 dragging 类
+        this.resizerLeft.classList.remove('dragging');
+        this.resizerRight.classList.remove('dragging');
+        document.body.classList.remove('resizing');
+        
+        this.isResizing = false;
+        this.currentResizer = null;
+        
+        // 保存宽度到localStorage
+        this.saveToLocalStorage();
+    }
+    
+    updateLayout() {
+        // 计算中间区域宽度
+        const middleWidth = 100 - this.leftWidth - this.rightWidth;
+        
+        console.log(`Updating layout: left=${this.leftWidth}%, middle=${middleWidth}%, right=${this.rightWidth}%`);
+        
+        // 更新左侧面板
+        if (this.sidebarLeft) {
+            this.sidebarLeft.style.width = `${this.leftWidth}%`;
+        }
+        
+        // 更新主内容区 - 使用left和right属性
+        if (this.mainContent) {
+            this.mainContent.style.left = `${this.leftWidth}%`;
+            this.mainContent.style.right = `${this.rightWidth}%`;
+        }
+        
+        // 更新右侧面板
+        if (this.sidebarRight) {
+            this.sidebarRight.style.width = `${this.rightWidth}%`;
+        }
+        
+        // 更新分隔线位置
+        if (this.resizerLeft) {
+            this.resizerLeft.style.left = `${this.leftWidth}%`;
+        }
+        if (this.resizerRight) {
+            this.resizerRight.style.right = `${this.rightWidth}%`;
+        }
+        
+        // 更新交换按钮位置
+        if (this.swapBtn) {
+            this.swapBtn.style.right = `${this.rightWidth + 1}%`;
+        }
+    }
+}
+
 // 当DOM加载完成后初始化应用
 document.addEventListener('DOMContentLoaded', () => {
     const app = new VideoPageApp(CONFIG);
     app.init();
     
-    // 将app实例挂载到window对象，方便调试
+    // 初始化可调整大小的面板
+    const resizablePanels = new ResizablePanels();
+    resizablePanels.init();
+    
+    // 将实例挂载到window对象，方便调试
     window.videoApp = app;
+    window.resizablePanels = resizablePanels;
 });

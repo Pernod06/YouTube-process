@@ -144,7 +144,7 @@ def display_full_transcript(transcript, output_file=None, details=None):
 def main():
     """主函数"""
     # 视频URL
-    video_url = "https://www.youtube.com/watch?v=EF8C4v7JIbA"
+    video_url = "https://www.youtube.com/watch?v=w0H1-b044KY"
     
     # 获取完整字幕
     transcript, details = get_full_transcript(video_url, language='en')
@@ -154,7 +154,7 @@ def main():
         # display_full_transcript(transcript)
         
         # 可选：保存到文件
-        display_full_transcript(transcript, output_file="full_transcript_2.txt", details=details)
+        display_full_transcript(transcript, output_file="How_to_Build_Agent_transcript.txt", details=details)
         
         print("\n" + "=" * 70)
         print("💡 提示：")

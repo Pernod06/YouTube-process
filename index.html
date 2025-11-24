@@ -10,7 +10,7 @@
 
     <div class="container">
         <!-- 左侧导航栏 -->
-        <div class="sidebar-left">
+        <div class="sidebar-left" id="sidebar-left">
             <!-- Navigation 区域 - 40% -->
             <div class="navigation-section">
                 <h3>Navigation</h3>
@@ -43,22 +43,25 @@
             </div>
         </div>
 
+        <!-- 左侧拖动分隔线 -->
+        <div class="resizer resizer-left" id="resizer-left" title="拖动调整宽度 | 双击重置"></div>
+
         <!-- 主内容区 -->
-        <div class="main-content">
+        <div class="main-content" id="main-content">
             <!-- 交换按钮 -->
-            <button id="swap-layout-btn" class="swap-layout-btn" title="交换布局">
+            <!-- <button id="swap-layout-btn" class="swap-layout-btn" title="交换布局">
                 <span class="swap-icon">⭕</span>
-            </button>
+            </button> -->
             
             <!-- 视频头部区域 -->
             <div class="video-header">
                 <div class="video-info-block">
-                    <div class="video-thumbnail">
+                    <!-- <div class="video-thumbnail">
                         <img id="video-thumbnail-img" 
                              src="https://img.youtube.com/vi/lQHK61IDFH4/maxresdefault.jpg" 
                              alt="视频缩略图"
                              onerror="this.src='https://img.youtube.com/vi/lQHK61IDFH4/hqdefault.jpg'">
-                    </div>
+                    </div> -->
                     <h1 id="video-title">加载中...</h1>
                     <div class="video-description" id="video-description">
                         <p>正在加载视频描述...</p>
@@ -80,8 +83,11 @@
             </div> -->
         </div>
 
+        <!-- 右侧拖动分隔线 -->
+        <div class="resizer resizer-right" id="resizer-right" title="拖动调整宽度 | 双击重置"></div>
+
         <!-- 右侧边栏（视频和聊天） -->
-        <div class="sidebar-right">
+        <div class="sidebar-right" id="sidebar-right">
             <div class="video-player">
                 <iframe id="video-iframe" 
                         allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
@@ -135,8 +141,8 @@
                             rows="2"
                         ></textarea>
                         <button id="chat-send-btn" class="chat-send-btn">
-                            <span>发送</span>
-                            <span class="send-icon">📤</span>
+                            <!-- <span>发送</span> -->
+                            <span class="send-icon">→</span>
                         </button>
                     </div>
                 <!-- </div> -->
