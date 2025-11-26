@@ -29,7 +29,8 @@ const CONFIG = {
         DEFAULT_PARAMS: {
             autoplay: 1,
             rel: 0,
-            modestbranding: 1
+            modestbranding: 1,
+            enablejsapi: 1
         }
     },
 

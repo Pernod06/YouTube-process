@@ -7,6 +7,8 @@ class VideoPageApp {
         this.player = null;
         this.currentSectionIndex = 0;
         this.totalSections = 0;
+        this.youtubePlayer = null;
+        this.playerReady = false;
     }
 
     /**
@@ -142,17 +144,38 @@ class VideoPageApp {
         div.id = section.id;
         div.className = 'section';
         
-        // 处理Markdown格式的粗体
-        const content = this.parseMarkdown(section.content);
+        // 检查内容是字符串还是数组
+        let contentHTML = '';
+        
+        if (Array.isArray(section.content)) {
+            // 新格式：content 是数组，每个句子作为 span 连续显示
+            contentHTML = '<div class="content-paragraph">';
+            section.content.forEach((item, index) => {
+                const parsedContent = this.parseMarkdown(item.content);
+                contentHTML += `<span class="sentence-span" 
+                                     draggable="true"
+                                     data-timestamp="${item.timestampStart}"
+                                     data-content="${this.escapeHtml(item.content)}"
+                                     data-index="${index}"
+                                     title="点击跳转 | 拖拽到聊天框">${parsedContent}</span> `;
+            });
+            contentHTML += '</div>';
+        } else {
+            // 旧格式：content 是字符串
+            const content = this.parseMarkdown(section.content);
+            const timestamps = (section.timestampStart && section.timestampEnd) 
+                ? `<span class="timestamp-range" 
+                          data-start="${section.timestampStart}" 
+                          data-end="${section.timestampEnd}">
+                        [${section.timestampStart}] - [${section.timestampEnd}]
+                   </span>`
+                : '';
+            contentHTML = `${timestamps}<p>${content}</p>`;
+        }
         
         div.innerHTML = `
             <h2>${section.title}</h2>
-            <span class="timestamp-range" 
-                  data-start="${section.timestampStart}" 
-                  data-end="${section.timestampEnd}">
-                [${section.timestampStart}] - [${section.timestampEnd}]
-            </span>
-            <p>${content}</p>
+            ${contentHTML}
         `;
         
         return div;
@@ -167,6 +190,15 @@ class VideoPageApp {
     }
 
     /**
+     * HTML 转义
+     */
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    /**
      * 渲染视频播放器
      */
     renderVideoPlayer(videoInfo) {
@@ -174,6 +206,12 @@ class VideoPageApp {
         if (!playerContainer) return;
         
         const params = new URLSearchParams(this.config.YOUTUBE.DEFAULT_PARAMS);
+        
+        // 确保启用 JavaScript API
+        if (!params.has('enablejsapi')) {
+            params.set('enablejsapi', '1');
+        }
+        
         const embedUrl = `${this.config.YOUTUBE.EMBED_URL}${videoInfo.videoId}?${params.toString()}`;
         
         playerContainer.src = embedUrl;
@@ -225,11 +263,41 @@ class VideoPageApp {
      * 时间戳点击事件
      */
     bindTimestampEvents() {
+        // 旧格式：时间戳范围点击
         const timestamps = document.querySelectorAll('.timestamp-range');
         timestamps.forEach(timestamp => {
             timestamp.addEventListener('click', () => {
                 const startTime = timestamp.getAttribute('data-start');
                 this.seekVideo(startTime);
+            });
+        });
+        
+        // 新格式：可点击的句子（span格式）
+        const sentenceSpans = document.querySelectorAll('.sentence-span');
+        sentenceSpans.forEach(span => {
+            // 点击事件
+            span.addEventListener('click', () => {
+                const timestamp = span.getAttribute('data-timestamp');
+                console.log('[INFO] 点击句子，跳转到:', timestamp);
+                this.seekVideo(timestamp);
+                
+                // 添加视觉反馈（短暂高亮）
+                sentenceSpans.forEach(s => s.classList.remove('active'));
+                span.classList.add('active');
+            });
+            
+            // 拖拽开始事件
+            span.addEventListener('dragstart', (e) => {
+                const content = span.getAttribute('data-content');
+                e.dataTransfer.setData('text/plain', content);
+                e.dataTransfer.effectAllowed = 'copy';
+                span.classList.add('dragging');
+                console.log('[INFO] 开始拖拽句子:', content);
+            });
+            
+            // 拖拽结束事件
+            span.addEventListener('dragend', (e) => {
+                span.classList.remove('dragging');
             });
         });
     }
@@ -320,12 +388,55 @@ class VideoPageApp {
     }
 
     /**
-     * 初始化YouTube播放器（可选：使用YouTube IFrame API）
+     * 初始化YouTube播放器（使用YouTube IFrame API）
      */
     initPlayer() {
-        // 如果需要更高级的控制，可以使用YouTube IFrame API
-        // 这里提供一个简单的实现
+        // 加载 YouTube IFrame API
+        if (!window.YT) {
+            const tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+        
+        // 等待 API 就绪
+        window.onYouTubeIframeAPIReady = () => {
+            this.initYouTubePlayer();
+        };
+        
+        // 如果 API 已经加载，直接初始化
+        if (window.YT && window.YT.Player) {
+            this.initYouTubePlayer();
+        }
+        
         console.log('Video player initialized');
+    }
+
+    /**
+     * 初始化 YouTube Player 对象
+     */
+    initYouTubePlayer() {
+        const iframe = document.getElementById('video-iframe');
+        if (!iframe) {
+            console.warn('[WARN] 找不到 video iframe');
+            return;
+        }
+
+        try {
+            this.youtubePlayer = new YT.Player('video-iframe', {
+                events: {
+                    'onReady': (event) => {
+                        console.log('[SUCCESS] YouTube Player 已就绪');
+                        this.playerReady = true;
+                    },
+                    'onStateChange': (event) => {
+                        // 可以在这里添加播放状态变化的处理
+                    }
+                }
+            });
+        } catch (error) {
+            console.error('[ERROR] 初始化 YouTube Player 失败:', error);
+        }
     }
 
     /**
@@ -420,6 +531,43 @@ class VideoPageApp {
         chatInput.addEventListener('input', () => {
             chatInput.style.height = 'auto';
             chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px';
+        });
+
+        // 拖拽目标事件处理
+        chatInput.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'copy';
+            chatInput.classList.add('drag-over');
+        });
+
+        chatInput.addEventListener('dragleave', (e) => {
+            chatInput.classList.remove('drag-over');
+        });
+
+        chatInput.addEventListener('drop', (e) => {
+            e.preventDefault();
+            chatInput.classList.remove('drag-over');
+            
+            const droppedText = e.dataTransfer.getData('text/plain');
+            if (droppedText) {
+                // 在光标位置插入文本
+                const start = chatInput.selectionStart;
+                const end = chatInput.selectionEnd;
+                const currentValue = chatInput.value;
+                
+                const newValue = currentValue.substring(0, start) + droppedText + currentValue.substring(end);
+                chatInput.value = newValue;
+                
+                // 设置光标位置到插入文本之后
+                const newCursorPos = start + droppedText.length;
+                chatInput.setSelectionRange(newCursorPos, newCursorPos);
+                
+                // 触发 input 事件以调整高度
+                chatInput.dispatchEvent(new Event('input'));
+                chatInput.focus();
+                
+                console.log('[INFO] 句子已拖拽到聊天框:', droppedText);
+            }
         });
     }
     
@@ -714,12 +862,714 @@ class VideoPageApp {
     }
 
     /**
-     * 显示思维导图视图
+     * 显示思维导图视图 (使用 Mermaid.js)
      */
-    showMindMapView() {
-        // TODO: 实现思维导图视图
-        console.log('Mind Map view activated');
-        this.showViewPlaceholder('Mind Map', '🗺️', '思维导图可视化');
+    async showMindMapView() {
+        console.log('Mind Map view activated (Mermaid.js)');
+        
+        const mainContent = document.querySelector('.main-content');
+        if (!mainContent) return;
+        
+        // 保存当前内容
+        if (!this.originalContent) {
+            this.originalContent = mainContent.innerHTML;
+        }
+        
+        // 显示加载状态
+        mainContent.innerHTML = `
+            <div class="mindmap-view">
+                <div class="mindmap-header">
+                    <h2><span class="view-icon">🗺️</span> 思维导图 (Mermaid)</h2>
+                    <button class="back-to-content-btn" onclick="videoApp.restoreOriginalContent()">
+                        ← 返回视频内容
+                    </button>
+                </div>
+                <div class="mindmap-loading">
+                    <div class="loading-spinner"></div>
+                    <p>正在生成思维导图，请稍候...</p>
+                    <p class="loading-hint">AI 正在分析视频内容并生成结构化思维导图</p>
+                </div>
+            </div>
+        `;
+        
+        try {
+            // 加载 Mermaid 库（如果尚未加载）
+            await this.loadMermaidLibrary();
+            
+            // 调用后端 API 生成思维导图
+            const result = await this.apiService.generateMindMap();
+            
+            console.log('[DEBUG] API 返回结果:', result);
+            
+            // 检查返回结果
+            if (!result) {
+                throw new Error('API 返回结果为空');
+            }
+            
+            if (!result.success) {
+                throw new Error(result.message || result.error || '生成失败');
+            }
+            
+            if (!result.mermaid || result.mermaid === 'undefined' || result.mermaid.trim() === '') {
+                throw new Error('AI 返回的内容为空或无效，请重试');
+            }
+            
+            console.log('[SUCCESS] 思维导图生成成功');
+            
+            // 渲染思维导图
+            this.renderMermaidMindMap(result.mermaid, result.videoTitle);
+            
+        } catch (error) {
+            console.error('Failed to generate mindmap:', error);
+            
+            // 确定错误消息
+            let errorMessage = error.message || '未知错误';
+            let errorHint = '请确保后端服务已启动并配置了 OpenAI API 密钥';
+            
+            // 根据错误类型提供更具体的提示
+            if (errorMessage.includes('API 密钥')) {
+                errorHint = '请在后端 .env 文件中配置 OPENAI_API_KEY';
+            } else if (errorMessage.includes('网络') || errorMessage.includes('fetch')) {
+                errorHint = '请检查后端服务是否运行在 http://localhost:5000';
+            } else if (errorMessage.includes('空') || errorMessage.includes('undefined')) {
+                errorHint = 'AI 生成内容失败，可能是 API 配额不足或网络问题，请重试';
+            }
+            
+            mainContent.innerHTML = `
+                <div class="mindmap-view">
+                    <div class="mindmap-header">
+                        <h2><span class="view-icon">🗺️</span> 思维导图</h2>
+                        <button class="back-to-content-btn" onclick="videoApp.restoreOriginalContent()">
+                            ← 返回视频内容
+                        </button>
+                    </div>
+                    <div class="mindmap-error">
+                        <div class="error-icon">⚠️</div>
+                        <h3>无法生成思维导图</h3>
+                        <p class="error-message">${errorMessage}</p>
+                        <p class="error-hint">${errorHint}</p>
+                        <button class="retry-btn" onclick="videoApp.showMindMapView()">
+                            重试
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    /**
+     * 动态加载 Mermaid 库
+     */
+    async loadMermaidLibrary() {
+        // 检查是否已加载
+        if (window.mermaid) {
+            console.log('[INFO] Mermaid 库已加载');
+            return;
+        }
+        
+        console.log('[INFO] 正在加载 Mermaid 库...');
+        
+        try {
+            // 加载 Mermaid (从 CDN)
+            await this.loadScript('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js');
+            
+            // 等待初始化
+            await new Promise(resolve => setTimeout(resolve, 200));
+            
+            // 验证并初始化
+            if (window.mermaid) {
+                // 初始化 Mermaid - 优化显示大小和布局均匀性
+                mermaid.initialize({ 
+                    startOnLoad: false,
+                    theme: 'default',
+                    themeVariables: {
+                        fontSize: '16px',
+                        fontFamily: 'Arial, sans-serif, "Microsoft YaHei"'
+                    },
+                    mindmap: {
+                        padding: 40,
+                        useMaxWidth: false,
+                        nodeSpacing: 80,     // 节点横向间距
+                        levelSpacing: 120,   // 层级纵向间距
+                        diagramPadding: 20
+                    },
+                    flowchart: {
+                        curve: 'basis',
+                        nodeSpacing: 50,
+                        rankSpacing: 50
+                    }
+                });
+                console.log('[SUCCESS] ✅ Mermaid 库加载并初始化成功！');
+            } else {
+                throw new Error('Mermaid 库加载失败');
+            }
+        } catch (error) {
+            console.error('[ERROR] Mermaid 库加载失败:', error);
+            throw new Error('无法加载 Mermaid 库，请检查网络连接');
+        }
+    }
+
+    /**
+     * 动态加载 Markmap 库 (已弃用，保留以防需要)
+     */
+    async loadMarkmapLibrary() {
+        // 检查是否已加载
+        if (window.markmap && window.markmap.Transformer && window.markmap.Markmap) {
+            console.log('[INFO] Markmap 库已加载');
+            return;
+        }
+        
+        console.log('[INFO] 正在加载 Markmap 库...');
+        
+        // 定义加载源（优先本地，然后 CDN）
+        const loadSources = [
+            {
+                name: '本地文件 (standalone)',
+                d3: '/libs/d3.v7.min.js',
+                markmap: '/libs/markmap-view.min.js'
+            },
+            {
+                name: 'jsdelivr (standalone)',
+                d3: 'https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js',
+                markmap: 'https://cdn.jsdelivr.net/npm/markmap-view@0.15.4/dist/index.min.js'
+            },
+            {
+                name: 'unpkg (standalone)',
+                d3: 'https://unpkg.com/d3@7/dist/d3.min.js',
+                markmap: 'https://unpkg.com/markmap-view@0.15.4/dist/index.min.js'
+            }
+        ];
+        
+        let lastError = null;
+        
+        // 尝试不同的加载源
+        for (const source of loadSources) {
+            try {
+                console.log(`[INFO] 尝试从 ${source.name} 加载...`);
+                
+                // 加载 d3（markmap 的依赖）
+                await this.loadScript(source.d3);
+                console.log(`[INFO] ✓ D3 从 ${source.name} 加载完成`);
+                
+                // 加载 markmap-view（包含 Transformer 和 Markmap）
+                await this.loadScript(source.markmap);
+                console.log(`[INFO] ✓ markmap-view 从 ${source.name} 加载完成`);
+                
+                // 等待库初始化（增加等待时间）
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                // 调试：查看 window 对象
+                console.log('[DEBUG] window.markmap =', window.markmap);
+                console.log('[DEBUG] typeof window.markmap =', typeof window.markmap);
+                
+                // 验证库是否正确加载
+                if (window.markmap) {
+                    console.log('[DEBUG] markmap.Transformer =', window.markmap.Transformer);
+                    console.log('[DEBUG] markmap.Markmap =', window.markmap.Markmap);
+                    
+                    if (window.markmap.Transformer && window.markmap.Markmap) {
+                        console.log(`[SUCCESS] ✅ Markmap 库从 ${source.name} 加载成功！`);
+                        return;
+                    } else {
+                        console.warn(`[WARNING] markmap 对象存在但缺少 Transformer 或 Markmap`);
+                    }
+                } else {
+                    console.warn(`[WARNING] window.markmap 未定义`);
+                }
+                
+                console.warn(`[WARNING] ${source.name} 加载后验证失败，尝试下一个源...`);
+                
+            } catch (error) {
+                console.error(`[ERROR] 从 ${source.name} 加载失败:`, error);
+                lastError = error;
+                // 继续尝试下一个加载源
+            }
+        }
+        
+        // 所有源都失败了
+        const errorMsg = '无法从任何源加载思维导图库。\n请检查：\n1. 运行 ./download-markmap-standalone.sh\n2. 网络连接\n3. 浏览器控制台获取详细错误\n最后错误: ' + (lastError?.message || '未知');
+        throw new Error(errorMsg);
+    }
+
+    /**
+     * 动态加载脚本
+     */
+    loadScript(src) {
+        return new Promise((resolve, reject) => {
+            // 检查是否已加载
+            const existingScript = document.querySelector(`script[src="${src}"]`);
+            if (existingScript) {
+                console.log(`[INFO] 脚本已存在: ${src}`);
+                resolve();
+                return;
+            }
+            
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = false; // 确保按顺序加载
+            script.onload = () => {
+                console.log(`[SUCCESS] 脚本加载成功: ${src}`);
+                resolve();
+            };
+            script.onerror = (error) => {
+                console.error(`[ERROR] 脚本加载失败: ${src}`, error);
+                reject(new Error(`Failed to load script: ${src}`));
+            };
+            document.head.appendChild(script);
+        });
+    }
+
+    /**
+     * 渲染 Mermaid 思维导图
+     */
+    async renderMermaidMindMap(mermaidCode, videoTitle) {
+        const mainContent = document.querySelector('.main-content');
+        if (!mainContent) return;
+        
+        // 生成唯一 ID
+        const mindmapId = 'mermaid-mindmap-' + Date.now();
+        
+        // 创建思维导图容器
+        mainContent.innerHTML = `
+            <div class="mindmap-view">
+                <div class="mindmap-header">
+                    <h2><span class="view-icon">🗺️</span> 思维导图</h2>
+                    <div class="mindmap-actions">
+                        <button class="mindmap-zoom-btn" onclick="videoApp.zoomMindMap('in')" title="放大">
+                            <span>+</span>
+                        </button>
+                        <span class="zoom-level" id="zoom-level">120%</span>
+                        <button class="mindmap-zoom-btn" onclick="videoApp.zoomMindMap('out')" title="缩小">
+                            <span>-</span>
+                        </button>
+                        <button class="mindmap-zoom-btn" onclick="videoApp.zoomMindMap('reset')" title="重置">
+                            <span>↺</span>
+                        </button>
+                        <button class="mindmap-download-btn" id="mindmap-download" title="下载">
+                            <span>⬇️</span>
+                        </button>
+                        <button class="back-to-content-btn" onclick="videoApp.restoreOriginalContent()">
+                            ← 返回
+                        </button>
+                    </div>
+                </div>
+                <div class="mindmap-container" id="mindmap-container">
+                    <div class="mermaid-wrapper" id="mermaid-wrapper">
+                        <pre class="mermaid" id="${mindmapId}">${mermaidCode}</pre>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // 保存代码用于下载
+        this.currentMindMapCode = mermaidCode;
+        this.currentZoomLevel = 1.0;
+        
+        try {
+            console.log('[INFO] 开始渲染 Mermaid 思维导图...');
+            
+            // 使用 Mermaid 渲染
+            await mermaid.run({
+                querySelector: `#${mindmapId}`
+            });
+            
+            console.log('[SUCCESS] ✅ Mermaid 思维导图渲染完成');
+            
+            // 应用初始缩放（放大以便更清晰）
+            this.applyMindMapZoom(1.2);
+            
+            // 绑定所有交互功能
+            this.bindMermaidControls();
+            this.enableMindMapPan();
+            this.enableMindMapWheelZoom();
+            this.enableMindMapKeyboardShortcuts();
+            this.enableMindMapDoubleClickReset();
+            
+        } catch (error) {
+            console.error('[ERROR] Mermaid 渲染失败:', error);
+            throw new Error('思维导图渲染失败: ' + error.message);
+        }
+    }
+
+    /**
+     * 绑定 Mermaid 控制按钮
+     */
+    bindMermaidControls() {
+        const downloadBtn = document.getElementById('mindmap-download');
+        
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', () => {
+                this.downloadMindMapCode();
+            });
+        }
+    }
+
+    /**
+     * 缩放思维导图
+     */
+    zoomMindMap(direction, delta = 0.2) {
+        const oldLevel = this.currentZoomLevel;
+        
+        if (direction === 'in') {
+            this.currentZoomLevel = Math.min(this.currentZoomLevel + delta, 3.0);
+        } else if (direction === 'out') {
+            this.currentZoomLevel = Math.max(this.currentZoomLevel - delta, 0.5);
+        } else if (direction === 'reset') {
+            this.currentZoomLevel = 1.2;
+        }
+        
+        // 只有当缩放级别改变时才应用
+        if (Math.abs(oldLevel - this.currentZoomLevel) > 0.01) {
+            this.applyMindMapZoom(this.currentZoomLevel);
+        }
+    }
+
+    /**
+     * 应用缩放
+     */
+    applyMindMapZoom(scale) {
+        const wrapper = document.getElementById('mermaid-wrapper');
+        const zoomLevelEl = document.getElementById('zoom-level');
+        
+        if (wrapper) {
+            wrapper.style.transform = `scale(${scale})`;
+            wrapper.style.transformOrigin = 'top center';
+            wrapper.style.transition = 'transform 0.2s ease-out';
+            console.log(`[INFO] 缩放级别: ${scale.toFixed(1)}x`);
+        }
+        
+        // 更新缩放比例显示
+        if (zoomLevelEl) {
+            zoomLevelEl.textContent = `${Math.round(scale * 100)}%`;
+            
+            // 添加动画效果
+            zoomLevelEl.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                zoomLevelEl.style.transform = 'scale(1)';
+            }, 200);
+        }
+    }
+
+    /**
+     * 启用拖拽平移
+     */
+    enableMindMapPan() {
+        const container = document.getElementById('mindmap-container');
+        if (!container) return;
+
+        let isDragging = false;
+        let startX, startY, scrollLeft, scrollTop;
+
+        container.addEventListener('mousedown', (e) => {
+            // 只在空白区域拖拽
+            if (e.target === container || e.target.closest('.mermaid-wrapper')) {
+                isDragging = true;
+                container.style.cursor = 'grabbing';
+                startX = e.pageX - container.offsetLeft;
+                startY = e.pageY - container.offsetTop;
+                scrollLeft = container.scrollLeft;
+                scrollTop = container.scrollTop;
+            }
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDragging = false;
+            container.style.cursor = 'default';
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'default';
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const y = e.pageY - container.offsetTop;
+            const walkX = (x - startX) * 1.5;
+            const walkY = (y - startY) * 1.5;
+            container.scrollLeft = scrollLeft - walkX;
+            container.scrollTop = scrollTop - walkY;
+        });
+    }
+
+    /**
+     * 启用鼠标滚轮缩放
+     */
+    enableMindMapWheelZoom() {
+        const container = document.getElementById('mindmap-container');
+        if (!container) return;
+
+        container.addEventListener('wheel', (e) => {
+            // 按住 Ctrl 键或单独滚轮都可以缩放
+            if (e.ctrlKey || !e.shiftKey) {
+                e.preventDefault();
+                
+                const delta = e.deltaY > 0 ? -0.1 : 0.1;
+                const direction = delta > 0 ? 'in' : 'out';
+                
+                this.zoomMindMap(direction, Math.abs(delta));
+            }
+        }, { passive: false });
+
+        console.log('[INFO] ✅ 鼠标滚轮缩放已启用');
+    }
+
+    /**
+     * 启用键盘快捷键
+     */
+    enableMindMapKeyboardShortcuts() {
+        const handleKeyPress = (e) => {
+            // 只在思维导图视图中生效
+            if (!document.getElementById('mermaid-wrapper')) return;
+            
+            switch(e.key) {
+                case '+':
+                case '=':
+                    e.preventDefault();
+                    this.zoomMindMap('in');
+                    break;
+                case '-':
+                case '_':
+                    e.preventDefault();
+                    this.zoomMindMap('out');
+                    break;
+                case '0':
+                    if (e.ctrlKey || e.metaKey) {
+                        e.preventDefault();
+                        this.zoomMindMap('reset');
+                    }
+                    break;
+            }
+        };
+
+        // 移除旧的监听器（如果存在）
+        if (this.keyboardHandler) {
+            document.removeEventListener('keydown', this.keyboardHandler);
+        }
+        
+        this.keyboardHandler = handleKeyPress;
+        document.addEventListener('keydown', this.keyboardHandler);
+
+        console.log('[INFO] ✅ 键盘快捷键已启用 (+/- 缩放, Ctrl+0 重置)');
+    }
+
+    /**
+     * 启用双击重置
+     */
+    enableMindMapDoubleClickReset() {
+        const container = document.getElementById('mindmap-container');
+        if (!container) return;
+
+        container.addEventListener('dblclick', (e) => {
+            // 不在按钮上双击
+            if (!e.target.closest('button')) {
+                this.zoomMindMap('reset');
+                console.log('[INFO] 双击重置缩放');
+            }
+        });
+
+        console.log('[INFO] ✅ 双击重置已启用');
+    }
+
+    /**
+     * 下载思维导图源码
+     */
+    downloadMindMapCode() {
+        if (!this.currentMindMapCode) {
+            console.error('No mindmap code to download');
+            return;
+        }
+        
+        const blob = new Blob([this.currentMindMapCode], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `mindmap_${new Date().toISOString().slice(0, 10)}.mmd`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        URL.revokeObjectURL(url);
+        console.log('[INFO] 思维导图源码已下载');
+    }
+
+    /**
+     * 渲染思维导图 (Markmap - 已弃用)
+     */
+    renderMindMap(markdown, videoTitle) {
+        const mainContent = document.querySelector('.main-content');
+        if (!mainContent) return;
+        
+        // 创建思维导图容器
+        mainContent.innerHTML = `
+            <div class="mindmap-view">
+                <div class="mindmap-header">
+                    <h2><span class="view-icon">🗺️</span> 思维导图</h2>
+                    <div class="mindmap-actions">
+                        <button class="mindmap-zoom-btn" id="mindmap-zoom-in" title="放大">
+                            <span>➕</span>
+                        </button>
+                        <button class="mindmap-zoom-btn" id="mindmap-zoom-out" title="缩小">
+                            <span>➖</span>
+                        </button>
+                        <button class="mindmap-zoom-btn" id="mindmap-fit" title="适应屏幕">
+                            <span>🔲</span>
+                        </button>
+                        <button class="mindmap-download-btn" id="mindmap-download" title="下载 Markdown">
+                            <span>⬇️</span> 下载 MD
+                        </button>
+                        <button class="back-to-content-btn" onclick="videoApp.restoreOriginalContent()">
+                            ← 返回视频内容
+                        </button>
+                    </div>
+                </div>
+                <div class="mindmap-container" id="mindmap-container">
+                    <svg id="mindmap-svg"></svg>
+                </div>
+            </div>
+        `;
+        
+        // 保存 markdown 用于下载
+        this.currentMindMapMarkdown = markdown;
+        
+        // 使用 Markmap 渲染
+        try {
+            // 验证 Markmap 库是否已加载
+            if (!window.markmap) {
+                throw new Error('Markmap 库未加载');
+            }
+            
+            if (!window.markmap.Transformer) {
+                throw new Error('Markmap.Transformer 未定义');
+            }
+            
+            if (!window.markmap.Markmap) {
+                throw new Error('Markmap.Markmap 未定义');
+            }
+            
+            console.log('[INFO] 开始渲染思维导图...');
+            
+            const { Transformer, Markmap } = window.markmap;
+            
+            // 创建 Transformer 并转换 markdown
+            const transformer = new Transformer();
+            const { root } = transformer.transform(markdown);
+            
+            console.log('[INFO] Markdown 转换成功，节点数:', root);
+            
+            // 获取 SVG 元素
+            const svg = document.getElementById('mindmap-svg');
+            if (!svg) {
+                throw new Error('SVG 元素未找到');
+            }
+            
+            // 设置 SVG 尺寸
+            const container = document.getElementById('mindmap-container');
+            const width = container?.clientWidth || 800;
+            const height = container?.clientHeight || 600;
+            
+            svg.setAttribute('width', width);
+            svg.setAttribute('height', height);
+            
+            console.log(`[INFO] SVG 尺寸: ${width}x${height}`);
+            
+            // 创建 Markmap 实例
+            const mm = Markmap.create(svg, {
+                autoFit: true,
+                duration: 500,
+                maxWidth: 300,
+                paddingX: 20,
+                color: (node) => {
+                    // 根据层级设置颜色
+                    const colors = ['#4285F4', '#34A853', '#FBBC05', '#EA4335', '#9C27B0', '#00BCD4'];
+                    return colors[node.depth % colors.length];
+                }
+            }, root);
+            
+            if (!mm) {
+                throw new Error('Markmap 实例创建失败');
+            }
+            
+            // 保存实例用于缩放控制
+            this.currentMarkmap = mm;
+            
+            // 绑定缩放按钮事件
+            this.bindMindMapControls();
+            
+            console.log('[SUCCESS] 思维导图渲染完成');
+            
+        } catch (error) {
+            console.error('[ERROR] Markmap 渲染失败:', error);
+            console.error('[ERROR] 错误详情:', error.stack);
+            throw new Error('思维导图渲染失败: ' + error.message);
+        }
+    }
+
+    /**
+     * 绑定思维导图控制按钮
+     */
+    bindMindMapControls() {
+        const zoomInBtn = document.getElementById('mindmap-zoom-in');
+        const zoomOutBtn = document.getElementById('mindmap-zoom-out');
+        const fitBtn = document.getElementById('mindmap-fit');
+        const downloadBtn = document.getElementById('mindmap-download');
+        
+        if (zoomInBtn && this.currentMarkmap) {
+            zoomInBtn.addEventListener('click', () => {
+                const svg = document.getElementById('mindmap-svg');
+                if (svg && this.currentMarkmap) {
+                    this.currentMarkmap.rescale(1.25);
+                }
+            });
+        }
+        
+        if (zoomOutBtn && this.currentMarkmap) {
+            zoomOutBtn.addEventListener('click', () => {
+                const svg = document.getElementById('mindmap-svg');
+                if (svg && this.currentMarkmap) {
+                    this.currentMarkmap.rescale(0.8);
+                }
+            });
+        }
+        
+        if (fitBtn && this.currentMarkmap) {
+            fitBtn.addEventListener('click', () => {
+                if (this.currentMarkmap) {
+                    this.currentMarkmap.fit();
+                }
+            });
+        }
+        
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', () => {
+                this.downloadMindMapMarkdown();
+            });
+        }
+    }
+
+    /**
+     * 下载思维导图 Markdown
+     */
+    downloadMindMapMarkdown() {
+        if (!this.currentMindMapMarkdown) {
+            console.error('No markdown content to download');
+            return;
+        }
+        
+        const blob = new Blob([this.currentMindMapMarkdown], { type: 'text/markdown;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `mindmap_${new Date().toISOString().slice(0, 10)}.md`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        URL.revokeObjectURL(url);
     }
 
     /**
@@ -1104,6 +1954,22 @@ class VideoPageApp {
     seekToTimestamp(timestamp) {
         console.log('[INFO] 跳转到时间:', timestamp);
         
+        // 优先使用 YouTube Player API
+        if (this.youtubePlayer && this.playerReady && typeof this.youtubePlayer.seekTo === 'function') {
+            try {
+                this.youtubePlayer.seekTo(timestamp, true);
+                // 如果视频暂停，自动播放
+                if (this.youtubePlayer.getPlayerState() !== YT.PlayerState.PLAYING) {
+                    this.youtubePlayer.playVideo();
+                }
+                console.log('[SUCCESS] 使用 Player API 跳转到:', timestamp);
+                return;
+            } catch (error) {
+                console.warn('[WARN] Player API 跳转失败，使用备用方案:', error);
+            }
+        }
+        
+        // 备用方案：使用 postMessage API
         const videoId = this.currentVideoData?.videoInfo?.videoId || 'lQHK61IDFH4';
         
         // 动态查找 iframe（尝试多个可能的位置）
@@ -1112,11 +1978,29 @@ class VideoPageApp {
                      document.querySelector('.video-player iframe') ||
                      document.querySelector('iframe[src*="youtube.com/embed"]');
         
-        if (iframe) {
-            // 更新 iframe src，跳转到指定时间
-            const newSrc = `https://www.youtube.com/embed/${videoId}?start=${timestamp}&autoplay=1`;
-            console.log('[INFO] 找到 iframe，更新 src:', newSrc);
-            iframe.src = newSrc;
+        if (iframe && iframe.contentWindow) {
+            try {
+                // 使用 YouTube postMessage API
+                iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: 'seekTo',
+                    args: [timestamp, true]
+                }), '*');
+                
+                iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: 'playVideo',
+                    args: []
+                }), '*');
+                
+                console.log('[INFO] 使用 postMessage 跳转到:', timestamp);
+            } catch (error) {
+                console.error('[ERROR] postMessage 失败:', error);
+                // 最后的备用方案：重新加载 iframe（会有闪烁）
+                const newSrc = `https://www.youtube.com/embed/${videoId}?start=${timestamp}&autoplay=1&enablejsapi=1`;
+                console.log('[INFO] 使用 src 更新跳转（备用方案）');
+                iframe.src = newSrc;
+            }
         } else {
             console.error('[ERROR] 未找到视频 iframe，尝试的选择器都失败了');
         }
@@ -1462,12 +2346,11 @@ class ResizablePanels {
             this.startResize(e, 'left');
         });
         
-        // 双击左侧分隔线重置为默认宽度
-        this.resizerLeft.addEventListener('dblclick', () => {
-            console.log('Left resizer double-clicked, resetting to 20%');
-            this.leftWidth = 20;
-            this.updateLayout();
-            this.saveToLocalStorage();
+        // 阻止左侧分隔线的click事件
+        this.resizerLeft.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
         });
         
         // 绑定右侧分隔线事件
@@ -1476,12 +2359,26 @@ class ResizablePanels {
             this.startResize(e, 'right');
         });
         
-        // 双击右侧分隔线重置为默认宽度
-        this.resizerRight.addEventListener('dblclick', () => {
-            console.log('Right resizer double-clicked, resetting to 28%');
-            this.rightWidth = 28;
-            this.updateLayout();
-            this.saveToLocalStorage();
+        // 阻止右侧分隔线的click事件
+        this.resizerRight.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+        });
+        
+        // 阻止分隔栏上的所有可能导致跳转的事件
+        const preventAllEvents = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+        };
+        
+        [this.resizerLeft, this.resizerRight].forEach(resizer => {
+            resizer.addEventListener('touchstart', preventAllEvents, { passive: false });
+            resizer.addEventListener('touchmove', preventAllEvents, { passive: false });
+            resizer.addEventListener('touchend', preventAllEvents, { passive: false });
+            resizer.addEventListener('contextmenu', preventAllEvents);
+            resizer.addEventListener('dragstart', preventAllEvents);
         });
         
         // 全局鼠标移动和释放事件
@@ -1499,10 +2396,13 @@ class ResizablePanels {
     
     startResize(e, side) {
         e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
         this.isResizing = true;
         this.currentResizer = side;
         this.resizerLeft.classList.add('dragging');
         this.resizerRight.classList.add('dragging');
+        document.documentElement.classList.add('resizing');
         document.body.classList.add('resizing');
     }
     
@@ -1510,6 +2410,7 @@ class ResizablePanels {
         if (!this.isResizing) return;
         
         e.preventDefault();
+        e.stopPropagation();
         
         const windowWidth = window.innerWidth;
         const mouseX = e.clientX;
@@ -1538,6 +2439,7 @@ class ResizablePanels {
         // 移除所有 dragging 类
         this.resizerLeft.classList.remove('dragging');
         this.resizerRight.classList.remove('dragging');
+        document.documentElement.classList.remove('resizing');
         document.body.classList.remove('resizing');
         
         this.isResizing = false;

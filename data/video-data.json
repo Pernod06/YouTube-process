@@ -9,73 +9,247 @@
   "sections": [
     {
       "id": "section1",
-      "title": "American Innovation and the AI Revolution",
-      "timestampStart": "00:00",
-      "timestampEnd": "02:54",
-      "content": "America has always been the land of innovation, where invention shaped destiny and technology helped dreams take flight. This history includes foundational breakthroughs like the transistor at Bell Labs, sparking the age of semiconductors and Silicon Valley, Hedy Lamarr's work paving the way for wireless connectivity, the universal computer of IBM's System 360, Intel's microprocessor, and Cray's supercomputers. Later, Apple made computing personal and portable with the iPod and iPhone, while Microsoft opened the window to new software, and ARPANET laid the foundation for the internet. Now, the next era is here, launched by a revolutionary new computing model: **Artificial Intelligence (AI)**. AI is described as the **new industrial revolution** and is considered essential infrastructure, much like electricity and the internet. Every company and nation will build it, and winning this competition will be a test of our capacities unlike anything since the space age. Today, AI factories are rising, built in America for scientists, engineers, and dreamers, clearing the way for abundance, saving lives, and extending humanity's reach to the stars in what is called America's next Apollo moment."
+      "title": "American Innovation and the Rise of Accelerated Computing",
+      "content": [
+        {
+          "content": "The presentation opens with a tribute to American innovation, tracing the lineage of technology from the transistor at Bell Labs to the internet's foundation via ARPANET.",
+          "timestampStart": "00:00"
+        },
+        {
+          "content": "NVIDIA CEO Jensen Huang takes the stage in Washington D.C., declaring this the 'Super Bowl of AI' and emphasizing the sentimental value of American ingenuity.",
+          "timestampStart": "04:41"
+        },
+        {
+          "content": "He explains that NVIDIA invented a new computing model because they observed that general-purpose computing would eventually hit the limits of physics.",
+          "timestampStart": "06:04"
+        },
+        {
+          "content": "With Dennard scaling stopping nearly a decade ago, NVIDIA spent 30 years advancing accelerated computing by adding parallel processing GPUs to sequential CPUs.",
+          "timestampStart": "06:47"
+        },
+        {
+          "content": "Huang stresses that this transition required a fundamental rewrite of the software stack, creating new algorithms and libraries rather than just porting existing code.",
+          "timestampStart": "07:43"
+        },
+        {
+          "content": "The true treasure of the company is its ecosystem of libraries, such as CuLitho for lithography and CuOpt for numerical optimization, which maintain compatibility across generations of GPUs.",
+          "timestampStart": "08:26"
+        },
+        {
+          "content": "These 350+ libraries have opened new markets and enabled ecosystem partners to leverage accelerated computing across industries ranging from healthcare to manufacturing.",
+          "timestampStart": "10:33"
+        }
+      ]
     },
     {
       "id": "section2",
-      "title": "Welcome to GTC and the End of Moore's Law",
-      "timestampStart": "02:54",
-      "timestampEnd": "07:36",
-      "content": "Jensen Huang welcomed the GTC audience in Washington D.C., emphasizing that the conference is where industry, science, computing, the present, and the future converge. He introduced the core innovation: the **Accelerated Computing** model, the first new computing model in 60 years. This model was invented to solve problems that general-purpose computers, or \"normal computers,\" could not. The need for this shift arose because the slowing down of Dennard Scaling and Moore's Law, limited by the laws of physics, is now a reality. While the number of transistors continues to grow, the performance and power efficiency have slowed tremendously. For 30 years, NVIDIA has advanced Accelerated Computing, inventing the **GPU** and the programming model **CUDA**. The core observation was that adding a parallel-processing GPU to a sequential-processing CPU could extend the capabilities of computing well beyond what was previously possible, and that inflection point has now arrived."
+      "title": "Revolutionizing Telecommunications: The 6G Partnership",
+      "content": [
+        {
+          "content": "Telecommunications is described as the lifeblood of the economy, yet recent wireless infrastructure has largely relied on foreign technologies.",
+          "timestampStart": "15:30"
+        },
+        {
+          "content": "They introduce the NVIDIA Arc (Aerial Radio Network Computer), a platform combining the Grace CPU, Blackwell GPU, and ConnectX networking to run the Aerial CUDA-X library.",
+          "timestampStart": "17:31"
+        },
+        {
+          "content": "This creates the first software-defined, programmable computer capable of handling both wireless communications and AI processing simultaneously.",
+          "timestampStart": "18:12"
+        },
+        {
+          "content": "The technology enables AI for RAN, which uses reinforcement learning to improve spectral efficiency and reduce power consumption by adjusting beamforming in real-time.",  
+          "timestampStart": "19:15"
+        },
+        {
+          "content": "Furthermore, it enables AI on RAN, transforming base stations into edge industrial robotics clouds, effectively bringing cloud computing to the edge where data centers do not exist.",
+          "timestampStart": "20:09"
+        }
+      ]
     },
     {
       "id": "section3",
-      "title": "The CUDA-X Ecosystem and 30 Years of Libraries",
-      "timestampStart": "07:36",
-      "timestampEnd": "15:07",
-      "content": "Accelerated computing is a fundamentally different programming model; simply moving sequential CPU software to a GPU will, in fact, make it run slower. This required the **reinvention of new algorithms and libraries**, and the rewriting of applications—a 30-year effort that was tackled one domain at a time. The real treasure of NVIDIA is not just the GPU, but the programming model **CUDA**, which has been kept compatible over generations (now on the cusp of CUDA 14), and the vast ecosystem of libraries known as **CUDA-X**. These libraries, which redesign algorithms for accelerated computing, open new markets and enable the entire ecosystem. Key examples include **cuLitho** for computational lithography (used by TSMC, Samsung, ASML), **cuOpt** for numerical optimization (breaking records in problems like the traveling salesperson problem), **QDF** for accelerating data frame databases, and **Megatron Core** for training extremely large language models. The list also includes **Monai** (the number one medical imaging AI framework) and **cuQuantum** for quantum computing. A demonstration showed that CUDA-X enables simulation across every industry—from healthcare and life sciences to robotics, autonomous vehicles, and computer graphics—all powered by the beauty of mathematics and deep computer science."
+      "title": "The Future of Quantum Computing and Scientific Simulation",
+      "content": [
+        {
+          "content": "Huang references Richard Feynman's vision of simulating nature with quantum computers and notes that the industry recently achieved the breakthrough of creating a coherent logical qubit.",
+          "timestampStart": "21:33"
+        },
+        {
+          "content": "Because qubits are fragile and require error correction involving many physical qubits, it is essential to connect quantum computers directly to GPU supercomputers.",
+          "timestampStart": "22:34"
+        },
+        {
+          "content": "The future of the field lies in hybrid systems where GPUs running classical algorithms work side-by-side with QPUs.",
+          "timestampStart": "23:52"
+        },
+        {
+          "content": "This architecture is scalable, designed to support the transition from hundreds of qubits today to hundreds of thousands in the future.",
+          "timestampStart": "26:50"
+        },
+        {
+          "content": "The CUDA-Q platform has been extended to support this hybrid processing with low latency, gaining support from 17 quantum companies and 8 Department of Energy (DOE) labs.",
+          "timestampStart": "27:52"
+        },
+        {
+          "content": "Additionally, NVIDIA announces a partnership with the DOE to build seven new AI supercomputers to advance national science and principal physics simulations.",
+          "timestampStart": "28:47"
+        }
+      ]
     },
     {
       "id": "section4",
-      "title": "NVIDIA Arc and the 6G Telecommunications Platform",
-      "timestampStart": "15:07",
-      "timestampEnd": "21:33",
-      "content": "Telecommunications is the lifeblood of our economy and national security, but wireless technology has largely been deployed on foreign standards for a long time. This fundamental platform shift presents a once-in-a-lifetime opportunity for American technology to get back into the game. NVIDIA is partnering with **Nokia**, the second-largest telecommunications maker in the world, to be at the center of the next revolution in **6G**. The new product line is the **NVIDIA Arc (Aerial Radio Network Computer)**, built from the **Grace CPU**, **Blackwell GPU**, and **ConnectX** networking, and running the **Aerial** CUDA-X library. Arc creates a **software-defined programmable computer** capable of both wireless communication and AI processing. Nokia will make Arc its future base station, which is compatible with their current Airscale stations, allowing millions of base stations globally to be upgraded with 6G and AI. The two fundamental benefits are **AI for RAN** (Radio Access Network) and **AI on RAN**. AI for RAN uses reinforcement learning to dynamically adjust beamforming and traffic, which improves spectral efficiency and reduces the world's power consumption (currently 1.5-2%). AI on RAN creates a brand new opportunity: an **edge industrial robotics cloud** on top of the wireless network, essentially extending cloud computing to the edge where base stations exist."
+      "title": "Defining the AI Factory and Scaling Laws",
+      "content": [
+        {
+          "content": "Huang clarifies that while chatbots like ChatGPT are vital, the world of AI is much broader, fundamentally reinventing the computing stack from hand-coding to machine learning.",
+          "timestampStart": "30:36"
+        },
+        {
+          "content": "He explains that AI processes 'tokens', which can represent anything from words and images to proteins and robotic motions.",
+          "timestampStart": "33:12"
+        },
+        {
+          "content": "A profound shift is occurring where software is no longer just a tool (like Excel) but 'work' itself, where AI agents actively use tools to perform tasks.",
+          "timestampStart": "35:46"
+        },
+        {
+          "content": "This creates a new industry of token generation, requiring specialized 'AI Factories' rather than general-purpose data centers.",
+          "timestampStart": "38:47"
+        },
+        {
+          "content": "The industry has hit a turbocharge moment driven by three scaling laws: Pre-training (learning from data), Post-training (learning skills and reasoning), and Inference (thinking time).",
+          "timestampStart": "42:16"
+        },
+        {
+          "content": "Huang debunks the myth that inference is easy, noting that 'thinking' requires extraordinary computation, creating a double exponential of demand as models get smarter and usage increases.",
+          "timestampStart": "44:27"
+        },
+        {
+          "content": "To sustain the 'virtuous cycle' where smarter AI generates more profit to fund more compute, the cost of token generation must be driven down aggressively despite the end of Moore's Law.",
+          "timestampStart": "48:40"
+        }
+      ]
     },
     {
       "id": "section5",
-      "title": "NVQLink: Hybrid Quantum-GPU Supercomputing",
-      "timestampStart": "21:33",
-      "timestampEnd": "30:36",
-      "content": "The pursuit of quantum computing, first imagined by Richard Feynman in 1981 to simulate nature, recently reached a fundamental breakthrough: the ability to create one stable, error-corrected **logical qubit** (which itself consists of tens or hundreds of fragile physical qubits). To manage the instability and perform the trillions of operations required for meaningful problem-solving, a new solution is necessary: directly connecting a quantum computer (QPU) to a **GPU supercomputer**. NVIDIA's answer is **NVQLink**, a new interconnect architecture that performs **quantum error correction**, control, and calibration, and co-simulations by connecting the two computers side-by-side. NVQLink is capable of moving terabytes of data thousands of times per second, which is essential for error correction and scaling quantum computers from hundreds to hundreds of thousands of qubits in the future. The open platform at its heart is **CUDA-Q**, which extends the CUDA model to support the QPU. This vision is supported by 17 different quantum computer companies and eight DOE labs (including Berkeley, Los Alamos, and Oak Ridge) to integrate quantum computing into the future of science. In a major announcement, the Department of Energy is partnering with NVIDIA to build **seven new AI supercomputers** to advance US science, embracing the simultaneous platform shifts to accelerated computing, AI-enhanced principal solvers, quantum computing, and robotic laboratories."
+      "title": "Blackwell, Extreme Co-Design, and Manufacturing in America",
+      "content": [
+        {
+          "content": "The solution to stalling transistor scaling is 'extreme co-design', where chips, systems, software, and algorithms are rearchitected simultaneously from a blank sheet of paper.",
+          "timestampStart": "49:43"
+        },
+        {
+          "content": "NVIDIA has scaled this up to the NVLink 72, a rack-scale computer that functions as one giant GPU by connecting 72 chips via NVLink.",
+          "timestampStart": "50:46"
+        },
+        {
+          "content": "This architecture allows 72 GPUs to act as a single fabric, enabling efficient processing for massive models that use 'Mixture of Experts' (MoE) architectures.",
+          "timestampStart": "54:49"
+        },
+        {
+          "content": "The Grace Blackwell system delivers 10 times the performance of the H200 despite having only twice the transistors, purely through this architectural innovation.",
+          "timestampStart": "56:40"
+        },
+        {
+          "content": "Consequently, Grace Blackwell NVLink 72 produces the lowest cost tokens in the world, making it the most cost-effective solution despite being a high-end system.",
+          "timestampStart": "57:16"
+        },
+        {
+          "content": "Demand is unprecedented, with half a trillion dollars of cumulative Blackwell and early Rubin business visible through 2026.",
+          "timestampStart": "01:01:20"
+        },
+        {
+          "content": "Huang proudly presents a video detailing the manufacturing process, highlighting that Blackwell and future AI factories are being built in America, from Arizona silicon to Texas assembly.",
+          "timestampStart": "01:06:12"
+        }
+      ]
     },
     {
       "id": "section6",
-      "title": "AI: Reinventing the Computing Stack as 'Work'",
-      "timestampStart": "30:36",
-      "timestampEnd": "39:20",
-      "content": "While chatbots are the public face of AI, the world of AI is much more, extending to basic science, AGI, and every industry. Fundamentally, AI has **completely reinvented the computing stack**. Software has shifted from hand-coding on CPUs to machine learning, data-intensive programming trained and learned by AI running on GPUs. This new stack requires enormous amounts of energy, which GPU supercomputers transform into **tokens**—the computational unit and vocabulary of artificial intelligence. Anything with structure and information content can be tokenized, including English words, images, video, 3D structures (like factories), chemicals, proteins, and genes. Once tokenized, AI can learn the language and meaning to translate, respond, and generate, just as ChatGPT does. The profound difference is that **AI is not a tool; AI is work**. The software industry of the past created tools (like Excel or a web browser) that humans used. AI, conversely, creates **workers**—agentic AI systems (like Perplexity or the developer partner Cursor)—that can actually use tools to perform tasks. This monumental shift allows AI to address a segment of the economy it has never touched, augmenting labor and engaging the **$100 trillion global economy** to make it more productive. Furthermore, AI itself is a **new industry**: an \"AI factory\" designed to produce these smart tokens."
+      "title": "The Future Roadmap: Vera Rubin and Advanced Networking",
+      "content": [
+        {
+          "content": "Looking ahead, Huang unveils 'Rubin', the third-generation NVLink rack-scale computer, which is already in the lab and scheduled for production next year.",
+          "timestampStart": "01:08:21"
+        },
+        {
+          "content": "A single Vera Rubin rack delivers 100 times the performance of the supercomputer delivered to OpenAI just nine years ago.",
+          "timestampStart": "01:09:51"
+        },
+        {
+          "content": "The system features a cableless design and introduces a new 'context processor' to handle the massive amount of information AI must read before answering questions.",
+          "timestampStart": "01:10:44"
+        },
+        {
+          "content": "It also includes the BlueField 4 data processor to manage 'KV caching', ensuring AI can remember previous conversations without slowing down.",
+          "timestampStart": "01:11:36"
+        },
+        {
+          "content": "Networking is critical, with the NVLink switch spine carrying 14.4 terabytes per second—more than the entire world's internet traffic—simultaneously to all GPUs.",
+          "timestampStart": "01:12:27"
+        },
+        {
+          "content": "NVIDIA supports all standards, offering the Spectrum X Ethernet switch designed specifically to prevent AI workloads from gumming up the network.",
+          "timestampStart": "01:12:53"
+        }
+      ]
     },
     {
       "id": "section7",
-      "title": "The AI Factory and the Three New Scaling Laws",
-      "timestampStart": "39:20",
-      "timestampEnd": "45:00",
-      "content": "The immense computational need for AI has necessitated the invention of the **AI factory**, a new type of system unlike the general-purpose data centers of the past. This factory is designed primarily to run AI and produce high-value, smart tokens at incredible rates for immediate response. The explosion of AI is driven by three new scaling laws: The first is **Scale**, involving larger models with more data and parameters, like the concept of a multi-trillion dollar AI model. The second is **Post-Training**, which moves beyond pre-training (the basic memorization and generalization akin to preschool) to teach the AI essential skills like problem-solving, coding, reasoning, and thinking about problems step-by-step using **first-principle reasoning**. The third, and most computationally demanding, is **Inference**, or thinking. When an AI acts as an agent—breaking down problems, reasoning, planning, and executing—it requires an enormous number of tokens to be generated. Thinking is hard, which is why the computation necessary for AI to think on behalf of every human has put extraordinary pressure on the infrastructure."
+      "title": "Digital Twins, Enterprise AI, and the Omni-Verse",
+      "content": [
+        {
+          "content": "NVIDIA has moved from designing chips to designing entire AI factories, introducing Omniverse DSX as a blueprint for building and operating gigascale facilities.",
+          "timestampStart": "01:14:51"
+        },
+        {
+          "content": "Partners like Jacob’s Engineering and Siemens use digital twins to simulate power, cooling, and layout before physical construction begins, significantly shrinking build time.",
+          "timestampStart": "01:15:53"
+        },
+        {
+          "content": "Huang discusses the vital role of open-source models as the lifeblood of startups and researchers, affirming NVIDIA's commitment as a top open-source contributor.",
+          "timestampStart": "01:19:14"
+        },
+        {
+          "content": "He highlights the integration of NVIDIA libraries into major clouds (AWS, Google, Azure, Oracle) and enterprise SaaS platforms like ServiceNow and SAP.",
+          "timestampStart": "01:22:00"
+        },
+        {
+          "content": "New partnerships are announced with CrowdStrike to create AI defenders for cybersecurity and with Palantir to accelerate their Ontology platform for national security and enterprise data processing.",
+          "timestampStart": "01:24:26"
+        }
+      ]
     },
     {
       "id": "section8",
-      "title": "Extreme Co-Design and Manufacturing the Rubin Platform in America",
-      "timestampStart": "45:00",
-      "timestampEnd": "01:09:51",
-      "content": "To achieve the necessary scale and performance, NVIDIA has pioneered **extreme co-design** in its infrastructure. They use **NVLink** to create one giant fabric where the entire multi-trillion parameter model, broken into \"experts,\" can communicate efficiently. This architecture is enabled by the custom **Spectrum Ethernet** (Spectrum X) designed specifically for AI performance, which is then scaled across multiple data centers via **Spectrum XGS (Gigascale X)**. This code-design is so extreme that it delivers \"shocking\" generational performance benefits—much more than typical gains. The latest platform is the **Rubin platform** (the third generation NVLink 72 rack scale computer), a system that has been \"ground up, reinvented\" since the IBM System 360. This new node, completely cableless and **100% liquid-cooled**, features the **ConnectX-9**, **BlueField-4 DPU**, **Vera CPUs**, and **Rubin GPUs**, delivering 100 times the performance of the DGX-1 delivered just nine years ago. Critically, NVIDIA is also manufacturing the **Blackwell** and future generations of these AI factory systems in America, with production starting in Arizona, Indiana, and Texas, fulfilling the call to **bring manufacturing back** for national security and reindustrialization."
-    },
-    {
-      "id": "section9",
-      "title": "AI Agents and the Transformation of Enterprise",
-      "timestampStart": "01:09:51",
-      "timestampEnd": "01:26:21",
-      "content": "The next frontier for this powerful computing is the **Enterprise**, where workloads and workflows will transition to **Agentic SaaS (Software as a Service)**. NVIDIA is partnering with industry leaders to integrate its libraries (CUDA-X, Nemo, NeMo-Triton) and AI systems to create AI agents and accelerate platforms across the global economy. Key partnerships include: **ServiceNow**, which handles 85% of the world's enterprise workflows; **SAP**, which facilitates 80% of the world's commerce; and major EDA/CAD firms like **Synopsis** and **Cadence**, accelerating their stacks and working towards having AI agent ASIC and system designers. Furthermore, recognizing that AI will supercharge cyber security challenges, NVIDIA is partnering with **CrowdStrike** to build an incredible defender platform. Finally, a partnership with **Palantir** will accelerate everything they do, allowing for data processing and business insight—for both structured and unstructured data—at the speed of light for government and enterprises globally."
-    },
-    {
-      "id": "section10",
-      "title": "Conclusion: Two Platform Transitions and the Future",
-      "timestampStart": "01:26:21",
-      "timestampEnd": "01:42:25",
-      "content": "In closing, the world is experiencing an extraordinary period of growth fueled by two concurrent platform transitions. The first is the inflection point of **Accelerated Computing**, and the second is the fundamental transition of software to **Artificial Intelligence**. The new platforms introduced—**ARC** for 6G, **Hyperion** for robotics cars, **DSX** for the AI factory, and **Mega** for factories with AI—demonstrate this comprehensive transformation. NVIDIA celebrates the return of manufacturing and the building of these technologies in America, marking a new chapter in industry and history. The keynote concludes by thanking the attendees for their service and for allowing GTC to be hosted in Washington D.C."
+      "title": "Physical AI: Robotics and Autonomous Systems",
+      "content": [
+        {
+          "content": "Huang pivots to 'Physical AI', which requires three distinct computers: one to train the model, one to simulate it in a digital twin (Omniverse), and one to operate the robot.",
+          "timestampStart": "01:26:33"
+        },
+        {
+          "content": "A prime example is the new Foxconn factory in Texas, which is 'born digital' in Omniverse to optimize layout and train robot fleets before they are deployed physically.",
+          "timestampStart": "01:29:01"
+        },
+        {
+          "content": "Humanoid robots are identified as a massive future market, with NVIDIA partnering with companies like Figure, Agility, and Boston Dynamics.",
+          "timestampStart": "01:32:44"
+        },
+        {
+          "content": "Huang showcases Disney's 'Blue' robot, trained in a physically accurate simulation using reinforcement learning to interact adorably with the world.",
+          "timestampStart": "01:34:56"
+        },
+        {
+          "content": "Finally, the presentation covers the inflection point of robotaxis, announcing the NVIDIA Drive Hyperion platform which provides a standard sensor and computing suite for autonomous vehicles.",
+          "timestampStart": "01:36:14"
+        },
+        {
+          "content": "A partnership with Uber is announced to connect these Hyperion-enabled vehicles into a global network, cementing the robotaxi as a new computing platform on wheels.",
+          "timestampStart": "01:38:47"
+        }
+      ]
     }
   ]
 }

@@ -527,6 +527,146 @@ def get_video_frames_batch(video_id):
         }), 500
 
 
+@app.route('/api/generate-mindmap', methods=['GET'])
+def generate_mindmap():
+    """
+    生成视频内容的 Mermaid 思维导图
+    """
+    try:
+        print('[INFO] 开始生成 Mermaid 思维导图...')
+        
+        # 加载视频数据
+        video_data = load_video_data()
+        
+        # 调用 LLM 生成 Mermaid 格式思维导图
+        mermaid_code = generate_mindmap_with_llm(video_data)
+        
+        print('[SUCCESS] Mermaid 思维导图生成成功')
+        print('[DEBUG] Mermaid 代码:')
+        print(mermaid_code)
+        
+        return jsonify({
+            'success': True,
+            'mermaid': mermaid_code,
+            'videoTitle': video_data.get('videoInfo', {}).get('title', 'Video'),
+            'timestamp': datetime.now().isoformat()
+        })
+        
+    except Exception as e:
+        print(f'[ERROR] 思维导图生成失败: {str(e)}')
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'message': '思维导图生成失败'
+        }), 500
+
+
+def generate_mindmap_with_llm(video_data):
+    """
+    使用 OpenAI 生成 Mermaid 格式的思维导图
+    """
+    from openai import OpenAI
+    import os
+
+    # 检查 API key
+    api_key = os.getenv('OPENAI_API_KEY')
+    if not api_key or api_key == 'YOUR_API_KEY_HERE':
+        raise ValueError("OPENAI_API_KEY 未配置，请在 .env 文件中设置")
+
+    # 初始化客户端
+    client = OpenAI(
+        api_key=api_key
+    )
+    
+    # 准备视频内容摘要
+    video_info = video_data.get('videoInfo', {})
+    sections = video_data.get('sections', [])
+    
+    # 构建内容文本
+    content_text = f"视频标题: {video_info.get('title', '')}\n"
+    content_text += f"视频摘要: {video_info.get('summary', '')}\n\n"
+    content_text += "章节内容:\n"
+    
+    for section in sections:
+        content_text += f"\n## {section.get('title', '')}\n"
+        content_text += f"时间: {section.get('timestampStart', '')} - {section.get('timestampEnd', '')}\n"
+        content_text += f"{section.get('content', '')}\n"
+    
+    system_prompt = """你是一个专业的思维导图生成助手。请根据提供的视频内容生成简洁清晰的 Mermaid mindmap 格式思维导图。
+
+Mermaid mindmap 语法说明：
+1. 以 `mindmap` 开头
+2. 使用缩进表示层级关系（2个空格为一级缩进）
+3. 根节点使用 root((文本)) 格式
+4. 其他节点直接写文本即可
+
+示例格式：
+mindmap
+  root((主题))
+    分类A
+      要点1
+      要点2
+    分类B
+      要点3
+      要点4
+
+核心要求（严格遵守）：
+1. 根节点：最多6个字，提取核心主题
+2. 一级分支：3-5个主要分类，每个4-8字
+3. 二级分支：每个一级分支下最多3-4个子节点，每个3-6字
+4. 严禁第三层及以上，只保持2层结构（根节点 + 一级分支 + 二级分支）
+5. 总节点数控制在15-20个以内
+6. 提取最核心的概念和关键词，去掉冗余信息
+7. 使用中文输出
+8. 只输出 Mermaid 代码，不要额外解释
+9. 确保缩进正确（2个空格）
+10. 每个分支下的节点数量要均衡，保持视觉对称
+
+布局建议：
+- 第一级分支：3-4个（奇数更好看）
+- 每个第一级分支下：2-3个第二级节点
+- 保持左右平衡
+"""
+    
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": f"请根据以下视频内容生成 Mermaid mindmap 格式的思维导图：\n\n{content_text}"}
+    ]
+    
+    # 调用 OpenAI API
+    print("[INFO] 正在调用 OpenAI API 生成 Mermaid 思维导图...")
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=messages,
+        max_tokens=4000,
+        temperature=0.3
+    )
+    
+    # 提取返回内容
+    mermaid_content = response.choices[0].message.content
+    
+    # 清理返回内容（移除可能的代码块标记）
+    if mermaid_content.startswith('```mermaid'):
+        mermaid_content = mermaid_content.replace('```mermaid', '').replace('```', '').strip()
+    elif mermaid_content.startswith('```'):
+        mermaid_content = mermaid_content.replace('```', '').strip()
+    
+    # 检查返回内容是否为空
+    if not mermaid_content or mermaid_content.strip() == '':
+        print("[ERROR] OpenAI 返回内容为空")
+        raise ValueError("AI 生成的思维导图内容为空，请重试")
+    
+    # 验证是否以 mindmap 开头
+    if not mermaid_content.strip().startswith('mindmap'):
+        print("[WARNING] 返回内容不是标准的 Mermaid mindmap 格式，尝试修复...")
+        mermaid_content = 'mindmap\n  root((视频主题))\n' + mermaid_content
+    
+    print(f"[SUCCESS] OpenAI API 调用成功，返回 {len(mermaid_content)} 字符")
+    return mermaid_content
+
+
 def chat_with_openai(user_message, video_context):
     """
     使用Open AI (新版 API >= 1.0.0)

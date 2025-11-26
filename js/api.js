@@ -315,6 +315,32 @@ class APIService {
     }
 
     /**
+     * 生成思维导图 Markdown
+     * @returns {Promise} - 返回思维导图的 markdown 内容
+     */
+    async generateMindMap() {
+        try {
+            const url = `${this.baseUrl}/generate-mindmap`;
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Failed to generate mindmap:', error);
+            throw error;
+        }
+    }
+
+    /**
      * 获取或设置认证token（示例）
      */
     setToken(token) {
