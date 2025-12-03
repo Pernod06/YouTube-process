@@ -1,4 +1,4 @@
-#!/root/pernod/youtube-process/.my_env/bin/python3
+#!/home/ubuntu/YouTube-process/my_env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

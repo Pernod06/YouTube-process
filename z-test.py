@@ -10,16 +10,16 @@
 #     print(chunk, end="")
 
 
-import os, requests
-from dotenv import load_dotenv
+# import os, requests
+# from dotenv import load_dotenv
 
-load_dotenv()
-API_KEY = os.getenv('TranscriptAPI_KEY')
-url = 'https://transcriptapi.com/api/v2/youtube/transcript'
-params = {'video_url': 'sOvi9Iu1Dq8', 'format': 'json'}
-r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout=30)
-r.raise_for_status()
-print(r.json()['transcript'])
+# load_dotenv()
+# API_KEY = os.getenv('TranscriptAPI_KEY')
+# url = 'https://transcriptapi.com/api/v2/youtube/transcript'
+# params = {'video_url': 'YRvf00NooN8', 'format': 'json'}
+# r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout=30)
+# r.raise_for_status()
+# print(r.json()['transcript'])
 
 
 
