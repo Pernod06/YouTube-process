@@ -317,34 +317,18 @@ def main():
     """示例使用"""
     try:
         # 创建YouTube客户端
+
+        url = "https://www.youtube.com/watch?v=DxL2HoqLbyA&t"
+
         client = YouTubeClient()
         
-        # 示例1: 搜索视频
-        print("\n=== 搜索视频示例 ===")
-        videos = client.search_videos("Python编程", max_results=5)
-        for i, video in enumerate(videos, 1):
-            print(f"{i}. {video['title']}")
-            print(f"   频道: {video['channel_title']}")
-            print(f"   视频ID: {video['video_id']}")
-            print()
+        video_id = client.extract_video_id(url)
+
         
-        # 示例2: 获取视频详情（如果搜索到了视频）
-        if videos:
-            print("\n=== 获取第一个视频的详细信息 ===")
-            video_id = videos[0]['video_id']
-            details = client.get_video_details(video_id)
-            if details:
-                print(f"标题: {details['title']}")
-                print(f"观看次数: {details['view_count']}")
-                print(f"点赞数: {details['like_count']}")
-                print(f"评论数: {details['comment_count']}")
-                print(f"\n缩略图URL:")
-                print(f"  默认: {details['thumbnails']['default']}")
-                print(f"  中等: {details['thumbnails']['medium']}")
-                print(f"  高清: {details['thumbnails']['high']}")
-                if details['thumbnails']['maxres']:
-                    print(f"  最高清: {details['thumbnails']['maxres']}")
         
+        # 示例1: 获取comments
+        comments = client.get_video_comments(video_id, max_results=100)
+        print(comments)
     except Exception as e:
         print(f"错误: {e}")
 

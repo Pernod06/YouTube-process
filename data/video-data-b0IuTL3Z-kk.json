@@ -1,0 +1,479 @@
+{
+  "videoInfo": {
+    "title": "Video b0IuTL3Z-kk",
+    "videoId": "b0IuTL3Z-kk",
+    "description": "Jeff, a bartender at Dutch Kills in NYC, demonstrates how to mix a wide array of classic cocktails from the 19th and early 20th centuries. He covers essential tools, ingredients, techniques, and historical context for each drink.",
+    "thumbnail": "https://img.youtube.com/vi/b0IuTL3Z-kk/maxresdefault.jpg",
+    "summary": "Bartender Jeff from Dutch Kills guides viewers through the art of mixing classic cocktails, focusing on popular drinks from the 19th and early 20th centuries. He demonstrates essential tools, emphasizes the importance of good ice and fresh ingredients, and provides step-by-step instructions and historical notes for a diverse selection of iconic beverages. The video encourages viewers to explore the rich traditions of cocktail making."
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Introduction to Classic Cocktails",
+      "content": [
+        {
+          "content": "Jeff, a bartender at Dutch Kills in New York City, introduces a guide to mixing classic cocktails, focusing on popular drinks from the 19th and early 20th centuries.",
+          "timestampStart": "00:13"
+        }
+      ]
+    },
+    {
+      "id": "essential-tools",
+      "title": "Essential Bartending Tools",
+      "content": [
+        {
+          "content": "Basic mixing tools include a Boston shaker for better control and frothier drinks, various strainers like Hawthorne, julep, and fine mesh for smooth cocktails.",
+          "timestampStart": "00:33"
+        },
+        {
+          "content": "A bar spoon is essential for stirring drinks and measuring small portions, while jiggers serve as the bartender's measuring cups.",
+          "timestampStart": "00:55"
+        },
+        {
+          "content": "Muddlers are necessary for mashing ingredients to extract essential oils or dissolve sugar, as seen in an Old Fashioned.",
+          "timestampStart": "01:03"
+        }
+      ]
+    },
+    {
+      "id": "ice-quality",
+      "title": "The Importance of Good Ice",
+      "content": [
+        {
+          "content": "Good quality ice is crucial for making a great cocktail, as smelly freezer ice can ruin the taste of even high-quality alcohol and fresh juices.",
+          "timestampStart": "01:12"
+        },
+        {
+          "content": "It is recommended to use store-bought ice from a grocery store for the best results.",
+          "timestampStart": "01:27"
+        }
+      ]
+    },
+    {
+      "id": "cocktail-ingredients-and-techniques",
+      "title": "General Cocktail Ingredients & Techniques",
+      "content": [
+        {
+          "content": "Luxardo Cherries are highly recommended as a garnish, serving as the inspiration for many common bar cherries due to their exceptional taste.",
+          "timestampStart": "03:39"
+        },
+        {
+          "content": "For stirred drinks, a julep strainer is preferred because it fits better into a pint glass.",
+          "timestampStart": "03:47"
+        }
+      ]
+    },
+    {
+      "id": "manhattan-cocktail",
+      "title": "Manhattan Cocktail",
+      "content": [
+        {
+          "content": "The Manhattan, likely developed at the famous Manhattan club in the 1870s, is the second most popular cocktail after the Old Fashioned.",
+          "timestampStart": "03:54"
+        }
+      ]
+    },
+    {
+      "id": "whiskey-sour-cocktail",
+      "title": "Whiskey Sour Cocktail",
+      "content": [
+        {
+          "content": "To make a Whiskey Sour, use fresh lemon juice, which significantly improves drink quality, along with simple syrup and two ounces of whiskey.",
+          "timestampStart": "04:01"
+        },
+        {
+          "content": "A traditional Whiskey Sour includes egg white for a foamy top, requiring a 'dry shake' without ice first to activate the egg white.",
+          "timestampStart": "04:19"
+        },
+        {
+          "content": "After the dry shake makes the egg white frothy, ice is added for softer shakes to cool the drink and create a better seal.",
+          "timestampStart": "04:42"
+        }
+      ]
+    },
+    {
+      "id": "whiskey-fix-cocktail",
+      "title": "Whiskey Fix Cocktail",
+      "content": [
+        {
+          "content": "The Whiskey Fix is lightly chilled until a piece of ice dissolves, served in a chilled double rocks glass with crushed ice, often acquired from fast-food restaurants or fish markets.",
+          "timestampStart": "07:27"
+        },
+        {
+          "content": "A steel straw is used not only for environmental benefits but also for its superior cold conduction, enhancing the drinking experience.",
+          "timestampStart": "07:48"
+        },
+        {
+          "content": "Garnished with a lemon wedge and a Luxardo Cherry, a Fix cocktail is defined as any drink with lemon juice, simple syrup, and a spirit, with optional muddled fresh fruit.",
+          "timestampStart": "07:58"
+        }
+      ]
+    },
+    {
+      "id": "boulevardier-cocktail",
+      "title": "Boulevardier Cocktail",
+      "content": [
+        {
+          "content": "The Boulevardier is made by stirring sweet vermouth, Campari, and bourbon, starting with the least expensive ingredients first.",
+          "timestampStart": "08:17"
+        },
+        {
+          "content": "Typically served straight up in a chilled coupe with an orange twist, it can also be served on the rocks.",
+          "timestampStart": "08:42"
+        },
+        {
+          "content": "This cocktail is a favorite and often considered a cousin to the Negroni, sharing sweet vermouth and Campari as base ingredients.",
+          "timestampStart": "08:50"
+        }
+      ]
+    },
+    {
+      "id": "improved-whiskey-cocktail",
+      "title": "Improved Whiskey Cocktail",
+      "content": [
+        {
+          "content": "This whiskey cocktail, claiming superiority over others, is prepared with a good stir and garnished with a lemon twist.",
+          "timestampStart": "11:16"
+        }
+      ]
+    },
+    {
+      "id": "monte-carlo-cocktail",
+      "title": "Monte Carlo Cocktail",
+      "content": [
+        {
+          "content": "The Monte Carlo starts with Angostura Bitters, then gets a herbal and sweet kick from Benedictine liqueur instead of sugar, along with rye whiskey.",
+          "timestampStart": "11:25"
+        },
+        {
+          "content": "This three-ingredient drink is quick to make, delicious, and is given a judicious stirring over a big rock of ice.",
+          "timestampStart": "11:42"
+        },
+        {
+          "content": "Garnished with a lemon twist to complement the herbal qualities of Benedictine, it is a popular Old Fashioned riff named after the city of Monte Carlo.",
+          "timestampStart": "11:52"
+        }
+      ]
+    },
+    {
+      "id": "mint-julep-cocktail",
+      "title": "Mint Julep Cocktail",
+      "content": [
+        {
+          "content": "A Mint Julep requires a generous amount of mint, with bottom leaves muddled in the glass and tops saved for garnish.",
+          "timestampStart": "12:05"
+        },
+        {
+          "content": "It is sweetened with sugar to start the abrasion process for mint oils, followed by simple syrup for additional sweetness, then gently muddled.",
+          "timestampStart": "12:40"
+        }
+      ]
+    },
+    {
+      "id": "martinez-cocktail",
+      "title": "Martinez Cocktail",
+      "content": [
+        {
+          "content": "The Martinez is often considered the predecessor to the Martini, with the main difference being its use of sweet vermouth instead of dry vermouth.",
+          "timestampStart": "14:52"
+        }
+      ]
+    },
+    {
+      "id": "gimlet-cocktail",
+      "title": "Gimlet Cocktail",
+      "content": [
+        {
+          "content": "Modern Gimlets use fresh lime juice instead of traditional Rose's lime juice, combined with three-quarter ounces of simple syrup and two ounces of gin.",
+          "timestampStart": "15:05"
+        },
+        {
+          "content": "This drink, known for its peppery, citrusy finish, is shaken with a large rock of ice and double-strained into a chilled coupe for ultimate smoothness.",
+          "timestampStart": "15:18"
+        },
+        {
+          "content": "The Gimlet is hailed as one of the oldest, simplest, and most refreshing gin cocktails.",
+          "timestampStart": "15:28"
+        }
+      ]
+    },
+    {
+      "id": "gin-rickey-cocktail",
+      "title": "Gin Rickey Cocktail",
+      "content": [
+        {
+          "content": "The Gin Rickey uses three simple, fresh ingredients: gin, simple syrup, and lime juice.",
+          "timestampStart": "15:34"
+        },
+        {
+          "content": "Essentially a Gimlet with soda added and served on ice, it offers a simple, refreshing, and fizzy gin experience.",
+          "timestampStart": "15:41"
+        }
+      ]
+    },
+    {
+      "id": "negroni-cocktail",
+      "title": "Negroni Cocktail",
+      "content": [
+        {
+          "content": "A classic Negroni consists of equal parts sweet vermouth (ideally from Turin), London dry gin, and Campari, served over a nice, large rock with an orange twist.",
+          "timestampStart": "15:52"
+        },
+        {
+          "content": "This iconic Italian cocktail is recognized as one of the most refreshing drinks available.",
+          "timestampStart": "16:11"
+        }
+      ]
+    },
+    {
+      "id": "corpse-reviver-no-2",
+      "title": "Corpse Reviver No. 2",
+      "content": [
+        {
+          "content": "The Corpse Reviver No. 2 is an equal-parts drink featuring lemon, triple sec, Lillet blanc, and gin.",
+          "timestampStart": "16:19"
+        },
+        {
+          "content": "It is finished with a nice rinse of absinthe in a chilled coupe, adding a distinctive aromatic layer.",
+          "timestampStart": "16:42"
+        }
+      ]
+    },
+    {
+      "id": "ramos-gin-fizz",
+      "title": "Ramos Gin Fizz",
+      "content": [
+        {
+          "content": "The Ramos Gin Fizz, noted for being solidified in the freezer, requires a straw to be inserted, then finished by pouring the fizziest seltzer down the straw.",
+          "timestampStart": "18:44"
+        },
+        {
+          "content": "This New Orleans classic is widely considered the hardest and most work-intensive drink to make.",
+          "timestampStart": "19:00"
+        }
+      ]
+    },
+    {
+      "id": "bramble-cocktail",
+      "title": "Bramble Cocktail",
+      "content": [
+        {
+          "content": "The Bramble is a Fix variation, a crushed ice drink with lemon, sugar, and spirit, where berries are muddled into the glass before adding the gin.",
+          "timestampStart": "19:15"
+        },
+        {
+          "content": "After a little dry shake to incorporate the gin, it's poured into a chilled double rocks glass, filled two-thirds with crushed ice.",
+          "timestampStart": "19:33"
+        },
+        {
+          "content": "This dangerously easy-to-drink gin cocktail combines citrus and fresh fruit.",
+          "timestampStart": "19:44"
+        }
+      ]
+    },
+    {
+      "id": "20th-century-cocktail",
+      "title": "20th Century Cocktail",
+      "content": [
+        {
+          "content": "The 20th Century is a unique drink combining lemon and chocolate, using Creme de Cacao (with a recommendation for higher quality) and Cocchi Americano.",
+          "timestampStart": "19:50"
+        }
+      ]
+    },
+    {
+      "id": "vodka-martini",
+      "title": "Vodka Martini",
+      "content": [
+        {
+          "content": "A vodka martini is stirred until it feels almost frozen, and can be served with either olives or a lemon twist.",
+          "timestampStart": "22:27"
+        }
+      ]
+    },
+    {
+      "id": "moscow-mule",
+      "title": "Moscow Mule",
+      "content": [
+        {
+          "content": "Like other buck drinks, the Moscow Mule features lime juice, fresh ginger syrup, and two ounces of vodka.",
+          "timestampStart": "22:43"
+        },
+        {
+          "content": "It is served in a tall glass with a large piece of ice instead of a traditional mug to prevent dilution, then topped with soda.",
+          "timestampStart": "23:09"
+        },
+        {
+          "content": "A bonus 'Headless Horseman' variation can be made by floating bitters on top of a Moscow Mule.",
+          "timestampStart": "23:24"
+        }
+      ]
+    },
+    {
+      "id": "vesper-cocktail",
+      "title": "Vesper Cocktail",
+      "content": [
+        {
+          "content": "The Vesper uses Cocchi Americano as the closest substitute for the original Kina Lillet, along with vodka and gin.",
+          "timestampStart": "23:30"
+        },
+        {
+          "content": "Famously invented by James Bond creator Ian Fleming, it is always garnished with a lemon twist, unlike martinis.",
+          "timestampStart": "24:00"
+        }
+      ]
+    },
+    {
+      "id": "dark-n-stormy",
+      "title": "Dark N' Stormy",
+      "content": [
+        {
+          "content": "The Dark N' Stormy follows the standard 'buck' specification with lime juice, fresh ginger syrup, and Bermuda rum.",
+          "timestampStart": "26:56"
+        },
+        {
+          "content": "This national drink of Bermuda must always be made with Goslings Rum, or 'it ain't Dark N' Stormy'.",
+          "timestampStart": "27:08"
+        }
+      ]
+    },
+    {
+      "id": "mai-tai-cocktail",
+      "title": "Mai Tai Cocktail",
+      "content": [
+        {
+          "content": "The Mai Tai features Orgeat, an almond-scented syrup, dry curacao, and rhum agricole for a distinctive funkiness.",
+          "timestampStart": "27:21"
+        },
+        {
+          "content": "It's given a quick whip to release aromas, garnished with mint placed near the straw for an aromatic experience, and finished with a drizzle of strong Jamaican rum.",
+          "timestampStart": "28:11"
+        },
+        {
+          "content": "This cocktail is known as the 'sexy grandad' of all tiki drinks.",
+          "timestampStart": "28:23"
+        }
+      ]
+    },
+    {
+      "id": "mojito-cocktail",
+      "title": "Mojito Cocktail",
+      "content": [
+        {
+          "content": "A Mojito requires a generous amount of fresh mint and a sugar cube, which are muddled before adding two ounces of silver rum.",
+          "timestampStart": "28:30"
+        },
+        {
+          "content": "The drink is gently shaken without aiming for a lot of froth, just to combine ingredients.",
+          "timestampStart": "28:59"
+        }
+      ]
+    },
+    {
+      "id": "vieux-carre-cocktail",
+      "title": "Vieux Carre Cocktail",
+      "content": [
+        {
+          "content": "The Vieux Carre, a New Orleans classic, is a Manhattan variation made with sweet vermouth, bitters, rye whiskey, and cognac.",
+          "timestampStart": "31:16"
+        },
+        {
+          "content": "It is served with a big piece of ice and finished with a lemon twist or orange, depending on the bartender's preference.",
+          "timestampStart": "31:40"
+        }
+      ]
+    },
+    {
+      "id": "pink-lady-cocktail",
+      "title": "Pink Lady Cocktail",
+      "content": [
+        {
+          "content": "To make a Pink Lady, an egg is cracked into a shaker separately, followed by fresh lemon juice and tart, pomegranate-y grenadine.",
+          "timestampStart": "31:59"
+        },
+        {
+          "content": "The hard stuff consists of a split base of gin and apple brandy (Apple Jack), making this often-forgotten drink a true classic.",
+          "timestampStart": "32:14"
+        }
+      ]
+    },
+    {
+      "id": "delmonico-cocktail",
+      "title": "Delmonico Cocktail",
+      "content": [
+        {
+          "content": "The Delmonico cocktail uses Angostura Bitters, half an ounce each of dry and sweet vermouths.",
+          "timestampStart": "32:53"
+        },
+        {
+          "content": "Its base consists of London dry gin and French cognac, filled to the top.",
+          "timestampStart": "33:10"
+        },
+        {
+          "content": "Invented at Delmonico's, one of the oldest restaurants in the country, it is garnished with a nice swath of lemon, representing 'New York's finest'.",
+          "timestampStart": "33:18"
+        }
+      ]
+    },
+    {
+      "id": "jack-rose-cocktail",
+      "title": "Jack Rose Cocktail",
+      "content": [
+        {
+          "content": "The Jack Rose requires only three ingredients: fresh lime juice, grenadine, and apple brandy.",
+          "timestampStart": "33:42"
+        },
+        {
+          "content": "This simple, refreshing, tart, and delicious drink is considered perfect for Thanksgiving dinner.",
+          "timestampStart": "34:00"
+        }
+      ]
+    },
+    {
+      "id": "pisco-sour-cocktail",
+      "title": "Pisco Sour Cocktail",
+      "content": [
+        {
+          "content": "The Pisco Sour is garnished with three dots of Angostura Bitters or grated cinnamon, often both for enhanced flavor.",
+          "timestampStart": "35:37"
+        },
+        {
+          "content": "This national drink of both Chile and Peru, though both countries claim its origin, is a celebrated classic.",
+          "timestampStart": "35:54"
+        }
+      ]
+    },
+    {
+      "id": "caipirinha-cocktail",
+      "title": "Caipirinha Cocktail",
+      "content": [
+        {
+          "content": "For a Caipirinha, fresh lime wedges are muddled into the drink with a sugar cube and simple syrup before adding the base spirit.",
+          "timestampStart": "36:10"
+        },
+        {
+          "content": "Cachaca, a fermented sugar cane product, is added, and the drink is gently shaken about 10 times to avoid over-shaking.",
+          "timestampStart": "36:51"
+        },
+        {
+          "content": "The national drink of Brazil, it features muddled fresh lime for a really nice, zesty flavor.",
+          "timestampStart": "37:06"
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "title": "Conclusion and Encouragement",
+      "content": [
+        {
+          "content": "The video highlights the rich tradition and history behind classic cocktails, noting how each country's proud spirit offers a 'around the world' experience.",
+          "timestampStart": "37:13"
+        },
+        {
+          "content": "Jeff encourages viewers to try mixing these cocktails at home or ordering one at a good bar, delving into their history.",
+          "timestampStart": "37:40"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "videoInfo": {
+    "title": "You’re Not Behind (Yet): How to Learn AI in 17 Minutes",
+    "videoId": "EWFFaKxsz_s",
+    "description": "A comprehensive guide to learning AI and prompt engineering.",
+    "thumbnail": "https://img.youtube.com/vi/EWFFaKxsz_s/maxresdefault.jpg",
+    "summary": "This video offers a 7-step, 30-day roadmap for beginners to master AI, focusing on effective communication with large language models. It covers understanding AI's predictive nature, structured prompting, providing context, iterative refinement, and critical verification of outputs. The goal is to transform users from casual AI explorers into top 1% experts."
+  },
+  "sections": [
+    {
+      "id": "section1",
+      "title": "Introduction: The AI Learning Opportunity",
+      "content": [
+        {
+          "content": "Most people using AI are doing it wrong, which is why it's surprisingly easy to get ahead of 99% of them.",
+          "timestampStart": "00:16"
+        },
+        {
+          "content": "I have spent over 20 years in tech and AI as a CEO, board member, investor, building billion-dollar companies.",
+          "timestampStart": "00:07"
+        },
+        {
+          "content": "The gap between people who understand AI and those who don't is getting wider faster.",
+          "timestampStart": "00:15"
+        },
+        {
+          "content": "In this video, I'll give you a clear seven-step road map to master AI like the top 1%.",
+          "timestampStart": "00:22"
+        },
+        {
+          "content": "And the best part is you can actually do it in just 30 days, even if you're a total beginner.",
+          "timestampStart": "00:28"
+        }
+      ]
+    },
+    {
+      "id": "section2",
+      "title": "Week 1: Mastering Machine English & AI Mechanics",
+      "content": [
+        {
+          "content": "Week one starts with learning what I call machine English.",
+          "timestampStart": "00:34"
+        },
+        {
+          "content": "Most people talk to AI like it's a person, and that's a huge mistake.",
+          "timestampStart": "00:37"
+        },
+        {
+          "content": "Generative AI systems like Chat GPT don't actually understand our language; they predict it.",
+          "timestampStart": "00:42"
+        },
+        {
+          "content": "AI models like Chat GPT or Gemini work in a similar fashion, but they're different than search engines because they don't store any pre-baked answers; they generate the answer on the fly.",
+          "timestampStart": "01:21"
+        },
+        {
+          "content": "When your prompt is vague, this guessing machine called Chat GPT or Gemini will produce guesses that are also vague.",
+          "timestampStart": "03:00"
+        },
+        {
+          "content": "That's what I call machine English. It helps AI to compute your intent, not just try to comprehend it.",
+          "timestampStart": "03:17"
+        },
+        {
+          "content": "I call it aim. A for actor. Tell the model who it's acting as. I is for input. Give it the context and data it needs. And M for mission. What do you want it to do?",
+          "timestampStart": "03:28"
+        }
+      ]
+    },
+    {
+      "id": "section3",
+      "title": "Week 2: Choosing Your AI Instrument & Going Deep",
+      "content": [
+        {
+          "content": "Most people start their AI journey the wrong way. They Google top 50 AI tools.",
+          "timestampStart": "04:54"
+        },
+        {
+          "content": "My recommendation, pick one, go deep.",
+          "timestampStart": "05:09"
+        },
+        {
+          "content": "The deeper you dig into one foundational model, the faster you will find the rhythm of all the others.",
+          "timestampStart": "05:46"
+        },
+        {
+          "content": "If you want the most mature one, pick Chat GPT. If you're deep into Google stack and Google's ecosystem, try Gemini. If you want more business and project-based AI, go with Claude.",
+          "timestampStart": "05:52"
+        },
+        {
+          "content": "In the first week, spend time with one of them and learn its personality, its cadence, its limits, its strengths.",
+          "timestampStart": "06:11"
+        },
+        {
+          "content": "By the end of week one, you should be able to write a structured prompt without thinking.",
+          "timestampStart": "06:29"
+        }
+      ]
+    },
+    {
+      "id": "section4",
+      "title": "Week 3: Providing Context with the MAAP Framework",
+      "content": [
+        {
+          "content": "Now, let's talk about what actually makes your outputs smart, and that's context.",
+          "timestampStart": "06:56"
+        },
+        {
+          "content": "The world's smartest AI will sound clueless unless you feed it context.",
+          "timestampStart": "07:01"
+        },
+        {
+          "content": "Context is the map that helps you navigate that space to tell AI where to look and what matters.",
+          "timestampStart": "07:21"
+        },
+        {
+          "content": "And the best way to build that map is with an acronym I call map.",
+          "timestampStart": "07:30"
+        },
+        {
+          "content": "M is for memory: the conversation history or the notes that carry over from previous chat sessions.",
+          "timestampStart": "07:33"
+        },
+        {
+          "content": "A is for assets: the files, data, the resources that you attach or copy paste in your prompt. Second A is for actions: these are the tools that the model can call to do work.",
+          "timestampStart": "07:51"
+        },
+        {
+          "content": "P is the prompt and the prompt is the instruction itself.",
+          "timestampStart": "08:00"
+        }
+      ]
+    },
+    {
+      "id": "section5",
+      "title": "Week 4: Debugging Your Thinking with Iterative Prompting",
+      "content": [
+        {
+          "content": "If you want to hit that absolute expert level, there is one more thing that you really need: Debug your thinking, which is step four.",
+          "timestampStart": "08:25"
+        },
+        {
+          "content": "When you're not getting the right answer, the problem is not the AI, it's your thinking.",
+          "timestampStart": "08:32"
+        },
+        {
+          "content": "Prompting isn't typing, it's iterating.",
+          "timestampStart": "09:02"
+        },
+        {
+          "content": "When the output is weak, I assume the fault is mine because it is.",
+          "timestampStart": "09:04"
+        },
+        {
+          "content": "Sometimes I even ask the model itself, what did you do? And why did you choose that answer? It will explain its logic.",
+          "timestampStart": "09:37"
+        },
+        {
+          "content": "The first is the chain of thought pattern: when the answer seems off, I would say think step by step. Show your reasoning.",
+          "timestampStart": "09:54"
+        },
+        {
+          "content": "The second is the verifier pattern: ask me three questions that would clarify my intent to you. Ask them one at a time and then combine what you've learned and try again.",
+          "timestampStart": "09:57"
+        },
+        {
+          "content": "The third is the refinement pattern where you're refining your input itself: propose two sharper versions of my question. Ask which one I prefer.",
+          "timestampStart": "10:03"
+        },
+        {
+          "content": "You and AI are learning together from each other.",
+          "timestampStart": "10:41"
+        }
+      ]
+    },
+    {
+      "id": "section6",
+      "title": "Week 5: Guiding AI to Expert-Level Insights",
+      "content": [
+        {
+          "content": "When you ask Chat GPT a question, you're not searching a database of answers. You're sampling from millions of probable ideas that AI has learned over time.",
+          "timestampStart": "11:01"
+        },
+        {
+          "content": "If you prompt vaguely, like explain how to make a team more innovative, the model will give you a superficial generic blah answer.",
+          "timestampStart": "11:23"
+        },
+        {
+          "content": "You direct the model away from the middle and toward the sharper edges of its brain.",
+          "timestampStart": "11:38"
+        },
+        {
+          "content": "Explain how to make a team more innovative using ideas from Pixar's brain trust, Satya Nadella strategy, and Harvard's research.",
+          "timestampStart": "11:47"
+        },
+        {
+          "content": "Now you pull the model from mediocrity into mastery by navigating it toward experts, frameworks, depth.",
+          "timestampStart": "11:58"
+        },
+        {
+          "content": "If you want to learn about black holes and you don't know who the experts are? No problem. Ask AI first.",
+          "timestampStart": "12:09"
+        },
+        {
+          "content": "Then feed the same thing back to the model and prompt using these experts and sources synthesize the original framework.",
+          "timestampStart": "12:45"
+        }
+      ]
+    },
+    {
+      "id": "section7",
+      "title": "Week 6: Verifying AI Output and Cultivating Critical Thinking",
+      "content": [
+        {
+          "content": "Remember, you're going to need to verify what you get. That's our step six.",
+          "timestampStart": "12:43"
+        },
+        {
+          "content": "The scary part is AI will sound just as confident when it's wrong as when it's right.",
+          "timestampStart": "12:53"
+        },
+        {
+          "content": "All models are essentially generative by design. Making things up is why they exist. So, what do you do about that? You simply verify.",
+          "timestampStart": "13:06"
+        },
+        {
+          "content": "Don't just consume. Critique.",
+          "timestampStart": "13:17"
+        },
+        {
+          "content": "There are five ways to separate intelligence from illusion: Assumptions, sources, counter evidence, auditing, and cross model verification.",
+          "timestampStart": "13:20"
+        },
+        {
+          "content": "Assumptions, ask: List every assumption you made and rank them each by confidence.",
+          "timestampStart": "13:31"
+        },
+        {
+          "content": "Second is sources. Ask: Si...",
+          "timestampStart": "13:40"
+        }
+      ]
+    }
+  ]
+}

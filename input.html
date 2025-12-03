@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入视频URL - 视频内容平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        input[type="text"]::placeholder {
+            color: #aaa;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-icon {
+            margin-left: 8px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .error {
+            display: none;
+            background: #fee;
+            color: #c33;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #c33;
+        }
+
+        .error.active {
+            display: block;
+        }
+
+        .success {
+            display: none;
+            background: #efe;
+            color: #3a3;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #3a3;
+        }
+
+        .success.active {
+            display: block;
+        }
+
+        .examples {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .examples-title {
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .example-link {
+            display: block;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background: #f8f9ff;
+        }
+
+        .example-link:hover {
+            background: #e8ebff;
+            padding-left: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-icon">🎬</div>
+        </div>
+        
+        <h1>视频内容平台</h1>
+        <p class="subtitle">输入 YouTube 视频链接，开始分析</p>
+
+        <form id="url-form">
+            <div class="input-group">
+                <label for="video-url">YouTube 视频链接</label>
+                <input 
+                    type="text" 
+                    id="video-url" 
+                    name="video-url" 
+                    placeholder="https://www.youtube.com/watch?v=..." 
+                    required
+                    autocomplete="off"
+                >
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-btn">
+                <span>开始分析</span>
+                <span class="btn-icon">🚀</span>
+            </button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <div class="loading-text">正在提取字幕和视频信息...</div>
+        </div>
+
+        <div class="error" id="error-message"></div>
+        <div class="success" id="success-message"></div>
+
+        <div class="examples">
+            <div class="examples-title">快速选项</div>
+            <a href="#" class="example-link" id="return-to-last" style="display:none;">
+                <span style="margin-right: 8px;">↩️</span>
+                返回上次分析的视频
+            </a>
+            <div class="examples-title" style="margin-top: 20px;">示例视频链接</div>
+            <a href="#" class="example-link" data-url="https://www.youtube.com/watch?v=lQHK61IDFH4">
+                NVIDIA GTC Washington D.C. Keynote
+            </a>
+            <a href="#" class="example-link" data-url="https://www.youtube.com/watch?v=EF8C4v7JIbA">
+                NVIDIA GTC Example Video
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('url-form');
+        const urlInput = document.getElementById('video-url');
+        const submitBtn = document.getElementById('submit-btn');
+        const loading = document.getElementById('loading');
+        const errorDiv = document.getElementById('error-message');
+        const successDiv = document.getElementById('success-message');
+        const returnToLastBtn = document.getElementById('return-to-last');
+
+        // 检查是否有上次的视频
+        const lastVideoId = sessionStorage.getItem('currentVideoId');
+        if (lastVideoId) {
+            returnToLastBtn.style.display = 'block';
+            returnToLastBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'index.html';
+            });
+        }
+
+        // 点击示例链接
+        document.querySelectorAll('.example-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const url = link.getAttribute('data-url');
+                if (url) {
+                    urlInput.value = url;
+                    urlInput.focus();
+                }
+            });
+        });
+
+        // 表单提交
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const videoUrl = urlInput.value.trim();
+            
+            if (!videoUrl) {
+                showError('请输入视频链接');
+                return;
+            }
+
+            // 验证 URL 格式
+            if (!isValidYouTubeUrl(videoUrl)) {
+                showError('请输入有效的 YouTube 视频链接');
+                return;
+            }
+
+            // 开始处理
+            hideMessages();
+            setLoading(true);
+
+            try {
+                // 调用后端 API 提取字幕
+                const response = await fetch('http://localhost:5000/api/process-video', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        url: videoUrl
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showSuccess('字幕提取成功！正在跳转...');
+                    
+                    // 保存视频 ID 到 sessionStorage
+                    sessionStorage.setItem('currentVideoId', data.videoId);
+                    
+                    // 延迟跳转到主页面
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                } else {
+                    showError(data.error || '字幕提取失败，请重试');
+                    setLoading(false);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showError('网络错误，请检查后端服务是否运行');
+                setLoading(false);
+            }
+        });
+
+        function isValidYouTubeUrl(url) {
+            const patterns = [
+                /^https?:\/\/(www\.)?youtube\.com\/watch\?v=[\w-]+/,
+                /^https?:\/\/youtu\.be\/[\w-]+/,
+                /^https?:\/\/(www\.)?youtube\.com\/embed\/[\w-]+/
+            ];
+            return patterns.some(pattern => pattern.test(url));
+        }
+
+        function setLoading(isLoading) {
+            if (isLoading) {
+                submitBtn.disabled = true;
+                loading.classList.add('active');
+            } else {
+                submitBtn.disabled = false;
+                loading.classList.remove('active');
+            }
+        }
+
+        function showError(message) {
+            errorDiv.textContent = message;
+            errorDiv.classList.add('active');
+        }
+
+        function showSuccess(message) {
+            successDiv.textContent = message;
+            successDiv.classList.add('active');
+        }
+
+        function hideMessages() {
+            errorDiv.classList.remove('active');
+            successDiv.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
+

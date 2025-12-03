@@ -1,0 +1,211 @@
+{
+  "videoInfo": {
+    "title": "Video ZAqIoDhornk",
+    "videoId": "ZAqIoDhornk",
+    "description": "This video provides an accessible introduction to fundamental physics concepts. It covers key ideas from classical mechanics, energy, thermodynamics, electromagnetism, and modern physics, explaining complex topics in an engaging way.",
+    "thumbnail": "https://img.youtube.com/vi/ZAqIoDhornk/maxresdefault.jpg",
+    "summary": "This video offers a whirlwind tour of fundamental physics, starting with gravity and Newton's laws. It then explores concepts of energy, work, and the conservation of energy, before delving into temperature, entropy, and the laws of thermodynamics. The video concludes by explaining electromagnetism, the structure of atoms, radioactivity, and the dual nature of light as both a wave and a particle."
+  },
+  "sections": [
+    {
+      "id": "section1",
+      "title": "Gravity and Classical Mechanics",
+      "content": [
+        {
+          "content": "To understand, let’s look a little bit of Physics.",
+          "timestampStart": "00:11"
+        },
+        {
+          "content": "This is gravity guy. But most people call him “Isaac Newton”.",
+          "timestampStart": "00:26"
+        },
+        {
+          "content": "One important thing he said is that Force equals mass times acceleration.",
+          "timestampStart": "00:28"
+        },
+        {
+          "content": "Force is just a push or pull on something, in a certain direction.",
+          "timestampStart": "00:33"
+        },
+        {
+          "content": "Newton discovered that two masses attract one another, making the apple fall.",
+          "timestampStart": "01:09"
+        },
+        {
+          "content": "Newton gave us the Law of Universal Gravitation.",
+          "timestampStart": "01:19"
+        },
+        {
+          "content": "Gravity is also the reason why the planets in our solar system orbit the sun.",
+          "timestampStart": "01:38"
+        }
+      ]
+    },
+    {
+      "id": "section2",
+      "title": "Energy and Work",
+      "content": [
+        {
+          "content": "One thing many people confuse is mass and weight, and no, they are not the same.",
+          "timestampStart": "02:13"
+        },
+        {
+          "content": "Mass tells you how much of something there is, and Weight is the force of Gravity it would feel.",
+          "timestampStart": "02:16"
+        },
+        {
+          "content": "The answer is Energy.",
+          "timestampStart": "02:41"
+        },
+        {
+          "content": "There are two main kinds of energy: Kinetic energy, and potential energy.",
+          "timestampStart": "02:51"
+        },
+        {
+          "content": "Work is defined as Force applied over distance.",
+          "timestampStart": "03:15"
+        },
+        {
+          "content": "The key thing to remember about energy is that it cannot be created or destroyed, only converted.",
+          "timestampStart": "03:55"
+        },
+        {
+          "content": "Ultimately, the kinetic energy is transferred from the car to the air.",
+          "timestampStart": "04:23"
+        }
+      ]
+    },
+    {
+      "id": "section3",
+      "title": "Thermodynamics and Entropy",
+      "content": [
+        {
+          "content": "Temperature is just the average kinetic energy of atoms in a system.",
+          "timestampStart": "04:26"
+        },
+        {
+          "content": "The faster they move, the hotter things get.",
+          "timestampStart": "04:35"
+        },
+        {
+          "content": "It’s time we talk about Thermodynamics.",
+          "timestampStart": "04:40"
+        },
+        {
+          "content": "It tells you how much disorder there is in a system, indicating the number of possible states a system can be in.",
+          "timestampStart": "04:48"
+        },
+        {
+          "content": "In total, the system went from low entropy to high entropy, meaning more disorder and more possible microstates.",
+          "timestampStart": "05:15"
+        },
+        {
+          "content": "The whole universe is on an unstoppable path to higher entropy.",
+          "timestampStart": "05:22"
+        },
+        {
+          "content": "The form of gasoline with lower entropy is more useful for doing work.",
+          "timestampStart": "05:46"
+        }
+      ]
+    },
+    {
+      "id": "section4",
+      "title": "Electromagnetism",
+      "content": [
+        {
+          "content": "Objects have a charge, which can be positive or negative.",
+          "timestampStart": "06:13"
+        },
+        {
+          "content": "The flow of electrons is called electric current.",
+          "timestampStart": "06:20"
+        },
+        {
+          "content": "Current is the amount of electrons passing through a wire in a given amount of time.",
+          "timestampStart": "06:26"
+        },
+        {
+          "content": "This is Coulomb’s Law, which is like Newton’s Law of Gravitation in disguise.",
+          "timestampStart": "06:42"
+        },
+        {
+          "content": "These four equations explain pretty much all of electromagnetism.",
+          "timestampStart": "06:56"
+        },
+        {
+          "content": "The third and fourth Maxwell equations tell us that a moving magnet creates an electric field, and a moving charge or electric field creates a magnetic field.",
+          "timestampStart": "07:38"
+        },
+        {
+          "content": "Electric and magnetic fields are so tightly linked that they are the two parts of the same bigger thing.",
+          "timestampStart": "07:59"
+        }
+      ]
+    },
+    {
+      "id": "section5",
+      "title": "Atomic Structure and Radioactivity",
+      "content": [
+        {
+          "content": "Molecules are made of atoms, which consist of a core and some electrons.",
+          "timestampStart": "08:15"
+        },
+        {
+          "content": "The core is made of protons and neutrons, both of which are made of quarks.",
+          "timestampStart": "08:19"
+        },
+        {
+          "content": "Depending on the number of protons in the core, you get different elements.",
+          "timestampStart": "08:39"
+        },
+        {
+          "content": "Depending on the number of neutrons in the core, you get different isotopes of the same element.",
+          "timestampStart": "08:42"
+        },
+        {
+          "content": "Unstable isotopes fall apart into smaller atoms, releasing ionizing radiation.",
+          "timestampStart": "08:50"
+        },
+        {
+          "content": "Ionizing radiation will kill you; do not play with radioactive atoms.",
+          "timestampStart": "08:53"
+        },
+        {
+          "content": "If you have a large group of atoms, you can predict when half of those will have fallen apart, which is called the halflife.",
+          "timestampStart": "08:56"
+        }
+      ]
+    },
+    {
+      "id": "section6",
+      "title": "The Nature of Light",
+      "content": [
+        {
+          "content": "Light is the fastest thing in the universe.",
+          "timestampStart": "09:28"
+        },
+        {
+          "content": "To be exact, light travels at 299,792,458 meters per second in a vacuum.",
+          "timestampStart": "09:32"
+        },
+        {
+          "content": "Many believe that light is a wave.",
+          "timestampStart": "09:41"
+        },
+        {
+          "content": "If you shoot light through two tiny slits, it creates an interference pattern, which is characteristic of a wave.",
+          "timestampStart": "09:44"
+        },
+        {
+          "content": "In this case, light behaves like a wave.",
+          "timestampStart": "09:56"
+        },
+        {
+          "content": "Albert Einstein, after hearing about the photoelectric effect, discovered that light comes in tiny packets called photons.",
+          "timestampStart": "09:57"
+        }
+      ]
+    }
+  ]
+}

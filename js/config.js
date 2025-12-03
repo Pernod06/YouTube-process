@@ -4,7 +4,7 @@ const CONFIG = {
     API: {
         // 开发环境
         development: {
-            BASE_URL: 'http://localhost:5000/api',
+            BASE_URL: 'http://localhost:6000/api',
             VIDEO_ENDPOINT: '/videos',
             SECTIONS_ENDPOINT: '/sections'
         },

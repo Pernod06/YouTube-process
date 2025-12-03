@@ -1,0 +1,1234 @@
+Video YRvf00NooN8
+======================================================================
+
+[00:00] Chris Anderson: Elon Musk,
+great to see you. How are you? Elon Musk: Good. How are you? CA: We're here at the Texas Gigafactory
+the day before this thing opens.
+[00:09] It's been pretty crazy out there. Thank you so much
+for making time on a busy day.
+[00:14] I would love you to help us,
+kind of, cast our minds, I don't know, 10, 20,
+30 years into the future.
+[00:22] And help us try to picture
+what it would take to build a future that's worth
+getting excited about.
+[00:29] The last time you spoke at TED, you said that that was really
+just a big driver. You know, you can talk about lots of other
+reasons to do the work you're doing,
+[00:37] but fundamentally, you want
+to think about the future and not think that it sucks.
+[00:43] EM: Yeah, absolutely. I think in general, you know, there's a lot of discussion of like,
+this problem or that problem.
+[00:51] And a lot of people are sad
+about the future and they're ...
+[00:58] Pessimistic. And I think ... this is ...
+[01:05] This is not great. I mean, we really want
+to wake up in the morning and look forward to the future.
+[01:10] We want to be excited
+about what's going to happen. And life cannot simply be about sort of,
+[01:20] solving one miserable
+problem after another. CA: So if you look forward 30 years,
+you know, the year 2050
+[01:26] has been labeled by scientists as this, kind of, almost like this
+doomsday deadline on climate.
+[01:33] There's a consensus of scientists,
+a large consensus of scientists, who believe that if we haven't
+completely eliminated greenhouse gases
+[01:42] or offset them completely by 2050, effectively we're inviting
+climate catastrophe.
+[01:49] Do you believe there is a pathway
+to avoid that catastrophe? And what would it look like?
+[01:56] EM: Yeah, so I am not one
+of the doomsday people, which may surprise you.
+[02:02] I actually think we're on a good path. But at the same time,
+[02:08] I want to caution against complacency. So, so long as we are not complacent,
+[02:14] as long as we have a high sense of urgency about moving towards
+a sustainable energy economy,
+[02:21] then I think things will be fine. So I can't emphasize that enough,
+[02:27] as long as we push hard
+and are not complacent,
+[02:34] the future is going to be great. Don't worry about it. I mean, worry about it, but if you worry about it, ironically,
+it will be a self-unfulfilling prophecy.
+[02:42] So, like, there are three elements
+to a sustainable energy future. One is of sustainable energy generation,
+which is primarily wind and solar.
+[02:51] There's also hydro, geothermal, I'm actually pro-nuclear.
+[02:58] I think nuclear is fine.
+[03:04] But it's going to be primarily
+solar and wind, as the primary generators of energy.
+[03:11] The second part is you need batteries
+to store the solar and wind energy because the sun
+doesn't shine all the time,
+[03:17] the wind doesn't blow all the time. So it's a lot of stationary battery packs.
+[03:23] And then you need electric transport. So electric cars, electric planes, boats. And then ultimately,
+[03:30] it’s not really possible
+to make electric rockets, but you can make
+the propellant used in rockets
+[03:36] using sustainable energy. So ultimately, we can have a fully
+sustainable energy economy.
+[03:42] And it's those three things: solar/wind, stationary
+battery pack, electric vehicles.
+[03:48] So then what are the limiting
+factors on progress? The limiting factor really will be
+battery cell production.
+[03:55] So that's going to really be
+the fundamental rate driver. And then whatever the slowest element
+[04:01] of the whole lithium-ion
+battery cells supply chain, from mining and the many steps of refining
+[04:08] to ultimately creating a battery cell and putting it into a pack, that will be the limiting factor
+on progress towards sustainability.
+[04:16] CA: All right, so we need to talk
+more about batteries, because the key thing
+that I want to understand, like, there seems to be
+a scaling issue here
+[04:23] that is kind of amazing and alarming. You have said that you have calculated
+[04:28] that the amount of battery production
+that the world needs for sustainability
+[04:34] is 300 terawatt hours of batteries. That's the end goal?
+[04:40] EM: Very rough numbers, and I certainly would invite others
+to check our calculations because they may arrive
+at different conclusions.
+[04:47] But in order to transition, not just
+current electricity production,
+[04:53] but also heating and transport, which roughly triples the amount
+of electricity that you need,
+[05:01] it amounts to approximately 300 terawatt
+hours of installed capacity.
+[05:06] CA: So we need to give people
+a sense of how big a task that is. I mean, here we are at the Gigafactory.
+[05:13] You know, this is one of the biggest
+buildings in the world.
+[05:19] What I've read, and tell me
+if this is still right, is that the goal here is to eventually
+produce 100 gigawatt hours
+[05:28] of batteries here a year eventually. EM: We will probably do more than that, but yes, hopefully we get there
+within a couple of years.
+[05:37] CA: Right. But I mean, that is one -- EM: 0.1 terrawat hours.
+[05:43] CA: But that's still 1/100
+of what's needed. How much of the rest of that 100
+is Tesla planning to take on
+[05:52] let's say, between now and 2030, 2040,
+[05:58] when we really need to see
+the scale up happen? EM: I mean, these are just guesses.
+[06:03] So please, people shouldn't
+hold me to these things. It's not like this is like some --
+[06:08] What tends to happen
+is I'll make some like, you know, best guess and then people, in five years,
+[06:15] there’ll be some jerk
+that writes an article: "Elon said this would happen,
+and it didn't happen.
+[06:20] He's a liar and a fool." It's very annoying when that happens. So these are just guesses,
+this is a conversation.
+[06:27] CA: Right. EM: I think Tesla probably ends up
+doing 10 percent of that.
+[06:35] Roughly. CA: Let's say 2050 we have this amazing, you know,
+100 percent sustainable electric grid
+[06:43] made up of, you know, some mixture
+of the sustainable energy sources you talked about.
+[06:49] That same grid probably
+is offering the world really low-cost energy, isn't it, compared with now.
+[06:56] And I'm curious about like, are people entitled to get
+a little bit excited
+[07:04] about the possibilities of that world? EM: People should be optimistic
+about the future.
+[07:12] Humanity will solve sustainable energy. It will happen if we, you know,
+continue to push hard,
+[07:20] the future is bright and good
+from an energy standpoint.
+[07:25] And then it will be possible to also use
+that energy to do carbon sequestration.
+[07:31] It takes a lot of energy to pull
+carbon out of the atmosphere because in putting it in the atmosphere
+it releases energy.
+[07:37] So now, you know, obviously
+in order to pull it out, you need to use a lot of energy. But if you've got a lot of sustainable
+energy from wind and solar,
+[07:45] you can actually sequester carbon. So you can reverse the CO2 parts
+per million of the atmosphere and oceans.
+[07:52] And also you can really have
+as much fresh water as you want. Earth is mostly water.
+[07:58] We should call Earth “Water.” It's 70 percent water by surface area. Now most of that’s seawater, but it's like we just happen to be
+on the bit that's land.
+[08:06] CA: And with energy,
+you can turn seawater into -- EM: Yes. CA: Irrigating water
+or whatever water you need.
+[08:13] EM: At very low cost. Things will be good. CA: Things will be good. And also, there's other benefits
+to this non-fossil fuel world
+[08:20] where the air is cleaner -- EM: Yes, exactly. Because, like, when you burn fossil fuels,
+[08:26] there's all these side reactions and toxic gases of various kinds.
+[08:33] And sort of little particulates
+that are bad for your lungs. Like, there's all sorts
+of bad things that are happening
+[08:41] that will go away. And the sky will be cleaner and quieter. The future's going to be good.
+[08:46] CA: I want us to switch now to think
+a bit about artificial intelligence. But the segue there,
+[08:52] you mentioned how annoying it is
+when people call you up for bad predictions in the past.
+[08:58] So I'm possibly going to be annoying now, but I’m curious about your timelines
+and how you predict
+[09:07] and how come some things are so amazingly
+on the money and some aren't. So when it comes to predicting sales
+of Tesla vehicles, for example,
+[09:15] you've kind of been amazing, I think in 2014 when Tesla
+had sold that year 60,000 cars,
+[09:22] you said, "2020, I think we will do
+half a million a year." EM: Yeah, we did
+almost exactly a half million.
+[09:28] CA: You did almost exactly half a million. You were scoffed in 2014
+because no one since Henry Ford,
+[09:33] with the Model T, had come close
+to that kind of growth rate for cars. You were scoffed, and you actually
+hit 500,000 cars
+[09:41] and then 510,000 or whatever produced. But five years ago,
+last time you came to TED,
+[09:47] I asked you about full self-driving, and you said, “Yeah, this very year,
+[09:53] I'm confident that we will have a car
+going from LA to New York
+[09:58] without any intervention." EM: Yeah, I don't want to blow your mind,
+but I'm not always right.
+[10:04] CA: (Laughs) What's the difference between those two? Why has full self-driving in particular
+been so hard to predict?
+[10:13] EM: I mean, the thing that really got me, and I think it's going to get
+a lot of other people, is that there are just so many
+false dawns with self-driving,
+[10:22] where you think you've got the problem, have a handle on the problem, and then it, no, turns out
+you just hit a ceiling.
+[10:33] Because if you were to plot the progress, the progress looks like a log curve.
+[10:39] So it's like a series of log curves. So most people don't know
+what a log curve is, I suppose.
+[10:45] CA: Show the shape with your hands. EM: It goes up you know,
+sort of a fairly straight way, and then it starts tailing off
+[10:52] and you start getting diminishing returns. And you're like, uh oh, it was trending up and now
+it's sort of, curving over
+[11:01] and you start getting to these,
+what I call local maxima, where you don't realize
+basically how dumb you were.
+[11:10] And then it happens again. And ultimately...
+[11:16] These things, you know,
+in retrospect, they seem obvious, but in order to solve
+full self-driving properly,
+[11:23] you actually have to solve real-world AI. Because what are the road networks
+designed to work with?
+[11:32] They're designed to work
+with a biological neural net, our brains, and with vision, our eyes.
+[11:40] And so in order to make it
+work with computers,
+[11:45] you basically need to solve
+real-world AI and vision.
+[11:51] Because we need cameras
+[11:56] and silicon neural nets in order to have self-driving work
+[12:01] for a system that was designed
+for eyes and biological neural nets.
+[12:07] You know, I guess
+when you put it that way, it's sort of, like, quite obvious that the only way
+to solve full self-driving
+[12:12] is to solve real world AI
+and sophisticated vision. CA: What do you feel
+about the current architecture?
+[12:19] Do you think you have an architecture now where there is a chance for the logarithmic curve
+not to tail off any anytime soon?
+[12:27] EM: Well I mean, admittedly
+these may be infamous last words,
+[12:32] but I actually am confident
+that we will solve it this year. That we will exceed --
+[12:39] The probability of an accident, at what point do you exceed
+that of the average person?
+[12:45] I think we will exceed that this year. CA: What are you seeing behind the scenes
+that gives you that confidence?
+[12:51] EM: We’re almost at the point
+where we have a high-quality unified vector space. In the beginning, we were trying
+to do this with image recognition
+[13:00] on individual images. But if you get one image out of a video, it's actually quite hard to see
+what's going on without ambiguity.
+[13:09] But if you look at a video segment
+of a few seconds of video, that ambiguity resolves.
+[13:15] So the first thing we had to do
+is tie all eight cameras together so they're synchronized, so that all the frames
+are looked at simultaneously
+[13:23] and labeled simultaneously by one person, because we still need human labeling.
+[13:30] So at least they’re not labeled
+at different times by different people in different ways.
+[13:35] So it's sort of a surround picture. Then a very important part
+is to add the time dimension.
+[13:41] So that you’re looking at surround video, and you're labeling surround video.
+[13:47] And this is actually quite difficult to do
+from a software standpoint.
+[13:52] We had to write our own labeling tools and then create auto labeling,
+[14:03] create auto labeling software to amplify
+the efficiency of human labelers because it’s quite hard to label.
+[14:09] In the beginning,
+it was taking several hours to label a 10-second video clip. This is not scalable.
+[14:16] So basically what you have to have
+is you have to have surround video, and that surround video has to be
+primarily automatically labeled
+[14:23] with humans just being editors and making slight corrections
+to the labeling of the video
+[14:30] and then feeding back those corrections
+into the future auto labeler, so you get this flywheel eventually
+[14:36] where the auto labeler
+is able to take in vast amounts of video and with high accuracy, automatically label the video
+for cars, lane lines, drive space.
+[14:46] CA: What you’re saying is ... the result of this is that you're
+effectively giving the car a 3D model
+[14:56] of the actual objects
+that are all around it. It knows what they are, and it knows how fast they are moving.
+[15:03] And the remaining task is to predict
+[15:09] what the quirky behaviors are
+that, you know, that when a pedestrian is walking
+down the road with a smaller pedestrian,
+[15:16] that maybe that smaller pedestrian
+might do something unpredictable or things like that. You have to build into it
+before you can really call it safe.
+[15:24] EM: You basically need to have
+memory across time and space.
+[15:30] So what I mean by that is ... Memory can’t be infinite,
+[15:37] because it's using up a lot
+of the computer's RAM basically.
+[15:42] So you have to say how much
+are you going to try to remember? It's very common
+for things to be occluded.
+[15:49] So if you talk about say,
+a pedestrian walking past a truck where you saw the pedestrian start
+on one side of the truck,
+[15:57] then they're occluded by the truck. You would know intuitively,
+[16:03] OK, that pedestrian is going to pop out
+the other side, most likely. CA: A computer doesn't know it.
+[16:09] EM: You need to slow down. CA: A skeptic is going to say
+that every year for the last five years,
+[16:14] you've kind of said, well, no this is the year, we're confident that it will be there
+in a year or two or, you know,
+[16:20] like it's always been about that far away. But we've got a new architecture now,
+[16:25] you're seeing enough improvement
+behind the scenes to make you not certain,
+but pretty confident,
+[16:31] that, by the end of this year, what in most, not in every city,
+and every circumstance
+[16:37] but in many cities and circumstances, basically the car will be able
+to drive without interventions
+[16:42] safer than a human. EM: Yes. I mean, the car currently
+drives me around Austin most of the time with no interventions.
+[16:49] So it's not like ... And we have over 100,000 people
+[16:55] in our full self-driving beta program. So you can look at the videos
+that they post online.
+[17:02] CA: I do. And some of them are great,
+and some of them are a little terrifying. I mean, occasionally
+the car seems to veer off
+[17:09] and scare the hell out of people. EM: It’s still a beta.
+[17:15] CA: But you’re behind the scenes,
+looking at the data, you're seeing enough improvement to believe that a this-year
+timeline is real.
+[17:23] EM: Yes, that's what it seems like. I mean, we could be here
+talking again in a year,
+[17:28] like, well, another year went by,
+and it didn’t happen. But I think this is the year. CA: And so in general,
+when people talk about Elon time,
+[17:36] I mean it sounds like
+you can't just have a general rule that if you predict that something
+will be done in six months,
+[17:42] actually what we should imagine
+is it’s going to be a year or it’s like two-x or three-x,
+it depends on the type of prediction.
+[17:49] Some things, I guess,
+things involving software, AI, whatever, are fundamentally harder
+to predict than others.
+[17:56] Is there an element that you actually deliberately make
+aggressive prediction timelines to drive people to be ambitious?
+[18:04] Without that, nothing gets done? EM: Well, I generally believe,
+in terms of internal timelines, that we want to set the most aggressive
+timeline that we can.
+[18:14] Because there’s sort of like
+a law of gaseous expansion where, for schedules, where
+whatever time you set,
+[18:20] it's not going to be less than that. It's very rare
+that it'll be less than that.
+[18:26] But as far as our predictions
+are concerned, what tends to happen in the media is that they will report
+all the wrong ones
+[18:31] and ignore all the right ones. Or, you know, when writing
+an article about me --
+[18:38] I've had a long career
+in multiple industries. If you list my sins, I sound
+like the worst person on Earth.
+[18:43] But if you put those
+against the things I've done right, it makes much more sense, you know?
+[18:48] So essentially like,
+the longer you do anything, the more mistakes
+that you will make cumulatively.
+[18:55] Which, if you sum up those mistakes, will sound like I'm the worst
+predictor ever.
+[19:00] But for example, for Tesla vehicle growth, I said I think we’d do 50 percent,
+and we’ve done 80 percent.
+[19:08] CA: Yes. EM: But they don't mention that one. So, I mean, I'm not sure what my exact
+track record is on predictions.
+[19:16] They're more optimistic than pessimistic,
+but they're not all optimistic. Some of them are exceeded
+probably more or later,
+[19:24] but they do come true. It's very rare that they do not come true.
+[19:31] It's sort of like, you know, if there's some radical
+technology prediction,
+[19:38] the point is not
+that it was a few years late, but that it happened at all. That's the more important part.
+[19:45] CA: So it feels like
+at some point in the last year, seeing the progress on understanding,
+[19:54] the Tesla AI understanding
+the world around it, led to a kind of, an aha moment at Tesla.
+[20:00] Because you really surprised people
+recently when you said probably the most important
+product development
+[20:06] going on at Tesla this year
+is this robot, Optimus. EM: Yes.
+[20:11] CA: Many companies out there
+have tried to put out these robots, they've been working on them for years.
+[20:16] And so far no one has really cracked it. There's no mass adoption
+robot in people's homes.
+[20:22] There are some in manufacturing,
+but I would say, no one's kind of, really cracked it.
+[20:29] Is it something that happened in the development of full self-driving
+that gave you the confidence to say,
+[20:35] "You know what, we could do
+something special here." EM: Yeah, exactly. So, you know, it took me a while
+to sort of realize
+[20:41] that in order to solve self-driving, you really needed to solve real-world AI.
+[20:47] And at the point of which you solve
+real-world AI for a car, which is really a robot on four wheels,
+[20:53] you can then generalize that
+to a robot on legs as well. The two hard parts I think --
+[20:59] like obviously companies
+like Boston Dynamics have shown that it's possible
+to make quite compelling,
+[21:05] sometimes alarming robots. CA: Right. EM: You know, so from a sensors
+and actuators standpoint,
+[21:11] it's certainly been demonstrated by many that it's possible to make
+a humanoid robot.
+[21:16] The things that are currently missing
+are enough intelligence
+[21:22] for the robot to navigate the real world
+and do useful things without being explicitly instructed.
+[21:27] So the missing things are basically
+real-world intelligence and scaling up manufacturing.
+[21:34] Those are two things
+that Tesla is very good at. And so then we basically just need
+to design the specialized actuators
+[21:43] and sensors that are needed
+for humanoid robot. People have no idea,
+this is going to be bigger than the car.
+[21:50] CA: So let's dig into exactly that. I mean, in one way, it's actually
+an easier problem than full self-driving
+[21:56] because instead of an object
+going along at 60 miles an hour, which if it gets it wrong,
+someone will die.
+[22:02] This is an object that's engineered
+to only go at what, three or four or five miles an hour. And so a mistake,
+there aren't lives at stake.
+[22:10] There might be embarrassment at stake. EM: So long as the AI doesn't take it over
+and murder us in our sleep or something.
+[22:17] CA: Right. (Laughter) So talk about --
+[22:22] I think the first applications
+you've mentioned are probably going to be manufacturing, but eventually the vision is to have
+these available for people at home.
+[22:30] If you had a robot that really understood
+the 3D architecture of your house
+[22:36] and knew where every object
+in that house was
+[22:41] or was supposed to be, and could recognize all those objects, I mean, that’s kind of amazing, isn’t it?
+[22:48] Like the kind of thing
+that you could ask a robot to do would be what? Like, tidy up?
+[22:54] EM: Yeah, absolutely. Make dinner, I guess, mow the lawn.
+[22:59] CA: Take a cup of tea to grandma
+and show her family pictures.
+[23:04] EM: Exactly. Take care
+of my grandmother and make sure -- CA: It could obviously recognize
+everyone in the home.
+[23:12] It could play catch with your kids. EM: Yes. I mean, obviously,
+we need to be careful this doesn't become a dystopian situation.
+[23:20] I think one of the things
+that's going to be important is to have a localized
+ROM chip on the robot
+[23:26] that cannot be updated over the air. Where if you, for example, were to say,
+“Stop, stop, stop,”
+[23:32] if anyone said that, then the robot would stop,
+you know, type of thing. And that's not updatable remotely.
+[23:38] I think it's going to be important
+to have safety features like that. CA: Yeah, that sounds wise. EM: And I do think there should be
+a regulatory agency for AI.
+[23:46] I've said that for many years. I don't love being regulated, but I think this is an important
+thing for public safety.
+[23:52] CA: Let's come back to that. But I don't think many people
+have really sort of taken seriously
+[23:58] the notion of, you know, a robot at home. I mean, at the start
+of the computing revolution,
+[24:03] Bill Gates said there's going to be
+a computer in every home. And people at the time said, yeah,
+whatever, who would even want that.
+[24:09] Do you think there will be basically
+like in, say, 2050 or whatever, like a robot in most homes,
+is what there will be,
+[24:17] and people will love them
+and count on them? You’ll have your own butler basically. EM: Yeah, you'll have your sort of
+buddy robot probably, yeah.
+[24:27] CA: I mean, how much of a buddy? How many applications have you thought, you know, can you have
+a romantic partner, a sex partner?
+[24:34] EM: It's probably inevitable. I mean, I did promise the internet
+that I’d make catgirls. We could make a robot catgirl.
+[24:42] CA: Be careful what
+you promise the internet. (Laughter) EM: So, yeah, I guess it'll be
+whatever people want really, you know.
+[24:52] CA: What sort of timeline
+should we be thinking about of the first models
+that are actually made and sold?
+[25:01] EM: Well, you know, the first units
+that we intend to make are for jobs that are dangerous,
+boring, repetitive,
+[25:10] and things that people don't want to do. And, you know, I think we’ll have like
+an interesting prototype
+[25:15] sometime this year. We might have something useful next year, but I think quite likely
+within at least two years.
+[25:22] And then we'll see
+rapid growth year over year of the usefulness
+of the humanoid robots and decrease in cost
+and scaling up production.
+[25:29] CA: Initially just selling to businesses, or when do you picture
+you'll start selling them where you can buy your parents one
+for Christmas or something?
+[25:39] EM: I'd say in less than ten years. CA: Help me on the economics of this. So what do you picture the cost
+of one of these being?
+[25:47] EM: Well, I think the cost is actually
+not going to be crazy high. Like less than a car.
+[25:53] Initially, things will be expensive
+because it'll be a new technology at low production volume. The complexity and cost of a car
+is greater than that of a humanoid robot.
+[26:01] So I would expect that it's going
+to be less than a car, or at least equivalent to a cheap car.
+[26:07] CA: So even if it starts at 50k,
+within a few years, it’s down to 20k or lower or whatever.
+[26:13] And maybe for home
+they'll get much cheaper still. But think about the economics of this. If you can replace a $30,000,
+[26:22] $40,000-a-year worker, which you have to pay every year, with a one-time payment of $25,000
+[26:29] for a robot that can work longer hours, a pretty rapid replacement
+of certain types of jobs.
+[26:36] How worried should
+the world be about that? EM: I wouldn't worry about the sort of,
+putting people out of a job thing.
+[26:42] I think we're actually going to have,
+and already do have, a massive shortage of labor. So I think we will have ...
+[26:54] Not people out of work, but actually still a shortage
+labor even in the future. But this really will be
+a world of abundance.
+[27:03] Any goods and services will be available
+to anyone who wants them.
+[27:08] It'll be so cheap to have goods
+and services, it will be ridiculous. CA: I'm presuming it should be possible
+to imagine a bunch of goods and services
+[27:16] that can't profitably be made now
+but could be made in that world, courtesy of legions of robots.
+[27:23] EM: Yeah. It will be a world of abundance. The only scarcity
+that will exist in the future
+[27:29] is that which we decide to create
+ourselves as humans. CA: OK. So AI is allowing us to imagine
+a differently powered economy
+[27:38] that will create this abundance. What are you most worried
+about going wrong? EM: Well, like I said,
+AI and robotics will bring out
+[27:48] what might be termed the age of abundance. Other people have used this word,
+[27:54] and that this is my prediction: it will be an age of abundance 
+for everyone.
+[27:59] But I guess there’s ... The dangers would be
+the artificial general intelligence
+[28:08] or digital superintelligence decouples
+from a collective human will
+[28:13] and goes in the direction
+that for some reason we don't like. Whatever direction it might go.
+[28:20] You know, that’s sort of
+the idea behind Neuralink, is to try to more tightly couple
+collective human world
+[28:27] to digital superintelligence.
+[28:33] And also along the way solve a lot
+of brain injuries and spinal injuries
+[28:39] and that kind of thing. So even if it doesn't succeed
+in the greater goal, I think it will succeed in the goal
+of alleviating brain and spine damage.
+[28:48] CA: So the spirit there is
+that if we're going to make these AIs that are so vastly intelligent,
+we ought to be wired directly to them
+[28:54] so that we ourselves can have
+those superpowers more directly. But that doesn't seem to avoid
+the risk that those superpowers might ...
+[29:05] turn ugly in unintended ways. EM: I think it's a risk, I agree. I'm not saying that I have
+some certain answer to that risk.
+[29:16] I’m just saying like maybe one of the things
+that would be good
+[29:22] for ensuring that the future
+is one that we want
+[29:27] is to more tightly couple the collective human world
+to digital intelligence.
+[29:36] The issue that we face here
+is that we are already a cyborg, if you think about it.
+[29:41] The computers are
+an extension of ourselves. And when we die, we have,
+like, a digital ghost.
+[29:49] You know, all of our text messages
+and social media, emails. And it's quite eerie actually,
+[29:55] when someone dies but everything
+online is still there. But you say like, what's the limitation?
+[30:00] What is it that inhibits
+a human-machine symbiosis?
+[30:06] It's the data rate. When you communicate,
+especially with a phone, you're moving your thumbs very slowly.
+[30:12] So you're like moving
+your two little meat sticks at a rate that’s maybe 10 bits per second,
+optimistically, 100 bits per second.
+[30:21] And computers are communicating
+at the gigabyte level and beyond.
+[30:26] CA: Have you seen evidence
+that the technology is actually working, that you've got a richer, sort of,
+higher bandwidth connection, if you like,
+[30:33] between like external
+electronics and a brain than has been possible before? EM: Yeah.
+[30:41] I mean, the fundamental principles
+of reading neurons,
+[30:46] sort of doing read-write on neurons
+with tiny electrodes, have been demonstrated for decades.
+[30:53] So it's not like the concept is new. The problem is that there is
+no product that works well
+[31:02] that you can go and buy. So it's all sort of, in research labs.
+[31:08] And it's like some cords
+sticking out of your head.
+[31:14] And it's quite gruesome,
+and it's really ... There's no good product
+that actually does a good job
+[31:22] and is high-bandwidth and safe and something actually that you could buy
+and would want to buy.
+[31:29] But the way to think
+of the Neuralink device is kind of like a Fitbit
+or an Apple Watch.
+[31:37] That's where we take out
+sort of a small section of skull about the size of a quarter,
+[31:44] replace that with what, in many ways really is very much like
+a Fitbit, Apple Watch
+[31:52] or some kind of smart watch thing. But with tiny, tiny wires,
+[32:00] very, very tiny wires. Wires so tiny, it’s hard to even see them. And it's very important
+to have very tiny wires
+[32:07] so that when they’re implanted,
+they don’t damage the brain. CA: How far are you from putting
+these into humans?
+[32:14] EM: Well, we have put in
+our FDA application to aspirationally do the first
+human implant this year.
+[32:23] CA: The first uses will be
+for neurological injuries of different kinds. But rolling the clock forward
+[32:29] and imagining when people
+are actually using these for their own enhancement, let's say,
+[32:36] and for the enhancement of the world, how clear are you in your mind as to what it will feel like
+to have one of these inside your head?
+[32:45] EM: Well, I do want to emphasize
+we're at an early stage. And so it really will be
+many years before we have
+[32:55] anything approximating
+a high-bandwidth neural interface
+[33:01] that allows for AI-human symbiosis.
+[33:07] For many years, we will just be solving
+brain injuries and spinal injuries. For probably a decade.
+[33:14] This is not something
+that will suddenly one day it will have this incredible
+sort of whole brain interface.
+[33:25] It's going to be, like I said, at least a decade of really
+just solving brain injuries
+[33:30] and spinal injuries. And really, I think you can solve
+a very wide range of brain injuries,
+[33:36] including severe depression,
+morbid obesity, sleep,
+[33:43] potentially schizophrenia, like, a lot of things that cause
+great stress to people.
+[33:48] Restoring memory in older people. CA: If you can pull that off,
+that's the app I will sign up for.
+[33:56] EM: Absolutely. CA: Please hurry. (Laughs) EM: I mean, the emails that we get
+at Neuralink are heartbreaking.
+[34:05] I mean, they'll send us
+just tragic, you know, where someone was sort of,
+in the prime of life
+[34:11] and they had an accident on a motorcycle and someone who's 25, you know,
+can't even feed themselves.
+[34:21] And this is something we could fix. CA: But you have said that AI is one
+of the things you're most worried about
+[34:28] and that Neuralink may be one of the ways where we can keep abreast of it.
+[34:35] EM: Yeah, there's the short-term thing, which I think is helpful on an individual
+human level with injuries.
+[34:43] And then the long-term thing is an attempt to address the civilizational risk of AI
+[34:51] by bringing digital intelligence and biological intelligence
+closer together.
+[34:58] I mean, if you think of how
+the brain works today, there are really two layers to the brain. There's the limbic system and the cortex.
+[35:04] You've got the kind of,
+animal brain where -- it’s kind of like the fun part, really. CA: It's where most of Twitter
+operates, by the way.
+[35:11] EM: I think Tim Urban said, we’re like somebody, you know,
+stuck a computer on a monkey.
+[35:18] You know, so we're like,
+if you gave a monkey a computer, that's our cortex. But we still have a lot
+of monkey instincts.
+[35:25] Which we then try to rationalize
+as, no, it's not a monkey instinct. It’s something more important than that.
+[35:31] But it's often just really
+a monkey instinct. We're just monkeys with a computer
+stuck in our brain.
+[35:38] But even though the cortex
+is sort of the smart, or the intelligent part of the brain, the thinking part of the brain,
+[35:46] I've not yet met anyone
+who wants to delete their limbic system or their cortex. They're quite happy having both.
+[35:52] Everyone wants both parts of their brain. And people really want their
+phones and their computers,
+[35:58] which are really the tertiary,
+the third part of your intelligence. It's just that it's ...
+[36:03] Like the bandwidth, the rate of communication
+with that tertiary layer is slow.
+[36:11] And it's just a very tiny straw
+to this tertiary layer. And we want to make that tiny
+straw a big highway.
+[36:19] And I’m definitely not saying
+that this is going to solve everything. Or this is you know,
+it’s the only thing --
+[36:26] it’s something that might be helpful. And worst-case scenario,
+[36:32] I think we solve
+some important brain injury, spinal injury issues,
+and that's still a great outcome.
+[36:38] CA: Best-case scenario, we may discover new
+human possibility, telepathy, you've spoken of, in a way,
+a connection with a loved one, you know,
+[36:46] full memory and much faster
+thought processing maybe.
+[36:51] All these things. It's very cool. If AI were to take down Earth,
+we need a plan B.
+[37:01] Let's shift our attention to space. We spoke last time at TED
+about reusability,
+[37:06] and you had just demonstrated that
+spectacularly for the first time. Since then, you've gone on to build
+this monster rocket, Starship,
+[37:15] which kind of changes the rules
+of the game in spectacular ways. Tell us about Starship.
+[37:22] EM: Starship is extremely fundamental. So the holy grail of rocketry
+or space transport
+[37:30] is full and rapid reusability. This has never been achieved. The closest that anything has come
+is our Falcon 9 rocket,
+[37:36] where we are able to recover
+the first stage, the boost stage,
+[37:42] which is probably about 60 percent
+of the cost of the vehicle of the whole launch, maybe 70 percent.
+[37:50] And we've now done that
+over a hundred times. So with Starship, we will be
+recovering the entire thing.
+[37:59] Or at least that's the goal. CA: Right. EM: And moreover,
+recovering it in such a way
+[38:05] that it can be immediately re-flown. Whereas with Falcon 9, we still need
+to do some amount of refurbishment
+[38:11] to the booster and
+to the fairing nose cone. But with Starship, the design goal
+is immediate re-flight.
+[38:22] So you just refill
+propellants and go again.
+[38:28] And this is gigantic. Just as it would be
+in any other mode of transport.
+[38:33] CA: And the main design is to basically take
+100 plus people at a time,
+[38:41] plus a bunch of things
+that they need, to Mars. So, first of all, talk about that piece.
+[38:47] What is your latest timeline? One, for the first time,
+a Starship goes to Mars,
+[38:54] presumably without people,
+but just equipment. Two, with people. Three, there’s sort of,
+[39:01] OK, 100 people at a time, let's go. EM: Sure. And just to put the cost
+thing into perspective,
+[39:09] the expected cost of Starship, putting 100 tons into orbit,
+[39:16] is significantly less
+than what it would have cost or what it did cost to put our tiny
+Falcon 1 rocket into orbit.
+[39:27] Just as the cost of flying
+a 747 around the world is less than the cost of a small airplane.
+[39:35] You know, a small airplane
+that was thrown away. So it's really pretty mind-boggling
+that the giant thing costs less,
+[39:43] way less than the small thing. So it doesn't use exotic propellants
+[39:50] or things that are difficult
+to obtain on Mars. It uses methane as fuel,
+[39:56] and it's primarily oxygen,
+roughly 77-78 percent oxygen by weight.
+[40:03] And Mars has a CO2 atmosphere
+and has water ice, which is CO2 plus H2O,
+so you can make CH4, methane,
+[40:10] and O2, oxygen, on Mars. CA: Presumably, one of the first tasks
+on Mars will be to create a fuel plant
+[40:16] that can create the fuel
+for the return trips of many Starships. EM: Yes.
+[40:21] And actually, it's mostly
+going to be oxygen plants, because it's 78 percent oxygen,
+22 percent fuel.
+[40:31] But the fuel is a simple fuel
+that is easy to create on Mars. And in many other parts
+of the solar system.
+[40:38] So basically ... And it's all propulsive landing,
+no parachutes,
+[40:43] nothing thrown away. It has a heat shield that’s capable
+of entering on Earth or Mars.
+[40:53] We can even potentially go to Venus. but you don't want to go there. (Laughs)
+[40:59] Venus is hell, almost literally. But you could ... It's a generalized method of transport
+to anywhere in the solar system,
+[41:08] because the point at which
+you have propellant depo on Mars, you can then travel to the asteroid belt and to the moons of Jupiter and Saturn
+[41:16] and ultimately anywhere
+in the solar system. CA: But your main focus
+[41:22] and SpaceX's main focus is still Mars. That is the mission.
+[41:28] That is where most of the effort will go? Or are you actually imagining
+a much broader array of uses
+[41:37] even in the coming, you know, the first decade or so of uses of this.
+[41:44] Where we could go,
+for example, to other places in the solar system to explore, perhaps NASA wants to use
+the rocket for that reason.
+[41:53] EM: Yeah, NASA is planning to use
+a Starship to return to the moon,
+[41:58] to return people to the moon. And so we're very honored that NASA
+has chosen us to do this.
+[42:07] But I'm saying it is a generalized -- it’s a general solution
+[42:14] to getting anywhere
+in the greater solar system.
+[42:19] It's not suitable for going
+to another star system, but it is a general solution for transport
+anywhere in the solar system.
+[42:25] CA: Before it can do any of that, it's got to demonstrate it can get into
+orbit, you know, around Earth. What’s your latest advice
+on the timeline for that?
+[42:35] EM: It's looking promising for us
+to have an orbital launch attempt in a few months.
+[42:43] So we're actually integrating -- will be integrating the engines
+into the booster
+[42:49] for the first orbital flight
+starting in about a week or two. And the launch complex
+itself is ready to go.
+[43:00] So assuming we get regulatory approval, I think we could have an orbital
+launch attempt within a few months.
+[43:10] CA: And a radical new technology like this presumably there is real risk
+on those early attempts. EM: Oh, 100 percent, yeah.
+[43:16] The joke I make all the time
+is that excitement is guaranteed. Success is not guaranteed,
+but excitement certainly is.
+[43:23] CA: But the last I saw on your timeline, you've slightly put back the expected date
+[43:28] to put the first human on Mars
+till 2029, I want to say? EM: Yeah, I mean, so let's see.
+[43:36] I mean, we have built a production
+system for Starship, so we're making a lot
+of ships and boosters.
+[43:43] CA: How many are you planning
+to make actually? EM: Well, we're currently expecting
+to make a booster and a ship
+[43:51] roughly every, well, initially,
+roughly every couple of months, and then hopefully by the end
+of this year, one every month.
+[43:59] So it's giant rockets, and a lot of them. Just talking in terms
+of rough orders of magnitude,
+[44:04] in order to create
+a self-sustaining city on Mars, I think you will need something
+on the order of a thousand ships.
+[44:12] And we just need a Helen of Sparta,
+I guess, on Mars.
+[44:19] CA: This is not in most
+people's heads, Elon. EM: The planet that launched 1,000 ships.
+[44:24] CA: That's nice. But this is not in most people's heads, this picture that you have in your mind.
+[44:29] There's basically a two-year window, you can only really fly to Mars
+conveniently every two years. You were picturing that during the 2030s,
+[44:39] every couple of years, something like 1,000 Starships take off, each containing 100 or more people.
+[44:45] That picture is just completely
+mind-blowing to me.
+[44:51] That sense of this armada
+of humans going to -- EM: It'll be like "Battlestar
+Galactica," the fleet departs.
+[44:57] CA: And you think that it can
+basically be funded by people spending maybe a couple hundred grand
+on a ticket to Mars?
+[45:03] Is that price about where it has been? EM: Well, I think if you say like,
+[45:08] what's required in order to get
+enough people and enough cargo to Mars to build a self-sustaining city.
+[45:17] And it's where you have an intersection of sets of people who want to go, because I think only a small percentage
+of humanity will want to go,
+[45:27] and can afford to go
+or get sponsorship in some manner. That intersection of sets, I think,
+[45:33] needs to be a million people
+or something like that. And so it’s what can a million people
+afford, or get sponsorship for,
+[45:40] because I think governments
+will also pay for it, and people can take out loans.
+[45:45] But I think at the point
+at which you say, OK, like, if moving to Mars costs are,
+for argument’s sake, $100,000,
+[45:56] then I think you know,
+almost anyone can work and save up
+[46:01] and eventually have $100,000
+and be able to go to Mars if they want. We want to make it available
+to anyone who wants to go.
+[46:10] It's very important to emphasize
+that Mars, especially in the beginning, will not be luxurious.
+[46:15] It will be dangerous, cramped,
+difficult, hard work.
+[46:22] It's kind of like that Shackleton ad
+for going to the Antarctic, which I think is actually not real,
+but it sounds real and it's cool.
+[46:28] It's sort of like, the sales pitch
+for going to Mars is, "It's dangerous, it's cramped.
+[46:35] You might not make it back. It's difficult, it's hard work." That's the sales pitch.
+[46:41] CA: Right. But you will make history. EM: But it'll be glorious.
+[46:47] CA: So on that kind of launch rate
+you're talking about over two decades, you could get your million people
+to Mars, essentially.
+[46:54] Whose city is it? Is it NASA's city, is it SpaceX's city? EM: It’s the people of Mars’ city.
+[47:01] The reason for this, I mean,
+I feel like why do this thing? I think this is important for maximizing
+[47:10] the probable lifespan of humanity
+or consciousness. Human civilization could come
+to an end for external reasons,
+[47:17] like a giant meteor or super volcanoes
+or extreme climate change.
+[47:24] Or World War III, or you know,
+any one of a number of reasons.
+[47:32] But the probable life span
+of civilizational consciousness as we know it, which we should really view
+as this very delicate thing,
+[47:40] like a small candle in a vast darkness. That is what appears to be the case.
+[47:47] We're in this vast darkness of space, and there's this little
+candle of consciousness
+[47:54] that’s only really come about
+after 4.5 billion years, and it could just go out.
+[48:01] CA: I think that's powerful, and I think a lot of people
+will be inspired by that vision. And the reason you need the million people
+[48:07] is because there has to be
+enough people there to do everything that you need to survive.
+[48:13] EM: Really, like the critical threshold
+is if the ships from Earth stop coming
+[48:20] for any reason, does the Mars City die out or not?
+[48:27] And so we have to -- You know, people talk about like,
+the sort of, the great filters,
+[48:32] the things that perhaps, you know, we talk about the Fermi paradox,
+and where are the aliens?
+[48:38] Well maybe there are these
+various great filters that the aliens didn’t pass, and so they eventually
+just ceased to exist.
+[48:46] And one of the great filters
+is becoming a multi-planet species. So we want to pass that filter.
+[48:54] And I'll be long-dead before
+this is, you know, a real thing,
+[49:00] before it happens. But I’d like to at least see us make
+great progress in this direction.
+[49:07] CA: Given how tortured
+the Earth is right now, how much we're beating each other up,
+[49:12] shouldn't there be discussions going on with everyone who is dreaming
+about Mars to try to say,
+[49:19] we've got a once
+in a civilization's chance
+[49:24] to make some new rules here? Should someone be trying
+to lead those discussions
+[49:30] to figure out what it means for this
+to be the people of Mars' City? EM: Well, I think ultimately
+[49:36] this will be up to the people
+of Mars to decide how they want to rethink society.
+[49:43] Yeah there’s certainly risk there. And hopefully the people of Mars
+will be more enlightened
+[49:50] and will not fight
+amongst each other too much. I mean, I have some recommendations,
+[49:56] which people of Mars
+may choose to listen to or not. I would advocate for more
+of a direct democracy,
+[50:02] not a representative democracy, and laws that are short enough
+for people to understand.
+[50:08] Where it is harder to create laws
+than to get rid of them.
+[50:14] CA: Coming back a bit nearer term, I'd love you to just talk a bit
+about some of the other possibility space
+[50:19] that Starship seems to have created. So given --
+[50:24] Suddenly we've got this ability
+to move 100 tons-plus into orbit. So we've just launched
+the James Webb telescope,
+[50:32] which is an incredible thing. It's unbelievable. EM: Exquisite piece of technology.
+[50:37] CA: Exquisite piece of technology. But people spent two years trying
+to figure out how to fold up this thing.
+[50:42] It's a three-ton telescope. EM: We can make it a lot easier
+if you’ve got more volume and mass. CA: But let's ask a different question.
+[50:49] Which is, how much more powerful
+a telescope could someone design
+[50:55] based on using Starship, for example? EM: I mean, roughly, I'd say it's probably
+an order of magnitude more resolution.
+[51:04] If you've got 100 tons
+and a thousand cubic meters volume, which is roughly what we have. CA: And what about other exploration
+through the solar system?
+[51:12] I mean, I'm you know -- EM: Europa is a big question mark. CA: Right, so there's an ocean there.
+[51:19] And what you really want to do
+is to drop a submarine into that ocean. EM: Maybe there's like,
+some squid civilization,
+[51:24] cephalopod civilization
+under the ice of Europa. That would be pretty interesting. CA: I mean, Elon, if you could take
+a submarine to Europa
+[51:32] and we see pictures of this thing
+being devoured by a squid, that would honestly be
+the happiest moment of my life.
+[51:38] EM: Pretty wild, yeah. CA: What other possibilities
+are out there? Like, it feels like if you're going to
+create a thousand of these things,
+[51:47] they can only fly to Mars every two years. What are they doing the rest of the time?
+[51:53] It feels like there's this
+explosion of possibility that I don't think people
+are really thinking about.
+[52:00] EM: I don't know, we've certainly
+got a long way to go. As you alluded to earlier,
+we still have to get to orbit.
+[52:05] And then after we get to orbit, we have to really prove out and refine
+full and rapid reusability.
+[52:14] That'll take a moment.
+[52:19] But I do think we will solve this. I'm highly confident
+we will solve this at this point.
+[52:26] CA: Do you ever wake up with the fear that there's going to be this
+Hindenburg moment for SpaceX where ...
+[52:31] EM: We've had many Hindenburg. Well, we've never had Hindenburg moments
+with people, which is very important.
+[52:37] Big difference. We've blown up quite a few rockets. So there's a whole compilation online
+that we put together
+[52:44] and others put together, it's showing rockets are hard. I mean, the sheer amount of energy
+going through a rocket boggles the mind.
+[52:51] So, you know, getting out
+of Earth's gravity well is difficult. We have a strong gravity
+and a thick atmosphere.
+[52:59] And Mars, which is less than 40 percent, it's like, 37 percent of Earth's gravity
+[53:06] and has a thin atmosphere. The ship alone can go all the way from the surface of Mars
+to the surface of Earth.
+[53:12] Whereas getting to Mars requires
+a giant booster and orbital refilling.
+[53:17] CA: So, Elon, as I think more
+about this incredible array of things that you're involved with,
+[53:24] I keep seeing these synergies, to use a horrible word,
+[53:30] between them. You know, for example, the robots you're building from Tesla
+could possibly be pretty handy on Mars,
+[53:38] doing some of the dangerous
+work and so forth. I mean, maybe there's a scenario
+where your city on Mars doesn't need a million people,
+[53:45] it needs half a million people
+and half a million robots. And that's a possibility. Maybe The Boring Company could play a role
+[53:52] helping create some of the subterranean
+dwelling spaces that you might need.
+[53:57] EM: Yeah. CA: Back on planet Earth, it seems like a partnership
+between Boring Company and Tesla
+[54:03] could offer an unbelievable deal to a city to say, we will create for you
+a 3D network of tunnels
+[54:12] populated by robo-taxis that will offer fast, low-cost
+transport to anyone.
+[54:18] You know, full self-driving may
+or may not be done this year. And in some cities,
+like, somewhere like Mumbai,
+[54:24] I suspect won't be done for a decade. EM: Some places are more
+challenging than others. CA: But today, today,
+with what you've got,
+[54:31] you could put a 3D network
+of tunnels under there. EM: Oh, if it’s just in a tunnel,
+that’s a solved problem.
+[54:38] CA: Exactly, full self-driving
+is a solved problem. To me, there’s amazing synergy there.
+[54:44] With Starship, you know, Gwynne Shotwell talked
+about by 2028 having from city to city,
+[54:51] you know, transport on planet Earth. EM: This is a real possibility.
+[54:57] The fastest way to get
+from one place to another, if it's a long distance, is a rocket.
+[55:03] It's basically an ICBM. CA: But it has to land -- Because it's an ICBM,
+it has to land probably offshore,
+[55:11] because it's loud. So why not have a tunnel
+that then connects to the city with Tesla?
+[55:20] And Neuralink. I mean, if you going to go to Mars having a telepathic connection
+with loved ones back home,
+[55:26] even if there's a time delay... EM: These are not intended
+to be connected, by the way.
+[55:33] But there certainly could be
+some synergies, yeah. CA: Surely there is a growing argument that you should actually put
+all these things together
+[55:40] into one company and just have a company
+devoted to creating a future
+[55:47] that’s exciting, and let a thousand flowers bloom. Have you been thinking about that?
+[55:53] EM: I mean, it is tricky because Tesla
+is a publicly-traded company, and the investor base of Tesla and SpaceX
+[56:02] and certainly Boring Company
+and Neuralink are quite different. Boring Company and Neuralink
+are tiny companies.
+[56:08] CA: By comparison. EM: Yeah, Tesla's got 110,000 people.
+[56:14] SpaceX I think is around 12,000 people. Boring Company and Neuralink
+are both under 200 people.
+[56:21] So they're little, tiny companies, but they will probably
+get bigger in the future.
+[56:27] They will get bigger in the future. It's not that easy to sort
+of combine these things.
+[56:33] CA: Traditionally, you have said
+that for SpaceX especially, you wouldn't want it public, because public investors wouldn't support
+the craziness of the idea
+[56:42] of going to Mars or whatever. EM: Yeah, making life multi-planetary is outside of the normal time horizon
+of Wall Street analysts.
+[56:51] (Laughs) To say the least. CA: I think something's changed, though. What's changed is that Tesla is now
+so powerful and so big
+[56:59] and throws off so much cash that you actually could
+connect the dots here.
+[57:05] Just tell the public that x-billion
+dollars a year, whatever your number is, will be diverted to the Mars mission.
+[57:13] I suspect you'd have massive
+interest in that company. And it might unlock a lot
+more possibility for you, no?
+[57:22] EM: I would like to give the public access
+to ownership of SpaceX,
+[57:27] but I mean the thing that like, the overhead associated
+with a public company is high.
+[57:38] I mean, as a public company,
+you're just constantly sued. It does occupy like, a fair bit of ...
+[57:45] You know, time and effort
+to deal with these things. CA: But you would still only have one
+public company, it would be bigger,
+[57:53] and have more things going on. But instead of being
+on four boards, you'd be on one. EM: I'm actually not even on the Neuralink
+or Boring Company boards.
+[58:02] And I don't really attend
+the SpaceX board meetings. We only have two a year,
+[58:07] and I just stop by and chat for an hour.
+[58:13] The board overhead for a public
+company is much higher. CA: I think some investors probably worry
+about how your time is being split,
+[58:19] and they might be excited
+by you know, that. Anyway, I just woke up the other day
+[58:25] thinking, just, there are so many ways
+in which these things connect. And you know,
+just the simplicity of that mission,
+[58:33] of building a future that is worth
+getting excited about, might appeal to an awful lot of people.
+[58:41] Elon, you are reported by Forbes
+and everyone else as now, you know,
+[58:46] the world's richest person. EM: That’s not a sovereign. CA: (Laughs) EM: You know, I think it’s fair to say
+[58:52] that if somebody is like, the king
+or de facto king of a country, they're wealthier than I am.
+[58:59] CA: But it’s just harder to measure -- So $300 billion. I mean, your net worth on any given day
+[59:07] is rising or falling
+by several billion dollars. How insane is that?
+[59:12] EM: It's bonkers, yeah. CA: I mean, how do you handle
+that psychologically? There aren't many people in the world
+who have to even think about that.
+[59:20] EM: I actually don't think
+about that too much. But the thing that is
+actually more difficult
+[59:26] and that does make sleeping difficult is that, you know,
+[59:31] every good hour or even minute of thinking about Tesla and SpaceX
+[59:39] has such a big effect on the company that I really try to work
+as much as possible,
+[59:45] you know, to the edge
+of sanity, basically. Because you know,
+Tesla’s getting to the point where
+[59:54] probably will get
+to the point later this year, where every high-quality
+minute of thinking
+[01:00:02] is a million dollars impact on Tesla.
+[01:00:08] Which is insane. I mean, the basic, you know,
+if Tesla is doing, you know,
+[01:00:17] sort of $2 billion a week,
+let’s say, in revenue, it’s sort of $300 million a day,
+seven days a week.
+[01:00:26] You know, it's ... CA: If you can change that by five percent
+in an hour’s brainstorm,
+[01:00:34] that's a pretty valuable hour. EM: I mean, there are many instances
+where a half-hour meeting,
+[01:00:42] I was able to improve
+the financial outcome of the company by $100 million
+in a half-hour meeting.
+[01:00:50] CA: There are many other people out there who can't stand
+this world of billionaires. Like, they are hugely
+offended by the notion
+[01:00:59] that an individual can have
+the same wealth as, say, a billion or more
+of the world's poorest people.
+[01:01:07] EM: If they examine sort of -- I think there's some axiomatic flaws
+that are leading them to that conclusion.
+[01:01:15] For sure, it would be very
+problematic if I was consuming, you know, billions of dollars a year
+in personal consumption.
+[01:01:23] But that is not the case. In fact, I don't even own
+a home right now. I'm literally staying at friends' places.
+[01:01:30] If I travel to the Bay Area, which is where most
+of Tesla engineering is, I basically rotate through
+friends' spare bedrooms.
+[01:01:38] I don't have a yacht,
+I really don't take vacations.
+[01:01:44] It’s not as though my personal
+consumption is high.
+[01:01:49] I mean, the one exception is a plane. But if I don't use the plane,
+then I have less hours to work.
+[01:01:55] CA: I mean, I personally think
+you have shown that you are mostly driven by really quite a deep
+sense of moral purpose.
+[01:02:01] Like, your attempts to solve
+the climate problem
+[01:02:07] have been as powerful as anyone else
+on the planet that I'm aware of. And I actually can't understand,
+[01:02:14] personally, I can't understand the fact that you get all this criticism
+from the Left about, "Oh, my God, he's so rich,
+that's disgusting."
+[01:02:21] When climate is their issue. Philanthropy is a topic
+that some people go to.
+[01:02:27] Philanthropy is a hard topic. How do you think about that? EM: I think if you care
+about the reality of goodness
+[01:02:34] instead of the perception of it,
+philanthropy is extremely difficult. SpaceX, Tesla, Neuralink
+and The Boring Company are philanthropy.
+[01:02:43] If you say philanthropy
+is love of humanity, they are philanthropy.
+[01:02:49] Tesla is accelerating sustainable energy. This is a love -- philanthropy.
+[01:02:56] SpaceX is trying to ensure
+the long-term survival of humanity with a multiple-planet species.
+[01:03:02] That is love of humanity. You know, Neuralink is trying to help
+solve brain injuries
+[01:03:09] and existential risk with AI. Love of humanity. Boring Company is trying to solve traffic,
+which is hell for most people,
+[01:03:16] and that also is love of humanity. CA: How upsetting is it to you
+[01:03:24] to hear this constant drumbeat of, "Billionaires, my God,
+Elon Musk, oh, my God?"
+[01:03:30] Like, do you just shrug that off or does it does it actually hurt?
+[01:03:36] EM: I mean, at this point,
+it's water off a duck's back. CA: Elon, I’d like to,
+as we wrap up now,
+[01:03:41] just pull the camera back
+and just think ... You’re a father now
+of seven surviving kids.
+[01:03:49] EM: Well, I mean, I'm trying
+to set a good example because the birthrate on Earth is so low that we're facing civilizational collapse
+[01:03:55] unless the birth rate returns
+to a sustainable level.
+[01:04:01] CA: Yeah, you've talked about this a lot, that depopulation is a big problem, and people don't understand
+how big a problem it is.
+[01:04:08] EM: Population collapse
+is one of the biggest threats to the future of human civilization. And that is what is going on right now.
+[01:04:14] CA: What drives you on a day-to-day
+basis to do what you do? EM: I guess, like,
+I really want to make sure
+[01:04:20] that there is a good future for humanity and that we're on a path to understanding
+the nature of the universe,
+[01:04:29] the meaning of life. Why are we here, how did we get here? And in order to understand
+the nature of the universe
+[01:04:37] and all these fundamental questions, we must expand the scope
+and scale of consciousness.
+[01:04:47] Certainly it must not diminish or go out. Or we certainly won’t understand this. I would say I’ve been motivated
+by curiosity more than anything,
+[01:04:54] and just desire to think about the future and not be sad, you know?
+[01:05:03] CA: And are you? Are you not sad? EM: I'm sometimes sad, but mostly I'm feeling I guess
+[01:05:12] relatively optimistic
+about the future these days. There are certainly some big
+risks that humanity faces.
+[01:05:20] I think the population collapse
+is a really big deal, that I wish more people would think about
+[01:05:28] because the birth rate is far below
+what's needed to sustain civilization
+[01:05:33] at its current level. And there's obviously ...
+[01:05:39] We need to take action
+on climate sustainability, which is being done.
+[01:05:45] And we need to secure
+the future of consciousness by being a multi-planet species.
+[01:05:51] We need to address -- Essentially, it's important to take
+whatever actions we can think of to address the existential risks
+that affect the future of consciousness.
+[01:06:00] CA: There's a whole
+generation coming through who seem really sad about the future. What would you say to them?
+[01:06:07] EM: Well, I think if you want the future
+to be good, you must make it so. Take action to make it good.
+[01:06:14] And it will be. CA: Elon, thank you for all this time.
+[01:06:19] That is a beautiful place to end. Thanks for all you're doing. EM: You're welcome.

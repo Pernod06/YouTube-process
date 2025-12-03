@@ -1,0 +1,414 @@
+Video 2PjmPU07KNs
+======================================================================
+
+[00:00] this video is sponsored by hadong one of the best open source platform for logging monitoring and debugging your
+[00:05] large L model applications today I want to show you how can you make your cursor workflow 10x more effective to build
+[00:11] production level application with much less arrows if you don't know what cursor is it is the most popular AI code
+[00:16] editor that everyone is learning it enable anyone even 8-year-old to be able to build fully functional application
+[00:23] using just natural language and we saw many wild example just form past week all around internet where people
+[00:28] showcase beautiful application that they have been building with cursor but the moment you start building with cursor app yourself you probably start
+[00:34] encountering countless arrows and very hard guessing actually up running and if this is your experience the good news is
+[00:41] that there are many things you can do to actually dramatically improve the success rate for example instead of giving cursor a simple instruction to
+[00:48] build out the whole web application you actually need to learn how to write the best documentation to communicate and
+[00:53] align with cursor what are core functionalities how does n file structure sure look like including code
+[00:58] examples and list out all the dependencies or it might be a bit unclear of which text tack that you
+[01:04] should be using and how does cloud VZ and cursor fit together into a cohesive
+[01:09] workflow and when to use which one with all those tips and best practice workflow I was able to dramatically
+[01:14] improve success rate for my own purs so I'm going to show you step by step what does my workflow look like so you can
+[01:20] replicate and build your next dream app and the example application I want to show you how to build today is a really
+[01:26] interesting AI analytics platform called Gummy Search it basically utiliz what what lar L model is really really good
+[01:32] at which is reading through thousands of unstructured redit posts and summarize extract key information like what kind
+[01:39] of pinpoints people are struggling with and what kind of opportunities might be for solutions that people are asking for
+[01:44] and I learned about this app from one of the Greg's video where he showcased how he use Gumi search to find startup ideas
+[01:50] which I highly recommend and what got me really interesed in to use this as example is because getting large L model
+[01:56] readings through huge amount unstructured data and extract insights can be us utilize for many other data
+[02:01] source apart from just rdit like you can probably build application for Twitter Facebook group Discord or even private
+[02:07] data source that you might got somewhere else so to hour showcase how can you use cursor to reute such social media
+[02:12] analytics platform where it can res thousands of posts and summarize and extract key information for people to
+[02:17] find Opportunities with a full backhand setup as well as integration with large language model monitoring platform so
+[02:23] you can optimize cost so let's get started so to get started instead of jumping into cursor Direct ask you to
+[02:30] build something out we need to do some planning the first thing is we want to scope out a little bit about what kind
+[02:35] of core functionality we want to ship my process is to spit out a core scope the application has to have to be useful now
+[02:42] do some quick research maybe talk to chbt to understand what kind of like package that I can use for core
+[02:48] functionalities in the end I would get cloud or 01 model to design the project structure folder so that I can plan
+[02:55] ahead based on all the requirements I have and then write out the detail requirements so in order for a specific case I will create new GitHub report
+[03:02] called Reddit analytics platform then I will start creating a instructions. MD
+[03:07] file and normally I would start with a file structure look something like this I would give a Pur overview and then
+[03:12] start spit out the cool functionalities including documentations of package that we're going to use and current file
+[03:19] structure so that I can ask 01 model to plan a little bit so in your case you can probably follow very similar structure especially if you're building
+[03:25] a web application for project overview I'll just give a brief description that you are building a Reddit application
+[03:31] platform where users can get antics of different subreddits where they can go and see the top contents as well as the
+[03:37] category of posts and you will be using nextjs 14 chassis in Tailwind Lucid icon
+[03:43] and in term of tax stack so nextjs is just one type of Frameworks that we are using similar to react and chassen is a
+[03:51] UI component library and telwin is a CSS Library where it will make a code more
+[03:56] easier to understand and Lucid is icon library that we can use but if you want to use other component Library you can
+[04:02] just change it here and then I'm going to start flashing out core functionality this is probably the most important part
+[04:07] I basically want to think through what are the core functionality that this app has to have in my case if I use Gummy
+[04:14] Search as the reference we need a page to actually view all the subreddit available and user can create a new
+[04:20] subreddit if they need and then we also need a part to revew all details for specific subred and from my experience
+[04:28] the most useful part of Gumi search is the same where I can see the top content as well a category about which post
+[04:34] where people talk about solution request which post they talk about P anger and something we can even do more than gumy
+[04:40] search is that sometimes I have very specific type of post that I want to find so I want to enable people maybe
+[04:47] add a new category as well so in my case I would have a few different functionalities one is the ability to
+[04:52] see the list of available subus and add a new sub Rus and it need to display a sub page uh and we also need to Fat post
+[05:00] data in the top post tab as well as using open AI to analyze the post data into different category SS and in the
+[05:07] end a bonus point to add new SE category and what I need to do after I basically just need to spit out all the detail
+[05:14] interaction that I can Sy of if this is your first time writing detail product doc it probably take some time but it
+[05:20] will be worth it so in my case I will write down the details that user can see list of available Subarus that already
+[05:25] created displayed in cards common ones like AMA and open AI and users can click
+[05:30] on add a Reddit button which should open a model for user to paste in Reddit URL and add and after user adding a Reddit a
+[05:37] new car should be added and in subreddit page uh clicking on each subreddit should go to Reddit page with two tabs
+[05:44] as well as other details that you can pause the video and type out later and after this core functionality next thing
+[05:49] we want to do is to find the libraries and packages that we're going to use to build out some functionalities so there are two type of documents I would need
+[05:56] to include one is the code example for how do we get ready Reddit data so there are few ways I can go the easiest way is
+[06:02] that you can go and ask chat gbt especially for functionality like this one where reditor is not new SC you
+[06:08] should already have training data about how to implement things for Reddit so I can just go and ask I'm building a web
+[06:13] app using nextjs for fashion Reddit post data what is best package to use then I can say give me answer where snow wrap
+[06:20] seem to be one of the best package to use and then I can go to npmjs.com to search for that specific package so mpm
+[06:27] is like the package man manager which we're going to use to install this package later so in here it give us some
+[06:33] examples and also link to the detailed documentations which we can take look to get more details and one thing I would
+[06:40] normally do is I would start un cursor to give it documentation and try to spit out some proof concept of this functionality that we want so I will
+[06:47] just copy this one go back to cursor open the cursor composer and then I addm
+[06:53] uh doc where I can click on add new Doc pasting the uh link here so it were
+[06:58] adding the documentation of the snow wrap I will confirm and then here I will give a specific instruction help me
+[07:04] build a simple typescript file of fing recent RIT post data from past 24 hours under orama including title content
+[07:11] score number of comments and date using snow rrap so you can see it start creating example uh script so I can
+[07:17] accept all and the first thing is I will need to get the redit API credentials so you can keep asking it about like how do
+[07:24] you get uh Reddit API credentials but you basically go to reddit.com preference SL apps and then you can
+[07:30] click on create another app and give a name so in our case I call Post categorizer and I want to choose script
+[07:37] description we can put an app that analyze Reddit posts and about Ur you
+[07:43] can keep empty redir URL I will just keep Local Host 3000 and click on I'm
+[07:49] not robot and create app and now you will get a credential here so I'm just going to temporarily replace a
+[07:54] credential and the user agent you can just put it whatever client ID will be the tag
+[07:59] here and the secret ID will be this one and here it ask for the refresh token as
+[08:05] well by remember snow wrap off a few different ways to oos I just want to make an easy one which using the
+[08:11] username and password so I'm going to copy this one and replace the refresh token to be username and password where
+[08:17] I can putting my username and password in next is I want to install mpm so I'll
+[08:22] copy the command line in terminal and then do TS node fash RIT post. TS Okay
+[08:28] cool so you can see that it does return actual post data back so this code
+[08:34] example is actually working and then I can just copy paste this thing as a code example and again just taking away
+[08:40] another layers of potential arrows from this process by doing some research early on so what I'll do is I will copy
+[08:46] this code example in and go back to the instruction. MD and put example here says documentation of how to use snow
+[08:55] wrap to fetch RIT post data so code example and paste this in and now we
+[09:01] also get description that we will use no RP as a library to fetch Reddit data and I will basically do the same thing as
+[09:07] documentation for how to use open AI structure output to categorize the RIT post as well so our go to open AI
+[09:13] documents copy the link in go back to cursor add a new one and add Doc and new
+[09:19] one paste in open AI structured output confirm and here I would say instruction
+[09:25] help me write a simple typescript to categorize the RIT post it should have output post category analysis where it
+[09:31] has bodan value bodan basically is like true and false value for each category below solution request P anger advice
+[09:38] request and money talk so I will click enter so it create a simple script for me and I can just come here and
+[09:44] temporarily replace the API key here I do notice the code here is actually not using the structure output so I'm going
+[09:50] to actually give a very specific example uh that I get from the documents and
+[09:56] this is kind of another reason why I think this type of in Advan plan research is necessary so I would just go
+[10:02] back to cursor and then say I want you to use the open AI structured output
+[10:08] function use example above as reference to refactored code uh and uh if I come back out you can see that it used the uh
+[10:15] structure output now even though the model is wrong so I will change this to be 40 mini but I will also just do some
+[10:23] quick updates because I don't really like the structure I wanted to put a description to actual Z data type here
+[10:29] here instead so I can just choose this part of code so I can just go back to cursor composer and I want you to set a
+[10:36] description of each category to zone model itself instead of part of prompt so later it'll be more flexible if
+[10:42] categories change okay now it should be all good so I will open Terminal mpm install open and zot and then do TS node
+[10:50] categorize post. TS okay I got this Arrow okay looks like it didn't add the
+[10:56] beta here so I'm going to paste in the beta according to the documentations
+[11:01] okay another problem I found earlier was that type script have very strict return type and previously the return type was
+[11:07] defined ex result type we defined earlier but the actual thing we return here is string so I just remove that and
+[11:12] we can run again cool now you can see it returned this result po play so this is also example we can include into the
+[11:19] instruction so our add documentation for open AI structured output code example
+[11:26] and I can also include the example output and example response and at top I update uh using open AI structure output
+[11:34] functions so this pretty much the Croc of the initial draft the last thing I want to do is I want to include the
+[11:40] current file structure to do that I will first need to set up the project so to set up project I can go to chass in they
+[11:47] have pretty good command line I press in npx chass in at latest initial and it
+[11:52] will ask me whether I want to create a new nextjs project first I will click Y and then give name Reddit and Antics and
+[12:00] I will choose a New York style natural uh yes then all the project has been created publicly so you can see a
+[12:06] project folder has been created uh what I want to do is that I actually want to
+[12:11] First create a folder inside this project folder called instructions and move this instruction MD under that
+[12:18] folder and now I do cursor Reddit analytics so this will open cursor in
+[12:23] that specific folder uh if you don't have this cursor command line yet you can command shift p and then select this
+[12:30] shell command install cursor command otherwise you can always just open that specific folder from here but now I'm
+[12:35] going to this specific uh project folder and then open the instruction that we created earlier so let's firstly install
+[12:41] a few different packages that we know we're going to need so mpm install snow wrap open Ai and z and next thing is I
+[12:47] will create a new file called EMV do loal where I will add all the credentials in and also do MPX chassi in
+[12:55] at latest app so at default the components from chass in one be automatically add in so I'm going to
+[13:01] manually select the ones that we know we're going to need like badge card input label sheet table tabs and enter
+[13:10] Then you can see the components has been added then we need to add the current file structure in so we'll firstly do
+[13:16] Brew install trees so this is a library that going to get a snapshot of a current file structure so if you just do
+[13:23] tree it will return the whole file structure which is not exactly what we need instead I would do tree- L which
+[13:29] which means we would go just two layer down which should be enough and then - I which means ignore so we don't want to
+[13:34] include node module file so now it will give me a clean file structure here uh
+[13:40] and I will copy this in Reddit analytics and then paste this file in to indicate
+[13:45] what does existing project folder look like so now what we have here is a pretty decent starting point of the
+[13:52] product requirement dot but that's not it to actually get a cursor produce really good result with less and less
+[13:57] Arrow I actually want to give it initial PRD to 01 model or Cloud uh to design
+[14:03] what does the final Pur structure should look like what kind of dependency Z will be and write out the final PRD to fill
+[14:09] in all the details I personally found 01 is really good at writing and filling those detail docks what I would normally
+[14:15] do is copy the existing Pro requirement dog paste in here and then add a bottom and above is a project I want to build
+[14:22] how should I structure my project file try to create as few files as possible because I found when you have less files
+[14:29] cursor tend to have less arrows and click enter so you can see the O Model start syncing through a few different
+[14:35] steps and then spit out a project structure file based on the requirements and after that I will give the Second
+[14:42] Step help me adding details to the original PRD that give clear alignment to developers who are implement this
+[14:48] project so don't create actual code just a PRD including file structure in the doc and all documents provided with both
+[14:55] example code and response those are important context and click enter again o1 model will start singing through a
+[15:00] few different steps and spit out a very detailed instructions of how this project should be created as well as
+[15:07] updated Pera structures and code examples in the end it will give a very detailed breakdown of all different
+[15:14] components okay great so this is really decent product requirement doc uh the only downside is you can't just copy
+[15:20] paste in because it's not in markdown format so normally what I do is I go to Cloud paste this in and then say help me
+[15:27] convert this to markdown and then Cloud will break that down into specific markdown files that I can copy paste in
+[15:35] once this finished I will just copy this and paste into instruction. MD and save
+[15:41] okay so this file should give cursor quite good amount of alignment so now I think we are pretty much ready to start
+[15:48] getting cursor Wan so only last thing we want to create aemv local file and putting the credential of Reddit and
+[15:54] open AI here and now let's get cursor to start implementing this project but before we diam I got a lot of DMS where
+[16:00] people asking for more indepth tutorial of utilizing AI to build fully production ready applications and that's
+[16:07] why I started a community called AI Builder Club where I'm spending lots of time every week adding really in-depth
+[16:14] content of how can you use AI to bring your next startup ideas life it includes step-by-step tutorial of how to build
+[16:20] real world use case with AI where our share best practice prompt and code example that I use in every single
+[16:27] project and you can just copy paste case plug and play as well as some ready to use template for some common agents that
+[16:32] you can build and most importantly you can go and post challenges and questions that you are experiencing in the
+[16:38] community me or other community members will normally jump on and answering you can also see some secret tips that other
+[16:44] AI builders in the community have tried and worked well for them if you think this is interesting you can click on the
+[16:49] link in the description below to join and now we can start getting curser to build out this application using the
+[16:55] fully flash out documents so I would do command I open cursor composer so let's
+[17:00] give instruction let's build a RIT analytics platform based on instruction let's firstly build 1.1 view available
+[17:07] subreddits enter so you can see that it will create files in all the right plac
+[17:13] and I click accept and we can try to run this by doing mpm wrong dep okay great
+[17:19] so we can see that the homepage already created listing out all the sub Rus available next let's build 1.2 adding
+[17:28] new sub Rus so Crea new components under the components called add sarus model
+[17:33] and it also ask me to add in those new components I believe I already added oh but looks like I didn't add the dialogue
+[17:40] okay so I'm going to do npx chass and latest add dialogue now if I go back to Local Host 3000 I can see this new
+[17:47] button called at subreddit if I click on that uh you can see the UI is a bit broken but we're going to come back to
+[17:54] UI later first thing we just want to making sure everything works so the functionality of adding sub seem to be
+[17:59] there and next we're just going to move on to the subredit detail page navigation let's view the next part of
+[18:08] subreddit detail page navigation so it will basically create pages and files
+[18:13] based on the predefined structure so if I go back to Local Host and click on the specific Reddit page you can see it
+[18:20] navigate to that specific side page then I will ask you to move to second part adding the tabs great now let's build
+[18:28] next part so you can see the beauty of predefined the product requirement doc like this is
+[18:34] that you basically break task down into small steps that the cursor can take very well and I will accept all so if I
+[18:41] go back to the app and click on this it will open the two tabs here as well and again I'm going to ignore the UI and
+[18:48] just finish the functionalities so I'm going to give instruction now great
+[18:53] let's build fashion RIT post uh 3.1 data retrieval so this should create a few
+[18:59] different files and I will just click accept all and refresh the page here you will see there are looks like there's
+[19:06] some arrows in terms of the modules so I'm going to paste the arrow into the cursor and help me resolve this Arrow so
+[19:15] we might need to install this two uh libraries or just go to the other terminal install and I'll accept all now
+[19:22] I can actually display the post great now let's build 3.2
+[19:29] okay after this looks like no content is displayed so I'm going to go back I can see loading posts show up briefly on UI
+[19:36] but later it disappear and no post are displayed on the interface help me things through the root cost Ling step
+[19:41] by step so first say try to add some additional logins or accept this it looks like it says no post F which would
+[19:48] be weird my guess is maybe the API is set up incorrectly so I can go to
+[19:54] libraries rdit dots and give feedback uh it says no post found CU this because
+[20:01] Reddit dots is not set up properly okay so it looks like the problem is that the
+[20:07] client side versus server side where the rdts file was executed on the server
+[20:12] side but the separ r tabs component is client side component so solution here is that to get the data flow from server
+[20:20] side API to the client side components given this observation here are the potential root cost the client and
+[20:26] component might not be able to make a service side API called directly so the solution here is it creating new API
+[20:32] route to fetch post so now all the post has been updated poply and what I would do is I will quickly come here and then
+[20:38] submit a commit set up project and fetch redit post commit so I going back to the
+[20:46] cursor composer and also this is fashing RIT post now next based on instruction let's build the 4.1 post
+[20:54] categorization uh I will accept all and go back to this page refresh okay so
+[20:59] looks like here is Arrow I'm going to copy this arrow and uh add to composer help me identify root cost and resolve
+[21:06] this issue let thing step by step accept all okay and next is I wanted to display
+[21:12] categories as well so I would say next let's implement this 4.2 display categories okay so looks like this one
+[21:18] issue that there's no actual categorization displayed so I'm going to go back cursor and then giveing
+[21:24] instruction back if categorize post and point actually
+[21:29] working okay if we go back to the reddits you can see again the end point
+[21:34] here of open AI is not exactly what do we have in the instruction so I need to be more specific I'll go back to the
+[21:41] instruction copy paste the code example or accept all first and then add Reddit
+[21:46] TS paste the file in the categorized post function is not implemented correctly it has to be based on
+[21:52] documentation we provided in this instruction file please refactor the code so accept all and I want to change
+[21:57] this model to to be 4 uh mini and I still observe a few uh kind of weird part for some reason it just keep
+[22:04] ignoring some specific part like beta so I just need to manually uh copy paste
+[22:09] over those things and Okay cool so you can see that the category has being show
+[22:14] off properly for each post if I go to SS I can click on each card and the relevant post will be displayed here
+[22:21] great so I'm going to add it commit again uh categorize posts ready so you
+[22:27] can see the core functional is implemented here I can see the top post I can also go to seams page future out
+[22:33] post with specific categories but for anyone who is launching large L model based application you all got a new
+[22:39] problem that you need to worry about which is how do you Monitor and alert the large L model usage and whether or
+[22:45] not you optimize the cost structure there can really make a difference of whether your business succeed or not I give you one example a few months ago I
+[22:51] launched a AI girlfriend and back then I offer a 60 seconds free Tri chat for
+[22:56] every single user lots of people sign up but somehow I just never make money from it so I manually Implement a bunch of
+[23:02] tracking to understand the cost structure there and later I realized for the 60 seconds free Tri if I have 1%
+[23:08] conversion of all the users I need to charge at least $13 from each user to break event so it's really a balance
+[23:14] between the performance cost and speed and the same case for this radit analytics platform we kind need to
+[23:19] understand what is cost of every single large Lear mod call to together those categories and how many post do we
+[23:25] normally have under one separ Addus that's why I normally were set top integration to large lar model
+[23:30] observability platform like hadon so if you haven't heard about hadon before haacon is open- Source platform for
+[23:36] logging monitoring and debugging lar L model applications where they give us ability to see exactly how people are
+[23:44] interacting with our large Lang mode application track the cost arrows and latencies so that we can optimize for
+[23:50] the performance and I can also do a bunch of very Advanced interesting things like automatic caching the
+[23:56] response if the promp is same to to save the cost and improve speed send customer properties so that I can segment
+[24:02] different type of requests and many more and the best part is it is extremely easy to set up so if you are calling an
+[24:08] open AI model like me all we need to do just adding this base URL and additional headers from our open AI clients and
+[24:15] that's pretty much it I can just copy this over and go back to cursor open the rit. TS which is where we make open Ai
+[24:21] call and paste this in and add this environment variable headon that is pretty much it so now if I go to the RIT
+[24:27] platform and open a subreddit after I get this response and it will automatically track that we made 200 lar
+[24:34] mod request for that specific subreddit and that probably means we processed around 200 posts and those requests are
+[24:40] from the same user basing in Australia which is me and total cost around 1 cent so that now I know the cost to onboard a
+[24:47] fairly popular new sub Rus is around 1 cent using the GPD 40 model and I can go
+[24:53] to request to see the detail of every single requests as well as the actual
+[24:58] prompt that we send to open ey and immediately I can spot the problems in my prompt for example the structure now
+[25:04] is actually not very clear what are the actual post content because some of content looks like part of prompt and
+[25:10] this might confuse lary model so I can immediately improve the performance by updating prompt here and save but on the
+[25:16] other side you also have a URI that allow me to experiment with different prompt directly and also switch between
+[25:22] different models and for each data while I'm reviewing that I can add this to a data set called bad sessions and this
+[25:27] allow me to create data set that I can use to either evaluate the new model or ply or F tune the model so I highly
+[25:34] recommend that you set up your L mode application with those logging and morning platform and headon is one of
+[25:39] the best one I have put the link in the description below for you to try out headon for free after we connect this to
+[25:45] Helicon the next thing is we want to set up the back end so we have the core functionality kind of implemented for
+[25:50] this RIT analytics platform but Annoying part now is that every time when someone click on this subr page it will refresh
+[25:57] all the posts and then going through the open AI to analyze and categorize posts which is not optimal and going to cost a
+[26:05] lot of money so what IDE I want to do is that when someone open the page and fet the data for the first time I want to
+[26:10] save this data on a database so that next time when someone else open this page we can check what is the last time
+[26:17] we fin the data from Reddit if it is within 24 hours let's not update again
+[26:22] so to do that we actually need cursor to implement a kind of new functionality to save the data somewhere I want to
+[26:27] showcase this because this is a great example to Showcase how can you add new features to exist pures they already set
+[26:33] up so to do that instead of just open cursor and ask it to implement the whole project I will actually open the side
+[26:40] panel and add codebase so this is really powerful feature where cursor actually
+[26:45] allow us to reference the whole code base and I can specify certain files to include and exclude for example I
+[26:51] probably don't want the node modules folder so I put node modules folder by the way I don't know if putting the
+[26:57] folder name going to work but I just going to put it here uh if you know the answer please comment below let me know and I'm going to put detail instruction
+[27:04] so I have this project build based upon the original instruction but currently we need to fetch R data and call open
+[27:11] API every time when someone open the subr page which is not optimal I want a backend engineer to connect it to super
+[27:18] base and save RIT post data and AI analysis data to superbase and only fetch data if the last update time is
+[27:25] older than 24 hours ago help me generate detail stock that can help back and developer understand this project
+[27:31] structure what cool parts to build for super base integration that compatible with this current project structure no
+[27:37] need to include actual code example just the design do by the way if you don't know what superbase is super base is
+[27:43] open source project that offered complete backhand for both mobile and web application it was introduced back
+[27:49] 2020 and got popularity very very quickly because before super base you basic have two options for building
+[27:55] backand one is Firebase another is a WS amplify they both kind of works but problem is it kind of lock you into
+[28:02] specific vendors which is not optimal that's why super Bas grow so fast because it allow you to build backhand
+[28:08] and host anywhere you want and they provide full backhand service for database authentication storage and even
+[28:15] Vector storage now and offer front and SDK to connect to the backand very easily and if you haven't buil any kind
+[28:21] of backand feature before it might feel stunning but it's actually easier than you saw what you really need is kind of
+[28:28] Define what kind of data we actually need to store about your application for example in our case you probably always
+[28:33] want to have a table for profile so that we can track the users you can even add things like tier to tracking the pricing
+[28:40] tier how many credits they left and strip customer ID and subscription ID if you are building the payments into the
+[28:45] platform as well as sub ratus so we want to track the list of different Subarus and the last updated time and list of
+[28:52] posts for each post we want to track title content scores and list of categories so you can basically think
+[28:58] them as spread sheets what kind of sheets you need and what kind of columns you need for each sheet but if you don't know what specific columns that will be
+[29:05] needed don't worry you can ask AI to help you figure out so go back to cursor so first thing I will do is I will open
+[29:11] Terminal and get file structure uh so I will use the same command but this time I will use three layers deep so this
+[29:18] will give me uh the latest file structure and I'm going to copy this over and I'm just going to the
+[29:24] instruction. MD and update the file structure here and then I'm going to copy this over to the instruction on the
+[29:31] right side and give instruction I have a project built based on the instruction. MD but currently we need to fast red
+[29:38] data and call open API every time which is not optimal I want a backend engineer
+[29:43] to connect to super base save each separated data to super base and only fetch data if the last update time is
+[29:50] older than 24 hours ago help me generate detailed documentations they help backand developer understand project
+[29:56] structure what a cool parts beautiful superbase integration that compatible with current project structure and what
+[30:03] database should we create and what optimal schema should look like let's sync step by step and I actually want to
+[30:09] use 01 preview model here directly and click enter okay now it return back a
+[30:15] very detailed documentations where it talk about how the data currently FL it also show me the actual database schema
+[30:22] design and data fashion logic as well as detail steps so this is really good next
+[30:27] thing is actually want to convert this into a markdown file then I can get cursor to refer to so I'm going to copy
+[30:33] paste the hos thing and go to cursor help me convert this into proper
+[30:39] markdown format okay great so I can copy this over uh go to instructions folder
+[30:45] and create a new one called superbase setup. MD paste this is in and we do
+[30:51] need to update one part which is the file structure I will need to copy the latest file structure into here and Save
+[30:58] and before we get into cursor we need to do a few steps firstly we need to install uh super based client Library
+[31:04] our open Terminal and paste in and then next we can start using cursor composer so I'm going to open cursor composer and
+[31:11] then say we need to implement super base integration for this current Project
+[31:19] based on instruction here super base First St to initialize clients so enter
+[31:26] so you can accept all and next it will we need to add the credential into env. loal and to do that we need to set up
+[31:33] the superbase project first so I'm going to go to super base and create new project I'm going to give a name edit
+[31:39] analytics and give password okay great and after the
+[31:45] project created I will go to Project settings and API then here we will get
+[31:51] the credential we need one is URL another is service row credentials and after that we will need to create the
+[31:57] two database table as well so there are two ways you can do that either you can go to table editor and create a new
+[32:03] table uh by just typing the name of table and adding the colum based on instruction or we can actually go to
+[32:09] cloud and then give instruction give me the SQL command to create all tables in
+[32:16] super base directly then it will give me this SQL code I can copy and go to the
+[32:22] SQL editor paste it in and then run okay and after it's running you can go to table all those tabl should be created
+[32:29] already according to the instruction so I'm going to uh give the instruction grid I've set up superbase project table
+[32:35] and add environment variables now let's do next step to initialize superbase client and modify the data fashion logic
+[32:42] and I'm going to copy paste the specific part into here as well and click enter so I'm going to click accept all and
+[32:49] then do let's do step six update PR now and accept all uh and the next step now
+[32:57] let's test data flow okay I can see I got a few arrows so past those arrow in
+[33:03] got this Arrow after loading sub page and accept all okay and thanks for the
+[33:10] log before I can see that we successfully fashed data from Reddit but got Arrow actually upserting data so it
+[33:16] says couldn't find advice request okay so I guess probably reference wrong scheme even though it is including in
+[33:23] the doc so this time I'm going to be more specific copy paste actual specific scheme in and then copy paste this arrow
+[33:29] in I got this Arrow seems fail to push data to super base please refer to the
+[33:39] actual sub red to actual tables and schemas we set in super base let think
+[33:46] step by step yeah save this and if I refresh again I got another arrow so so
+[33:51] I'm going copy paste in I go this Arrow after updating TS okay and our accept
+[33:59] and we got another arrow here related to super base so I'm going to copy paste in
+[34:05] and enter so it says that duplicate key Arrow as well as category is not defined
+[34:10] so it is fixing those ones okay cool so I can see the post has loaded and uh
+[34:15] there are also uh post created sub loaded as well as uh post categories
+[34:22] however I do get it arrow and looks like the issue is that for some reason it
+[34:27] kind of F the data twice so I will go back to cursor and then copy paste this
+[34:32] in everything seems working now I can see data stand to super base the only issue is that it seems that somehow we
+[34:38] fetch dat twice after initial fetch succeed this letter Arrow I pasted what could be the root cost okay great so now
+[34:45] I can see data is loaded poply on the front end and if I quit this page and
+[34:51] coming again you can see dat load much faster because reading data is from the super base the only issue is that the
+[34:58] comment data didn't seem to be loaded create ad data is not loaded the category is also not loaded so I'm going
+[35:05] to go back to cursor so here I will give instruction that there are some issues for top right post command created
+[35:11] category data then seem to load down front end and for Sims no data is loaded too but I can see in super baseer data
+[35:18] exist what could be the ru cost okay so it give me answer but for some reason it didn't really update the file directly
+[35:25] so I'm just going to manually copy paste in so you can just copy this function name go to search uh and then you will
+[35:31] find a specific file so we need to update this part I'm going to update
+[35:37] this part as well as the return value so I save this and refresh okay so you can
+[35:43] see the comments data and the create data has been displayed properly the only thing is the category data still is
+[35:50] not pulling through and let me just double check I do think the post categories are create pop so I will so
+[35:58] give instruction great the created and commands data are displayed now however
+[36:04] no category data is loaded what could be the ru cost help me Sy through step by
+[36:13] step and what I also probably do I would just copy paste the command we have
+[36:19] about the schema above is the table details we use to create uh super based
+[36:27] table as reference so I say so I pasting the actual SQL that we use to create
+[36:33] table to give it more context and then tell it to uh no category data is loaded
+[36:38] what could be root cost help me Sy step by step and above is a reference okay so it ask me to add in uh the debuging for
+[36:46] so I just add it and then try to load the data again so I can see that the
+[36:51] post category looks something like this so I tell it post category looks like an
+[36:59] array of object our pting like this okay great so everything is working now uh I
+[37:07] can see that it's added to super base and I can go back and click again data
+[37:13] will be loaded instantly but if the first time I open something it will load the data and sync all the data to super
+[37:20] base so this actually how you can build a new feature on top of project that already exist and the last part I want
+[37:27] to show you is how can you make your UI looks a lot better so I'm sure you definitely heard about vzer which is
+[37:33] kind of generative UI platform introduced by versal a lot of people are talking about it but it might be not
+[37:38] super clear to you about when should you use VZ for my experience you can basically use cursor to build out the
+[37:43] functionality of your application and in the end you can go back ask v0 to make your UI looks a lot better and it's a
+[37:50] lot easier than you saw I will show you how so I basically ask v0 to help me update UI Page by page for example I
+[37:57] will go back to my app and choose page. TSX which is kind of like homepage where
+[38:02] I display all the Rus and what I would do is I will basically just go to vzer and paste in the page. TSX and then I'll
+[38:08] give instruction I'm building a RIT analytics platform above is homepage displaying all the sub R is available
+[38:14] please keep the functionality exactly like above but make UI a lot better remember only changes UI do not change
+[38:20] functionality and variables so I will click enter what it will do is that it will St spit out the UI it might give
+[38:26] you some error but you can ignore that I will just come here and copy paste this code and go back save you can see the UI
+[38:33] looks a lot better and different so this is basically how we going to update UI we basically just need to change things
+[38:40] bit by bit so next thing is I want to update the add subreddit button so now I'm going to go back to components and
+[38:46] let's change as SE model button so I'm going to copy things in above is seated
+[38:53] model and button and again I'm going to uh copy the same uh kind of code same
+[38:59] prompt here please keep the function at exactly same as above but make UI a lot better and once it's finished I'm going
+[39:05] to copy this over paste in okay one thing I did try again is add this part
+[39:10] making sure the same style as the previous page you created so that things will be consistent uh all right I will
+[39:16] copy this in save okay so now you can see the button is also in the same style
+[39:21] as well if I click on that it will give me the kind of dark mode model and next thing I want to change those uh cards
+[39:28] that display in the subreddit as well so I will go to subreddit card basically do the same thing copy those over and I
+[39:35] just copy exactly same prompt okay so the card has been created uh I can copy this paste in uh great now the style you
+[39:43] can see is the same as everything else on the platform next I will go to the subreddit page and there I will firstly
+[39:50] go to the Subarus page and paste it in and use the same prompt and give
+[39:56] instruction great above subred page displaying detail of this subed analytics uh and enter okay once this is
+[40:02] finished even though it shows Arrow here but I'm going to ignore that and just copy this paste in here cool so you can
+[40:10] see that the overall structure looks more and more similar we only have a few
+[40:15] things left subred tabs um copy that in and paste over okay still look a bit
+[40:21] wrong but I will just copy this code over and uh go back to cursor save it uh
+[40:27] and go back here okay it actually does look pretty good it kind of blend into the dark mode same overall um the next
+[40:35] thing I want to do is that I want to update table so I will uh go back to the
+[40:41] post table copy this and paste it over nice so it looks a lot better now with
+[40:46] the right color scheme and the Addison icon as well obviously you can promp it
+[40:52] further to get the right style you want I'm just going to move on to the last part which is same card so paces and
+[40:58] paste in awesome so you can see that now the UI is a lot more flash out than before and everything looks a lot more
+[41:05] cohesive and obviously if you don't like a style you can prompt V Zer to change style as well but I would suggest you do
+[41:12] at very beginning so this is how you can set up a fully functional web app with
+[41:17] beautiful UI and backand setup the last thing is that we actually want to bring this app live so the rest of world can
+[41:23] see it and to do that we're going to use Verso which is company behind next JS and they made it deployment a lot easier
+[41:30] uh so you can basically go to Verso create account and choose this purchase GitHub repo and going through a
+[41:35] deployment process which normally involves some kind of debug process as well I'm not going to go into details
+[41:41] and if you want to learn details about how do you actually deploy the web app Val versal you can check out the other
+[41:47] video where I dive deep into every single step that's needed to put your app life I've put that link in the
+[41:53] description below so you can check out so this is some of my best practice workflow of how do I use cursor to build
+[41:59] fully functional application by creating very detailed documentations I hope you find this useful I highly recommend to
+[42:05] try out and even build some kind of more advanced function that maybe chat with this redit data and if you want to learn
+[42:11] detail things like how do you build user authentication with cursor and how do you connect to stripe so that you can
+[42:17] charge different pricing tier you can join my community AI Builder Club where I share a lot of tips and detailed
+[42:23] prompts and code example of how to build AI applications and each one of them has my best practice prompts that I
+[42:29] personally use for every single project where you can just copy paste Plug and Play plus you get to connect with other
+[42:35] AI Builders who might already experience problem that you are facing right now so you can click the link in the
+[42:41] description below to join my community today I hope you enjoy this video I will continue sharing interesting a Pur I'm
+[42:46] doing so please like And subscribe if you want to keep update thank you and I see you next time

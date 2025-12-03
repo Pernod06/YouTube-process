@@ -1,0 +1,517 @@
+Video ZAqIoDhornk
+======================================================================
+
+[00:00] Hi!
+[00:01] You’re on a rock.
+[00:02] Floating in space.
+[00:03] Surrounded by more rocks.
+[00:04] And gas.
+[00:05] And a bunch of nothing, mainly.
+[00:06] Oh hey, look at that, the rocks are going
+around the gas.
+[00:08] Hold on, what the heck, is going on here?
+[00:11] To understand, let’s look a little bit of
+Physics.
+[00:13] Wait, did I say a little bit?
+[00:17] To find out what kind of magic this is, we’ll
+have to go back in time.
+[00:20] Okay, not that far.
+[00:23] Stop!
+[00:24] Yeah.
+[00:25] That’s perfect.
+[00:26] This is gravity guy.
+[00:27] But most people call him “Isaac Newton”.
+[00:28] One important thing he said is that Force
+equals mass times acceleration.
+[00:31] Now what do all these words even mean?
+[00:33] Force is just a push or pull on something,
+in a certain direction.
+[00:36] Mass tells you how much of something there
+is, and it’s also a measure of inertia,
+[00:39] but we’ll get to that later, and acceleration
+is the derivative of velocity with respect
+[00:43] to time, but that’s too many big words for
+my taste, so let’s just say it’s how fast
+[00:47] velocity is changing.
+[00:48] The key takeaway is that if you apply a Force
+to a fixed mass, you get a predictable amount
+[00:52] of acceleration.
+[00:53] If you know all the forces acting on a basketball
+mid-air, you can predict with 100% certainty
+[00:57] if the ball will go in the hoop or your neighbours
+windshield.
+[01:01] “Whoa, did an apple just fall on my head?”
+[01:05] Yes Newton, it did.
+[01:07] “That must have happened for a reason”
+said Newton, as he discovered that two masses
+[01:10] attract one another, making the apple fall.
+[01:13] Yes, even you, no matter how ugly you think
+you are, attract pretty much the whole universe,
+[01:17] at least a little bit.
+[01:18] Hey, can you put that on paper?
+[01:19] “yup” said Newton, who gave us the Law
+of Universal Gravitation.
+[01:23] In other words, how much two bodies pull on
+each other, given their mass and distance,
+[01:26] times a constant.
+[01:27] Bigger mass?
+[01:28] Bigger Pull.
+[01:29] Bigger distance?
+[01:30] Smaller pull.
+[01:31] Actually, a lot smaller pull.
+[01:32] You see, the as the distance increases, the
+Force gets smaller by the square.
+[01:36] That my friends, is the Inverse-Square Law.
+[01:38] Gravity is also the reason why the planets
+in our solar system orbit the sun.
+[01:42] They got their initial velocity when the solar
+system formed out of spinning gas, and since
+[01:46] there’s nothing in space to stop them from
+moving, they’ll keep moving.
+[01:49] Hey, that’s Newton’s first Law.
+[01:51] The sun is so massive, that the force of gravity
+keeps pulling the planets towards the sun,
+[01:55] but the planets are fast enough to essentially
+fall towards the sun but miss it, and this
+[01:59] goes on forever, creating a round orbit.
+[02:01] Actually, that’s kind of a lie.
+[02:03] Most orbits orbits are not perfectly round
+but more egg-shaped and pluto’s orbit is
+[02:07] just…a complete mess.
+[02:08] But you get the idea.
+[02:09] In this case, the gravity is what we call
+a centripetal force.
+[02:13] One thing many people confuse is mass and
+weight, and no, they are not the same.
+[02:16] Mass tells you how much of this blob there
+is, and Weight is the force of Gravity the
+[02:20] blob would feel.
+[02:21] To make things clear, your mass would be the
+same on the earth and on the moon, but the
+[02:25] “weight” you would perceive, is different,
+because the moon has a weaker gravitational
+[02:28] pull, meaning, a weaker force acting on your
+mass.
+[02:31] So really, you’re not overweight, you’re
+just on the wrong planet.
+[02:34] Aight, enough about Newton, let’s break
+some stuff.
+[02:36] If you ever dropped your phone, it might look
+like this: What the hell ground, why’d you
+[02:40] do that?
+[02:41] The answer is Energy.
+[02:42] You know, the thing kids have after eating
+gummy bears.
+[02:45] Energy has the unit Joule.
+[02:46] And it’s not like Force, it’s doesn’t
+have a direction, it’s just a number, that’s
+[02:49] kind of chilling there, as a property of a
+thing.
+[02:51] You see, there’s two main kinds of energy:
+Kinetic energy, and potential energy.
+[02:55] In plain English, energy of movement, and
+stored energy due to some circumstance.
+[02:59] For example, when you held your phone, it
+stored gravitational potential energy, due
+[03:02] to being held above the ground, at a certain
+height.
+[03:05] Once you dropped it, the potential energy
+was converted into kinetic energy, as the
+[03:09] phone fell.
+[03:10] Then it smashed into the ground, and the phone
+absorbed some of the energy making the screen
+[03:13] go boom.
+[03:15] Work is defined as Force applied over distance.
+[03:17] For example:
+If you lift an apple by 1 meter, you would
+[03:19] have done about 1 Joule of work.
+[03:21] This happened by converting chemical energy
+stored in your body to gravitational potential
+[03:24] energy stored in the apple.
+[03:26] As you may have noticed, Energy and Work have
+the same unit “Joule”.
+[03:29] So they must be the same thing?
+[03:31] Uhhh, No.
+[03:33] Energy is the total amount of work that a
+thing could possibly do.
+[03:36] Work is just the stuff that actually happened
+and required energy.
+[03:38] You know, force applied over a distance, which
+most often implies converting energy from
+[03:39] one form to another.
+[03:40] If you try to lift a weight that’s too heavy
+for you, you’d feel like that took a bunch
+[03:42] of work, right?
+[03:43] Well, yes, but your feelings are invalid in
+the face of Physics!
+[03:47] Mathematically, no work has been done!
+[03:49] Because, work is a force applied over a distance.
+[03:51] And since you didn’t move the weight at
+all, no distance means no work.
+[03:55] The key thing to remember about energy is
+that it cannot be created or destroyed, only
+[03:59] converted.
+[04:00] Aka, the conservation of energy.
+[04:01] Okay, but a car, that’s moving has kinetic
+energy.
+[04:04] When the car stops, assuming the car doesn’t
+smash into a wall, where does that energy
+[04:09] go?
+[04:10] When you apply the brakes, there’s friction
+between the brakes and the wheels, causing
+[04:12] the car to slow down, and creating heat as
+a byproduct.
+[04:16] That heat is then dissipated to the surrounding
+air.
+[04:18] And that makes the molecules in the air move
+faster.
+[04:21] And things that move have kinetic energy.
+[04:23] So ultimately, the kinetic energy is transferred
+from the car to the air.
+[04:26] With this knowledge, we can define that Temperature
+is just the average kinetic energy of atoms
+[04:30] in a system.
+[04:31] You see, all atoms, not just molecules in
+the air, wiggle.
+[04:34] Like this.
+[04:35] The faster they move, the hotter things get.
+[04:37] That is temperature.
+[04:39] All that talk about hot stuff, I think it’s
+time we talk about Thermodynamics.
+[04:42] It tells us that jumping in lava is probably
+a bad idea, but more importantly, the absolute
+[04:47] mess that is entropy.
+[04:48] Literally, it tells you how much disorder
+there is in a system, indicating the number
+[04:52] of possible states a system can be in.
+[04:54] For example, get an ice cube, no not that
+one, yes that’s perfect, and put it in the
+[04:59] sun.
+[05:00] The sun will obliterate the ice cube and turn
+it into water.
+[05:03] Looking at the structure of ice and water,
+we can see that ice is more neatly organized
+[05:06] than water, which just kind of goes all over
+the place.
+[05:09] Also, the water could look like this, or this,
+or even this, but the ice will always look
+[05:13] a little something like this.
+[05:15] In total, the system went from low entropy
+to high entropy, meaning more disorder and
+[05:19] more possible microstates.
+[05:21] This trend applies everything.
+[05:22] The whole universe is on an unstoppable path
+to higher entropy.
+[05:25] It’s also the reason why time seems to go
+only forwards, or at least, that’s what
+[05:29] we believe at this point.
+[05:30] Practically, entropy tells us that some forms
+of energy are more useful for doing work than
+[05:33] others.
+[05:34] Burn some gasoline, and your car will move,
+spitting out heat and gas.
+[05:37] That heat and gas is pretty much gasoline,
+just in the form of higher entropy.
+[05:41] And as you can imagine, this stuff won’t
+really make your car move, and the gas won’t
+[05:44] spontaneously turn back into liquid gasoline.
+[05:46] Meaning, the form of gasoline with lower entropy
+is more useful for doing work.
+[05:51] Okay, but if you put some water in the freezer,
+will it not decrease in entropy?
+[05:55] Yes, BUT the fridge is not an isolated system
+and will heat up the room more than it will
+[06:00] cool down the water, increasing the total
+entropy.
+[06:02] Wanna see some magic?
+[06:04] Woah, what just happened?
+[06:06] Some electrons apparently moved through some
+wires and let there be light.
+[06:11] What is going on here?
+[06:13] Objects have a fancy something called a charge.
+[06:14] It can be positive or negative.
+[06:16] Or, if you have the same amount of both, an
+object is neutral.
+[06:19] Electrons have a single negative charge.
+[06:20] The flow of electrons is called electric current.
+[06:22] To describe it, we use three parameters: Current,
+Voltage, and Resistance.
+[06:26] Current is the amount of electrons passing
+through a wire in a given amount of time,
+[06:30] Voltage is what pushes the electrons to move,
+but simply put, it’s a difference in electric
+[06:34] potential, so you can imagine it as a slope
+that goes from high potential to low potential,
+[06:38] where the flow of current goes downhill, and
+resistance is pretty self explanatory.
+[06:42] This is Coulomb’s Law.
+[06:43] Wait a minute, this is just Newton’s Law
+of Gravitation in disguise!
+[06:47] This tells us that electric charges attract
+each other in a similar way masses do.
+[06:51] Opposites want to cuddle, while like charges
+literally couldn’t think of a more disgusting
+[06:54] thing than to be with one another.
+[06:56] These four equations explain pretty much all
+of electromagnetism.
+[06:59] But don’t be scared just because they look
+scary!
+[07:01] I mean, yeah, they do, but it’s simpler
+than it seems at first.
+[07:04] The first one states that if there is an electric
+charge, there will be an Electric field, or
+[07:07] this big E, emerging form it.
+[07:09] Add another and you have an electrostatic
+field.
+[07:12] These lines tell us in which direction a charged
+particle would feel a force at any given point.
+[07:16] The second one tells us the same for magnetic
+fields, AND, even though electric charges
+[07:20] are cool and can be alone, magnetic poles,
+are not.
+[07:23] They’re very lonely.
+[07:24] There will always be a north pole together
+with a south pole, and a single pole can never
+[07:28] be alone.
+[07:29] Okay now here’s where things get kind of
+freaky.
+[07:32] You know how electric charges only act on
+other charges, and magnets only affect other
+[07:35] magnets?
+[07:36] Well that’s only true if they’re not moving.
+[07:38] The third and fourth maxwell equations tell
+us that a moving magnet creates an electric
+[07:42] field, and a moving charge or electric field
+creates a magnetic field.
+[07:45] One consequence of this is that current can
+seemingly come “out of nowhere” by moving
+[07:49] a magnet next to a conductor.
+[07:51] The moving magnet creates and electric field,
+which makes the electrons inside the conductors
+[07:54] go crazy.
+[07:56] That is called induction.
+[07:57] It’s the reason why your phone charges when
+you put in on the charging pad, even though
+[07:58] it is not directly connected to a cable.
+[07:59] In other words, electric and magnetic fields
+are so tightly linked that they are the two
+[08:00] parts of the same bigger thing.
+[08:02] Let’s say we have a charge.
+[08:04] Since it doesn’t move, it has a static electric
+field.
+[08:06] If we accelerate the charge, there will be
+a magnetic field around it.
+[08:09] That magnetic field interacts with the electric
+field, which again changes the magnetic field,
+[08:13] and this is a sort of chain reaction that
+makes the electromagnetic field radiate outwards
+[08:17] into space as an electromagnetic wave.
+[08:19] Depending on the frequency, the human eye
+can actually see this, it’s called light,
+[08:23] but most of the spectrum is invisible to the
+human eye and is used for things such as Bluetooth,
+[08:27] wireless charging and confusing human apes
+into thinking magic is real.
+[08:31] Hey, can we go back to the water and look
+at those molecules?
+[08:33] Yeah, those, what are they made of?
+[08:35] The molecules are made of Atoms.
+[08:37] Atoms are made of a core and some electrons.
+[08:39] The core is made of protons and neutrons,
+both of which are made of quarks.
+[08:42] They’re strange yet charming, from up top
+down to the bottom.
+[08:46] Oh yeah there’s some more stuff, like for
+example the overweight brothers of the electron.
+[08:50] All of this together makes up the standard
+model, which we believe to be the smallest
+[08:54] things in the universe.
+[08:55] At least that’s the excuse we have for not
+knowing what quarks are made of.
+[08:58] Fun Fact!
+[08:59] Depending on the number of protons in the
+core, you get different elements.
+[09:02] Depending on the number of Neutrons in the
+core, you get different Isotopes of the same
+[09:05] element.
+[09:06] Most of which are a little overweight and
+very unstable.
+[09:08] So they fall apart, into smaller atoms.
+[09:11] That releases ionizing radiation.
+[09:13] Not so fun fact: That stuff will kill you.
+[09:15] Do not play with radioactive atoms.
+[09:16] If you have a large group of atoms, you can
+predict when half of those will have fallen
+[09:18] apart.
+[09:19] That’s the halflife.
+[09:20] Depending on how unstable an isotope is, it
+will survive a certain amount of time.
+[09:23] Some don’t want to live, some really don’t
+want to live, but some will live far longer
+[09:27] than you probably will.
+[09:28] Oh yeah, did I mention that light is like
+the fastest thing in the universe?
+[09:32] To be exact, 299, 792, 458 meters per second
+in a vacuum.
+[09:38] “That is pretty fast” said everyone.
+[09:41] Also, “Light is a wave” said everyone.
+[09:43] Why?
+[09:44] If you shoot it through two teeny tiny slits
+it creates a fancy pattern due to interference,
+[09:47] which is just a wave thing.
+[09:49] You see, when two waves cross, they can add
+up, or cancel each other out.
+[09:52] These gaps, are the spots where they cancel
+each other out, so in this case, light behaves
+[09:56] like a wave.
+[09:57] “Nah, screw that, everything you know is
+wrong” said Albert Einstein, probably smoking
+[10:02] crack, after hearing about the photoelectric
+effect and discovering that light comes in
+[10:05] tiny packets called photons.
+[10:07] I sure hope that doesn’t unravel a whole
+new area of phyiscs, haha.
+[10:11] “Anyway” he said, as he continued to casually
+drop an absolute bomb on the entire field
+[10:16] of physics with his theory of relativity:
+He assumed the speed of light is constant
+[10:20] because it arises from two other constants.
+[10:22] He also assumed the laws of physics are the
+same for everyone, regardless if moving or
+[10:26] at rest.
+[10:27] Now think about it: If two people turn on
+a flashlight, but one person is standing still,
+[10:30] while the other person is on a moving train,
+wouldn’t the person standing still see the
+[10:34] other person’s light as going faster than
+the speed of light?
+[10:37] The reality is: NO!
+[10:39] It would be the same as their own flashlight.
+[10:41] That’s impossible, except if time passes
+slower for that person from the perspective
+[10:44] of this person.
+[10:46] In other words, if the speed of light is constant,
+time must be relative.
+[10:49] Also, gravity is not actually a Force, sorry
+Newton, but rather a consequence of masses
+[10:53] bending spacetime.
+[10:55] Einstein thought that the universe is a mesh
+of space and time, and anything with a mass
+[10:58] bends this fabric.
+[11:00] Also, all objects move freely on a straight
+line when moving through space.
+[11:04] Gravitation is simply the result of objects
+following these bent lines, which appear straight
+[11:07] to them.
+[11:08] If you have a hard time understanding this,
+you can imagine two people on earth, walking
+[11:11] in parallel, straight lines.
+[11:12] On a short distance, the straight lines will
+never meet.
+[11:13] Now imagine one standing on the east cost,
+and one the west coast of the US.
+[11:16] If they both walk north, eventually, they
+will meet at the north pole.
+[11:20] Because of the curvature of the earth, they
+ended up at the same point even though they
+[11:23] both walked “straight” relative to themselves.
+[11:25] “Oh yeah by the way Energy and mass are
+kind of the same thing” he added, which
+[11:28] explains why atom bombs are so frickin powerful.
+[11:31] According to this formula, even just tiny
+atoms can release a humongous amount of energy
+[11:35] by giving up just a fraction of their mass
+during fission.
+[11:39] What is Fission?
+[11:40] It’s the same thing Oppenheimer used to
+make this thing go boom.
+[11:42] You see, there’s two main ways to gain energy
+from changing nuclei: Fission and Fusion.
+[11:46] Fission aims to split the nucleus of an atom
+into two or more smaller nuclei, which is
+[11:50] most often achieved by blasting the core with
+neutrons.
+[11:53] Fusion is the opposite, where you combine
+two smaller nuclei to get one bigger one.
+[11:57] The energy came from something we call a “mass
+defect” where the resulting nucleus is lighter
+[12:01] than the starting nuclei.
+[12:02] This “missing” mass is what was converted
+to energy during Fusion.
+[12:06] Fission and Fusion are cool, but you have
+got to be careful or you might just blow up
+[12:09] the planet.
+[12:10] That totally didn’t almost happen before…multiple
+times.
+[12:13] Hey remember when Einstein said light is a
+particle?
+[12:16] He accidentally discovered a whole new field
+of physics which he though is just a giant
+[12:20] hoax: Quantum Mechanics.
+[12:21] This stuff is crazy.
+[12:23] Another german guy called Max Planck said
+“yes, Einstein, you’re right.
+[12:26] Light does come in tiny packets.
+[12:27] Actually, all energy comes in tiny packets”.
+[12:30] Or “Quanta”.
+[12:31] He is the daddy of Quantum Mechanics.
+[12:32] Wanna know where an electron is inside an
+atom?
+[12:33] It’s here!
+[12:34] And there!
+[12:35] And everywhere, at the same time, actually!
+[12:36] That’s a superposition.
+[12:37] It’s not in one state, it’s in multiple
+states at once - at least until you measure
+[12:41] it.
+[12:42] Then it chooses one cozy spot to be in.
+[12:44] Schrödinger gave us an equation that gives
+you a probabilistic model of where you can
+[12:47] find it if you were to measure.
+[12:49] You can imagine this as a cloud, and the denser
+it is, the more likely it is for an electron
+[12:53] to be there.
+[12:54] But still, where exactly it will end up once
+you measure it, is random.
+[12:57] Speaking of observing particles, they’re
+also super sensitive about their private data.
+[13:01] Look at these two images of a flying ball:
+in one, you can clearly see where the ball
+[13:04] is, but not in which direction it’s moving,
+and in the other you can see where it’s
+[13:08] moving and approximately how fast, but not
+where exactly it is at the moment.
+[13:12] That is essentially Heisenberg’s uncertainty
+principle: You can never know both the exact
+[13:16] position and the exact speed of a quantum
+particle at the same time.
+[13:19] Okay, let’s recap, a small thing can be
+a particle and a wave at the same time, and
+[13:22] when we try to look at them, weird stuff happens.
+[13:24] But you know what, it gets even weirder.
+[13:27] Think back to the double slit experiment:
+We know that a light beam acts as a bunch
+[13:30] of waves and we get interference.
+[13:31] But here’s the weird thing: Even if you
+send individual photons, after sending enough
+[13:36] of them and detecting where they end up, you
+get interference.
+[13:38] Like, how can that be?
+[13:40] What did a single particle interfere with?
+[13:42] Well, we think it interfered with itself,
+because it acted as a wave and went through
+[13:45] both slits at the same time.
+[13:48] That’s a superposition.
+[13:49] “Okay, well let’s just measure which slit
+it goes through”.
+[13:51] Uh, yeah, that’s not going to happen.
+[13:53] Once you start measuring which slit the photon
+goes through, it stops acting like a wave
+[13:56] and the interference pattern disappears, as
+every particle chooses just one of the slits
+[14:00] to go through.
+[14:01] Sounds kinda suspicious to me.
+[14:03] Anyways, all this knowledge is going to cost
+you one subscribe and a thumbs up, thank you
+[14:07] very much, and you can decide if maybe you’d
+want to tip with a comment, perhaps?

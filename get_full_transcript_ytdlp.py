@@ -1,0 +1,203 @@
+"""
+获取并显示完整的YouTube视频字幕
+使用 youtube_transcript_api（简洁高效的方案）
+"""
+
+import os, requests
+from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_client import YouTubeClient
+
+# ========== 配置区域 ==========
+
+# 代理设置 - 根据你的网络环境配置
+# 如果你在中国大陆，需要配置代理才能访问 YouTube
+# USE_PROXY = True  # 设置为 False 禁用代理
+# PROXY_PORT = 50142  # 修改为你的代理端口
+# PROXY_URL = f"http://127.0.0.1:{PROXY_PORT}" if USE_PROXY else None
+
+# ========== 配置区域结束 ==========
+
+
+# def setup_proxy():
+#     """设置代理环境变量"""
+#     if USE_PROXY and PROXY_URL:
+#         os.environ['HTTP_PROXY'] = PROXY_URL
+#         os.environ['HTTPS_PROXY'] = PROXY_URL
+#         os.environ['http_proxy'] = PROXY_URL
+#         os.environ['https_proxy'] = PROXY_URL
+#         print(f"✓ 代理已设置: {PROXY_URL}")
+#         return True
+#     else:
+#         # 清除代理环境变量
+#         for key in ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']:
+#             os.environ.pop(key, None)
+#         print(f"⚠️  代理已禁用")
+#         return False
+
+
+# # 初始化代理设置
+# setup_proxy()
+
+
+def format_timestamp(seconds: float) -> str:
+    """将秒数转换为时间戳格式"""
+    hours = int(seconds // 3600)
+    minutes = int((seconds % 3600) // 60)
+    secs = int(seconds % 60)
+    
+    if hours > 0:
+        return f"{hours:02d}:{minutes:02d}:{secs:02d}"
+    else:
+        return f"{minutes:02d}:{secs:02d}"
+
+
+def get_full_transcript(video_url: str, language: str = 'en'):
+    """
+    获取视频的完整字幕（使用 youtube_transcript_api）
+    
+    Args:
+        video_url: YouTube视频URL
+        language: 语言代码（默认'en'）
+    
+    Returns:
+        (字幕列表, 视频详情) 或 (None, None)
+    """
+    print("=" * 70)
+    print("获取YouTube视频完整字幕 (使用 youtube_transcript_api)")
+    print("=" * 70)
+    
+    # 提取视频ID
+    video_id = YouTubeClient.extract_video_id(video_url)
+    if not video_id:
+        print(f"❌ 无法从URL提取视频ID: {video_url}")
+        return None, None
+    
+    print(f"\n📹 视频ID: {video_id}")
+    print(f"🌐 视频链接: https://www.youtube.com/watch?v={video_id}")
+    print(f"🔍 正在获取字幕...")
+    
+    try:
+        # 创建 API 实例
+        API_KEY = os.getenv('TranscriptAPI_KEY')
+        url = 'https://transcriptapi.com/api/v2/youtube/transcript'
+        params = {'video_url': video_id, 'format': 'json'}
+        r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout = 30)
+        transcript = r.json()['transcript']
+        
+        # 视频详情（youtube_transcript_api 不提供视频标题，使用 video_id）
+        details = {
+            'title': f'Video {video_id}',
+            'video_id': video_id,
+            'duration': 0,
+            'view_count': 0,
+        }
+        
+        print(f"\n✓ 成功获取字幕")
+        print(f"  总段数: {len(transcript)}")
+        
+        # 计算统计信息
+        if transcript:
+            total_duration = sum(entry['duration'] for entry in transcript)
+            total_chars = sum(len(entry['text']) for entry in transcript)
+            
+            print(f"  总时长: {format_timestamp(total_duration)}")
+            print(f"  总字符: {total_chars:,}")
+            print(f"  平均每段: {total_duration/len(transcript):.2f}秒")
+        
+        return transcript, details
+        
+    except Exception as e:
+        error_msg = str(e)
+        print(f"\n❌ 获取字幕失败: {e}")
+        
+        # 提供更有用的错误提示
+        if "ProxyError" in error_msg or "proxy" in error_msg.lower():
+            print("\n💡 代理连接失败，请检查:")
+            print(f"   1. 代理服务是否正在运行（当前配置: {PROXY_URL}）")
+            print(f"   2. 修改 PROXY_PORT = {PROXY_PORT} 为正确的端口")
+            print("   3. 或设置 USE_PROXY = False 禁用代理")
+        elif "SSL" in error_msg or "ssl" in error_msg.lower():
+            print("\n💡 SSL 连接错误，可能原因:")
+            print("   1. 网络环境无法直接访问 YouTube")
+            print("   2. 需要配置代理访问")
+            print(f"   3. 当前代理设置: USE_PROXY={USE_PROXY}, PORT={PROXY_PORT}")
+        elif "timeout" in error_msg.lower():
+            print("\n💡 连接超时，请检查网络连接")
+        
+        return None, None
+
+
+def display_full_transcript(transcript, output_file=None, details=None):
+    """
+    显示完整字幕内容
+    
+    Args:
+        transcript: 字幕列表
+        output_file: 可选，输出到文件的路径
+        details: 视频详情
+    """
+    if not transcript:
+        print("没有字幕数据")
+        return
+    
+    print("\n" + "=" * 70)
+    print(f"完整字幕内容（共 {len(transcript)} 段）")
+    print("=" * 70 + "\n")
+    
+    # 准备输出内容
+    output_lines = []
+
+    for i, entry in enumerate(transcript, 1):
+        timestamp = format_timestamp(entry['start'])
+        text = entry['text']
+        duration = entry['duration']
+        
+        # 格式化输出
+        line1 = f"[{timestamp}] {text}"
+        line2 = f"       持续: {duration:.2f}秒 | 起始: {entry['start']:.2f}秒"
+        
+        print(line1)
+        print(line2)
+        print()
+        
+        # 保存到列表（用于文件输出）
+        output_lines.append(line1)
+    
+    # 如果指定了输出文件，保存到文件
+    if output_file:
+        try:
+            with open(output_file, 'w', encoding='utf-8') as f:
+                if details:
+                    f.write(f"{details.get('title', 'Unknown Title')}\n")
+                    f.write("=" * 70 + "\n\n")
+                f.write('\n'.join(output_lines))
+            
+            print("\n" + "=" * 70)
+            print(f"✓ 字幕已保存到: {output_file}")
+            print("=" * 70)
+        except Exception as e:
+            print(f"\n❌ 保存文件失败: {e}")
+
+
+def main():
+    """主函数"""
+    # 视频URL
+    video_url = "https://www.youtube.com/watch?v=DxL2HoqLbyA"
+    
+    # 获取完整字幕
+    transcript, details = get_full_transcript(video_url, language='en')
+    
+    if transcript and details:
+        # 显示完整字幕
+        # display_full_transcript(transcript)
+        
+        # 可选：保存到文件
+        output_filename = f"{details.get('title', 'transcript').replace('/', '-')}_transcript_1.txt"
+        display_full_transcript(transcript, output_file=output_filename, details=details)
+
+    else:
+        print("\n❌ 无法获取字幕")
+
+
+if __name__ == "__main__":
+    main()

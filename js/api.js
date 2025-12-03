@@ -192,8 +192,31 @@ class APIService {
      */
     async loadLocalData() {
         try {
-            const response = await fetch(this.config.LOCAL.DATA_PATH);
+            // 检查 sessionStorage 中是否有视频 ID
+            const currentVideoId = sessionStorage.getItem('currentVideoId');
+            
+            let dataPath;
+            if (currentVideoId) {
+                // 如果有视频 ID，加载对应的数据文件
+                dataPath = `./data/video-data-${currentVideoId}.json`;
+                console.log(`[INFO] 加载视频数据: ${dataPath}`);
+            } else {
+                // 否则加载默认数据文件
+                dataPath = this.config.LOCAL.DATA_PATH;
+                console.log(`[INFO] 加载默认数据: ${dataPath}`);
+            }
+            
+            const response = await fetch(dataPath);
             if (!response.ok) {
+                // 如果加载失败且有 videoId，尝试加载默认文件
+                if (currentVideoId) {
+                    console.warn(`[WARN] 无法加载 ${dataPath}，尝试加载默认数据`);
+                    const fallbackResponse = await fetch(this.config.LOCAL.DATA_PATH);
+                    if (!fallbackResponse.ok) {
+                        throw new Error(`Failed to load data: ${fallbackResponse.status}`);
+                    }
+                    return await fallbackResponse.json();
+                }
                 throw new Error(`Failed to load local data: ${response.status}`);
             }
             return await response.json();

@@ -1,0 +1,327 @@
+Trump is letting China win the chip race
+======================================================================
+
+[00:02] Inside these containers are a very
+[00:04] important computer chip called the H20.
+[00:07] It was designed by a company called
+[00:09] Nvidia in the US, manufactured in
+[00:11] Taiwan, then sold to tech companies in
+[00:14] China. In 2025, China was set to get
+[00:17] around 1.3 million H20s when suddenly US
+[00:21] President Donald Trump blocked them.
+[00:23] Why? Because the H20 powers artificial
+[00:26] intelligence. And right now, the US and
+[00:29] China are locked in an all-out race to
+[00:31] dominate artificial intelligence.
+[00:33] Whoever wins could gain a stronger
+[00:34] economy and a stronger military than the
+[00:37] other. Trump wasn't going to help China
+[00:39] get those advantages. But 3 months
+[00:42] later, Trump had dinner with Nvidia's
+[00:44] CEO Jensen Hang. And just days later,
+[00:47] Nvidia announced
+[00:48] >> that it will resume sales of its
+[00:50] advanced H220 chips into China.
+[00:52] >> Nvidia's H20 chips, once banned in
+[00:55] China, they will be back in play. Judson
+[00:56] Huang played both Washington and Beijing
+[00:59] and he won.
+[01:00] >> Trump's U-turn on AI chips is shocking.
+[01:02] >> If there was anything that you'd think
+[01:04] people could agree on, it would be that
+[01:05] the most advanced AI technology does not
+[01:08] go to China
+[01:09] >> and it could have huge consequences.
+[01:11] >> It is very plausible that if we get this
+[01:13] policy wrong, China could be overtaking
+[01:16] the United States.
+[01:17] >> So why did Trump change his mind on
+[01:19] Nvidia chips? And what happens when
+[01:21] China gets them?
+[01:24] [Music]
+[01:36] And away they go.
+[01:38] >> Let's imagine the AI race is like a car
+[01:40] race. The US and China are each building
+[01:43] the best AI or race car they can.
+[01:45] They're funding AI research,
+[01:47] constructing data centers, and
+[01:48] supporting AI companies. At this point,
+[01:50] China's car may actually be the faster
+[01:52] one. But a race car is only as good as
+[01:55] its engine. And an AI's engine is the
+[01:57] computer chip. It's a tiny slice of
+[02:00] silicon packed with billions of
+[02:02] transistors that turn electric signals
+[02:04] on and off. Bundle hundreds of thousands
+[02:06] of chips together, and you've got the
+[02:08] computing power to train and run AI
+[02:10] models.
+[02:12] China's chip makers like Huawei and
+[02:14] Kecon make pretty good AI chips, but US
+[02:17] chip makers like Nvidia and AMD make
+[02:20] much better ones. Better chips are what
+[02:23] allowed US AI to build a lead in the
+[02:25] 2010s. But since US chip makers sold
+[02:28] chips to China, too, China was able to
+[02:30] hang not far behind.
+[02:32] >> There has never been a more exciting
+[02:34] battle.
+[02:36] >> Then around 2018, the US government
+[02:38] realized given the stakes of the AI
+[02:40] race, it should probably stop helping
+[02:42] China.
+[02:42] >> AI technology is advancing very quickly
+[02:44] and is fast becoming militarily and
+[02:47] strategically extremely significant.
+[02:49] Chris Magcguire worked on AI chip policy
+[02:51] under both presidents Trump and Biden.
+[02:53] >> The only area where we have a big
+[02:55] advantage over China is in hardware. So
+[02:58] if we want to be able to slow the
+[03:00] Chinese down, this is our only way of
+[03:02] doing it.
+[03:02] >> In 2020, Trump blocked Chinese chip
+[03:04] makers from using US-made tools to make
+[03:06] their chips. Then in 2022, Joe Biden
+[03:09] made it illegal for US chip makers to
+[03:11] sell their best chips to China. With
+[03:13] each new chip, US AI surged ahead, while
+[03:17] Chinese AI was stuck using older US
+[03:20] chips or inferior Chinese-made chips.
+[03:23] >> This was like a boiling the frog effect.
+[03:25] The amount that it's going to keep China
+[03:26] back is going to increase every year
+[03:28] that they're in effect.
+[03:29] >> And now starts to pull away.
+[03:32] >> These restrictions called export
+[03:34] controls change the game. But they cost
+[03:36] US chip makers a lot of potential
+[03:38] business, especially for the best chip
+[03:40] maker, Nvidia.
+[03:44] Just 15 years ago, Nvidia was designing
+[03:46] chips for video games when researchers
+[03:48] discovered Nvidia chips were also great
+[03:50] for powering AI models. The discovery
+[03:53] gave Nvidia a head start on the AI boom.
+[03:56] By 2023, it made more than 90% of AI
+[03:59] data center chips. The world wants to
+[04:02] run on Nvidia chips, and that's because
+[04:04] it's so much easier to use Nvidia than
+[04:06] to use anything else.
+[04:07] >> Gregory Allen studies AI policy. The
+[04:10] best chips that are being made by
+[04:12] Chinese manufacturing facilities are
+[04:14] around five years behind that of Nvidia.
+[04:18] And in fact, Chinese military documents
+[04:20] when AI is involved, they're asking for
+[04:23] Nvidia chips. Before Biden's
+[04:25] restrictions, 22% of Nvidia's revenue
+[04:28] came from selling chips to China. But
+[04:30] after, just 13% did. These restrictions
+[04:34] were hurting business. So Nvidia found a
+[04:37] genius way around them.
+[04:39] This story is moving pretty fast. It
+[04:40] took a lot of extra reporting. It took a
+[04:42] lot of extra research going all over the
+[04:44] internet and that often leads to many
+[04:46] more spam texts and emails and it gets
+[04:48] really annoying. Thankfully, I protect
+[04:50] myself through my subscription to
+[04:52] Incogn. And I'm thrilled to have Incogn
+[04:54] sponsor this episode. So, there are
+[04:56] hundreds of these data brokers out
+[04:58] there. They take the personal
+[04:59] information you give out on the
+[05:00] internet, your login, your addresses,
+[05:02] your passwords, even your social
+[05:04] security number, and they sell it to
+[05:06] marketers. That's how you get those spam
+[05:08] texts and emails, but it's also how your
+[05:10] information can fall into the hands of
+[05:11] criminals. Now, we have the right to
+[05:13] take that data back, but it would take
+[05:15] forever to do it ourselves. That's when
+[05:16] Incogn. They'll do it for you, and it
+[05:19] takes three easy steps. Step one, you
+[05:21] create an account. Tell Incogn whose
+[05:22] personal data you want them to remove.
+[05:24] Step two is you grant Incogn behalf.
+[05:27] Incogn will go out and contact those
+[05:29] data brokers. Step three, you sit back
+[05:31] and relax and watch Incogn do the work
+[05:33] for you. It'll send you a progress
+[05:34] report all along the way. So, here's the
+[05:36] deal. Right now, use the code search
+[05:38] party at the link below and you're going
+[05:39] to get 60% off Incogn's annual plan.
+[05:42] Now, I've been using Incogn for a few
+[05:44] years. I love it. If you want to keep
+[05:46] your personal data safe on the internet
+[05:48] while supporting Search Party in the
+[05:49] meantime, Incogn is a great way to do
+[05:51] it. So, thanks again to Incogn for
+[05:53] supporting our work. Now, I'll get you
+[05:55] back to the story.
+[05:57] Each AI chip is judged by its power and
+[06:00] its interconnect speed. That's how fast
+[06:01] it can talk to other chips. In 2022,
+[06:04] Biden banned selling any chip above
+[06:06] these limits, which included Nvidia's
+[06:08] best. So, Nvidia took its H100 chip and
+[06:12] degraded it to create a new version that
+[06:14] fell under the limits, the H800.
+[06:17] Chinese AI companies bought as many as
+[06:19] they could. Then, when Biden tightened
+[06:21] the restrictions, Nvidia designed
+[06:23] another new chip, the H20. It wasn't
+[06:26] powerful, but it was very fast, which
+[06:28] made it ideal for serving AI models to
+[06:31] millions of users. Chinese AI companies
+[06:34] again bought as many as they could and
+[06:36] smuggled in some chips. By 2025, largely
+[06:39] thanks to Nvidia chips, they were
+[06:40] showing incredible progress.
+[06:42] >> Financial markets have been reacting to
+[06:44] Deep Seek.
+[06:44] >> Deep Seek.
+[06:45] >> Deep Seek, a company with a collection
+[06:46] of Chinese AI models
+[06:48] >> that claims to beat out even open AI
+[06:51] >> and it used Nvidia H800.
+[06:54] >> They're catching up quickly. We cannot
+[06:56] blink at all.
+[06:59] So, the Chinese market is scooping up
+[07:01] these chips as fast as they can. They're
+[07:03] saying whatever the best NVIDIA chips
+[07:05] were allowed to buy, that's what we
+[07:06] want. So, in April 2025, the US, this
+[07:09] time under Trump again, blocked the H20.
+[07:12] But instead of making a new chip, Nvidia
+[07:14] CEO went to Trump with a new argument,
+[07:17] and Trump agreed with him.
+[07:19] >> President Trump really understands and
+[07:21] really wants and his it's his policy to
+[07:24] have America win the AI race. The Trump
+[07:27] administration and Nvidia are making two
+[07:29] main arguments for why it should sell
+[07:31] chips to China. And the first one is
+[07:33] that it'll make a lot of money.
+[07:34] >> And we have an opportunity to go capture
+[07:36] some of that $50 billion. It's great for
+[07:39] exports. It's great for our treasury.
+[07:42] >> That's true. Nvidia stock climbed to a
+[07:44] new record when Trump reversed the ban.
+[07:46] And Trump's policy that the US will take
+[07:48] 15% of chip sales could generate
+[07:50] billions of dollars for the government.
+[07:52] But the second argument is a little more
+[07:54] counterintuitive. You want to sell the
+[07:56] Chinese enough that their developers get
+[07:59] addicted to the American technology
+[08:02] stack.
+[08:02] >> He means that selling H20s to China is a
+[08:05] trap. Let me show you.
+[08:08] If the Nvidia H20 is the best chip
+[08:10] available, then Chinese AI companies
+[08:12] will choose to buy it over a
+[08:14] Chinese-made chip. If no one buys
+[08:16] China's chips, Chinese chip makers will
+[08:18] struggle to make better ones. Then if
+[08:21] the US strings China along with better
+[08:23] chips, eventually Chinese AI will have
+[08:25] no choice but to continue using US
+[08:27] chips. They'll be addicted to them. Then
+[08:30] as US AI advances, it can keep China a
+[08:33] few steps behind until the US wins the
+[08:35] AI race. Honestly, seems like a solid
+[08:38] plan. This is not completely insane. We
+[08:41] will help Chinese AI companies, but we
+[08:44] will hurt Chinese semiconductor
+[08:46] companies. That's the thesis. But many
+[08:48] experts say there's just one problem
+[08:50] with that. Trump's plan assumes that the
+[08:52] Chinese government will let its
+[08:54] chipmakers fall behind. And well,
+[08:56] >> there's no chance that's going to
+[08:58] happen.
+[08:58] >> The Chinese government is pumping
+[09:00] billions of dollars into its chipmakers,
+[09:02] mandating that its AI companies use 50%
+[09:04] Chinese-made chips. And its leader,
+[09:06] Xiinping, is demanding it eventually
+[09:08] reach self-sufficiency in AI. All of
+[09:11] that means
+[09:12] >> they'll get there eventually. The chips
+[09:14] won't be as good as Nvidia's, but
+[09:16] they'll go from basically unusable to at
+[09:19] least workable. And once they cross that
+[09:21] threshold, they're just going to get off
+[09:22] of Nvidia. They just are. That's the
+[09:25] flaw in Trump's plan. He's not getting
+[09:28] China addicted to US chips. He's letting
+[09:30] China use Nvidia chips to stay in the
+[09:32] race until its own chip makers can catch
+[09:34] up. The H20 is a bridge to a future
+[09:38] without US chips. And once China gets
+[09:40] there, many experts believe it can pull
+[09:42] close or even with the US.
+[09:44] >> This is the playbook. We should not help
+[09:47] them execute their playbook. It's just
+[09:48] not in America's national security
+[09:50] interest.
+[09:51] >> And it's there that they can pass. Look
+[09:53] at the courage as they both refuse to
+[09:55] back off.
+[09:59] >> Yet Trump is considering letting Nvidia
+[10:00] sell an even better chip to China.
+[10:02] >> The Blackwell. Do you know what the
+[10:04] Blackwell is? The Blackwell is super
+[10:06] duper advanced. The Blackwell or B30 is
+[10:09] 12 times more powerful and 11 times
+[10:11] faster than the H20. They would let
+[10:14] China easily catch the US and likely
+[10:16] surpass it.
+[10:18] >> I think that's absolutely possible.
+[10:19] >> Everything else, like I said before, is
+[10:21] not in our favor and the Chinese might
+[10:23] be able to leaprog us.
+[10:25] >> Out of the slipstream, he's taking the
+[10:27] lead.
+[10:28] An incredible achievement.
+[10:33] >> Right now, Trump and China are
+[10:35] negotiating a trade deal. And it looks
+[10:36] like China is angling to get those black
+[10:39] weld chips.
+[10:41] China's reportedly banning its AI
+[10:42] companies from buying Nvidia chips and
+[10:45] calling its own chips comparable to the
+[10:46] H20. This could be the Chinese
+[10:48] government pressuring its AI companies
+[10:50] to use Chinese-made chips. Or could be a
+[10:53] way to pressure Nvidia to pressure the
+[10:54] Trump administration into letting Nvidia
+[10:57] sell black wells to China. If Trump
+[10:59] gives in, expect Chinese AI to get
+[11:02] really good really fast. If we start to
+[11:04] see models that are as good that are
+[11:06] released around the same time as US as
+[11:08] Frontier US models or better, that would
+[11:10] show they squandered our compute
+[11:12] advantage.
+[11:13] >> It's a crucial moment in the AI race.
+[11:16] What the US decides to do right now
+[11:18] could determine how close it is.
+[11:21] Maybe who wins it.
+[11:25] [Music]
+[11:27] All right, thanks for watching Search
+[11:28] Party. If you haven't subscribed yet,
+[11:29] now is your chance to. If you're new
+[11:31] here, we cover geopolitics and sports.
+[11:33] So, in two weeks, we're going to have a
+[11:35] sports episode. Since it's October,
+[11:37] that's going to be baseball. It's a
+[11:39] story I've wanted to do for a super long
+[11:40] time. There's this amazing international
+[11:42] element. I had a lot of fun writing it,
+[11:44] and I think you're going to enjoy it.
+[11:46] So, we'll see you then. Thanks.

@@ -3,8 +3,60 @@
 简化版示例，专注于获取全部字幕内容
 """
 
+import os
+import requests
+from http.cookiejar import MozillaCookieJar
 from youtube_client import YouTubeClient
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.proxies import GenericProxyConfig
+
+# ========== 配置区域 ==========
+
+# 代理设置
+USE_PROXY = True  # 设置为 False 禁用代理
+PROXY_PORT = 59891
+PROXY_URL = f"http://127.0.0.1:{PROXY_PORT}" if USE_PROXY else None
+
+# Cookies 文件路径（Netscape 格式）
+COOKIES_FILE = "cookies.txt"  # 设置为 None 禁用 cookies
+
+# ========== 配置区域结束 ==========
+
+# 设置环境变量代理（用于 YouTubeClient 和其他库）
+if USE_PROXY and PROXY_URL:
+    os.environ['HTTP_PROXY'] = PROXY_URL
+    os.environ['HTTPS_PROXY'] = PROXY_URL
+    os.environ['http_proxy'] = PROXY_URL
+    os.environ['https_proxy'] = PROXY_URL
+    print(f"✓ 代理已设置: {PROXY_URL}")
+else:
+    print(f"⚠️ 代理已禁用")
+
+# 创建带有 cookies 和代理的 HTTP 客户端
+def create_http_client():
+    """创建配置好 cookies 和代理的 HTTP 客户端"""
+    session = requests.Session()
+    
+    # 设置代理（如果启用）
+    if USE_PROXY and PROXY_URL:
+        session.proxies = {
+            'http': PROXY_URL,
+            'https': PROXY_URL
+        }
+    
+    # 加载 cookies（如果文件存在）
+    if COOKIES_FILE and os.path.exists(COOKIES_FILE):
+        try:
+            cookie_jar = MozillaCookieJar(COOKIES_FILE)
+            cookie_jar.load(ignore_discard=True, ignore_expires=True)
+            session.cookies.update(cookie_jar)
+            print(f"✓ 已加载 cookies 文件: {COOKIES_FILE} ({len(cookie_jar)} 个 cookies)")
+        except Exception as e:
+            print(f"⚠️ 无法加载 cookies 文件: {e}")
+    elif COOKIES_FILE:
+        print(f"⚠️ 未找到 cookies 文件: {COOKIES_FILE}")
+    
+    return session
 
 
 def format_timestamp(seconds: float) -> str:
@@ -38,16 +90,24 @@ def get_full_transcript(video_url: str, language: str = 'en'):
     video_id = YouTubeClient.extract_video_id(video_url)
     if not video_id:
         print(f"❌ 无法从URL提取视频ID: {video_url}")
-        return None
+        return None, None
     
     print(f"\n📹 视频ID: {video_id}")
     print(f"🌐 视频链接: https://www.youtube.com/watch?v={video_id}")
 
-    details = YouTubeClient().get_video_details(video_id)
+    # 尝试获取视频详情（可选，如果失败不影响字幕获取）
+    try:
+        details = YouTubeClient().get_video_details(video_id)
+    except Exception as e:
+        print(f"⚠️ 无法获取视频详情: {e}")
+        details = {'title': f'Video {video_id}', 'video_id': video_id}
     
     try:
-        # 获取字幕
-        api = YouTubeTranscriptApi()
+        # 创建 HTTP 客户端（带 cookies 和代理）
+        http_client = create_http_client()
+        
+        # 获取字幕（使用代理和 cookies）
+        api = YouTubeTranscriptApi(http_client=http_client)
         transcript_list = api.list(video_id)
         
         # 显示可用语言
@@ -83,7 +143,7 @@ def get_full_transcript(video_url: str, language: str = 'en'):
         
     except Exception as e:
         print(f"\n❌ 获取字幕失败: {e}")
-        return None
+        return None, None
 
 
 def display_full_transcript(transcript, output_file=None, details=None):
@@ -144,12 +204,12 @@ def display_full_transcript(transcript, output_file=None, details=None):
 def main():
     """主函数"""
     # 视频URL
-    video_url = "https://www.youtube.com/watch?v=w0H1-b044KY"
+    video_url = "https://www.youtube.com/watch?v=AF8d72mA41M"
     
     # 获取完整字幕
     transcript, details = get_full_transcript(video_url, language='en')
     
-    if transcript:
+    if transcript and details:
         # 显示完整字幕
         # display_full_transcript(transcript)
         

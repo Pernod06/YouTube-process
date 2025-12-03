@@ -1,0 +1,506 @@
+How is China using AI in the classroom? | The Take
+======================================================================
+
+[00:00] [Music]
+[00:02] Al Jazer podcasts.
+[00:05] >> Today, as China's school year begins,
+[00:07] students as young as six will be
+[00:09] studying artificial intelligence.
+[00:11] >> It's a starting point for them to be
+[00:14] able to
+[00:16] be comfortable with the idea of
+[00:17] artificial intelligence from a really
+[00:19] young age.
+[00:20] >> What lessons does this experiment hold
+[00:22] for students? And what will it mean for
+[00:24] China's future as the global tech race
+[00:27] rages on? I'm Malikica Vilal and this is
+[00:30] The Take.
+[00:33] [Music]
+[00:37] Before we continue with today's show, if
+[00:39] you're watching us on YouTube or
+[00:40] Spotify, leave us a comment. Tell us
+[00:43] what you think about this episode and
+[00:45] what stories you want us to do next. And
+[00:47] if you're listening, you're going to
+[00:49] want to check us out on those platforms
+[00:50] to see us on video. While you're there,
+[00:53] leave us a review telling us where
+[00:54] you're listening from and give us a
+[00:56] five-star rating on your favorite
+[00:58] podcast app. It really helps the show.
+[01:04] >> I'm Katrina U. I am the correspondent
+[01:06] for Alazer English in China, based in
+[01:09] Beijing.
+[01:11] >> And you are talking to me very late in
+[01:14] Beijing right now. Indeed,
+[01:17] it is 11 p.m.
+[01:18] >> Well, Katrina, it is great to have you
+[01:20] on the take. This September, China is
+[01:24] doing something it hasn't done before.
+[01:26] Children as young as 6 years old will be
+[01:29] trained in artificial intelligence
+[01:30] literacy. So, it begs the question, what
+[01:34] does that look like in the classroom?
+[01:38] >> Right. Well, China is strongly
+[01:41] encouraging AI education for not just
+[01:44] six-year-olds, but as soon as you start
+[01:46] school to the end, a program of AI
+[01:49] literacy. Obviously, you just start, you
+[01:51] can't, you know, you're at school, you
+[01:53] can't read. And so, it's not really
+[01:55] about getting these kids to have a deep
+[01:58] knowledge of AI, but it's about sparking
+[02:00] their interest in AI. What does that
+[02:03] look like? I guess most likely bringing
+[02:06] them maybe to a robot convention,
+[02:08] showing them videos of robots, talking
+[02:10] to them about how they might be helpful
+[02:12] in their lives, in their families, in
+[02:14] their households, and in the country.
+[02:17] And the aim is that these six-year-olds
+[02:20] will one day grow up and be very good
+[02:24] users of AI.
+[02:26] >> That's the hope. Yeah.
+[02:28] >> Mhm. So six-year-olds will grow up and
+[02:31] totally know how artificial intelligence
+[02:33] works. But for the secondary schoolers,
+[02:36] middle schoolers, high schoolers, this
+[02:38] is about what ethics, right and wrong.
+[02:41] What do you think is happening there?
+[02:45] So we don't know what AI education is
+[02:48] going and AI is going to look like in
+[02:50] the next 10 years but
+[02:53] when you get into middle school now
+[02:55] you'll be able to use different
+[02:56] applications you know chat bots uh
+[02:59] different visual applications on the
+[03:01] phone you'll also be learning about the
+[03:03] ethics of AI you'll be learning about
+[03:05] privacy social responsibility issues
+[03:09] you'll be learning the basics about what
+[03:11] goes in the back end of AI and the
+[03:13] higher levels of high school that you
+[03:14] get, you'll learn about what goes into
+[03:16] actually making that. And I'm sure the
+[03:19] hope from the Chinese government's point
+[03:22] of view will be that some of these kids
+[03:24] will grow up and be AI engineers or
+[03:26] contribute to AI in some form or
+[03:30] fashion.
+[03:31] >> Okay. So, you talked about the potential
+[03:33] hope there. In April, China's President
+[03:36] Xiinping spoke about AI as a strategic
+[03:39] technology.
+[03:41] General Secretary Xin Ping noted that
+[03:43] the party central committee attaches
+[03:45] great importance to the development of
+[03:47] AI. The CPC has improved the top level
+[03:50] design and strengthened implementation
+[03:52] efforts in recent years. Why do you
+[03:55] think there is such an emphasis on AI in
+[03:58] China?
+[04:00] Xiinping has made it his mission to
+[04:02] achieve this great rejuvenation of China
+[04:05] by the year 2049 which basically means
+[04:07] he wants China to be really advanced,
+[04:11] prosperous, he calls it modern socialist
+[04:14] society and Xiinping believes artificial
+[04:18] intelligence is crucial to getting to
+[04:21] that goal. Somehow whoever is able to
+[04:25] really use AI will be one of the most
+[04:30] powerful, most advanced, most
+[04:32] influential countries in the world. And
+[04:34] he believes that so strongly that he
+[04:37] doesn't want to leave it to market
+[04:39] forces. He genuinely believes that the
+[04:42] state is responsible for doing what it
+[04:44] can to get its country there. So that's
+[04:47] why we're seeing all this investment.
+[04:49] That's why we're seeing these education
+[04:50] mandates. Um, so that's one part of it.
+[04:54] I think the other part is that Xiinping
+[04:56] as a leader since he's come to power,
+[04:58] it's been really evident that he's kind
+[05:00] of obsessed with narratives. And
+[05:02] artificial intelligence, as we know, is
+[05:06] not just this objective entity that will
+[05:10] speak the truth or whatever that is. It
+[05:12] is imbued with the ideas, the
+[05:15] philosophies, the histories, the
+[05:17] ideologies of whoever creates it. And
+[05:21] we're seeing people go to chat dpt or
+[05:24] these chat bots for not just not using
+[05:26] it as Google as you for direction in
+[05:29] their life. They're having an influence
+[05:31] on people. So Xiinping
+[05:33] also is conscious of China as not just a
+[05:37] rival with Western countries when it
+[05:40] comes to the economic sphere,
+[05:43] geopolitical sphere, the military
+[05:44] sphere. It's also an old rivalry with
+[05:47] countries like the US when it comes to
+[05:49] ideas. And one of the things that
+[05:50] artificial intelligence does is it it
+[05:52] powers these large language models. So I
+[05:56] think China also wants to make sure that
+[05:58] it is in the AI game writing its own
+[06:02] LLMs and playing a part in contributing
+[06:06] to that world narrative. And that is
+[06:08] also part of the mission I think. Well,
+[06:11] you mentioned the rivalry there. In the
+[06:14] US, 250 CEOs, including the heads of
+[06:17] LinkedIn, Uber, Salesforce, signed an
+[06:20] open letter to lawmakers criticizing the
+[06:23] US for not doing something similar to
+[06:25] what we're seeing roll out in China. So,
+[06:29] you've talked about why this is so
+[06:30] important to China being the narrative.
+[06:33] But when I think of narrative, I'm
+[06:34] imagining a bunch of squirmy
+[06:37] six-year-olds. Instead of using crayons
+[06:40] to color, they are using AI to generate
+[06:43] things from their imagination, pictures
+[06:45] of their home and what they did that
+[06:47] day. There's no more coloring outside
+[06:48] the lines because AI has got it. Is
+[06:50] there conversation online in China about
+[06:53] what this will look like? Will it look
+[06:55] like that?
+[06:57] I think when we look at the guidelines
+[07:00] that the government released about this
+[07:02] strongly urging the AI uh a AI to be in
+[07:07] Chinese curriculum, they specifically
+[07:09] say that they don't want AI to be
+[07:12] thinking for the kids. They want them to
+[07:14] be able to use AI without those things.
+[07:18] But it's kind of difficult, right?
+[07:20] because you're teaching kids about how
+[07:21] useful this is, how great this is. But
+[07:23] no, no, don't don't you don't use it.
+[07:26] Just I'm just, you know, telling you an
+[07:28] app. This is a thing the rest of the
+[07:30] world will have to kind of figure out
+[07:31] like how are we going to teach our
+[07:34] children how to use AI without it
+[07:36] harming their ability to think for
+[07:38] themselves. And what I'm seeing from the
+[07:40] Chinese government especially is this
+[07:42] very conscious move to make sure that
+[07:46] that population kind of embrace AI that
+[07:51] they're not scared of it that they will
+[07:52] see it as a positive.
+[07:55] >> Well, Katrina, you have reported on how
+[07:58] the Chinese government is pouring
+[08:00] billions into not just AI development
+[08:03] but also into the creation of robotics
+[08:06] that can run that AI. And you got to see
+[08:09] this up close and personal at the World
+[08:11] Robotics Conference in Beijing.
+[08:13] >> Yeah.
+[08:14] >> I've seen a video of you exploring this
+[08:17] conference and it's really quite
+[08:19] something to see. So tell us about what
+[08:20] you saw or should I say who you met.
+[08:25] >> Um 200 companies were presenting their
+[08:28] robots at this conference and the theme
+[08:31] was embodied intelligence. So, you know,
+[08:34] a lot of us, many of us may have
+[08:36] chatbots on our phone, but it's about
+[08:38] giving those chatbots a body, human or
+[08:42] animal or otherwise. And so, first of
+[08:46] what impressed me was the scale of this.
+[08:50] [Music]
+[08:54] >> They had fighting robots in a boxing
+[08:56] ring. They had robots that were playing
+[08:58] the drums, playing the piano, making
+[09:00] coffee, serving popcorn. They had
+[09:04] freakily human looking robots, you know,
+[09:07] with like the silicon skin that that is,
+[09:11] you know, with the hair, with the eye
+[09:13] movements. You know, in China, there are
+[09:16] hundreds of companies creating humanoid
+[09:20] robots to do all sorts of things. One of
+[09:23] the robots that impressed me was a robot
+[09:24] that has been designed by UB Tech and
+[09:27] their robots are being used in some
+[09:29] electric vehicle factories in China. And
+[09:32] they have now come up with a robot that
+[09:34] can change its own battery. Like it
+[09:37] literally takes a battery out of its
+[09:40] back while still having another battery.
+[09:42] It knows when its battery is low. It
+[09:44] replaces it and then it goes on working.
+[09:47] So
+[09:47] >> incredible. There is now a worker, a
+[09:49] factory worker that doesn't rest,
+[09:51] doesn't sleep,
+[09:52] >> doesn't take breaks, doesn't eat,
+[09:54] doesn't complain, can work 247.
+[09:58] So that's like something I thought was
+[10:02] only in movies, but that's already
+[10:04] happening. Another thing that surprised
+[10:06] me is there were so many kids at this
+[10:08] thing and it was geared towards kids.
+[10:11] You know, the first time my
+[10:13] three-year-old saw a robot was in person
+[10:16] was at the mall. this like dog looking
+[10:18] robot. And the first thing my
+[10:20] three-year-old did was freak out because
+[10:22] like
+[10:22] >> it's animal, but it's not quite an. But
+[10:25] the more you see it, the more you
+[10:26] interact with it, the more you get used
+[10:28] to it, the more um
+[10:32] interested you are and welcoming of this
+[10:34] kind of technology. Potentially that
+[10:36] humanoid robot could be walking their
+[10:38] dog and cooking their food at home. It
+[10:40] could be
+[10:41] >> not teaching them at school, but it
+[10:43] could be like the assistant teacher at
+[10:45] their school one day. Who knows?
+[10:48] >> As the technology increases, they can
+[10:50] become much more lifelike. So, it won't
+[10:53] feel like they're an anomaly, this
+[10:55] robotic thing that's like a human or
+[10:58] that's like an animal. You actually
+[11:00] spoke to one who's not quite there yet.
+[11:03] Tell me about that that exchange.
+[11:06] >> So, um I just wanted to have a
+[11:09] conversation. I said, "I'm Katrina
+[11:12] >> from Alazera."
+[11:14] And then I waited for a response maybe
+[11:16] five seconds. It was thinking, you know,
+[11:18] it was like thinking.
+[11:19] >> Nice to meet you too, Katrina. It's
+[11:22] great to connect with a journalist from
+[11:23] Algeria.
+[11:24] >> It's great to meet a journalist from
+[11:26] Algeria.
+[11:28] >> So,
+[11:30] not quite. I mean, and then I corrected
+[11:32] it and then it apologized to me. So,
+[11:34] that was nice. But the technology, who
+[11:36] knows, 5 years from now, that that could
+[11:38] have been a much smoother conversation.
+[11:41] and it was a warm tone. That's obviously
+[11:44] not the most advanced. I'm sure some
+[11:47] company in the back of their warehouse
+[11:49] has some secret project that's even more
+[11:51] advanced going on. And so there is so
+[11:53] much investment. I've covered so many AI
+[11:56] stories. For me, I feel like AI is
+[11:59] >> it's such a huge thing. And this analyst
+[12:02] I was talking to, she says, you know,
+[12:04] there is no other government that is so
+[12:06] enthusiastic as China in really making a
+[12:10] bet on AI. They are really hoping this
+[12:13] is going to pay off because if you look
+[12:15] at other governments, especially in the
+[12:17] West, they're actually kind of afraid
+[12:18] because they are are afraid of the
+[12:20] impact this is going to have on their
+[12:21] labor force. They're afraid of people
+[12:24] losing their jobs. And so they're
+[12:26] they're kind of just tentative, maybe
+[12:28] wait and see. in some cases even holding
+[12:31] back with AI. But China is going all in.
+[12:34] So one of the reasons for that is that
+[12:36] China is in the middle of a demographic
+[12:38] crisis, aging population. There is a
+[12:40] concern that the labor force that
+[12:42] powered its
+[12:44] breakneck economic growth that that era
+[12:47] could quickly end. And I think they're
+[12:50] also hoping that the solution to that
+[12:53] will be AI could be humanoid robots in
+[12:57] factories instead of the millions of
+[13:00] people who now power those industries.
+[13:04] We'll have more with Katrina after the
+[13:06] break.
+[13:10] You know, Katrina, you and I um through
+[13:12] so much of this conversation are being
+[13:14] kind of jovial because so much of this
+[13:16] conversation feels very sci-fi and feels
+[13:19] fun and and light. There's also another
+[13:22] sector where AI is increasingly being
+[13:25] used and that has people nervous and
+[13:28] that is in warfare. So a big part of any
+[13:31] country's identity is its military and
+[13:33] we know that President Xi has also vowed
+[13:36] to have a worldclass military by 2050.
+[13:40] How does China talk about AI when it
+[13:43] comes to conflict? I think Xiinping has
+[13:47] made it very clear that AI is going to
+[13:50] play a crucial role in China's military,
+[13:53] not just tomorrow, but but today. We
+[13:55] just had in Beijing, the whole city shut
+[13:58] down for this massive military parade on
+[14:00] September the 3rd, which was marking the
+[14:02] end of World War II. The crowd of more
+[14:05] than 50,000 waved Chinese flags,
+[14:07] cheering as thousands of soldiers
+[14:10] marched in perfect unison. Several
+[14:12] hundred ground weapon systems on
+[14:14] display. over 100 aircraft,
+[14:17] >> lots of soldiers goostepping. It was a
+[14:20] spectacle and a lot of military
+[14:22] analysts. The messages that I got
+[14:24] afterwards were really remarking on not
+[14:28] only the advanced tanks, the advanced
+[14:30] jets, the advanced hypersonic missiles,
+[14:32] but so many different types of drones,
+[14:34] so many different types of unmanned um
+[14:37] ships, unmanned um submarine vehicles.
+[14:42] The phrase that I heard was that the
+[14:43] army of the future is the army of no man
+[14:46] and that the future of warfare could be
+[14:49] fought with all of these unmanned
+[14:52] vehicles. And one analyst I spoke to
+[14:53] said, "Well, if you remove the person
+[14:56] from a ship, then you don't need to
+[14:58] worry about defending the ship or arming
+[15:00] it in a certain way. It really just
+[15:02] changes the game. You have um you can
+[15:05] have all these vehicles. You can have
+[15:07] these have a swarm attack. AI will be
+[15:11] used in the way that a battlefield is
+[15:13] scanned in surveillance and
+[15:14] reconnaissance in early warning. It can
+[15:17] be used in training
+[15:19] I think is also begging the question of
+[15:22] other governments and I mean the kind of
+[15:25] investments they're making in their
+[15:27] military are they making the right
+[15:30] investments or should they also be
+[15:32] thinking about a war that can be fought
+[15:34] with all these unmanned technologies?
+[15:37] >> Yeah. Well, Katrina, at the same time,
+[15:40] there's also another battle. We touched
+[15:42] on this earlier, but I want to dive in a
+[15:44] little deeper here, and that is about
+[15:46] the battle for dominance in AI
+[15:50] specifically when it comes to the
+[15:53] technology that powers it. So, AI chips,
+[15:55] can you tell us a little bit about
+[15:56] those?
+[15:58] Well, not being engineer an engineer. I
+[16:01] think in simple terms,
+[16:03] AI requires a lot of computing power and
+[16:06] the US had control over the creation of
+[16:10] the best semiconductors. If you think of
+[16:13] companies like Nvidia for example at the
+[16:15] forefront of this kind of technology,
+[16:19] I think there was a recognition from the
+[16:22] previous US Biden administration that
+[16:26] maybe they shouldn't be sending their
+[16:28] best semiconductors to China because one
+[16:31] day they could be used at China's
+[16:33] arrival could be used against the US
+[16:35] militarily. And so they started
+[16:37] systematically restricting the access of
+[16:41] semiconductors to the Chinese market.
+[16:44] Now at the beginning that was quite
+[16:46] devastating for Chinese companies who
+[16:48] relied on this kind of technology.
+[16:51] But it has also spurred the Chinese
+[16:54] government
+[16:56] to really be on a mission for
+[16:58] self-reliance
+[16:59] to realize hey maybe we shouldn't be
+[17:02] relying on the US for something that is
+[17:03] so important to our mission and our
+[17:05] future. maybe we should create a
+[17:06] homegrown industry. And that is exactly
+[17:09] what China has done. And it's been slow,
+[17:12] painful, and expensive. But China now is
+[17:16] progressing in the creation of its own
+[17:18] semiconductors.
+[17:20] And I think you have the creation or the
+[17:24] founding of companies like Deepseek that
+[17:29] suddenly came on the global stage
+[17:31] seemingly out of nowhere earlier this
+[17:33] year. Deepseek caused those ripples in
+[17:36] the US because Deepseek is a Chinese
+[17:39] artificial intelligence company
+[17:40] >> and it has emerged as a real player in
+[17:43] the AI arms race. It's called Deep Seek
+[17:47] and investors and I would imagine
+[17:49] officials in Washington are stunned to
+[17:51] learn that Deep Seek's AI model has
+[17:54] developed technology that can actually
+[17:56] be competitive with Open AI and Google
+[17:58] and XAI and all these more established
+[18:01] players. and it freaked out the stock
+[18:04] market and the whole tech industry in
+[18:06] the United States because it really
+[18:08] challenged this narrative. So
+[18:11] >> China has now
+[18:13] >> got an industry that many experts would
+[18:16] acknowledge that yes it is still behind
+[18:19] the US but maybe it's not as far behind
+[18:22] as we thought and some nationalist
+[18:24] commentators on in China say actually
+[18:28] thank you to the US thank you to the
+[18:30] Biden administration for doing that
+[18:32] because that really lit a fire under the
+[18:35] bottom of policy makers in China and
+[18:37] they're not going to need to go to
+[18:40] anyone else for semiconductors to power
+[18:42] their AI dreams of the future.
+[18:45] >> AI dreams of the future. So Katrina,
+[18:48] before we go, you and I have a couple of
+[18:51] things in common and that is that we are
+[18:53] both elder millennials and we both have
+[18:57] young kids who are not quite school age
+[19:00] yet but will be soon. and your kids are
+[19:04] growing up in a world where AI will be
+[19:08] something they learn most likely in
+[19:11] school.
+[19:12] When you think of their future, do you
+[19:14] ever wonder how different it will be
+[19:16] from
+[19:17] the upbringing that you had
+[19:22] >> all the time? I think it's already so
+[19:25] different. Technology is such a huge
+[19:27] part of our lives and I wonder
+[19:35] what kind of part it's going to play in
+[19:37] their future when they grow up, what
+[19:39] kind of jobs they're going to have. And
+[19:42] I think there's like two sides of the
+[19:44] coin. And my husband and I talk about
+[19:46] this all the time. He's kind of the
+[19:48] pessimistic, oh no,
+[19:52] of kind of not panicking, but a little
+[19:55] worried about what their future is going
+[19:57] to look like. I'm choosing to be
+[19:59] optimistic.
+[20:01] I'm hoping that whatever world they grow
+[20:03] up with, a in with AI, that it's going
+[20:05] to free up their time to be more
+[20:09] creative, to be more expressive, that it
+[20:11] will celebrate the things that make them
+[20:13] human, that it might take away jobs.
+[20:16] sure that are process oriented,
+[20:19] that are repetitive,
+[20:21] but maybe the future will be a better
+[20:24] one. I don't know what it's like. It's
+[20:26] changing so quickly, but I can only
+[20:29] choose to be hopeful.
+[20:31] >> And
+[20:33] I think that there's no point in trying
+[20:35] to shield them from it. I think AI will
+[20:40] be an inevitable part of their life. So,
+[20:42] as a parent, I think it's also my
+[20:44] prerogative to be on top of that and to
+[20:48] be curious and open and um resist the
+[20:53] elder millennial ways of not moving on
+[20:55] this and and see where it takes takes um
+[20:59] not just my kids, but all of us.
+[21:02] >> Yeah. Katrina, thank you for this
+[21:05] conversation and for letting us in on
+[21:07] what it's like in Beijing right now.
+[21:09] >> Thank you so much, Malikica. It's been a
+[21:11] pleasure talking to you.
+[21:16] [Music]

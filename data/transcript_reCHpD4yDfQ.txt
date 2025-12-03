@@ -1,0 +1,467 @@
+Video reCHpD4yDfQ
+======================================================================
+
+[00:00] NASA's estimated budget of $500 billion
+[00:01] for a human landing on Mars
+[00:04] could buy 1.36 Alis, 3.5 NBA leagues, or
+[00:07] build 100 Apple Towers. Park, buying 140 billion cups of coffee
+[00:11] is only enough for OpenAI to build one Stargate data center.
+[00:13] But this may just be the beginning
+[00:15] ; its ambition may be ten times or even more.
+[00:18] In addition to OpenAI
+[00:19] , tech giants such as xAI and Meta
+[00:21] have also started to spend money like crazy on AI data centers,
+[00:23] starting a global infrastructure frenzy
+[00:26] and betting on a new trillion-dollar market.
+[00:27] But behind the frenzy, we can't help but ask
+[00:30] where all this money is going.
+[00:32] Hello everyone,
+[00:32] welcome to "Silicon Valley 101".
+[00:34] I am Chen Qian.
+[00:34] In this video, we will take a look at
+[00:37] the capital expenditure behind AI data centers.
+[00:39] What are the components of a data center?
+[00:41] Who are the main upstream and downstream companies and players?
+[00:44] How exactly is the money spent
+[00:45] ? Interestingly, after reviewing various reports, we
+[00:47] found that everyone's budget is different.
+[00:50] So who is right?
+[00:52] Some data centers have even been "forced" to go to space.
+[00:54] Why?
+[00:55] Why is capital still pouring in
+[00:58] when AI is being questioned as a bubble ? Let's first look at
+[01:06] the cost analysis of
+[01:07] next-generation AI data centers by Bank of America
+[01:09] on October 15 this year.
+[01:11] We divide the expenditure of data centers into four main categories
+[01:14] : IT equipment, power supply equipment,
+[01:16] cooling equipment, and engineering construction
+[01:18] . For easier comparison,
+[01:19] we'll standardize the unit of measurement to expenditure per GW.
+[01:25] First, let's look at IT equipment directly related to computing
+[01:29] , specifically servers, networks, and storage.
+[01:31] Servers account for the largest share
+[01:34] , approximately $37.5 billion per GW.
+[01:37] Servers include
+[01:41] crucial components like CPUs, GPUs, memory, and motherboards,
+[01:42] typically supplied directly by ODMs (Original Design Manufacturers)
+[01:44] , such as Foxconn.
+[01:46] These companies obtain server design standards
+[01:49] from chip design companies like Nvidia and AMD and manufacture complete systems
+[01:52] , supplying directly to hyperscale clients like
+[01:54] Oracle, Meta, and Amazon.
+[01:56] ODMs hold a 46% share of the server market.
+[01:59] Other small and medium-sized enterprises (SMEs) need to purchase servers
+[02:02] from OEMs (Original Equipment Manufacturers) like
+[02:04] Dell, Supermicro, and HP.
+[02:06] In the networking sector,
+[02:07] $3.75 billion per GW is needed for network equipment.
+[02:11] Major players include
+[02:12] Arista, Cisco, Huawei, and Nvidia.
+[02:15] It's worth noting that
+[02:16] although Nvidia only holds a 5% market share
+[02:20] , some industry experts argue
+[02:22] that while Nvidia's InfiniBand
+[02:24] network communication standard is more expensive
+[02:26] , its low latency... The advantages of delayed response and no packet loss risk
+[02:29] are more suitable for AI data centers.
+[02:32] Finally, there's storage, specifically hard drives.
+[02:34] Each GW requires $1.9 billion in storage equipment.
+[02:38] Major players include
+[02:39] Samsung, SK, Micron, and Seagate.
+[02:42] Adding these three items together
+[02:44] , we arrive at $43.15 billion per GW for
+[02:45] IT equipment
+[02:49] —the bulk of data center spending.
+[02:52] While IT equipment is core
+[02:54] , the entire data center's support system is equally crucial.
+[02:58] Next, let's look at the cooling system.
+[03:00] First, let me tell you a story:
+[03:05] In 2018, an Atlanta data center
+[03:08] suffered a cyberattack,
+[03:09] forcing the closure of multiple city services,
+[03:11] including courts, police stations, and airports.
+[03:13] Besides locking data with ransomware, the attackers
+[03:16] also compromised the cooling system.
+[03:20] After the system was compromised,
+[03:21] the ambient temperature soared to over 100 degrees Fahrenheit,
+[03:24] damaging many chips.
+[03:26] The hackers even held the servers
+[03:28] and cooling system hostage,
+[03:30] demanding $51,000 in Bitcoin.
+[03:33] Later, attacks on cooling systems became increasingly common
+[03:36] and sophisticated.
+[03:38] This story illustrates the critical importance
+[03:39] of the cooling system for a data center.
+[03:42] Although the construction budget only accounts for 3% of the total cost,
+[03:46] with the exponential upgrade of global AI computing power demand,
+[03:49] traditional air cooling technology is struggling to meet
+[03:52] the heat dissipation needs of high-density computing equipment. Furthermore
+[03:54] , for NVIDIA GPUs,
+[03:56] heat dissipation capacity has
+[03:58] become a core bottleneck restricting computing power.
+[04:00] Therefore, for data centers,
+[04:02] liquid cooling has gone from an alternative
+[04:05] to a necessity
+[04:06] . For data centers equipped with liquid cooling systems,
+[04:09] the cooling equipment mainly includes
+[04:11] cooling towers, chillers, CDUs (cooling distribution units),
+[04:14] and CRAHs (data center air handling units).
+[04:17] To handle 1GW of cooling,
+[04:19] these would require expenditures of
+[04:20] $0.9 billion, $3.6 billion, $4.5 billion, and $5.75 billion
+[04:25] respectively , totaling $1.475 billion.
+[04:27] Major suppliers are
+[04:29] numerous and scattered across various stages, so we won't list them all
+[04:32] , but
+[04:32] Vertiv, Johnson Controls, Stuttgart, and Schneider Electric
+[04:36] are all major players in this field.
+[04:37] Having discussed cooling and
+[04:39] power as core infrastructure,
+[04:41] let's look at the power supply equipment.
+[04:46] Power supply equipment mainly includes
+[04:47] emergency power supply, backup diesel generators,
+[04:50] power distribution control switching equipment, and
+[04:52] UPS (Uninterruptible Power Supply)
+[04:53] to ensure uninterrupted power
+[04:54] supply. The busbars and other power distribution equipment that supply power to each generator unit (Power Supply)
+[04:58] are estimated by Bank of America
+[04:59] to cost $400,000 to $550,000 per MW for a
+[05:01] typical diesel generator.
+[05:05] Fuel tanks, fuel pumps, and installation costs combined
+[05:08] are approximately $350,000 to $500,000
+[05:10] , making the cost of a generator per MW
+[05:12] approximately $800,000.
+[05:14] Providing 1GW of power
+[05:16] would require $800 million in emergency generators.
+[05:19] However, according to our guests,
+[05:20] the actual cost is far higher
+[05:22] due to redundancy.
+[05:24] If your IT (equipment) capacity (power consumption) reaches,
+[05:27] for example, 1GW,
+[05:29] you often need more than 1GW of diesel generators.
+[05:33] There are several reasons for this
+[05:34] , but the most important is
+[05:35] ensuring redundancy.
+[05:37] For some data centers with particularly high reliability requirements,
+[05:40] the number of diesel generators
+[05:42] may be twice the data center's computing power.
+[05:45] For example, a 1GW data center
+[05:48] might require 2GW of diesel generators.
+[05:50] The biggest players
+[05:52] in the diesel generator market
+[05:54] are Caterpillar , Cummins, and Rolls-Royce, which
+[05:57] are roughly equal . In addition, a 1GW data center
+[05:59] also requires $615 million in switchgear, $
+[06:02] 985 million in UPS systems, and $300 million in power distribution equipment.
+[06:05] The three major players in these electrical equipment
+[06:08] are Schneider Electric, Vertiv, and Eaton.
+[06:10] Therefore, the total cost of the power supply infrastructure
+[06:12] is calculated per GW... $2.7 billion is
+[06:15] only 1/13th of the cost of IT equipment
+[06:17] , which seems quite cheap.
+[06:20] Although power supply is free
+[06:21] ,
+[06:22] it has become a core bottleneck for many data centers in the United States.
+[06:25] We will discuss this in more detail later in the video.
+[06:28] Let's first draw the complete pie chart of this expenditure.
+[06:31] The last item is construction
+[06:37] costs. Construction costs include
+[06:39] building costs, installation costs, general contractor fees, etc.
+[06:43] The estimated cost for each GW of construction is approximately $4.28 billion
+[06:47] . We calculated
+[06:49] that the total expenditure
+[06:51] for building a 1GW data center is approximately $51.6 billion
+[06:55] , with IT equipment accounting for the highest proportion of
+[06:56] the cost, reaching 84%.
+[06:59] Therefore,
+[07:00] OpenAI's 10GW Stargate project
+[07:03] would cost $516 billion.
+[07:05] This is very close
+[07:08] to the officially announced $500 billion investment.
+[07:10] However, while reviewing various research reports, we
+[07:13] found something interesting:
+[07:15] the data provided by
+[07:16] different institutions varies greatly.
+[07:20] For example, taking Stargate as an example,
+[07:22] the total budget estimated by different institutions
+[07:24] differs by as much as $200 billion.
+[07:27] Why is this?
+[07:28] How should we interpret these calculation discrepancies
+[07:31] ? Let's elaborate a bit more.
+[07:37] First, let's look at the predictions from several different institutions.
+[07:40] Bernstein's report released on November 1st stated that
+[07:43] the cost of each GW of AI data center is approximately $35 billion
+[07:47] , and the expenditure breakdown for each item
+[07:49] also differs from Bank of America's prediction.
+[07:51] For instance, the total expenditure for IT equipment related to GPUs, networks, CPUs,
+[07:54] and storage is 56%,
+[07:56] far lower than the 84% calculated by Bank of America.
+[07:59] Barclays Bank
+[08:00] 's report at the end of October indicated that
+[08:02] the expenditure for each GW of AI data center
+[08:04] is $50-60 billion
+[08:06] , with 65-70% used for computing and networking.
+[08:10] And in August of this year,
+[08:11] Morgan... Stanley's research model
+[08:13] estimates a cost of $33.5 billion per GW
+[08:16] , with computing equipment accounting for 41%
+[08:19] and the remaining 59%
+[08:20] allocated to infrastructure such as power and cooling.
+[08:24] Why then are the predictions
+[08:25] so disparate?
+[08:27] There are two main reasons.
+[08:28] First, the assumptions differ.
+[08:31] Bank of America's calculations focus
+[08:33] on Nvidia's
+[08:35] Rubin architecture , released in early September
+[08:36] , which is expected to be available by the end of 2026.
+[08:38] Bernstein and Morgan Stanley's calculations focus on
+[08:41] the Blackwell architecture, to be released in March 2024.
+[08:44] Bernstein's GPU costs $13.65 billion (13.65 billion USD), while
+[08:48] BofA's (Bank of America) Future (future data center)
+[08:50] costs $37.5 billion (37.5 billion USD).
+[08:52] This difference alone is over 20 billion USD
+[08:55] , which I feel is the biggest difference
+[08:57] . Therefore, the biggest difference
+[08:59] in the calculated amounts lies in the different chip prices,
+[09:02] resulting in a $20 billion difference per GW.
+[09:04] The costs of other facilities like power supply and cooling
+[09:07] don't differ significantly.
+[09:08] However, this also suggests that
+[09:10] Jensen's next-generation chips will be more expensive,
+[09:12] a new "
+[09:14] Jensen's Mathematics." Math
+[09:15] estimates that the total cost of a 1GW AI data center
+[09:18] is between $600 and $800 billion
+[09:20] , even higher than predictions from other institutions. The
+[09:23] "computing cost," which
+[09:25] represents Nvidia's potential revenue,
+[09:27] is approximately
+[09:29] $ 400 to $500 billion
+[09:31] . I think Nvidia's assessment is probably accurate
+[09:33] ; they know what price they want to set, right?
+[09:35] They've calculated the energy consumption,
+[09:37] the price, and
+[09:38] how much profit they expect to make.
+[09:41] The second reason is the difference in the scope of calculation.
+[09:43] BofA (Bank of America) calculates
+[09:47] the cost of
+[09:49] the data center building
+[09:50] itself , while Bernstein calculates
+[09:52] the cost of the entire data center campus,
+[09:56] including the power distribution system
+[09:59] and generators.
+[10:00] I feel that
+[10:02] BofA's generators
+[10:03] are primarily
+[10:05] backup diesel generators,
+[10:06] while Bernstein's generators
+[10:08] are gas generators.
+[10:10] Turbines are essentially self-generating generators .
+[10:14] Therefore, considering all factors,
+[10:15] our guests believe that
+[10:17] the budget provided by Bank of America
+[10:20] for the future data centers built by tech giants
+[10:23] is closer to the reality.
+[10:25] So, this episode's estimate
+[10:27] is based on the Bank of America report. As
+[10:29] we mentioned earlier,
+[10:30] electricity will become a bottleneck for data centers.
+[10:33] This is why you see
+[10:35] generators both inside and outside the data centers in our animation.
+[10:38] There will be a significant hidden expense
+[10:39] in
+[10:41] electricity investment
+[10:44] . Let's continue discussing this.
+[10:52] We previously did a video and podcast
+[10:54] discussing the power shortages caused by AI
+[10:56] and why the US is so short of electricity
+[10:58] . A year and a half later,
+[11:00] the situation hasn't improved.
+[11:02] Now, tech giants
+[11:04] have to invest in building their own power plants
+[11:06] to obtain electricity. OpenAI or its partners like Oracle
+[11:08] need to find ways to create new capacity.
+[11:12] Many tech companies now
+[11:14] ... They have to build their own generators, power plants,
+[11:17] substations, and distribution network facilities
+[11:19] , and even some shorter power transmission lines,
+[11:22] to meet their own needs.
+[11:23] If you want to equip a 10GW data center
+[11:26] with a power plant,
+[11:28] the cost could reach
+[11:30] $120-200 billion.
+[11:34] So we also see
+[11:35] that the large-scale infrastructure construction of AI data centers
+[11:37] has boosted the power stocks
+[11:39] , which were considered a "sunset industry."
+[11:41] Their gas turbine orders are even booked up for three years.
+[11:44] Google once spent $3 billion
+[11:47] to upgrade two hydroelectric power plants in Pennsylvania
+[11:49] in order to obtain 3,000MW of power.
+[11:52] This means that it would cost $1 billion to acquire 1GW.
+[11:56] And this is just the cost of upgrading
+[11:57] . Musk
+[12:00] also acquired a power plant for the Colossus 2 project.
+[12:02] Data centers are fiercely competing for power.
+[12:04] Some analysts believe
+[12:06] that companies like GE
+[12:08] have the ability to pay a premium
+[12:09] (to purchase) 1GW (generators),
+[12:10] which may be equivalent to $2.5 billion (US dollars).
+[12:12] $2.5 billion is a potentially high figure.
+[12:13] I think if you use $2 billion, it'll be around
+[12:16] the CapEx (capital expenditure).
+[12:17] Here's the problem:
+[12:19] data centers already have emergency generators,
+[12:22] so why not just use them for power ?
+[12:25] There's a fundamental difference between
+[12:27] emergency diesel generators
+[12:29] and large natural gas turbine generators.
+[12:31] Diesel generators
+[12:32] are primarily used as backup power,
+[12:36] so
+[12:37] all their components
+[12:39] are optimized for high power and short bursts.
+[12:43] Therefore, they can't handle 24/7
+[12:46] operation.
+[12:48] Natural gas turbine generators,
+[12:50] on the other hand, are designed for
+[12:51] scenarios
+[12:53] like running
+[12:54] almost every hour of the year.
+[12:56] There are other reasons as well.
+[12:57] Diesel is a relatively expensive fuel,
+[13:00] while natural gas generators
+[13:02] use natural gas
+[13:04] , which can be piped . The cost of
+[13:06] generating the same amount of electricity
+[13:07] from a diesel generator
+[13:09] is likely 3 to 8 times that of a natural gas generator.
+[13:13] So, the construction of data centers
+[13:15] is currently stuck on obtaining power.
+[13:17] The US power grid can't provide enough power, and
+[13:20] natural gas turbine generators are unavailable.
+[13:23] This has spurred the development of other methods
+[13:26] , such as fuel cells, which are becoming increasingly popular.
+[13:29] Even tech giants are being "forced" into space.
+[13:32] Google's latest news is that
+[13:33] they plan to send a data center into space in 2027.
+[13:36] The main reason is that
+[13:37] using solar panels in space
+[13:40] can generate electricity at eight times the efficiency on Earth
+[13:42] , and it can also solve the problem of no solar energy at night,
+[13:45] which is essentially a free and unlimited energy supply.
+[13:47] In addition,
+[13:49] vacuum and radiation heat dissipation in space can
+[13:52] reduce the need for cooling systems.
+[13:54] In addition to Google, Microsoft, Amazon
+[13:56] , and Musk's SpaceX
+[13:57] , all have started exploring this area.
+[13:59] So how much does it cost to build a space data center?
+[14:02] On LinkedIn,
+[14:03] we saw that some people predict that
+[14:06] the cost of building a 1MW space data center
+[14:09] , including launch costs,
+[14:10] is about $35.5 million.
+[14:13] If it is 1GW,
+[14:15] it will be $35.5 billion
+[14:17] . However, this does not seem to be much more expensive than on Earth.
+[14:20] We plan to make a separate video
+[14:23] to discuss
+[14:24] the challenges and opportunities behind
+[14:27] the feasibility of space data centers.
+[14:28] Don't forget to follow us.
+[14:34] Since building AI data centers is so costly
+[14:38] , and the market is full of doubts and doubts about a bubble,
+[14:41] why does this infrastructure boom only increase?
+[14:45] According to the guests we interviewed,
+[14:46] there are two main reasons
+[14:48] . First, underinvestment is riskier than overinvestment.
+[14:53] Most companies now realize
+[14:54] that underinvestment
+[14:56] is riskier than overinvestment.
+[14:59] The risks of insufficient investment
+[15:01] far outweigh those of overinvestment. Why? Because whoever acquires the best AI model or AGI first will likely capture a large market share, rapidly shrinking the survival space of other companies. Now let's look at the risks of overinvestment. You
+[15:04] 've
+[15:05] essentially
+[15:09] bought
+[15:10] more
+[15:14] land
+[15:17] ,
+[15:18] more
+[15:19] electricity
+[15:20] , and more buildings
+[15:23] to build data centers.
+[15:24] In the end, you might find that you've overspent
+[15:26] , but you can use it for
+[15:27] internal
+[15:30] efficiency improvements
+[15:31] , lease it out
+[15:33] , or sell the land and electricity to other companies.
+[15:36] Overall, the risks of overinvestment
+[15:38] have a ceiling.
+[15:40] The second reason is that
+[15:42] as long as there's computing power
+[15:43] , tech companies will always find a way to utilize it.
+[15:46] There's a saying in Silicon Valley
+[15:47] : "Bill will always eat Andy.
+[15:49] " As long as you have infrastructure
+[15:51] , hardware,
+[15:52] and servers, there will always be a way
+[15:53] to use it.
+[15:55] Earlier this week, OCP... Meta's representatives stated
+[15:58] that their current GPUs
+[16:00] already require significant computing power
+[16:02] just for internal AI tasks
+[16:04] like filtering inappropriate content for
+[16:07] Instagram or Facebook
+[16:09] . Even with surplus idle computing power
+[16:11] , it could be fully utilized
+[16:14] for internal cost reduction.
+[16:15] Therefore, I believe mainstream companies
+[16:18] aren't worried about
+[16:19] overinvestment.
+[16:20] We see
+[16:21] that even with market skepticism
+[16:23] about AI overinvestment,
+[16:25] giants are still investing heavily .
+[16:28] The final question is,
+[16:29] where does the trillion-dollar demand come from?
+[16:33] It comes from
+[16:34] the self-generated money of these
+[16:35] hyperscale cloud service providers.
+[16:36] They reinvest
+[16:38] their profits and debts.
+[16:40] Ultimately, it relies on the
+[16:42] public market—
+[16:44] the US investment-grade
+[16:45] or high-yield
+[16:46] bond market—and
+[16:47] the emerging
+[16:49] shadow banking system
+[16:51] , also known
+[16:52] as
+[16:53] private credit.
+[16:55] These large financing channels
+[16:58] support the entire AI build-up . The infrastructure boom
+[17:01] isn't unprecedented in American history.
+[17:03] I think AI is more like a large-scale
+[17:06] global infrastructure cycle
+[17:08] . As long as you (AI) can make money,
+[17:09] you're a global growth driver,
+[17:11] so you don't really need to worry about money.
+[17:13] This seemingly crazy investment
+[17:15] is essentially a
+[17:17] game of "who gets to the future first."
+[17:19] This path may be risky
+[17:21] , but for tech giants,
+[17:23] the cost of "absence"
+[17:24] is higher than the cost of "investing wrongly."
+[17:27] Okay, that's all for this video.
+[17:29] I'm Chen Qian, co-founder of "Silicon Valley 101."
+[17:32] Your likes, comments, and shares
+[17:33] are the best motivation for us to create in-depth technology
+[17:35] and business content.
+[17:36] See you in the next video! Bye!

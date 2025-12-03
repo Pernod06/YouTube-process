@@ -1,0 +1,408 @@
+You’re Not Behind (Yet): How to Learn AI in 17 Minutes
+======================================================================
+
+[00:00] Most people using AI are doing it wrong,
+[00:02] which is why it's surprisingly easy to
+[00:04] get ahead of 99% of them. I have spent
+[00:07] over 20 years in tech and AI as a CEO,
+[00:10] board member, investor, building
+[00:12] billiondoll companies. And here's what
+[00:15] I'm seeing. The gap between people who
+[00:17] understand AI and those who don't is
+[00:19] getting wider faster. In this video,
+[00:22] I'll give you a clear sevenstep road map
+[00:24] to master AI like the top 1%. And the
+[00:28] best part is you can actually do it in
+[00:30] just 30 days, even if you're a total
+[00:32] beginner. Let's dive in. Week one starts
+[00:35] with learning what I call machine
+[00:37] English. Most people talk to AI like
+[00:40] it's a person. And that's a huge
+[00:42] mistake. Why? Because the generative AI
+[00:44] systems like Chad GPT don't actually
+[00:47] understand our language. They predict
+[00:48] it. And that's where most people get
+[00:51] stuck. If I said Humpty Dumpty sat on a
+[00:55] Your brain's going to fire wall, you
+[00:58] knew what was coming. Your brain
+[00:59] predicted it. You could have said Humpty
+[01:01] Dumpty sat on a roof. Now it's accurate,
+[01:04] but you knew wall was more likely based
+[01:07] on what you've seen before. Think about
+[01:09] Google search. It does autocomplete the
+[01:12] same way. Why? Because it has seen so
+[01:15] many search queries before. It has
+[01:17] learned from it and now is giving you
+[01:19] the most likely option. AI models like
+[01:21] Chat GPT or Gemini work in a similar
+[01:23] fashion, but they're different than
+[01:25] search engines because they don't store
+[01:27] any [music] pre-baked answers. They
+[01:29] generate the answer on the fly. How do
+[01:32] they generate it? Like at a very high
+[01:33] level, AI breaks your text into smaller
+[01:36] parts called tokens. Each token is a
+[01:40] word or sometimes a part of a word.
+[01:42] Humpty is probably one token. Dumpty
+[01:45] could be another token. Sat another
+[01:47] token. Wall another token. [music]
+[01:49] Then AI converts each token into a list
+[01:52] of numbers, also known as
+[01:54] multi-dimensional vectors. Those numbers
+[01:56] are placed inside a massive mathematical
+[02:00] space called an embedding space. And in
+[02:03] that massive space, similar ideas tend
+[02:06] to live closer together. The system has
+[02:09] learned from previous experiences. So,
+[02:11] it knows that the word Humpty, egg,
+[02:14] wall, and fall will be closer, [music]
+[02:16] but they're going to be far from words
+[02:18] like motorcycle or chocolate. Now, when
+[02:21] it's time to generate the answer, AI
+[02:23] looks at the context and predicts the
+[02:26] most likely next token. So, when it sees
+[02:29] Humpty Dumpty had a great, it weighs all
+[02:32] the options. Humpty Dumpty had a great
+[02:34] party. Humpty Dumpty had a great day.
+[02:36] Humpty Dumpty had a great chocolate. and
+[02:39] it sees that the word fall is the most
+[02:41] likely outcome. So the line is generated
+[02:44] and finished not from memory, not from
+[02:47] stored facts, but from probability and
+[02:50] proximity. That's why AI can feel so
+[02:54] smart, but also so alien. Now,
+[02:56] [clears throat] I'm skipping a lot of
+[02:58] details here, but the important takeaway
+[03:00] here is that when your prompt is vague,
+[03:03] [music] this guessing machine called
+[03:04] Chat GPT or Gemini will produce guesses
+[03:08] that are also vague. And if your prompt
+[03:11] is sharp and targeted, AI will come back
+[03:14] to you with sharp and targeted guesses.
+[03:17] That's what I call machine English. It
+[03:19] helps AI to compute your intent, not
+[03:22] just try to comprehend it. So, what does
+[03:25] a sharper prompt look like? I call it
+[03:28] aim. A for actor. Tell the model who
+[03:31] it's acting as. I is for input. Give it
+[03:34] the context and data it needs. And M for
+[03:36] mission. What do you want it to do?
+[03:38] Instead of typing, let's say, fix my
+[03:40] resume, try typing, [music]
+[03:42] hey, at GPT, you are the world's most
+[03:45] sought after ré editor and business
+[03:47] writer. You've reviewed thousands of
+[03:50] résumés that led to interviews at top
+[03:52] tech companies. You've told the AI what
+[03:55] its persona is, [music] what it's acting
+[03:58] as. A second line, I'm attaching my
+[04:02] resume and the job description for a
+[04:04] senior product manager role at a fintech
+[04:07] company. That's your input. Third,
+[04:09] mission. Review it and give me a bullet
+[04:12] list of 10 specific ideas [music] on how
+[04:15] to improve clarity, measurable impact,
+[04:18] align with the role. Your mission is to
+[04:21] help me build the best resume that gets
+[04:24] me hired. That's how you take aim. It
+[04:27] turns a prompt into a structure. The
+[04:30] model can understand, compute, and
+[04:32] reason with. You can use this three-part
+[04:35] structure in almost all prompts. And
+[04:38] from now on, you will start seeing the
+[04:40] results to be at least five or 10 times
+[04:42] better than before. Only when you learn
+[04:44] its language does AI finally start
+[04:47] working for you. Now that you understand
+[04:50] how to speak to AI, we're going to pick
+[04:52] your instrument. Here's the thing. Most
+[04:54] people start their AI journey the wrong
+[04:56] way. They Google top 50 AI tools. They
+[04:59] pick 10 and they jump from one to the
+[05:02] other. They skim through all of them.
+[05:04] That's a recipe for failure because
+[05:07] there's so much out there. My
+[05:09] recommendation, pick one, go deep. Think
+[05:12] of learning AI the same way you would
+[05:15] learn an instrument. You know, there is
+[05:17] a study in Frontier Psychology that
+[05:19] found that drummers pick up guitar
+[05:21] faster than complete beginners. [music]
+[05:23] Drumming is not even about melody and it
+[05:26] requires very different physical skills.
+[05:28] [music]
+[05:29] But I personally had the same
+[05:30] experience. I spent tens of thousands of
+[05:33] hours as a drummer. [music] And when I
+[05:36] picked up guitar, it wasn't easy, but it
+[05:39] wasn't uncomfortable because I already
+[05:41] knew [music] how to practice and my
+[05:43] brain was trained to see structures and
+[05:46] patterns. [music] The deeper you dig
+[05:48] into one foundational model, the faster
+[05:50] you will find the rhythm of all the
+[05:52] others. So, which one do you pick? If
+[05:54] you want the most mature one, pick Chat
+[05:57] GPT. If you're deep into Google stack
+[06:00] and Google's ecosystem, try Gemini. If
+[06:03] you want more business and projectbased
+[06:06] AI, go with Claude. But really, it
+[06:09] doesn't matter what you pick. In the
+[06:11] first week, spend time with one of them
+[06:13] [music] and learn its personality, its
+[06:15] cadence, its limits, its strengths. The
+[06:19] goal is to [music] start feeling the
+[06:22] rhythm. Once you get comfortable, try
+[06:24] using the aim [music] framework that we
+[06:26] talked about. By the end of week one,
+[06:29] you should be able to write a structured
+[06:31] prompt without thinking. All right, so
+[06:33] we've started using AI. Now, let's talk
+[06:36] about what actually makes your outputs
+[06:39] smart, and that's context. [music] The
+[06:41] world's smartest AI will sound clueless
+[06:43] unless you feed it context. Every answer
+[06:46] AI gives depends on how it understands
+[06:49] the question. If you don't give it
+[06:51] context, it has no grounding. Remember
+[06:53] [music]
+[06:53] that inside these AI models, there is
+[06:56] nothing but a crazy mathematical space
+[06:59] filled with billions of numbers. [music]
+[07:01] Context is the map that helps you
+[07:04] navigate that space to tell AI where to
+[07:07] look and what matters. And the best way
+[07:10] to build that map is with an acronym I
+[07:13] call [music] map. M is for memory. the
+[07:17] conversation history or the notes that
+[07:19] carry over from previous chat sessions
+[07:21] that you've had with the AI. Now, you
+[07:23] can repaste the thread or ask the model
+[07:26] to summarize before starting again.
+[07:28] That's how you'll start building
+[07:30] continuity [music] in your
+[07:31] conversations. A is for assets. The
+[07:34] files, data, the resources [music] that
+[07:37] you attach or copy paste in your prompt.
+[07:40] These assets help you ground the model
+[07:44] in reality. Second A is for actions. Now
+[07:48] these are the tools that the model can
+[07:50] call to do work. The action could be
+[07:52] search the web or scan your drive or
+[07:56] write this code or create a notion doc
+[07:59] and P is the prompt and the prompt is
+[08:01] the instruction itself. So the better
+[08:04] you get with memory assets and external
+[08:07] actions, the better context you'll give
+[08:10] AI in the prompt. And the richer the
+[08:13] context, the better the AI reasoning and
+[08:16] response. Once you start using these
+[08:18] frameworks like AIM and MAP, you have
+[08:21] joined the top 10% of AI users. But if
+[08:25] you want to hit that absolute expert
+[08:27] level, there is one more thing that you
+[08:29] really need. Debug your thinking, which
+[08:32] is step four. When you're not getting
+[08:34] the right answer, the problem is not the
+[08:35] AI, it's your thinking. [music] I
+[08:38] remember the first time I ever prompted
+[08:40] an AI. It was one of those earliest
+[08:43] models from OpenAI and I spent an entire
+[08:47] day trying to make sense of it and by
+[08:50] the end of it I was super frustrated
+[08:52] because it was random. It was
+[08:54] unpredictable. But back then no one
+[08:57] understood. The phrase prompt
+[08:59] engineering hadn't even existed yet
+[09:02] because prompting isn't typing. It's
+[09:04] iterating. When the output is weak, I
+[09:07] assume the fault is mine because it is.
+[09:11] [music]
+[09:12] Did I get it the right persona? Did I
+[09:15] provide the right context? Did I give it
+[09:17] the right goal? And sometimes I even ask
+[09:19] the model itself, what did you do? And
+[09:21] why did you choose that answer? [music]
+[09:23] It will explain its logic. He'll explain
+[09:25] his chain. And that's when the magic
+[09:28] starts. You're not just using AI, you're
+[09:31] learning how it thinks. There are three
+[09:34] cheat codes I use for that. The first is
+[09:36] the chain of thought pattern. When the
+[09:39] answer seems off, I would say think step
+[09:42] by step. Show your reasoning. Then give
+[09:45] me the final concise answer. The second
+[09:47] is the verifier pattern. I would say to
+[09:50] the AI, ask me three questions that
+[09:52] would clarify my intent to you. Ask them
+[09:55] [music] one at a time and then combine
+[09:57] what you've learned and try again. And
+[10:00] the third is the refinement pattern
+[10:03] where you're refining your input itself.
+[10:06] Before answering, propose two sharper
+[10:08] versions of my question. Ask which one I
+[10:10] prefer. So AI will tell me how to ask
+[10:13] the right [music] way. And then we
+[10:15] continue. And you have to keep iterating
+[10:17] with these patterns because these loops
+[10:20] can teach the model how to understand
+[10:22] you [music] and teach you how to
+[10:24] understand the model. test, tweak, tune
+[10:27] up, push until you can tell why [music]
+[10:30] something is working and why something
+[10:32] is off. That's when it clicks. You're
+[10:35] not talking at AI anymore. You're having
+[10:38] an ongoing conversation. You and AI are
+[10:41] learning together from each other. But
+[10:44] here's the thing, it's not enough to
+[10:46] just debug your mind. If your post
+[10:49] sounds like every other LinkedIn post I
+[10:52] see that's pasted from [music] chat GPT,
+[10:54] you still have a problem. And that's why
+[10:56] step five is to steer to experts. When
+[11:01] you ask Chat GPT [music] a question,
+[11:03] you're not searching a database of
+[11:05] answers. You're sampling from millions
+[11:08] of probable ideas that AI has learned
+[11:11] over time [music]
+[11:12] and is storing as billions of numbers.
+[11:15] is some are brilliant, some are average,
+[11:18] some are completely made up, [music] and
+[11:20] some are flat out wrong. If you prompt
+[11:23] vaguely, like explain how to make a team
+[11:27] more innovative, the model will give you
+[11:29] a superficial generic blah answer full
+[11:32] of buzzwords. And you'll read it and
+[11:35] think, "Yeah, I already knew that." So,
+[11:38] how do you [music] fix that? You direct
+[11:40] the model away from the middle and
+[11:42] toward the sharper edges of its brain.
+[11:45] [music] So instead of that vague prompt,
+[11:47] you can say this. Explain how to make a
+[11:49] team more innovative using ideas from
+[11:52] Pixar's brain trust, Satya dea strategy,
+[11:55] [music] and Harvard's research. Now you
+[11:58] pull the model from mediocrity into
+[12:02] mastery by navigating it toward experts,
+[12:05] [music]
+[12:05] frameworks, depth. What if you want to
+[12:09] learn about black holes and you don't
+[12:11] know who the experts [music] are? No
+[12:13] problem. Ask AI first. List the top
+[12:17] experts, researchers, and [music]
+[12:19] research papers and current thinking on
+[12:22] black holes. Then feed the same thing
+[12:25] back to [music] the model and prompt
+[12:27] using these experts and sources
+[12:30] synthesize the original framework that
+[12:33] fills the current gap on the science of
+[12:35] black holes or whatever it is that
+[12:37] you're after. That's [music] the way you
+[12:39] make sure AI is not an echo chamber
+[12:42] anymore. But remember, you're going to
+[12:43] need to verify what you get. That's our
+[12:46] step six. Sometimes AI will tell you
+[12:49] things like 68% of Americans are getting
+[12:51] divorced. I mean, you know, it's not
+[12:53] true. But the scary part is AI will
+[12:56] sound just as confident when it's wrong
+[12:59] as when it's right. So, you can tell AI
+[13:02] 100 times, stop making stuff up. [music]
+[13:06] But all models are essentially
+[13:09] generative by design. [music] Making
+[13:11] things up is why they exist. So, what do
+[13:14] you do about that? You simply verify.
+[13:17] [music]
+[13:17] Don't just consume. Critique. There are
+[13:20] five ways to separate intelligence from
+[13:23] illusion. Assumptions, sources, counter
+[13:27] evidence, auditing, and cross model
+[13:29] verification. Let's take one at a
+[13:31] [music] time. Assumptions, ask. List
+[13:34] every assumption you made and rank them
+[13:37] each by confidence. Second is sources.
+[13:40] [music] Ask. Site two independent
+[13:41] sources for each major claim that you
+[13:43] just made. Include title, [music]
+[13:46] URL, and a oneline quote. Now you can
+[13:48] check it yourself. That's the [music]
+[13:50] scaffolding behind the answer. Counter
+[13:52] evidence. Push it. Find one credible
+[13:55] source [music] that disagrees with your
+[13:57] answer. Explain the dependencies. That's
+[14:00] where real reasoning lives. Auditing is
+[14:02] the fourth one. Ask. [music]
+[14:04] Recomputee every figure. Show your math
+[14:07] or code. You'll be shocked how often the
+[14:10] numbers change once you make it slow
+[14:13] down and [music] start auditing. And
+[14:15] finally, crossmodel verification. This
+[14:18] one's my favorite. I run the same prompt
+[14:21] in ChatgPT and Gemini and Claude.
+[14:23] [music] I take the output from one model
+[14:26] and ask another to critique it. Or
+[14:28] [music] I feed the claims of one model
+[14:30] into the other and say, "Verify this."
+[14:33] That's how you separate [music] noise
+[14:34] from knowledge. By the end of your third
+[14:37] week, you'll start feeling more [music]
+[14:39] in control of your output. But here's
+[14:42] the problem. The best AI output aren't
+[14:45] the ones that sound the most original,
+[14:47] [music] they're the ones that sound like
+[14:49] you. That's why step seven is about
+[14:52] developing tastes. Most people use AI
+[14:55] like a vending machine. They push a
+[14:58] button, grab the same junk food output
+[15:01] everyone else gets, and call it a day.
+[15:03] If you did that, most people will know
+[15:05] you just copy pasted it. But you are
+[15:08] past that now, right? It's your fourth
+[15:10] week. It's time to step into the ring.
+[15:12] Treat AI like your sparring partner.
+[15:15] Argue with it. Push back. Sharpen your
+[15:18] thinking. Sharpen its thinking. That's
+[15:21] where the ocean framework comes in. Is
+[15:23] how you turn generic answers into
+[15:26] tasteful insights. Something that sounds
+[15:29] like you. Oh, original. Look at the
+[15:32] response. Is there a nonobvious idea in
+[15:35] it? If not, push it. [music] Ask, give
+[15:39] me three angles. no one else has thought
+[15:41] about. Label one as risky and recommend
+[15:44] the one that you like the most. C
+[15:46] concrete. Are there names, examples, and
+[15:49] numbers that make sense? If not, ask.
+[15:52] Back every claim with one real example.
+[15:55] E is [music] evident. Is the reasoning
+[15:58] visible? Is there enough evidence? If
+[16:00] not, ask. Show your logic in three
+[16:02] bullets. [music] Provide evidence before
+[16:04] you provide final answer. A assertive.
+[16:08] Does it take a stance? you could agree
+[16:10] or disagree with. If not, push it again.
+[16:13] Don't tell me what I want to hear. Pick
+[16:15] a side. State your thesis, defend
+[16:17] [music] it, and then address the best
+[16:19] counterpoint. Narrative.
+[16:22] What's the story? [music] Does it flow?
+[16:24] Is it tight? Guide it. Write it like a
+[16:26] story. Hook, problem, insight, proof,
+[16:28] actions, whatever you want in that
+[16:30] story. So, that's the ocean framework to
+[16:33] add taste to your output. Now, as you
+[16:36] apply this over 30 days, you will start
+[16:39] noticing something [music] deeper. Every
+[16:42] prompt you write, every revision you
+[16:45] push, every judgment you make, you're
+[16:49] not just [music] training the model, you
+[16:51] are training you. AI is coming whether
+[16:54] we like it or [music] not. To some, it
+[16:57] might be triggering lots of deep fears,
+[17:00] but I remain a perpetual optimist.
+[17:04] [music] I think AI is not here to
+[17:07] replace human work. It's here to restore
+[17:10] human worth. If you like this video,
+[17:13] [music] don't forget to subscribe and
+[17:15] check out my most recent video here.
+[17:18] Thank you and I love

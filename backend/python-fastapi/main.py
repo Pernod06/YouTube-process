@@ -3,10 +3,10 @@ Python + FastAPI 后端示例
 安装依赖: pip install fastapi uvicorn python-multipart
 """
 
-from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.responses import FileResponse, StreamingResponse, Response
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import json
@@ -97,6 +97,10 @@ class VideoFramesRequest(BaseModel):
     timestamps: List[int]
 
 
+class ProcessVideoRequest(BaseModel):
+    url: str
+
+
 def load_video_data():
     """加载视频数据"""
     data_path = DATA_DIR / 'video-data.json'
@@ -108,10 +112,30 @@ def load_video_data():
 async def get_video(video_id: str):
     """获取视频数据"""
     try:
-        video_data = load_video_data()
-        return video_data
+        data_path = DATA_DIR / f'video-data-{video_id}.json'
+        if not data_path.exists():
+            raise HTTPException(status_code=404, detail=f"视频数据文件不存在: video-data-{video_id}.json")
+        
+        with open(data_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/transcript/{video_id}")
+async def get_transcript(video_id: str):
+    """获取视频字幕"""
+    transcript_file = DATA_DIR / f"transcript_{video_id}.txt"
+    
+    if not transcript_file.exists():
+        raise HTTPException(status_code=404, detail=f"字幕文件不存在: transcript_{video_id}.txt")
+    
+    try:
+        with open(transcript_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+        return Response(content=content, media_type="text/plain; charset=utf-8")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"读取字幕失败: {str(e)}")
 
 
 @app.get("/api/videos")
@@ -147,20 +171,23 @@ async def get_comments(video_id: str, maxResults: Optional[int] = Query(20)):
         client = YouTubeClient()
         
         # 获取评论数量参数（默认20条）
-        max_results = min(maxResults, 100)  # 限制最大100条
+        max_results = min(maxResults, 30)  # 限制最大100条
         
         print(f"[INFO] 正在调用 YouTube API 获取 {max_results} 条评论...")
         # 调用 YouTube API 获取评论
+        print(f"[INFO] 视频ID: {video_id}")
         comments = client.get_video_comments(video_id, max_results=max_results)
         
         if comments:
             print(f"[SUCCESS] 成功获取 {len(comments)} 条评论")
+            print(comments)
             return {
                 'success': True,
                 'videoId': video_id,
                 'comments': comments,
                 'total': len(comments)
             }
+            
         else:
             # 如果获取失败，返回空列表
             print("[WARNING] 未获取到评论")
@@ -305,6 +332,8 @@ async def chat(chat_request: ChatRequest):
     user_message = chat_request.message
     video_context = chat_request.video_context
 
+    print(f"Video context: {video_context}", flush=True)
+
     try:
         # 调用 OpenAI API 进行聊天
         response = chat_with_openai(user_message, video_context)
@@ -325,16 +354,32 @@ async def chat(chat_request: ChatRequest):
         )
 
 
-@app.get("/api/generate-pdf")
-async def generate_pdf():
+@app.get("/api/generate-pdf/{video_id}")
+async def generate_pdf(video_id: str):
     """
     生成视频数据的 PDF 文档
+    
+    Args:
+        video_id: YouTube 视频 ID
     """
     try:
-        print('[INFO] 开始生成 PDF...')
+        print(f'[INFO] 开始生成 PDF for video {video_id}...')
         
         # 加载视频数据
-        video_data = load_video_data()
+        data_path = DATA_DIR / f'video-data-{video_id}.json'
+        
+        if not data_path.exists():
+            raise HTTPException(
+                status_code=404,
+                detail={
+                    'success': False,
+                    'error': 'Video data not found',
+                    'message': f'视频数据文件不存在: video-data-{video_id}.json'
+                }
+            )
+        
+        with open(data_path, 'r', encoding='utf-8') as f:
+            video_data = json.load(f)
         
         # 生成 PDF（在内存中）
         pdf_buffer = generate_video_pdf(video_data, output_path=None)
@@ -348,12 +393,16 @@ async def generate_pdf():
         
         print(f'[SUCCESS] PDF 生成成功: {filename}')
         
-        # 返回 PDF 文件
-        return StreamingResponse(
-            pdf_buffer,
+        # 读取 buffer 内容
+        pdf_content = pdf_buffer.getvalue()
+        
+        # 使用 Response 而不是 StreamingResponse，确保完整传输
+        return Response(
+            content=pdf_content,
             media_type='application/pdf',
             headers={
-                'Content-Disposition': f'attachment; filename="{filename}"'
+                'Content-Disposition': f'attachment; filename="{filename}"',
+                'Content-Length': str(len(pdf_content))
             }
         )
         
@@ -539,186 +588,271 @@ async def get_video_frames_batch(video_id: str, request: VideoFramesRequest):
         )
 
 
-@app.get("/api/generate-mindmap")
-async def generate_mindmap():
-    """
-    生成视频内容的 Mermaid 思维导图
-    """
-    try:
-        print('[INFO] 开始生成 Mermaid 思维导图...')
-        
-        # 加载视频数据
-        video_data = load_video_data()
-        
-        # 调用 LLM 生成 Mermaid 格式思维导图
-        mermaid_code = generate_mindmap_with_llm(video_data)
-        
-        print('[SUCCESS] Mermaid 思维导图生成成功')
-        print('[DEBUG] Mermaid 代码:')
-        print(mermaid_code)
-        
-        return {
-            'success': True,
-            'mermaid': mermaid_code,
-            'videoTitle': video_data.get('videoInfo', {}).get('title', 'Video'),
-            'timestamp': datetime.now().isoformat()
-        }
-        
-    except Exception as e:
-        print(f'[ERROR] 思维导图生成失败: {str(e)}')
-        import traceback
-        traceback.print_exc()
-        raise HTTPException(
-            status_code=500,
-            detail={
-                'success': False,
-                'error': str(e),
-                'message': '思维导图生成失败'
-            }
-        )
-
-
-def generate_mindmap_with_llm(video_data):
-    """
-    使用 OpenAI 生成 Mermaid 格式的思维导图
-    """
-    from openai import OpenAI
-
-    # 检查 API key
-    api_key = os.getenv('OPENAI_API_KEY')
-    if not api_key or api_key == 'YOUR_API_KEY_HERE':
-        raise ValueError("OPENAI_API_KEY 未配置，请在 .env 文件中设置")
-
-    # 初始化客户端
-    client = OpenAI(
-        api_key=api_key
-    )
-    
-    # 准备视频内容摘要
-    video_info = video_data.get('videoInfo', {})
-    sections = video_data.get('sections', [])
-    
-    # 构建内容文本
-    content_text = f"视频标题: {video_info.get('title', '')}\n"
-    content_text += f"视频摘要: {video_info.get('summary', '')}\n\n"
-    content_text += "章节内容:\n"
-    
-    for section in sections:
-        content_text += f"\n## {section.get('title', '')}\n"
-        content_text += f"时间: {section.get('timestampStart', '')} - {section.get('timestampEnd', '')}\n"
-        content_text += f"{section.get('content', '')}\n"
-    
-    system_prompt = """你是一个专业的思维导图生成助手。请根据提供的视频内容生成简洁清晰的 Mermaid mindmap 格式思维导图。
-
-Mermaid mindmap 语法说明：
-1. 以 `mindmap` 开头
-2. 使用缩进表示层级关系（2个空格为一级缩进）
-3. 根节点使用 root((文本)) 格式
-4. 其他节点直接写文本即可
-
-示例格式：
-mindmap
-  root((主题))
-    分类A
-      要点1
-      要点2
-    分类B
-      要点3
-      要点4
-
-核心要求（严格遵守）：
-1. 根节点：最多6个字，提取核心主题
-2. 一级分支：3-5个主要分类，每个4-8字
-3. 二级分支：每个一级分支下最多3-4个子节点，每个3-6字
-4. 严禁第三层及以上，只保持2层结构（根节点 + 一级分支 + 二级分支）
-5. 总节点数控制在15-20个以内
-6. 提取最核心的概念和关键词，去掉冗余信息
-7. 使用中文输出
-8. 只输出 Mermaid 代码，不要额外解释
-9. 确保缩进正确（2个空格）
-10. 每个分支下的节点数量要均衡，保持视觉对称
-
-布局建议：
-- 第一级分支：3-4个（奇数更好看）
-- 每个第一级分支下：2-3个第二级节点
-- 保持左右平衡
-"""
-    
-    messages = [
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": f"请根据以下视频内容生成 Mermaid mindmap 格式的思维导图：\n\n{content_text}"}
-    ]
-    
-    # 调用 OpenAI API
-    print("[INFO] 正在调用 OpenAI API 生成 Mermaid 思维导图...")
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=messages,
-        max_tokens=4000,
-        temperature=0.3
-    )
-    
-    # 提取返回内容
-    mermaid_content = response.choices[0].message.content
-    
-    # 清理返回内容（移除可能的代码块标记）
-    if mermaid_content.startswith('```mermaid'):
-        mermaid_content = mermaid_content.replace('```mermaid', '').replace('```', '').strip()
-    elif mermaid_content.startswith('```'):
-        mermaid_content = mermaid_content.replace('```', '').strip()
-    
-    # 检查返回内容是否为空
-    if not mermaid_content or mermaid_content.strip() == '':
-        print("[ERROR] OpenAI 返回内容为空")
-        raise ValueError("AI 生成的思维导图内容为空，请重试")
-    
-    # 验证是否以 mindmap 开头
-    if not mermaid_content.strip().startswith('mindmap'):
-        print("[WARNING] 返回内容不是标准的 Mermaid mindmap 格式，尝试修复...")
-        mermaid_content = 'mindmap\n  root((视频主题))\n' + mermaid_content
-    
-    print(f"[SUCCESS] OpenAI API 调用成功，返回 {len(mermaid_content)} 字符")
-    return mermaid_content
-
 
 def chat_with_openai(user_message, video_context):
     """
-    使用 OpenAI (新版 API >= 1.0.0)
+    使用 Gemini API 进行聊天（不需要代理，可直连）
     """
-    from openai import OpenAI
+    from google import genai
+    
+    gemini_api_key = os.getenv('GEMINI_API_KEY')
+    if not gemini_api_key:
+        raise ValueError("GEMINI_API_KEY 未配置，请在 .env 文件中设置")
+    
+    client = genai.Client(api_key=gemini_api_key)
+    
+    system_prompt = """You are a video assistant PageOn-Video assistant, helping users understand and find video content.
+Your key abilities are:
+1. **deep Analysis**: Provide accurate and detailed response based on the complete video transcript and chapter information.
+2. **Timestamp**: Mark precise timestamps for relevant content within your answers to facilitate user navigation.
+3. **Contextual Understanding**: Comprehend the overall structure of the video to provide valuable insights.
 
-    # 初始化客户端
-    client = OpenAI(
-        api_key=os.getenv('OPENAI_API_KEY')
-    )
+Response Format Requirements:
+1. Use the [Timestamp] format to cite key information points. For example:
+-[05:30] mention a key concept
+-[12:45] demonstrated a specific case
+-[1:08:20] summarized the core viewpoints
+
+2. If the user's inquiry involves multiple relevant sections, list all corresponding timestamps:
+Example:
+"This topic is mentioned multiple times in the video:
+-[05:30] Introduced the concept for the first time
+-[15:20] Explained the principle in depth
+-[28:40] Showed practical application"
+
+3. Provide concise yet informative responses, highlighting key takeaways.
+
+4. If the video does not contain relevant content, explicitly inform the user.
+
+5. Adopt a friendly and professional tone, acting as a knowledgeable guide who understands the full scope of the video"""
     
-    system_prompt = """你是一个视频助手，帮助用户理解和查找视频内容。
-当前视频是关于 NVIDIA GTC 大会的主题演讲，涵盖了 AI、加速计算、量子计算等主题。
-请用简洁、友好的方式回答用户问题。"""
-    
-    messages = [
-        {"role": "system", "content": system_prompt}
-    ]
+    # 构建完整提示
+    full_prompt = system_prompt
     
     if video_context:
-        messages.append({
-            "role": "system",
-            "content": f"视频信息：{json.dumps(video_context, ensure_ascii=False)}"
-        })
+        full_prompt += f"\n\nVideo information: {json.dumps(video_context, ensure_ascii=False)}"
     
-    # 添加用户消息
-    messages.append({"role": "user", "content": user_message})
+    full_prompt += f"\n\nUser question: {user_message}"
     
-    # 调用 OpenAI API (新版)
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=messages,
-        max_tokens=500,
-        temperature=0.7
+    # 调用 Gemini API
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=[full_prompt]
     )
     
-    return response.choices[0].message.content
+    return response.text
 
+
+@app.post('/api/process-video')
+async def process_video(request_data: ProcessVideoRequest):
+    """
+    处理前端传来的 YouTube 视频 URL：
+    - 提取视频 ID
+    - 通过 get_full_transcript 获取完整字幕和视频信息
+    - 将字幕写入 data/transcript_{video_id}.txt
+    - 返回基本处理状态给前端
+    """
+    url = request_data.url
+
+    if not url:
+        raise HTTPException(status_code=400, detail='URL is required')
+
+    try:
+        print(f"[INFO] 开始处理视频: {url}")
+
+        import sys
+        sys.path.append(str(BASE_DIR))
+
+        from get_full_transcript_ytdlp import get_full_transcript, display_full_transcript
+        from youtube_client import YouTubeClient
+
+        # 提取视频 ID
+        video_id = YouTubeClient.extract_video_id(url)
+        if not video_id:
+            raise HTTPException(status_code=400, detail='无法从URL提取视频ID')
+
+        # print(f"[INFO] 提取到视频 ID: {video_id}")
+
+        # 获取完整字幕与视频详情（注意传入的是完整 URL）
+        result = get_full_transcript(url, language='en')
+        if not result or result == (None, None):
+            raise HTTPException(status_code=500, detail='无法获取视频字幕')
+
+        transcript, details = result
+        
+        # 再次检查解包后的值
+        if not transcript or not details:
+            raise HTTPException(status_code=500, detail='无法获取视频字幕或详情')
+
+        # 保存字幕到文件，供后续 /api/videos/<video_id> 使用
+        output_file = DATA_DIR / f"transcript_{video_id}.txt"
+        try:
+            display_full_transcript(transcript, output_file=str(output_file), details=details)
+            print(f"[SUCCESS] 字幕已写入文件: {output_file}")
+        except Exception as save_error:
+            print(f"[WARN] 保存字幕文件失败: {save_error}")
+
+        # 使用 LLM 处理和结构化字幕
+        try:
+            print(f"[INFO] 开始使用 LLM 处理字幕...")
+            video_data_json = chat_with_gemini(transcript, details, video_id)
+            
+            # 保存生成的 JSON 到 data 目录
+            json_output_file = DATA_DIR / f"video-data-{video_id}.json"
+            with open(json_output_file, 'w', encoding='utf-8') as f:
+                import json
+                json.dump(video_data_json, f, ensure_ascii=False, indent=2)
+            
+            print(f"[SUCCESS] 视频数据已保存到: {json_output_file}")
+            
+            return {
+                'success': True,
+                'videoId': video_id,
+                'title': details.get('title', ''),
+                'transcriptLength': len(transcript),
+                'dataFile': f"video-data-{video_id}.json",
+                'message': '视频处理成功'
+            }
+        except Exception as llm_error:
+            print(f"[WARN] LLM 处理失败: {llm_error}, 返回基本信息")
+            # LLM 失败时仍返回成功，但不包含结构化数据
+            return {
+                'success': True,
+                'videoId': video_id,
+                'title': details.get('title', '') if details else '',
+                'transcriptLength': len(transcript) if transcript else 0,
+                'message': '视频处理成功（未使用 LLM 结构化）',
+                'warning': str(llm_error)
+            }
+
+    except Exception as e:
+        import traceback
+        print(f"[ERROR] /api/process-video 处理失败: {e}")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f'视频处理失败: {str(e)}')
+
+
+
+
+def chat_with_gemini(transcript, details, video_id):
+    """
+    使用Gemini API 将视频字幕转换为结构化 JSON
+    """
+    import os
+    import json
+    import re
+    from google import genai
+
+    gemini_api_key = os.getenv('GEMINI_API_KEY')
+    if not gemini_api_key:
+        raise ValueError("GEMINI_API_KEY 未配置，请在 .env 文件中设置")
+
+    client = genai.Client(api_key=gemini_api_key)
+
+
+    # 准备字幕文本
+    transcript_text = "\n".join([f"[{item['start']}] {item['text']}" for item in transcript])
+    
+    # 构建 prompt，避免 f-string 嵌套问题
+    title = details.get('title', 'Unknown')
+    def sample_transcript(transcript_text, max_chars=15000, num_segments=10):
+      """
+      均匀采样文本：将文本分为N个片段，均匀分布在整个时间轴
+      """
+      total_len = len(transcript_text)
+      if total_len <= max_chars:
+        return transcript_text
+
+      segment_len = max_chars // num_segments
+      if segment_len == 0:
+        segment_len = 1
+      
+      if num_segments > 1:
+        step = (total_len - segment_len) // (num_segments - 1)
+      else:
+        step = 0
+
+      sampled_parts = []
+      for i in range(num_segments):
+        start_index = i * step
+        end_index = start_index + segment_len
+        chunk = transcript_text[start_index:end_index]
+        sampled_parts.append(chunk)
+
+      separator = "\n\n[...]\n\n"
+      return separator.join(sampled_parts)
+      
+      
+      
+    transcript_preview = sample_transcript(transcript_text, max_chars=15000, num_segments=10)
+    thumbnail_url = f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg"
+    
+    system_prompt = """
+You are a video content analyzer. Analyze this YouTube video transcript and generate a structured JSON.
+
+Video Title: """ + title + """
+Video ID: """ + video_id + """
+
+Transcript:
+""" + transcript_preview + """
+
+Generate JSON with this structure:
+{
+  "videoInfo": {
+    "title": "Video Title",
+    "videoId": "xxx",
+    "description": "Brief topic description",
+    "thumbnail": "https://img.youtube.com/vi/xxx/maxresdefault.jpg",
+    "summary": "2-3 sentence summary"
+  },
+  "sections": [
+    {
+      "id": "section1",
+      "title": "Section Title",
+      "content": [
+        {"content": "Key point (1-2 sentences)", "timestampStart": "00:00"}
+      ]
+    }
+  ]
+}
+
+REQUIREMENTS:
+- **MUST cover the ENTIRE video from beginning to end**
+- Create sections based on natural topic changes in the video
+- Each content item: 1-2 concise sentences (focus on key insights)
+- Include timestamps spanning the full video duration
+- Thumbnail: """ + thumbnail_url + """
+- Output ONLY valid JSON
+"""
+
+    try:
+        # 生成内容
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=[system_prompt],
+        )
+        
+        # 提取响应文本
+        response_text = response.text.strip()
+        
+        # 移除可能的 markdown 代码块标记
+        response_text = re.sub(r'^```json\s*', '', response_text)
+        response_text = re.sub(r'^```\s*', '', response_text)
+        response_text = re.sub(r'\s*```$', '', response_text)
+        
+        # 解析 JSON
+        video_data_json = json.loads(response_text)
+        
+        print(f"[SUCCESS] LLM 成功生成结构化数据，包含 {len(video_data_json.get('sections', []))} 个章节")
+        return video_data_json
+        
+    except json.JSONDecodeError as e:
+        print(f"[ERROR] JSON 解析失败: {e}")
+        print(f"[DEBUG] 原始响应: {response_text[:500]}")
+        raise ValueError(f"LLM 返回的不是有效的 JSON: {str(e)}")
+    except Exception as e:
+        print(f"[ERROR] Gemini API 调用失败: {e}")
+        raise
 
 # 提供静态文件
 @app.get("/")

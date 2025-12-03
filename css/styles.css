@@ -92,7 +92,7 @@ body {
 
 .views-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 12px;
 }
 
@@ -1858,7 +1858,7 @@ iframe {
 
 
 /* ==================== 思维导图样式 ==================== */
-.mindmap-view {
+/* .mindmap-view {
     padding: 20px;
     height: 100%;
     display: flex;
@@ -1906,7 +1906,7 @@ iframe {
 .mindmap-download-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
-}
+} */
 
 .zoom-level {
     color: white;
@@ -1915,14 +1915,14 @@ iframe {
     text-align: center;
 }
 
-.mindmap-container {
+/* .mindmap-container {
     flex: 1;
     overflow: auto;
     background: #f8f9fa;
     border-radius: 10px;
     padding: 20px;
     position: relative;
-}
+} */
 
 .mermaid-wrapper {
     display: flex;

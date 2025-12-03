@@ -1,0 +1,345 @@
+How does Computer Hardware Work?  💻🛠🔬  [3D Animated Teardown]
+======================================================================
+
+[00:00] Throughout this video we’re going to do
+a desktop computer dissection using 3D animation.
+[00:06] Kind of like a dissection lab in biology class,
+but instead, we’ll journey through the inside
+[00:12] of this computer and disassemble every piece
+of hardware.  We’ll then use a microscope
+[00:18] and zoom in to give you a nanoscopic view
+of the transistors and other structures inside.
+[00:24] To make this video we disassembled all the
+hardware inside a typical desktop computer,
+[00:30] we desoldered and removed the components from
+each of the printed circuit boards and took
+[00:35] thousands of pictures.  Then using these
+pictures, we meticulously 3D modeled every
+[00:42] single component from the computer case down
+to the tiniest resistor.  As a result, here’s
+[00:48] all the hardware that we’ll explore throughout
+this video.  It kind of looks like a crime
+[00:53] scene where someone viciously destroyed a
+computer and arranged all the components,
+[00:59] but anyways let’s dive right in.  
+We’ll begin this journey with the  Central
+[01:04] Processing Unit or CPU which is the brain
+of the computer.  On top we have the cover,
+[01:11] called an integrated heat spreader, and inside
+is a smaller metal package that holds the
+[01:16] integrated circuit which is technically called
+a die. This die is mounted on a printed circuit
+[01:23] board that distributes the 1200 connection
+points to landing pads that interface with
+[01:28] the landing grid array on the motherboard.
+The integrated circuit inside has a few different
+[01:35] sections, but perhaps the most recognizable
+are the 10 cores where programs and instructions
+[01:40] are run.  Each core is quite  complicated,
+so here’s a diagram laying out the different
+[01:46] functional sections.  There are dozens of
+rather complicated elements in this diagram,
+[01:52] and you can look forward to a series of videos
+we’re currently planning which will explore
+[01:57] computer architecture and how each of these
+sections work.
+[02:00] Let’s zoom into a nanoscopic view of the
+integrated circuit so we can see individual
+[02:06] transistors.  These transistors are incredibly
+small, only a few nanometers wide  and in
+[02:12] this die there are approximately 8 to 10 billion. 
+On top of the transistors are multiple layers
+[02:19] of metal wires with vias rising vertically
+between the layers.  Together these transistors
+[02:26] and wires create a multilayer labyrinth or
+highway resulting in a computer that can execute
+[02:32] billions of operations every second.  
+Let’s now zoom out and look at other sections
+[02:38] of the CPU.  To the side of each core is
+the shared L3 memory cache and ring interconnect.
+[02:45] On the far right is an integrated graphics
+processor which functions as a less powerful
+[02:50] GPU; in the top left is the memory controller
+which sends data to and from the DRAM; and
+[02:57] finally on the far left is the system agent
+and platform I/O, which communicates with
+[03:03] the Chipset on the motherboard and manages
+the flow of data between many of the other
+[03:08] components in your PC.  So, with that in
+mind, let’s move on and look at the motherboard.
+[03:14] This motherboard is a massive, printed circuit
+board with thousands of wires running inside
+[03:20] and a variety of microchips, components,
+sockets, ports, slots, headers and connectors
+[03:27] soldered to it.  Perhaps the single most
+important and expensive component, aside from
+[03:32] the bare PCB, is the Chipset, which is this
+integrated circuit found underneath a heat
+[03:38] sink down here and is connected directly to
+the system agent section in the CPU.  Here’s
+[03:44] a diagram illustrating how the CPU and chipset
+are connected to everything else.  As seen
+[03:51] here, the CPU connects directly to the DRAM,
+one or two displays, the GPU, and perhaps
+[03:58] a few SSDs plugged into the M2 slots.  The
+Chipset manages most everything else: data
+[04:05] flowing through the ethernet or Wi-Fi, data
+going to and from solid state drives and hard
+[04:11] drives plugged into the SATA ports, some of
+the PCIe slots, your keyboard and mouse, USB
+[04:18] devices, and the audio sent to the speakers
+or from the microphone.
+[04:23] Just a quick note, computer hardware has evolved
+immensely over the past 65 years and continues
+[04:30] to evolve, so the details we show should be
+thought of as a current day example PC and
+[04:36] not as how all computers work.
+Let’s move on and skip over the many different
+[04:41] sockets and connectors throughout the motherboard
+and focus on the voltage regulator module
+[04:47] or VRM found near the CPU.  These components
+are used to drop the voltage coming from the
+[04:53] power supply down to the 1.3 volts used by
+the CPU.  As a result of all the power flowing
+[05:00] through these components and their 80 to 90
+percent efficiency,  heat sinks need to be
+[05:06] placed on top.
+While we’re on the topic of power, this
+[05:10] CPU consumes power equivalent to approximately
+16 LED bulbs, thus generating a considerable
+[05:18] amount of heat which is taken away by the
+CPU cooler.  This particular cooler uses
+[05:24] a pump to circulate liquid through these tubes
+and into the radiator’s channels which transfers
+[05:30] heat to the radiator fins.  The fans then
+help transfer the heat to the air and the
+[05:35] cooled liquid returns to the pump via the
+return loop.  The pump is a brushless DC
+[05:41] motor constructed from a PCB, a control chip
+and a stator on the dry side, a barrier in
+[05:48] the middle, and then the permanent magnet
+rotor and impeller on the liquid side.  There’s
+[05:54] no mechanical connection between the rotor
+and stator, thereby preventing any leaks of
+[05:59] the cooling liquid. 
+Let’s move onto the power supply which distributes
+[06:03] power throughout the computer.  In here,
+the main transformer reduces the voltage and
+[06:09] bridges the isolation boundary between the
+primary side high voltage and the secondary
+[06:14] side lower voltages used throughout your computer. 
+Here’s the control PCB that ensures a stable
+[06:21] output voltage and sends adjustment signals
+to the switching power transistor on the primary
+[06:27] side using opto-isolators.  There are dozens
+of other components used to filter the input
+[06:33] voltage and generate various output voltages
+which are then sent to all the different hardware
+[06:39] in your computer.  For example, an SSD consumes
+just a few watts, and the connector uses these
+[06:46] voltages, whereas your GPU can consume hundreds
+of watts using these connectors and these
+[06:52] voltages.
+Next, we’ll explore the GPU, but before
+[06:57] that, let’s take a step back and consider
+the technology we’ve covered thus far.
+[07:02] Alone, each of these components doesn’t
+do much at all, but when united, they combine
+[07:07] to form a powerful system.  Similarly, this
+video is a multidisciplinary combination of
+[07:14] engineering, technology, art and animation
+inspired by the Magic School Bus.  We can’t
+[07:20] emphasize enough how important it is to be
+a multidisciplinary student.  And to help
+[07:25] you do that, the sponsor of this video is
+Brilliant.org.  Brilliant is a multidisciplinary
+[07:31] online education platform which teaches a
+ton of different topics in hands-on interactive
+[07:37] ways.  Here are two courses from different
+disciplines that you might think were entirely
+[07:42] unrelated.  However, when combined they provide
+the foundational basis for a cutting-edge
+[07:47] field of science and engineering.  This combination
+of seemingly unrelated courses can be done
+[07:53] with pretty much any two courses that Brilliant
+offers.
+[07:57] Don’t worry, you won’t be learning from 
+boring textbooks, but rather Brilliant uses
+[08:02] interactive modules to make their lessons
+entertaining and help the concepts stick in
+[08:07] your head. 
+It’s incredibly easy to sign up.  Try out
+[08:11] some of the lessons for free and, if you like
+them, which we’re sure you will, you can
+[08:16] sign up for an annual subscription.  We personally
+are currently working through their lessons
+[08:22] on quantum circuits and algorithms for a future
+video that dives into Quantum Computers.
+[08:28] Brilliant is offering a free 30-day trial
+with access to all of their thousands of lessons,
+[08:34] and to the viewers of this channel, Brilliant
+is offering 20% off an annual subscription
+[08:39] to the first 200 people who sign up.  Just
+go to brilliant.org/brancheducation.  The
+[08:45] link is in the description below.  
+Let’s get back to dissecting this computer
+[08:50] and move onto the graphics card and GPU which
+is also the brain of the computer… well…
+[08:57] actually this analogy doesn’t really work
+very well but anyway…  Opening the graphics
+[09:02] card we see another PCB, with the GPU’s
+integrated circuit in the center, VRAM chips
+[09:09] all around, and the voltage regulator module
+on the side.  Above the IC is a heat sink
+[09:15] with a fan to dissipate heat, and on the side
+of the graphics card are HDMI and Display
+[09:21] Ports, a PCIe Interface and then on the other
+side is the input power connector.
+[09:27] Let’s focus on the GPU integrated circuit
+which, similar to the CPU, has more than a
+[09:33] thousand solder pads that connect it to the
+PCB.  Opening the packaging we find the GPU
+[09:40] die which is noticeably different from the
+CPU.  In here are approximately 11.8 billion
+[09:46] transistors organized into 6 graphics processing
+clusters, totaling 28 streaming multiprocessors.
+[09:55] Each streaming multiprocessor is composed
+of 128 cores, resulting in a total of 3,584
+[10:03] cores.  Each core has sections for integer
+and floating-point arithmetic, and sections
+[10:09] for queueing in the operands and collecting
+the results and is far simpler than a CPU
+[10:15] core.  Additionally, on the die is an L2
+memory cache shared among all the graphics
+[10:22] processing clusters, a set of memory controllers
+that connect to the VRAM located around the
+[10:27] processor, and a PCIe interface for connecting
+to the CPU.
+[10:32] When we zoom in to see a nanoscopic view of
+the integrated circuit we find something very
+[10:37] similar to what we saw in the CPU, with the
+transistors on the bottom and a labyrinth
+[10:43] of multiple layers of metal wires above. 
+All these structures are manufactured in multibillion
+[10:49] dollar semiconductor fabrication plants or
+fabs but that’s a topic for a whole different
+[10:55] video, so let’s move on.  GPUs and CPUs
+are similar in many ways, however, GPUs have
+[11:03] thousands of cores that are limited to basic
+arithmetic, whereas CPUs have only a handful
+[11:09] of cores that perform far more complicated
+operations.  Additionally, CPUs have branch
+[11:17] prediction and deep pipelines that optimize
+the execution of code.    Here’s a quick
+[11:22] example of what GPUs can do.  Take this image
+comprised of 16 million pixels each with RGB
+[11:30] values for each pixel.  A simple way to brighten
+the image is to add 20 to each of these numbers.
+[11:36] A CPU has 10 cores and thus performs arithmetic
+10 numbers at a time whereas GPUs distribute
+[11:44] the data to thousands of cores thus performing
+magnitudes more parallel processing.
+[11:50] Let’s close this graphics card and talk
+briefly about the 3D model.  Note that this
+[11:55] is a slightly older model graphics card because
+we buy most of our hardware as non-functioning
+[12:01] parts from eBay, and then, as shown earlier,
+we tear them down rather destructively in
+[12:08] order to accurately model everything.  Additionally,
+sometimes components shown aren’t compatible,
+[12:15] such as this motherboard that says DDR4, while
+the DRAM is DDR5.
+[12:22] That said, modeling and animating everything
+to make it feel like you’re actually inside
+[12:27] a computer took us around 500 hours and we
+would greatly appreciate it if you could take
+[12:33] a few seconds to hit that like button, subscribe
+if you haven’t already, type up a quick
+[12:38] comment below, and share this video with someone
+who will enjoy it.  Also, we have a Patreon
+[12:44] and would appreciate any support.  We’re
+planning more videos on computer architecture
+[12:50] and other related topics and can’t do it
+without your help, so thank you for doing
+[12:55] these 4 quick things. It helps a ton.
+Let’s move on and look at the DRAM, Solid
+[13:01] State Drives, and Hard Drives.  We’re not
+going to spend too long, because we have an
+[13:06] entire series of videos on solid state drives,
+and then separate videos covering DRAM, and
+[13:12] Hard Drives.  But quickly, the CPU communicates
+directly with the DRAM through memory channels
+[13:18] running inside the motherboard.  Inside each
+of these 8 DRAM chips is an integrated circuit
+[13:25] composed of 32 memory banks each 8192 columns
+wide by 65536 rows tall.  The DRAM temporarily
+[13:38] stores data using capacitors and transistors
+called 1T1C memory cells in 2D arrays that
+[13:45] look like this.  Data can be accessed within
+nanoseconds, however, among these 8 chips,
+[13:51] only 16 Gigabytes of data can be temporarily
+stored.    Take a look at our 35-minute
+[13:57] video on DRAM, but for now let’s move on
+to SSDs which permanently store data in 3D
+[14:05] arrays called 3D NAND.  This array is 100
+to 200 layers tall, 32 to 64 thousand columns
+[14:13] wide and 32 to 64 thousand rows deep.  Additionally,
+within a single SSD chip such as this one,
+[14:22] are multiple 3D NAND arrays stacked one on
+top of the other.  As a result, a single
+[14:28] microchip can store terabytes of data, however
+reading or writing data takes 50 or so microseconds,
+[14:35] which is 3000 times slower than DRAM.  Zooming
+in on a single SSD memory cell we find a charge
+[14:43] trap which stores different levels of charge
+allowing for 3 bits of data to be more permanently
+[14:49] saved.  Looking at the NVMe and SATA SSD,
+both have a few 3D NAND data storage chips,
+[14:57] a DRAM chip for buffering and holding the
+data mapping table and a controller chip.
+[15:03] Let’s move on and dissect the hard disk
+drive.  Here we have a disk mounted to a
+[15:08] spindle with a motor that rotates the disk
+at thousands of rpm.  A read write head moves
+[15:14] across the disk in order to access a single
+track out of half a million other data tracks.
+[15:20] Let’s zoom in on the read write head. 
+The write head changes the direction of localized
+[15:25] magnetic domains in a small layer on the disk
+whereas the read head senses these changes
+[15:30] in magnetic domains.  This disk drive is
+even slower than the SSD, taking a few milliseconds
+[15:37] to access, thus resulting in slower read and
+write times, but costing less per terabyte
+[15:43] of storage.
+Thus far we’ve covered all the hardware
+[15:46] inside your computer.  So, thanks for watching
+this far, and as a bonus here’s what it
+[15:52] looks like inside a computer mouse, with the
+scroll wheel up top, the infrared light, image
+[15:58] sensor, and multiple lenses down here and
+the battery and processor in the middle.
+[16:04] For computer mice we have separate dedicated
+videos exploring the image sensor and scroll
+[16:09] wheel with incredible details.
+Additionally, here’s what it looks like
+[16:14] inside a basic keyboard, with plastic traces
+that carry electricity to each key and, when
+[16:20] pressed, that key completes a circuit which
+is sensed by the processor up here.
+[16:26] That’s pretty much it for what it looks
+like inside your computer.  We believe the
+[16:30] future will require a strong emphasis on engineering
+education and we’re thankful to all our
+[16:37] Patreon and YouTube Membership Sponsors for
+supporting this dream.  If you want to support
+[16:42] us on YouTube Memberships, or Patreon, you
+can find the links in the description.  Also,
+[16:49] thank you again to Brilliant for sponsoring
+this video.
+[16:52] This is Branch Education, and we create 3D
+animations that dive deep into the technology
+[16:58] that drives our modern world.  Watch another
+Branch video by clicking one of these cards
+[17:04] or click here to subscribe.  Thanks for watching
+to the end!
