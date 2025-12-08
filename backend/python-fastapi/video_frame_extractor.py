@@ -18,12 +18,13 @@ def extract_youtube_chapters(video_id):
         video_id: YouTube 视频 ID
     
     Returns:
-        list: 章节列表，每个章节包含 timestamp、title、thumbnail_url
+        tuple: (video_title, chapters)
+            - video_title: 视频标题
+            - chapters: 章节列表，每个章节包含 timestamp、title、thumbnail_url
     """
     url = f"https://www.youtube.com/watch?v={video_id}"
     
     print(f"[INFO] 正在获取视频页面: {video_id}")
-    
     try:
         # 设置 User-Agent 避免被识别为爬虫
         headers = {
@@ -44,6 +45,21 @@ def extract_youtube_chapters(video_id):
             return extract_chapters_fallback(video_id)
         
         data = json.loads(data_match.group(1))
+
+        # 寻找title
+        video_title = ''
+        try:
+            contents = data['contents']['twoColumnWatchNextResults']['results']['results']['contents']
+            for content in contents:
+                if 'videoPrimaryInfoRenderer' in content:
+                    title_runs = content['videoPrimaryInfoRenderer']['title']['runs']
+                    video_title = ''.join(run['text'] for run in title_runs)
+                    break
+        except (KeyError, TypeError):
+            # 备用方法：从 HTML title 标签提取
+            title_match = re.search(r'<title>(.+?) - YouTube</title>', html)
+            if title_match:
+                video_title = title_match.group(1)
         
         # 寻找章节数据
         chapters = []
@@ -80,8 +96,8 @@ def extract_youtube_chapters(video_id):
                             'thumbnail_url': thumbnail_url
                         })
                     
-                    print(f"[SUCCESS] 找到 {len(chapters)} 个章节")
-                    return chapters
+                    print(f"[SUCCESS] 找到 {len(chapters)} 个章节, 标题: {video_title}")
+                    return (video_title, chapters)
         except (KeyError, TypeError) as e:
             print(f"[WARNING] 主路径解析失败: {e}")
         
@@ -114,24 +130,24 @@ def extract_youtube_chapters(video_id):
                         })
                     
                     if chapters:
-                        print(f"[SUCCESS] 找到 {len(chapters)} 个章节（备用路径）")
-                        return chapters
+                        print(f"[SUCCESS] 找到 {len(chapters)} 个章节（备用路径）, 标题: {video_title}")
+                        return (video_title, chapters)
         except (KeyError, TypeError) as e:
             print(f"[WARNING] 备用路径解析失败: {e}")
         
         # 如果没找到章节，返回空列表
-        print("[WARNING] 未找到章节信息")
-        return []
+        print(f"[WARNING] 未找到章节信息, 标题: {video_title}")
+        return (video_title, [])
         
     except requests.RequestException as e:
         print(f"[ERROR] 请求失败: {e}")
-        return []
+        return ('', [])
     except json.JSONDecodeError as e:
         print(f"[ERROR] JSON 解析失败: {e}")
-        return []
+        return ('', [])
     except Exception as e:
         print(f"[ERROR] 未知错误: {e}")
-        return []
+        return ('', [])
 
 
 def parse_timestamp(time_str):
@@ -152,7 +168,10 @@ def parse_timestamp(time_str):
 
 def extract_chapters_fallback(video_id):
     """
-    备用方法：使用 yt-dlp 提取章节信息
+    备用方法：使用 yt-dlp 提取章节信息和视频标题
+    
+    Returns:
+        tuple: (video_title, chapters)
     """
     import subprocess
     
@@ -169,6 +188,9 @@ def extract_chapters_fallback(video_id):
         result = subprocess.check_output(cmd, stderr=subprocess.PIPE, timeout=15)
         data = json.loads(result.decode('utf-8'))
         
+        # 获取视频标题
+        video_title = data.get('title', '')
+        
         chapters = []
         if 'chapters' in data and data['chapters']:
             for chapter in data['chapters']:
@@ -178,11 +200,12 @@ def extract_chapters_fallback(video_id):
                     'thumbnail_url': None  # yt-dlp 不提供章节缩略图
                 })
         
-        return chapters
+        print(f"[SUCCESS] yt-dlp 获取标题: {video_title}, 章节数: {len(chapters)}")
+        return (video_title, chapters)
         
     except Exception as e:
         print(f"[ERROR] yt-dlp 备用方法失败: {e}")
-        return []
+        return ('', [])
 
 
 def download_thumbnail(thumbnail_url, output_path):
@@ -333,19 +356,61 @@ def extract_multiple_frames(video_id, timestamps):
     return results
 
 
+# 保存章节列表到文件
+def save_chapters(video_id, video_title, chapters, output_dir=None):
+    """
+    保存章节列表到 JSON 文件
+    
+    Args:
+        video_id: YouTube 视频 ID
+        video_title: 视频标题
+        chapters: 章节列表 [{timestamp, title, thumbnail_url}, ...]
+        output_dir: 输出目录，默认为 data 目录
+    
+    Returns:
+        保存的文件路径
+    """
+    import json
+    
+    if output_dir is None:
+        output_dir = Path(__file__).parent.parent.parent / 'data'
+    else:
+        output_dir = Path(output_dir)
+    
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = output_dir / f"chapters_{video_id}.json"
+    
+    data = {
+        'video_id': video_id,
+        'video_title': video_title,
+        'chapters': chapters
+    }
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    
+    print(f"[SUCCESS] 章节列表已保存: {output_file}")
+    return str(output_file)
+
+
 # 测试代码
 if __name__ == '__main__':
     print("=" * 60)
     print("测试快速视频帧提取功能")
     print("=" * 60)
     
-    video_id = "EF8C4v7JIbA"
+    video_id = "DxL2HoqLbyA"
     
     # 测试章节提取
-    chapters = extract_youtube_chapters(video_id)
-    print(f"\n找到 {len(chapters)} 个章节:")
-    for ch in chapters:  # 只显示前3个
+    video_title, chapters = extract_youtube_chapters(video_id)
+    print(f"\n视频标题: {video_title}")
+    print(f"找到 {len(chapters)} 个章节:")
+    for ch in chapters:
         print(f"  - {ch['timestamp']}s: {ch['title']}")
+    
+    # 保存章节列表
+    if chapters:
+        save_chapters(video_id, video_title, chapters)
     
     # 测试单帧提取
     # if chapters:

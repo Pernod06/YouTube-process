@@ -1,0 +1,238 @@
+{
+  "videoInfo": {
+    "title": "The Best AI Coding Tools for Developers in 2025 (That I Actually Use)",
+    "videoId": "YESrXVkcCHY",
+    "description": "An expert developer shares their personal stack of frequently used AI tools and frameworks, detailing how each enhances their daily workflow and productivity. The video covers AI-powered IDEs, general-purpose AI assistants, dictation software, agentic AI platforms, AI terminals, website generators, meeting recorders, and automation tools.",
+    "thumbnail": "https://img.youtube.com/vi/YESrXVkcCHY/maxresdefault.jpg",
+    "summary": "This video features a developer's deep dive into the AI tools they actively use on a daily basis, distinguishing between tools they've reviewed and those integral to their workflow. It highlights AI-powered IDEs, a highly personalized ChatGPT, productivity-boosting dictation software, and specialized AI agents for complex tasks. The speaker also details AI tools for terminal operations, simple website generation, meeting transcription, and large-scale code development, alongside essential AI frameworks and automation platforms."
+  },
+  "sections": [
+    {
+      "id": "section1",
+      "title": "Introduction to Daily AI Tools",
+      "content": [
+        {
+          "content": "The speaker, a developer, introduces a video focused on the specific AI tools they use daily, distinguishing them from the numerous tools previously covered on their channel.",
+          "timestampStart": "00:00:00"
+        }
+      ]
+    },
+    {
+      "id": "section2",
+      "title": "AI-Powered IDEs: Cursor and Windsurf",
+      "content": [
+        {
+          "content": "Cursor is the speaker's primary AI-powered IDE, particularly for hybrid projects with multiple components, due to its rapid feature acceleration and current superiority over Windsurf.",
+          "timestampStart": "00:00:27"
+        },
+        {
+          "content": "While Windsurf initially offered more features and better performance, Cursor has since replicated and surpassed its capabilities, becoming the preferred choice for its intuitive development experience.",
+          "timestampStart": "00:00:42"
+        }
+      ]
+    },
+    {
+      "id": "section3",
+      "title": "ChatGPT: The Versatile AI Assistant",
+      "content": [
+        {
+          "content": "ChatGPT is the most frequently used tool, employed for a wide array of tasks including writing emails, responding to queries, reviewing contracts, managing students, scripting videos, and handling accounting matters.",
+          "timestampStart": "00:01:52"
+        },
+        {
+          "content": "Through extensive use since its release, ChatGPT has become highly personalized, retaining context about the speaker's life, travel, and plans, leading to more accurate and relevant responses.",
+          "timestampStart": "00:02:34"
+        },
+        {
+          "content": "It is open for multiple hours daily on a second monitor and mobile devices, serving as a constant go-to for immediate assistance.",
+          "timestampStart": "00:03:13"
+        }
+      ]
+    },
+    {
+      "id": "section4",
+      "title": "Whisper Flow: Dictation for Productivity",
+      "content": [
+        {
+          "content": "Whisper Flow is highlighted as a game-changer for coding and general productivity, serving as the fastest and most accurate dictation tool the speaker has ever used.",
+          "timestampStart": "00:03:24"
+        },
+        {
+          "content": "It operates in the background across Windows, Mac, and iOS, integrating seamlessly into any application and outperforming built-in OS dictation features.",
+          "timestampStart": "00:03:38"
+        },
+        {
+          "content": "The tool significantly boosts productivity by allowing the speaker to stream thoughts at nearly 200 words per minute, tripling their output compared to typing, and aids in crafting more detailed AI prompts.",
+          "timestampStart": "00:04:03"
+        },
+        {
+          "content": "Whisper Flow's ability to understand application context and save dictation history is crucial for maintaining long prompts and providing precise input to AI models.",
+          "timestampStart": "00:04:49"
+        }
+      ]
+    },
+    {
+      "id": "section5",
+      "title": "Deep Agent by Abacus AI: Complex Task Automation",
+      "content": [
+        {
+          "content": "Deep Agent is utilized for highly complex, long-running agent tasks that require extensive internet searching, app building, or document generation, such as creating student roadmaps or researching local construction impacts.",
+          "timestampStart": "00:05:40"
+        },
+        {
+          "content": "It excels where general-purpose AIs like ChatGPT fall short, providing very accurate results for intricate queries by autonomously performing detailed research.",
+          "timestampStart": "00:06:53"
+        }
+      ]
+    },
+    {
+      "id": "section6",
+      "title": "Warp: The AI Terminal",
+      "content": [
+        {
+          "content": "Warp functions as an AI-powered terminal that generates code and explains commands, operating effectively in agent mode to identify files or suggest terminal commands.",
+          "timestampStart": "00:07:08"
+        },
+        {
+          "content": "A notable feature is its ability to run multiple agents in parallel, enhancing efficiency for tasks related to deployment, backend environments, containerization, and Kubernetes.",
+          "timestampStart": "00:08:02"
+        }
+      ]
+    },
+    {
+      "id": "section7",
+      "title": "Lovable: AI Website Generation",
+      "content": [
+        {
+          "content": "Lovable is used specifically for generating simple, basic landing pages or multi-page websites that do not require complex data or backend integrations.",
+          "timestampStart": "00:08:41"
+        },
+        {
+          "content": "The generated code can then be exported to an IDE like Cursor for further, more serious development once the initial design is established.",
+          "timestampStart": "00:09:10"
+        }
+      ]
+    },
+    {
+      "id": "section8",
+      "title": "tl;dv: AI Meeting Recorder",
+      "content": [
+        {
+          "content": "tl;dv is a frequently used AI tool for recording, transcribing, and summarizing meetings, generating meeting notes, highlights, and action items automatically.",
+          "timestampStart": "00:10:25"
+        },
+        {
+          "content": "The transcripts are often fed into other AI tools like ChatGPT for deeper analysis, aiding in content creation, roadmap development, or student support.",
+          "timestampStart": "00:10:36"
+        },
+        {
+          "content": "It integrates with Zapier to automate workflows, such as sending meeting recordings to Discord for team access, significantly improving team collaboration.",
+          "timestampStart": "00:10:52"
+        }
+      ]
+    },
+    {
+      "id": "section9",
+      "title": "Blitzes: Deep Codebase Understanding and Generation",
+      "content": [
+        {
+          "content": "Blitzes is a distinct AI tool that focuses on deeply understanding a codebase, capable of generating extensive technical documentation (200+ pages) with architecture and flowcharts.",
+          "timestampStart": "00:11:20"
+        },
+        {
+          "content": "It requires highly detailed prompts, similar to instructions for a junior developer, and processes tasks by modifying individual files, taking approximately five minutes per file.",
+          "timestampStart": "00:12:18"
+        },
+        {
+          "content": "The tool can generate hundreds of thousands of lines of code over several days, making it valuable for comprehensive refactoring or adding major features.",
+          "timestampStart": "00:12:34"
+        }
+      ]
+    },
+    {
+      "id": "section10",
+      "title": "Zapier: AI Automation Orchestration",
+      "content": [
+        {
+          "content": "Although not an AI tool itself, Zapier is crucial for connecting and automating various AI tools, forming intricate workflows to manage tasks like meeting follow-ups and data distribution.",
+          "timestampStart": "00:12:56"
+        },
+        {
+          "content": "The speaker utilizes over 100 zaps to streamline operations, demonstrating its importance in orchestrating their AI-driven ecosystem.",
+          "timestampStart": "00:13:45"
+        }
+      ]
+    },
+    {
+      "id": "section11",
+      "title": "AI Frameworks for Custom Tool Development",
+      "content": [
+        {
+          "content": "For building custom AI agents and tools, the speaker primarily uses Python along with frameworks like LangChain and LangGraph.",
+          "timestampStart": "00:13:57"
+        },
+        {
+          "content": "Additional frameworks mentioned for specific functionalities include LiveKit, VPI, and Deepgram for voice agents, and Ingest for AI orchestration.",
+          "timestampStart": "00:14:13"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "timestamp": 0,
+      "title": "Overview",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_14300.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBB00vSr2zMRbIFyQBZfY944_QNHQ"
+    },
+    {
+      "timestamp": 25,
+      "title": "Cursor/Windsurf",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_54533.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCHmWyKNotn-dhaU0keD_Bnwov4g"
+    },
+    {
+      "timestamp": 112,
+      "title": "ChatGPT",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_116300.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBFoL9EDeKxsICa5aLtPBrsZkU5oA"
+    },
+    {
+      "timestamp": 204,
+      "title": "Flow",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_206133.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDwhQDLbm5HUFzrOQ8ORDJTEvUgHg"
+    },
+    {
+      "timestamp": 340,
+      "title": "DeepAgent",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_342100.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDM_Vw1mDewaIgWUgJ2Q1HoWajfYw"
+    },
+    {
+      "timestamp": 429,
+      "title": "Warp.dev",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_429800.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4N0r293HDmqncz2LPYxoTjSecEA"
+    },
+    {
+      "timestamp": 521,
+      "title": "Lovable",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_537033.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC20Dwqqa6TNIhpYlQA-LZYhwH4Zw"
+    },
+    {
+      "timestamp": 607,
+      "title": "TLDV",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_632033.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC78FeunXwQJhFh9fUabkKMGnbDjw"
+    },
+    {
+      "timestamp": 680,
+      "title": "Blitzy",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_683733.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDcsgYQ8ODJvI5ldSeD4sYXNktmFA"
+    },
+    {
+      "timestamp": 777,
+      "title": "Zapier",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_778266.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDG55IA3A6MybTvcnLq3Xq_lvTRtQ"
+    },
+    {
+      "timestamp": 833,
+      "title": "Python Frameworks",
+      "thumbnail_url": "https://i.ytimg.com/vi/YESrXVkcCHY/hqdefault_834133.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1Xk07BKT3Fz5DFoUrEYAolOE58A"
+    }
+  ]
+}

@@ -10,28 +10,24 @@
 #     print(chunk, end="")
 
 
-# import os, requests
-# from dotenv import load_dotenv
+import os, requests
+from dotenv import load_dotenv
 
-# load_dotenv()
-# API_KEY = os.getenv('TranscriptAPI_KEY')
-# url = 'https://transcriptapi.com/api/v2/youtube/transcript'
-# params = {'video_url': 'YRvf00NooN8', 'format': 'json'}
-# r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout=30)
-# r.raise_for_status()
-# print(r.json()['transcript'])
+load_dotenv()
+API_KEY = os.getenv('TranscriptAPI_KEY')
+url = 'https://transcriptapi.com/api/v2/youtube/transcript'
+params = {'video_url': 'YRvf00NooN8', 'format': 'json'}
+r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout=30)
+r.raise_for_status()
+print(r.json()['transcript'])
 
-
-
-# from youtube_client import YouTubeClient
-        
+# from youtube_client import YouTubeClient        
 # # 创建 YouTube 客户端
 # print("[INFO] 正在初始化 YouTube 客户端...")
 # client = YouTubeClient()
-        
 # # 获取评论数量参数（默认20条）
 # max_results = 20
-        
+
 # print(f"[INFO] 正在调用 YouTube API 获取 {max_results} 条评论...")
 # # 调用 YouTube API 获取评论
 # comments = client.get_video_comments("zsOYK-sb3Qo", max_results=max_results)

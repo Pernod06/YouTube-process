@@ -1,0 +1,353 @@
+Video dEk3LUPAg7s
+======================================================================
+
+[00:00] Over the past year, we've seen an explosion of vibecoded apps, but they all look like crap. And so, in this
+[00:05] video, I want to bring on Ming, who's one of the leading experts when it comes to design for these vibecoded apps in
+[00:10] particular, who's got decades of design experience. And recently, he went viral for showing how you can get these incredible looking websites built with
+[00:16] the new Gemini 3 model. So, I wanted to bring him on and for my sake and for yours, learn how to get these incredible
+[00:22] outcomes out of these vibe coding tools by just adding in a little bit of secret source at the right place. This is an
+[00:27] incredibly valuable skill to have in this day and age, whether you're an AI agency owner wanting to build your own website, wanting to build and sell
+[00:33] websites for your clients, or wanting to design and build incredible software and SAS applications for yourself and your
+[00:38] clients. So, this is such an essential thing to have in the age of coding, and you guys will get to see us do it live here in this video. Enjoy. Ming, welcome
+[00:45] on to the channel, man. I'm super excited to jump into this. uh after seeing that Gemini 3 release and the crazy thing people are building with it,
+[00:51] including yourself, uh it got me super excited about the opportunity for people to be able to make these for businesses
+[00:57] and add it to their services or using it as a foot in the door. But it's just such an exciting space right now and really seeing timelines being compressed
+[01:03] and the possibilities of what you can do with this really being stretched and and you're definitely one of the people leading that. So, thank you for coming
+[01:08] on and uh bit about yourself and where we're going to go with this video. My background, I've been doing this for
+[01:14] 20 years. I've done a number of startups. I've done a a coding platform learn teaching designers how to code
+[01:20] teaching developers how to design and I think uh now with you know me building
+[01:25] this AI tool and being in this space uh learning how to prom and all that stuff
+[01:31] so we want to bring design in the space because like most of these tools they
+[01:36] don't really care that much about design so we want lovable and replet and so on right right
+[01:42] so it's very codeheavy but we want animations We want beautiful typography,
+[01:47] colors, agency, things that you're going to make it super easy for uh anyone to
+[01:53] build beautiful websites for their customers whether uh you know you can find a new customer and can literally
+[02:00] generate with Gemini 3 in like five to 15 minutes and just vibe vibe design with you know
+[02:07] the Yeah. What do you call it? Do you call it vibe designing or vibe? What do what do you call it? I I prefer wipe design
+[02:12] because uh essentially, you know, it's it's creating something visual in front of you and you're just like, "Oh, you
+[02:19] know, this is off. Oh, the color is off. Oh, I want, you know, this image instead." So, what are we going to be covering?
+[02:25] So, we're going to learn how to get the best out of uh Gemini 3. Because right now, I think a lot of people have trouble with what to prom and how to do
+[02:33] it. And Gemini 3 is really bad if you don't give the right prom, right? If you don't give the visuals, if you don't
+[02:40] give the references, if you don't, you know, say what your app is about or what type of typography you want or if you
+[02:46] want animations at all, it's going to be very bad. So, what we're going to learn today is how to prompt the right way.
+[02:53] And not just that, but how to find the resources to prompt the right way. And
+[02:59] if you do that, you're going to fly. You're going to go from zero to 100 in a very, very short time. All right, Liam,
+[03:06] are you ready? I'm going to try to create uh to to treat you like a pro prospective client. And basically, you
+[03:13] know, this is your current website. I noticed it's a little bit, you know, basic. Um, you know, I don't want to
+[03:19] hurt your feelings, of course, but we do have another one in the works. That's why we have this one up, but yeah, it is it is basic. Yeah, I'm sure
+[03:26] with you know your experience and how much you care about design and AI space you know very very soon it's gonna you
+[03:35] know people are going to expect way higher because of Gemini 3. So basically I want to show you you know
+[03:42] just with a few prompts you can create this beautiful presentation. So this is about morning side by the way. So I'm
+[03:48] taking your brand and I'm creating these beautiful presentations. since I'm using your colors and I'm animating this
+[03:55] these kind of websites would you say like what's what would a what would a typical designer be charging for these
+[04:01] things prior to prior to this stuff? Okay guys, very quickly if you're an aspiring entrepreneur and want to start your own AI business and you haven't
+[04:07] already joined my free school community, it's down there in one of the links in the description below has my full free course on how to start your own AI
+[04:13] agency as a complete beginner and you're surrounded by over a quarter million people who are also striving towards the
+[04:18] same thing. There's no better place on the planet right now to be surrounded by like-minded people and you get free weekly Q&A with me where you can ask
+[04:24] questions directly to me about how to start and scale your business. I'll see you in there. Right. So, most designers charge $5 to
+[04:31] $10,000 USD for a landing page like this. Now, obviously this is just one
+[04:36] page, but let's say you know I'm taking your colors. I'm vibe coding this. I'm
+[04:41] VI designing this and I'm using your slogan. I'm using your manifesto and you
+[04:47] know we have a typical like high converting landing page. We have beautiful animations. If you uh if you
+[04:54] refresh this there's like an intro animation. You can see just a couple prompts uh starting with an image and
+[05:02] adapting it and you can see it's all animated. It has sort of like your
+[05:07] content with just a few prompts. So I prepared a few a few and um you know we
+[05:15] have this one which I also really like. Okay. A bit more bit more technical
+[05:20] feeling. Yes. Um love it. But look at this part right the
+[05:26] challenges ahead are are you know like there's a scrolling aspect there's like a timeline animation aspect. There's the
+[05:33] card flipping aspect you know like you this is like 30 minutes. Yes. All of this was created within the
+[05:39] last 30 minutes, you know, just before uh this uh this session here. And again,
+[05:46] this I'm using a template and I'm asking AI to essentially just, you know, adapt
+[05:52] this to a landing page for my AI consulting business called Morningside.
+[05:57] And then I'm just giving the colors and the manifesto, which is uh the text that
+[06:03] you have right here. Yeah. So that's all you need to do. You know, you you approach a client, you study a
+[06:10] little bit their their website, what is their logo, what is their name, what is their brand, where their what what is
+[06:16] their colors, what what do they like, right? Because everyone has that sort of like personal touch that's going to sell
+[06:22] them the business and then you bring that to AI. You describe that because if you don't do that, this is what it's
+[06:28] going to look like. Um, you know, build a landing page for my AI consulting
+[06:34] business called Morningside. Yeah, it's quite as you can see, you know, it's it's still really good, don't get me wrong,
+[06:41] but it doesn't have it's not going to sell you. Why? Because maybe you like green and this is not green. And funny
+[06:48] enough, most uh clients, they have that sort of like little fine line where if
+[06:55] you get exactly that font or that color, they, you know, they're going to take you. So, you know, even though the
+[07:02] design might be great, it doesn't have the picture that they want. it doesn't have like the the the correct approach.
+[07:08] So, if you don't prompt correctly, you're going to have something like this. But then let's get to the next
+[07:14] one, which is now I'm prompting a little bit better. And so, I'm using an image
+[07:20] this time. So, this is an image. I'm just I just took a screenshot, right? Command shift 4 on the Mac. Take a
+[07:28] screenshot. I bring this and I'm just saying, hey, uh build a landing page for my AI consulting business. again uh use
+[07:35] these colors and you know this is my template that I want to use. I'm
+[07:41] referencing something and then there we go. We have something a little bit better for the complete beginners. Walk us
+[07:47] through assume we don't know anything about this platform and you might need a little bit of introduction on it. So if you just want to walk us through sort of
+[07:53] start to finish what it's like as a as a new new user coming on to it. What do we need to know to be able to get the most out of this? So, like I said, the first
+[08:00] thing that you want to do is a screenshot. That's the the most basic thing every
+[08:07] everyone knows how to take a screenshot or take an image of an existing design. Where do you get those images? Well,
+[08:13] very simple. You can go to something like Mobin. You browse the web. You can also go to your favorite website, Apple,
+[08:20] whatever you want. And then you use that as a reference whether as an image or as
+[08:25] a reference. So you can say that in your prom can say in the style of apple.com
+[08:30] in the style of squarespace.com that is already 100% better because
+[08:36] every website has their own color theme and based on that color theme it's going
+[08:42] to be embedded into the prompt. Say I'm an agency or or someone wanted to start selling any kind of AI website design or
+[08:48] or development. I have a local business that is sort of in my area that I could literally go physically into or it's
+[08:54] just in my area. They have a kind of stink website that I probably wouldn't want to use as a as the reference,
+[09:00] right? You want to make it a lot better inspired by their branding to some some degree like borrowing a lot of the colors. Uh how would I go about that? I
+[09:08] take a screenshot of their website as it currently is. I go and find some cool designs on Mobin for better inspiration
+[09:15] and then I select a template with an aura and it sort of handles the rest. Correct. So, you know, I've been doing
+[09:22] uh you know, consulting uh for design like design agency, freelancing. A lot
+[09:27] of people do that. And I think, you know, this this industry is about to change. Now, what I would do is there's
+[09:33] two kind of website. The first one is, you know, a real website, right? Like, you know, you go to your favorite
+[09:39] website, square.com, and that's a real website. Sometimes it's good, sometimes bad. Min is is similarly uh it has real
+[09:47] images. And then you have the dribble one which is more for inspiration. Instagram all of these like Twitter.
+[09:54] These are more like best case scenario kind of concept car type of deal. You
+[10:00] need both sides, right? Because the client essentially wants something
+[10:05] beautiful. But this is a step that we call kind of mood boarding. The goal of
+[10:10] this step is to know exactly what the client wants. Usually the client is going to come to you and say, "Hey, I
+[10:16] want this website. these are the colors that I want. Usually you ask for like a creative brief and essentially that's a
+[10:23] step where it is your job as a vibe coder to bring this into the prompt and
+[10:29] then you know let's say you go to dribble right you need to know how to navigate all of this. These are these
+[10:36] are more concept. But what is cool about this is that it will definitely create
+[10:41] more beautiful design just because just like a concept car, it's going to have like the perfect colors, the perfect
+[10:47] images, you know, like usually they get like, you know, the perfect scenario for
+[10:54] the typography to to flourish and the images of, you know, beautiful models and all that stuff. Uh, but it's it's
+[11:01] necessary because you want to get your client excited. So you can search by uh
+[11:07] you know branding you you can search by web design you can get into the logo and then you can also filter uh by the
+[11:14] color. So for example in your case you know would be dark green. So now we're kind of like drilling down into the
+[11:20] details and then we're kind of walking through with the customer as to what is
+[11:25] their taste what you know they know their business. You did this live with them. Yes, you would you would do this live with them
+[11:31] ideally because you don't want to get into a surprise where they don't like your design and you spend like two weeks
+[11:37] on it traditionally, right? But with the Gemini 3 now and sort of like five coding era, I think this process is
+[11:44] about to get down from like, you know, a day, 3 days to just 30 minutes in a
+[11:50] session like this one. Okay, cool. Let's uh let's see if we can run through like an example from start
+[11:55] to finish. I think it'll be the most most helpful thing here. So, I'll I'll pretend to be a client and you uh you walk through. So, I need to make up a
+[12:02] fantasy business that I'm I'm running. Um or I'll just pick one that I like, right? And I'll make up Does it work for
+[12:08] if you're doing software? Have you tried it with web applications and and SAS? So SAS is definitely kind of like our
+[12:14] specialty right now. If you look at our sort of like all of our template, we have the biggest library of templates
+[12:20] but not just the biggest library but we have the sort of the most beautiful uh
+[12:25] you know design centric uh you know design out there. So we have all kinds
+[12:31] you know you have the the design studio type you have the SAS business type you know with gorgeous animation. So if you
+[12:39] look at you know the most popular one of the month so for example this one is for like a video editor. It has gorgeous
+[12:45] colors and animations and you know it's interactive. It has a beautiful button.
+[12:50] So one thing that you're gonna notice is that if you don't specify, you know, some of these buttons, you're never
+[12:56] going to get a button with a beam animation or with a glow animation. It's just going to be the most basic button
+[13:03] possible. And so uh you know, usually they're white or black and that's it. Right?
+[13:08] Once you're finished with this step of kind of knowing sort of the creative brief, this is where you start
+[13:14] collecting uh different portions of a website. So for example, if I go here
+[13:21] uh for a case study, this is the hero. This is what we call the hero. This is the most important part of a a landing
+[13:29] page. You should spend at least 50% of your time on the hero alone because it
+[13:34] sets the whole tone. It's above the fold. is the the part that's going to convert. It's also the main part of your
+[13:41] cover image. For example, all of these uh templates have a cover image. All of
+[13:48] these designs have a cover image. On Instagram, we have a cover image. So, the hero always appear on the cover
+[13:56] image, which is why you have to spend so much time on on that aspect. So, and
+[14:02] then once you're done with that, you go into the section of the website. So now you need to be familiar what are the
+[14:09] sections. So for example is is a testimonial section is it where an about section or a pricing section and then
+[14:17] you know what kind of animation that I want what kind of uh attention where do do I uh get the attention from the
+[14:24] customers and the FAQ. So these are the most typical sections and then finally
+[14:29] you finish with the footer. Okay. Do you have to assemble these things yourself or is there like I guess
+[14:36] that's a tricky part of a of a non-web designer knowing even for me thinking about if I'm going through this it's like well I mean I've even had a player
+[14:42] on trying to build my personal brand website with the new Gemini model in the in the Google AI studio and when it
+[14:48] comes down to like I know what kind of content it needs to communicate but in terms of sections and it's knowing like
+[14:54] okay should this be like a three card split like a three columns with three different cards um do I have a sort
+[15:00] image on the left and then text on the right. This is where the the edge of the actual designer still lies in in like
+[15:07] tastefully picking the right things. And is this assembling it not just from this like am I selecting a bunch of sections
+[15:13] here or am I selecting one here and selecting one from another or is this just like the gallery for this
+[15:18] particular theme? So let me give a little bit of history here. Traditionally speaking before the age of AI we used to draw everything and
+[15:26] I think that's still relevant. Usually you want to start with what we call a wireframe. A wireframe is like basically
+[15:31] saying, okay, you know, this is kind of the structure, the skeleton of the
+[15:37] landing page. And you know, you can absolutely do that. That's totally valid. You're never you're probably not
+[15:44] going to get as beautiful as as a design, but you will get the right structure, the the wireframe aspect. And
+[15:51] a wireframe is meant is meant to be uh to be very plain. I'm not covering that this part because I feel like if your
+[15:59] client is vibing with you, they can essentially tell you, okay, I kind of
+[16:05] like this section here and I think that would work. I kind of want a signup, you
+[16:11] know, I kind of want a footer. I definitely want uh to show my my product
+[16:16] in 3D, right? So I think it's important to educate them at the same time and to
+[16:23] sort of like be as specific as possible so that you are kind of killing a bunch
+[16:30] of steps that usually takes a lot of time to to to waste. Um and it's kind of is it going to cost them a lot less as
+[16:36] well? We could do this with a with a with a SAS. I've got an idea um in mind and you can just walk through off that. Yeah,
+[16:42] sure. If do you need to like guide me through? So, I just need to pick ones out of here that I like.
+[16:48] Okay. So, let's talk about styling. Uh, what kind of landing page are you looking for? Are you looking for like a
+[16:53] more futuristic modern uh or are you looking more for like a um sort of like more traditional?
+[17:00] It's SAS for it's an AI agent essentially that does uh automates
+[17:06] outreach like lead generation and outreach for you kind of like a SDR BDR kind of uh thing. Let's say that's the
+[17:11] that's the use case. So any while I would like to go all funky on it, if I was if I was actually going to be
+[17:17] rolling this out, it would be more on the like sleek uh futuristic that sort
+[17:22] of stuff. And colors wise, I'm thinking in a kind of bluey bluey purpley kind of
+[17:30] range, you have to select the purple, right? which is like, you know, what we uh what
+[17:36] AI loves a lot, which is kind of like getting people to call it AI slots.
+[17:42] That's quite nice. That like sort of more muted blue. Um okay, muted blue works well. Um it's um
+[17:50] you know, I can think of something like linear, for example, is very popular amongst designers. So something a
+[17:55] product like linear uh is what AI trains on a lot because it's modern. It's very
+[18:03] high converting. It has a lot like it it attracts a certain specific type of
+[18:08] person. So for example, if your type of customer is more like businesses, startups, uh Fortune 500, they're
+[18:16] definitely going to like this type of website. uh just because it's more technical, it's um very clean and it's
+[18:25] like an app. I think I kind of understand what you're looking for. So you you want something like this.
+[18:31] Yep. A little bit like linear but a bit blue uh blueish. So we can save this image
+[18:37] for example. And we're going to bring that, you know, we're going to try and um it's
+[18:45] better than nothing, right? So, I'm going to bring this image. I'm going to paste right here.
+[18:52] All right. And I'm going to say something like create a landing page for
+[18:57] my is it a SAS business? It's an AI SDR for AI agencies to help them generate
+[19:05] leads or like find leads and then h automate the outreach and
+[19:10] personalization of that outreach. It's basically like a full AISDR system. Let's just call it outreach X or
+[19:17] something. Okay, outreach X sounds good. So that generates leads and automate uh outreach
+[19:25] to and it's for it's for AI agencies specifically uh for AI agencies.
+[19:33] So, and then I'm going to say in the style of, you know, linear, for example,
+[19:38] and uh with a a blue tone,
+[19:44] um dark mode uh try to inspire from this image. So,
+[19:54] let's see how it goes. But this is how I would kind of start. And it's it's
+[20:00] important to be as descriptive as possible. There's three key key elements here. First, the name. Second, uh what
+[20:08] type of product is it? Um and third, what is sort of like the the the content
+[20:15] of it, like what does it do? So based on the content, it's going to generate those sections um as best as it can. So
+[20:23] for example, it it might get like a testim testimonial section or a feature section uh based based on that and then
+[20:31] you have the image. I think that's the icing on the cake because without the image it's not going to do very very
+[20:38] well. Now, what you're noticing here, um, it hasn't generated the background yet, but you're you're definitely
+[20:44] noticing that we have the bluish colors and we have the the demo app, which is
+[20:51] extremely popular right now. If you look at a website like Linear, yeah, it's going to have the sort of like this
+[20:57] is what we call the uh the hero section, but we have the title, the heading, the
+[21:03] description, and the call to action CTA. And then there's usually a
+[21:08] secondary acting secondary button. So primary button, secondary button, and
+[21:14] then we have the header that is usually uh sticky fixed from the top. And uh you
+[21:20] know, usually you have the UI right here. Sometimes it's animated, sometimes
+[21:27] it's not depending how clean you want this to be. In this case, it works well well for linear because they want
+[21:33] something clean. But if you want to get more attention, you might want something more animated. Um, so and then this is
+[21:41] super powerful. This is the social proof where you're showing the uh the customers, the logos, and who's trusting
+[21:49] your brand. And then finally, you get into the feature section and uh you
+[21:54] know, you explain the features of your product. uh maybe the process, the
+[22:00] design process, the steps um you know how you work with customers, you explain
+[22:06] that more in details, you have beautiful, beautiful visuals that goes with it. And so yeah, there you go.
+[22:14] Boom. You know, that's it. And it built out that demo in there as well.
+[22:20] Yeah. So it creates like a little demo here. It has a beautiful animation that I do on scroll on on hover and it has
+[22:28] your logo. It has the color that you want and it's also based on the image
+[22:33] that I gave. Right? So we have this and then you know it has sort of like it's
+[22:40] respecting all of that stuff. Now what is just you know at this point you want
+[22:46] to remove what you don't like. You want to add what you like. So, for example, uh you don't like how the title is kind
+[22:53] of like not drop down. Yeah. Correctly formatted. Uh you might
+[22:59] not like the font. So, you This is where, you know, I feel I want to build
+[23:04] a tool where it's super easy to just change the font, right? So, I want to go
+[23:10] with more space. Uh mono. I want more light. I want
+[23:15] you, right? So, we're vibing. But we're vibing in a way that it's just a few
+[23:20] clicks, right? Not like it's not like having to reprompt the whole thing. Yeah. Yeah. Exactly. A pain in the butt.
+[23:26] And people what people don't realize, especially if you don't have a ton of budget, is that every single prompt that
+[23:31] you use costs money. Usually in the range of 20 cents per prom. So that is important to keep in mind. I know you're
+[23:38] you're making a lot of money, Liam, but most people they do care about, you know, 20 cents per prom.
+[23:44] I still I still be checking my cloud code usage, you know. Yes, of course. If you're a business owner who's interested in what
+[23:50] generative AI can do for your business, you can get in touch with me and my team at Morning.AI in one of the links in the description below and we can start your
+[23:56] entire AI transformation process going all the way from the education and training of your staff to the identification of the best AI use cases
+[24:02] for your company all the way through to development and beyond. We've worked with some of the world's biggest sports teams and also publicly traded
+[24:08] companies. So, rest assured, you are in good hands. The next thing you want is maybe maybe some animation, right? So boom, in one
+[24:17] click, I gave you like a a laser beam animation that is definitely going to impress your customers, right?
+[24:23] So this is blending blending like the benefits of vibe coding with the benefits of having more structured
+[24:30] things that like perhaps it's a lot harder to execute on for a like vied design or vibe coded website. You've
+[24:37] built in the ability to put these more sort of advanced features in without uh having to rely on on like vibes alone.
+[24:44] Exactly. Because you know we are using taste and taste is one of the most as
+[24:50] important aspect in the new era where taste is all about building your sort of like experience with what you like and
+[24:57] what you don't like. It's like coffee for example. It's only by drinking a lot of coffee that eventually you know the
+[25:03] the temperature level, the variables. And so the same way here, you need to make all of these a ton of micro
+[25:09] decisions. The only difference is that you're not in there coding every single line of code. AI is doing all of that
+[25:16] for you. And AI is here to bridge the gap, right? So if you, you know, if you
+[25:21] need something else or if you want to fix something and you don't know how to do it, then you would ask AI for it. But
+[25:28] if you know how to do it and if you're just clicking around and vibe coding the background for example,
+[25:33] well, you know, like there you go. It's just a few way better. The reason I wanted to bring you on is that this is so versatile just
+[25:39] as a skill in the digital age to to be able to build this stuff for yourself, for your clients. If you guys are
+[25:45] starting an an AI automation agency right now, you'll be like, "Hey, I want a website that positions me well, that
+[25:51] looks good." And you can create these in in a few minutes uh just based off this. So whether it's your own agency website,
+[25:57] whether it's building websites for clients and using that as a as a like foot in the door and offering these these kind of builds for free and just
+[26:04] completely changing what their website looks like or in this case if you are
+[26:09] getting to the point with your your agency where you wanted to launch software like something like this, then you have the skills to be able to do
+[26:15] some design for yourself as well. So my question from here would be uh I mean if you've got some more steps here that
+[26:21] you'd like to cover, but I was just going to go okay if you wanted to do UIU UX design for um a uh like the inside of
+[26:28] an application like this. Sure. So obviously this is the first step and I think this step is important because it didn't cost me a lot of time
+[26:35] to to to change the background to get like a screenshot and all that stuff and I already see that you you start liking
+[26:42] it and so I'm already getting you sort of on board. Now we're getting like once we're like good with the direction we
+[26:49] can start populating the rest. So for example, what section do I want? Uh and now let's talk about animations which is
+[26:55] one of the the most important aspect. And most of these tools like level vis zero and all that stuff they don't care
+[27:01] that much about animation but for me for example I can just say animate and I can go to a code snippet and uh you know for
+[27:08] those who know a little bit more about code you can prompt this. By the way, we have a prom builder and you can learn
+[27:15] all of this sort of like lexicon of uh what is a hero and feature and on
+[27:20] boarding? What kind of layout is it? Left side, is it right side? Split or bento layout. You know, as someone who's
+[27:28] offering these services, you might want to get into learning those things. And then you want to learn about the style.
+[27:34] Is it a flat style? Is it like a glass style like iOS? or is it more, you know,
+[27:39] uh, you know, futuristic? And then the all of this language is is so key because this is the first thing I notice
+[27:46] when like the difference between someone like myself who knows how to knows how to code and someone who doesn't is is
+[27:52] like I understand the language to describe to claw code or to a a a lovable to explain like hey I want the
+[27:58] database to have these sort of uh these these components. I want this to be a relational database that has these kinds
+[28:03] of columns on it. I want this to be connected to the front end in this sort of way. And when you can speak the language of it, that's really what
+[28:09] unlocks these these tools for you. So even for me, like I would definitely need to brush up on my design. I think that's why I've been very limited is
+[28:16] that I don't know how to describe. Okay, what is flat? What is like uh the liquid glass? Like all of these kind of terms.
+[28:22] I think the the average person is just doesn't doesn't have the right vocabulary to get the most out of them. So that's it's a great feature to have.
+[28:29] Yeah. At the end of the day, you're here to impress your customers, right? because if if they're not impressed,
+[28:35] they're not going to want to spend a ton of money. And also, don't sell yourself
+[28:40] short, right? You want to get the most out of your customers. Like, you you
+[28:47] don't want the the low-end customers. You want high-end customers. You want those who are ready to pay $5,000, $10,000. And the only way to get those
+[28:55] kind of customers is to, you know, to really know your craft and to also show
+[29:02] examples of high-end craft. So, for example, you know, maybe they want a
+[29:08] section like this one. You know, maybe they want a button that, you know, is
+[29:14] animated like this one, right? Maybe they want something a little bit cleaner
+[29:19] like this one, but still a bit more 3D and has the color of their brand. Maybe they want different styles of card,
+[29:26] whether it's glass or not a glass or flat. Maybe they want different background. So all of these think of of
+[29:33] it like ingredients to a a recipe to cook. You know, you want AI to cook, but
+[29:39] you have to give AI the ingredients to cook properly. And once you bring all of
+[29:45] these ingredients, then you can reference these ingredients to to get the best result possible. And in this
+[29:53] case, I'm giving the ingredients for animation. And once it's going to finish
+[29:59] um generating this, then it's going to animate. And you know, it has the sort of animation that I've been showing you.
+[30:06] Um, and yeah, you know, like it's the same with, you know, the progressive
+[30:11] blur. Your clients may not care about it, but when they see it, when it's a
+[30:16] good design, they just intuitively feel the craftmanship behind it and they will
+[30:23] start caring about it. So, for example, the reason why there's a progressive viewer here is so that we can read this
+[30:30] across the entire website so that even so there's a reason for everything so
+[30:36] that the logo doesn't get in the way of the typography. All right, we have the animation in just
+[30:41] a another prompt. I'm able to get the animation that I can
+[30:48] show you as a client. So there you go. So I fades in. Wow. Exactly.
+[30:54] That's awesome, man. I think um I mean everyone watching here is probably dying to go and give this a
+[30:59] spin. So where can they where can they go to get this? Like I can drop a link down in the description below. And I mean there's so many features it seems
+[31:05] like you've got in here. You've got templates, components, and so on. um what would you recommend is just a a
+[31:11] good exercise for them to get their feet wet and start really seeing what they can do with this. Right. So, by the way, you don't have to
+[31:16] use my product. Uh the only the only reason why I'm showing this is because I do care about the animations, the
+[31:21] components, and templates, but you can totally use AI studio, which is kind of free right now, but you know, don't
+[31:27] expect products to be free all the time. Uh there's lovable, there's visero. A lot of people know these products now
+[31:33] nowadays. And then for those who are more who wants to be more in control and especially if you're building a scalable
+[31:38] business, you want to get into cursor. But that being said, what makes this different? And by the way, the product
+[31:43] is called a.build. This is something that I v coded myself for the past 6 months. And uh we have 60,000 users
+[31:50] already. So uh you know here you would paste your screenshot. You would prompt uh just the way that I I you know I
+[31:57] showed you. You would get it into the prompt builder. You will learn about this. Then you would sort of like use
+[32:02] some of the suggestions and and then you start sort of like
+[32:07] going through the uh you know the VIP designing with your customers like the
+[32:12] name, the description and all that stuff. And then if you're you're not sure, you can always go to the
+[32:18] templates. Let's say you like this template right here and you just want to adapt it to your design. What you can do
+[32:25] here, you can just click on remix full template and from here you can just say
+[32:31] adapt to my business and then cool. So I could take the screenshot of the morning side one. I could dump in
+[32:37] all the copy and then get a basically reskin of this in line with my agency. Wow. Exactly. Because usually you have to do
+[32:43] it everything manually. But with AI and especially uh you know what is different
+[32:49] between my uh Aura for example compared to the to the rest is that all the code
+[32:55] is here one single page as someone who's done cursor yourself you know that
+[33:00] there's maybe the more that you work on cursor the more that you get like hundreds of files right and at some
+[33:06] point you're like how do I even get the structure or the design of my entire
+[33:11] page or the this the theme in this case it's just one single file. This is all the code and you can just export all of
+[33:19] this to HTML. You can copy the code, download the HTML and as you know in cursor or lovable you can bring that as
+[33:28] an attachment and then you can build the rest of the landing page in cursor. So
+[33:33] here we're focusing on the design, you can edit the design, right? And you can
+[33:40] uh you know see the animations and all that stuff. Um you can also ask AI to do
+[33:46] all the change for you and you can you know reference for example uh adapt the
+[33:53] the images and then you can reference the images uh you know just for
+[33:58] placeholder you can reference the button for example and find the button that you want or the
+[34:04] animations or the template that you want the sections that you want. So I mentioned about section we also have a
+[34:10] number of section. So you can see we have you know the footer and animated
+[34:16] sections or feature section that you can reference and then add this to this
+[34:22] template and it's just AI is going to do all the work for you. Love it. That's too easy man. Well Ming
+[34:29] I really appreciate you uh you coming on. This is I mean levels beyond what I thought was uh really possible. right
+[34:34] now. It makes me really think about what the future of of the the design industry is when these kind of tools are available. So, if you're watching this,
+[34:41] there's it's very likely that you can go and now create your website for your agency. You can potentially look at
+[34:47] doing it for some clients. Uh but I think justice as a skill generally uh in
+[34:52] this age is uh is essential. So, giving I've always felt limited by my lack of design skills and this has definitely
+[34:59] given uh people like myself a lot more confidence to to be able to build. So Ming, I really really appreciate your time in and obviously for putting
+[35:06] together this tool that seems to be a great uh great resource for the community who are trying to make this jump too. So I'll leave your links down
+[35:12] in the description. Ming has a ton of great content on his YouTube channel. Of course, I will leave his uh links down below. And yeah, M if you got anything
+[35:18] else. What I want to say is that Gymni3 is really raising the standard for what is good craft in term of web design or
+[35:24] not, what is good animation and we all have to upgrade as a result. Uh but not
+[35:29] just that we can for those who are not AI trained you know any business out
+[35:35] there they they haven't heard of this so we can sell this at a very premium rate in fact there's a lot of our customers
+[35:41] they're just agencies and they're like hey I want to use this and I want to sell the templates can I do that and I'm
+[35:47] like yes you know you create an AI you do whatever you want so yeah you know this is what I want I want to bring
+[35:52] design into the space because I feel like people forget design in the equation and I think it's so so so
+[35:58] important But thank you so much, Liam, for having me and uh I'm I'm happy to help anyone if you have any question.
+[36:04] Awesome mate. Great to meet you properly and I'm sure we'll have you back on when there's another big update like this and you've got some more stuff to show us.
+[36:10] For sure. I'd be happy to. So that is all for this episode of the podcast, guys. If you want to see something similar that I really think
+[36:15] you'd like, you can click up here to watch another one. And remember, if you think you have a story worth telling, some valuable insight you can share with
+[36:21] the community. You can fill out my podcast application form in the description below. I'd love to have a chat with you and get some exposure for
+[36:26] your business. Aside from that guys, that's all for the video.

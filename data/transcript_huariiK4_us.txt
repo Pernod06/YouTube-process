@@ -1,0 +1,420 @@
+Video huariiK4_us
+======================================================================
+
+[00:00] There are quite literally thousands of
+[00:02] AI tools on the market right now. And
+[00:04] because my work revolves around helping
+[00:06] businesses use AI, I've tested pretty
+[00:08] much all of them. A lot of them probably
+[00:10] aren't worth your time or money, but
+[00:12] there's a few amazing ones that can save
+[00:14] you dozens of hours every week, and some
+[00:16] might even revolutionize how you work.
+[00:18] So today, I'm going to share what I
+[00:20] believe to be the best AI tools that you
+[00:22] can use to do everything from boosting
+[00:23] your personal productivity to building
+[00:25] powerful AI automations all the way to
+[00:28] transforming your entire business
+[00:30] operations. All right, starting with
+[00:31] Whisper Flow. This is a voicetoext AI
+[00:34] tool that works in any app where you
+[00:35] need to type something. Rather than
+[00:37] typing with your keyboard, simply hold
+[00:38] down the whisper hotkey, start talking,
+[00:40] and it does the typing for you. But it
+[00:42] doesn't just transcribe what you're
+[00:44] saying word for word. It actually uses
+[00:45] AI to understand what you're trying to
+[00:47] say. and then spits out text with
+[00:49] perfect grammar, punctuation, and with a
+[00:51] clear, logical flow. This has been such
+[00:53] a productivity hack for me. I'm using it
+[00:55] for everything from writing emails,
+[00:57] Slack messages, but most of all, I use
+[00:59] it from where I'm prompting AI tools. I
+[01:01] just basically hold down the hotkey,
+[01:03] start talking, I ramble for 2 minutes,
+[01:05] telling the AI roughly what I want it to
+[01:07] do, and then whisper spits out a clear
+[01:09] and well structured prompt. Speaking of
+[01:11] voice tech getting crazy, 11 Labs has
+[01:13] basically perfected voice cloning. All
+[01:15] you need to do is upload around 30
+[01:17] minutes of audio of you talking and then
+[01:19] boom, there is an AI version of your
+[01:21] voice that sounds exactly like you. Not
+[01:23] only your voice, but how you pause, how
+[01:25] you emphasize words, even those little
+[01:27] quirks in how you talk. People are using
+[01:29] it to create entire video courses,
+[01:31] automating customer calls, or making
+[01:34] audio books, all without recording
+[01:35] anything themselves. It's kind of
+[01:37] unsettling how good it actually is. And
+[01:39] while we're on the topic of voice,
+[01:41] chatbt voice mode in their mobile app
+[01:43] has become my go-to companion for
+[01:45] brainstorming. It's not the way that
+[01:46] you'd normally use chatbt, typing
+[01:49] prompts and waiting for a response, but
+[01:50] actually having a full conversation with
+[01:52] it. Hi, ChatBT. How are you?
+[01:54] Hey there, I'm doing great. Thanks for
+[01:56] asking. Always happy to chat with you.
+[01:58] How about you?
+[01:59] You can talk through business
+[02:00] strategies, get feedback on ideas, or
+[02:02] work through any problems while you're
+[02:04] walking or on the go. And the real super
+[02:06] hack is after you've had a long
+[02:08] conversation back and forth with chat
+[02:09] GBT on a certain topic, ask it to
+[02:11] summarize everything you discussed in a
+[02:13] well ststructured document. This is then
+[02:15] super handy if you're working on a new
+[02:17] project plan. You discuss it back and
+[02:19] forth with chatbt and at the end you
+[02:20] have this perfect document that you can
+[02:22] share with your team. For writing,
+[02:23] Claude has become my secret weapon,
+[02:25] specifically Claude projects. Think of
+[02:27] it like creating your own team of
+[02:28] specialized AI copywriters. Here's how
+[02:30] it works. You create different projects
+[02:32] for different types of writing. So, I
+[02:33] have one for writing LinkedIn posts,
+[02:35] another one for the AI tutorials on our
+[02:37] website, and another one for writing
+[02:38] YouTube scripts. You just upload
+[02:40] examples of your best work, give it
+[02:42] specific instructions, and now every
+[02:44] time you use that project, it writes
+[02:45] exactly the way you want it to. For my
+[02:47] YouTube script writing project, I
+[02:49] literally uploaded the transcript from a
+[02:50] 2hour YouTube script writing course, and
+[02:53] now I just tell it my video idea, and it
+[02:55] writes the script following all of those
+[02:56] best practices. Claude is honestly the
+[02:59] best AI writer out there. The copy
+[03:00] sounds like me because it learned from
+[03:02] my examples. If you use Notion, then you
+[03:04] need to be using Notion AI. It is built
+[03:06] right in and actually understands your
+[03:08] entire workspace. To activate it, you
+[03:10] just need to hit the space bar on any
+[03:12] new line and then it springs to life. If
+[03:14] you need meeting notes summarized, if
+[03:15] you need action items pulled out, if you
+[03:17] need to write a proposal, notion AI
+[03:19] knows your exact company's format
+[03:21] because it can reference it from other
+[03:23] pages. It can even search through
+[03:24] connected Slack and Google Drive. The
+[03:27] coolest part is AI blocks. Save prompts
+[03:29] that you use all the time and reuse them
+[03:31] across pages. Your whole team can use
+[03:33] the same AI command. It's like having an
+[03:35] AI assistant that actually knows how
+[03:37] your company works. When it comes to AI
+[03:40] generated images, Google recently
+[03:41] dropped what might be the best image
+[03:43] editing AI ever. It's called Nano
+[03:45] Banana, also known as Gemini 2.5 Flash
+[03:48] Image. You can completely change
+[03:50] someone's outfit, put them in a
+[03:51] different location, blend multiple
+[03:53] photos together, and they still look
+[03:54] like themselves. No weird AI face stuff
+[03:57] or six finger hands. And it is fast,
+[04:00] like 1 to two seconds per image instead
+[04:02] of the 10 to 15 that we're seeing in
+[04:03] other tools. Right now, it's free to use
+[04:05] in Gemini. You get 100 edits per day.
+[04:08] Before we get into the next tool, if
+[04:09] you're finding these tools valuable,
+[04:11] we're actually launching a free AI
+[04:12] starter course that shows you the
+[04:14] complete AI tools landscape and more
+[04:16] importantly, how to actually implement
+[04:18] them in your workflow. Lesson two
+[04:20] specifically breaks down every category
+[04:22] of AI tools and when to use each one.
+[04:24] It's completely free to enroll. The link
+[04:26] is in the description. Just look for AI
+[04:28] starter course. Now, let's move into the
+[04:30] tools that can help you build with AI.
+[04:32] Starting with what I'd call integration
+[04:34] or automation platforms. While you can
+[04:36] already get a ton of value from chatting
+[04:38] with chatbt, Gemini, or Claude, the real
+[04:40] power comes when you bring AI into your
+[04:43] automated business processes. And the
+[04:45] traditional automation platforms, Zapia,
+[04:47] MG, and NAND have gotten really good at
+[04:50] this. They allow you to not only build
+[04:51] AI automations, but also AI agents.
+[04:54] Zappia is probably the most beginner
+[04:56] friendly. You simply need to drag and
+[04:57] drop to connect thousands of apps with
+[05:00] AI. Customer email comes in, AI analyzes
+[05:03] it, updates your CRM, creates follow-up
+[05:05] tasks, all automatically with no coding
+[05:08] needed. Make.com. This is for when you
+[05:10] need more complex stuff, but it's still
+[05:11] very beginnerfriendly. You can see
+[05:13] exactly how your data flows through the
+[05:15] automation. Perfect if you're building
+[05:17] for clients. Plus, their new make grid
+[05:19] feature shows you a visual map of how
+[05:21] all the systems and automations in your
+[05:23] company connect. It's honestly gorgeous.
+[05:26] For the more techsavvy folks, N8N gives
+[05:28] you the most flexibility with its
+[05:30] open-source approach. With N8N, you can
+[05:32] create sophisticated AI agent workflows
+[05:34] and self-host for complete control over
+[05:36] your data. But there's a new breed of
+[05:38] integration platforms that have been
+[05:40] designed specifically with AI in mind.
+[05:42] And two that are absolutely worth
+[05:44] checking out are Relay.app and Gumloop.
+[05:47] Both are great platforms that have made
+[05:48] it very simple for beginners to start
+[05:50] building their first AI automations. But
+[05:52] what I really want to highlight is that
+[05:54] both founders, Jacob from Relay and Max
+[05:57] from Gum Loop, are constantly sharing
+[05:59] real use cases and templates that
+[06:01] actually work. So if you're learning AI
+[06:03] automation, definitely follow these
+[06:04] guys. They're dropping gold daily. Now,
+[06:07] when you start using AI inside
+[06:09] automations, you quickly realize that
+[06:10] nailing your prompts becomes more
+[06:12] important than ever. This is where the
+[06:14] anthropic prompt generator comes in.
+[06:16] It's a tool that I use so I never have
+[06:18] to write a prompt from scratch. All you
+[06:20] need to do is give it a highlevel one or
+[06:22] two sentence description of what you're
+[06:24] trying to accomplish, even a scrappy
+[06:25] basic prompt, and it converts it into a
+[06:27] prompt that follows all the best
+[06:29] practices. It adds proper formatting,
+[06:31] includes placeholders for variables, and
+[06:33] structures the output so that you can
+[06:35] actually use AI's results in other steps
+[06:37] of your automation. Put simply, if
+[06:39] you're building AI automations, then you
+[06:41] should be using this tool. Something
+[06:42] else that is super useful for AI
+[06:44] automations and agents is giving AI the
+[06:47] ability to search and read websites.
+[06:49] Firecrawl makes any website readable for
+[06:52] AI. It takes messy web pages and turns
+[06:54] them into clean data that AI can
+[06:56] actually understand. Single pages,
+[06:58] entire websites, search results. Fire
+[07:01] Crow handles all the annoying stuff like
+[07:02] cookie banners, JavaScript, and avoiding
+[07:04] detection. You can tell it exactly what
+[07:06] information to extract and how to format
+[07:08] it. Perfect for competitive intelligence
+[07:10] or content pipelines. Moving on from the
+[07:13] automation platforms and now let's look
+[07:15] at the dedicated AI agent builders. And
+[07:17] there's two that I want to recommend. If
+[07:19] you're not so technical but want to
+[07:21] build AI agents, start with Lindy.
+[07:24] Lindy.ai. The new Lindy 3.0 agent
+[07:27] builder is insane. Just describe what
+[07:29] you want in plain English and it builds
+[07:31] the whole agent in minutes. They also
+[07:33] have computer mode where your agent can
+[07:34] actually click through websites and apps
+[07:36] like a human. plus built-in meeting
+[07:38] recording so your AI agents can join
+[07:40] your meetings. The interface is super
+[07:43] clean and you can see exactly what your
+[07:45] agent is doing. For more advanced stuff,
+[07:47] Relevance AI lets you build seriously
+[07:49] powerful custom AI agents. But you're
+[07:51] not just building agents, you're also
+[07:53] creating the tools the agent uses. Their
+[07:55] new workforce feature lets you build
+[07:57] entire teams or swarms of AI agents that
+[08:00] actually work together. Like one agent
+[08:02] finds the leads, passes them to another
+[08:04] agent that does the research, and then
+[08:06] hands off to a third that writes
+[08:08] personalized messages. It's not just
+[08:10] single agents anymore. It's an entire AI
+[08:12] agent department working together.
+[08:14] They've got LinkedIn automation, website
+[08:16] scraping. Basically, everything a human
+[08:18] can do in a browser, your agents can do
+[08:20] automatically, and you have total
+[08:22] control over the details. Google AI
+[08:24] Studio is basically your playground for
+[08:26] all of Gemini's features, and it's
+[08:28] completely free. The real magic is in
+[08:30] the build section. And you literally
+[08:32] just type what kind of app you want and
+[08:34] it creates a full AI web application.
+[08:36] I'm talking an actual functional app
+[08:38] with interfaces, logic, everything. You
+[08:41] want a document analyzer, a recipe
+[08:43] generator based on fridge photos. Just
+[08:45] describe it and you have a working app
+[08:46] in seconds. All the Gemini APIs are
+[08:49] built in. You don't need an API key. You
+[08:51] don't need any setup or any billing. You
+[08:53] can just start building. You can test
+[08:55] every Gemini model, try different
+[08:57] settings, and see what works best for
+[08:59] your use case. Then when you're ready,
+[09:01] export the code or just share the app
+[09:03] directly. Google have basically given
+[09:05] everyone a free AI development studio,
+[09:07] but not enough people know about it. If
+[09:09] you want to experiment with AI apps
+[09:11] without any technical hassle, this is
+[09:13] definitely where you start. There's also
+[09:14] another category of AI agents, and
+[09:16] that's browser agents. Airtop lets you
+[09:18] build powerful browser agents that lets
+[09:20] you automate the web just with your
+[09:22] words. This is especially useful if
+[09:24] you're trying to interact with a tool
+[09:25] that doesn't have an API and you need to
+[09:27] use a website like a human would. Just
+[09:29] tell your browser agent what you want it
+[09:31] to do in plain English, like go through
+[09:33] this directory and grab all the contact
+[09:35] info. It'll then navigate through
+[09:36] hundreds of pages, handle the login,
+[09:39] compile everything into a spreadsheet,
+[09:40] all with absolutely zero coding
+[09:42] whatsoever. Last one for building with
+[09:45] AI. Zite is the ultimate vibe no coding
+[09:48] tool that lets you create real business
+[09:49] apps without any coding. The AI will
+[09:52] help design your layout, suggest
+[09:53] improvements, and can generate complete
+[09:55] interfaces based on your data and what
+[09:57] you describe. It's great for client
+[09:59] portals, dashboards, data collection
+[10:01] apps. It connects and builds right on
+[10:03] top of your existing tools like Google
+[10:05] Sheets and Air Table. And you can
+[10:06] publish on custom domains and embed your
+[10:08] apps anywhere. Now for the heavy hitters
+[10:11] that transform entire businesses with
+[10:13] AI, starting with Air Table, Air Table
+[10:16] just made AI stupid simple for business
+[10:18] workflows. Create columns that
+[10:20] automatically summarize and categorize
+[10:22] data. Add AI steps to workflows that
+[10:24] enrich leads or generate content in
+[10:26] seconds. But the killer feature, it can
+[10:28] read PDFs and documents and
+[10:30] automatically put the data in the right
+[10:32] columns. The new Omni AI app builder is
+[10:34] pretty nuts. You just describe what you
+[10:36] want and it builds the complete business
+[10:37] app for you with databases, interfaces,
+[10:40] and automations. Stuff only developers
+[10:42] could do before. Now, here's something
+[10:43] that's absolutely critical in the AI
+[10:46] era, especially for businesses. Call
+[10:48] transcripts. Every single person should
+[10:50] be recording their meetings. And the one
+[10:52] that I'm currently using is CircleBack.
+[10:54] This tool automatically transcribes your
+[10:56] meetings across Zoom, Google Meet,
+[10:58] Teams, or even in-person conversations,
+[11:00] and it generates incredibly detailed
+[11:02] notes that are organized by topic with
+[11:04] action items automatically assigned to
+[11:06] each participant. It also has an AI
+[11:09] powered search across all your meetings.
+[11:11] So, you can literally ask it questions
+[11:12] like, "What did we decide about our
+[11:14] product roadmap last month?" And it will
+[11:15] find the exact moment and give you the
+[11:17] relevant context. It's pretty clear that
+[11:19] every business needs a CRM and ATIO is
+[11:22] an AI native CRM built with AI in mind.
+[11:25] You can deploy AI directly in your CRM
+[11:28] setting up research agents to tackle
+[11:30] complex tasks like prospecting and lead
+[11:32] routing. It's also super fast to set up.
+[11:34] You just sync your email and calendar
+[11:36] and ATIO starts tracking everything and
+[11:38] populates your CRM before your eyes.
+[11:40] They also have built-in call
+[11:41] intelligence for AI to automatically
+[11:43] capture and store insights from any of
+[11:45] your sales calls. While we're on the
+[11:47] topic of sales, Clay is the go-to tool
+[11:49] for scaling sales outreach. They
+[11:51] basically invented the job position GTM
+[11:54] Engineer. Clay is like a spreadsheet on
+[11:56] steroids for finding and enriching
+[11:58] prospects. You just import a list of
+[12:00] companies or people, and Clay
+[12:02] automatically enriches it with data from
+[12:03] over a 100 different sources. And the AI
+[12:06] agent feature, which has by far the best
+[12:08] name, Clay Agent, can visit any website
+[12:11] and pull specific information you need,
+[12:13] like find the tech stack this company
+[12:15] uses or check if they're hiring for
+[12:17] sales roles. It'll actually go and
+[12:18] browse their site and bring back the
+[12:20] answer. Then you can use all of that
+[12:22] research to write hyperpersonalized
+[12:23] outreach that actually works. Cassidy.ai
+[12:26] lets you build AI assistants that
+[12:28] actually know your business. Not generic
+[12:30] chat bots, but specialized assistance
+[12:32] for each department. You can create a
+[12:34] customer support bot that knows all of
+[12:36] your products, a sales assistant that
+[12:38] understands your pipeline. The knowledge
+[12:40] base syncs with all your tools so that
+[12:42] the AI always has the current info.
+[12:44] Companies are using this to automate RFP
+[12:46] responses, support tickets, competitive
+[12:48] analysis, anything that requires deep
+[12:50] knowledge of your own business data.
+[12:53] Last one, super.work. Super solves that
+[12:55] annoying problem of information
+[12:57] scattered everywhere. You know, when
+[12:58] you're hunting through Slack, Drive,
+[13:00] Notion, and 10 other apps for that one
+[13:02] thing. Super's AI searches everything at
+[13:04] once and you just ask it what you need
+[13:06] like what did we decide on pricing or
+[13:08] get me the latest on project X and it
+[13:10] finds it instantly across all your
+[13:12] tools. The security is perfect too. Each
+[13:14] member of your team will only get
+[13:16] answers based on what they actually have
+[13:18] access to. So there's no accidental
+[13:20] surfacing of confidential stuff. It's
+[13:21] like having a perfect memory of
+[13:23] everything that ever happened at your
+[13:25] company. Now there's one more amazing
+[13:27] tool that's just come out recently and
+[13:28] that is Chat GBT agent mode. And with so
+[13:31] many ways to use it, I couldn't do it
+[13:33] justice in a video like this. So, click
+[13:35] here to head over to the next video
+[13:37] where I go over eight of the most insane
+[13:39] use cases for chat GBT agents that you
+[13:42] can use either in your day-to-day work
+[13:44] life, in any startup, or small to medium
+[13:46] business. See you over there.

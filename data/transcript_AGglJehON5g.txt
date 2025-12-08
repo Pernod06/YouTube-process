@@ -1,0 +1,638 @@
+Video AGglJehON5g
+======================================================================
+
+[00:00] - This is what the inside of a lithium-ion battery looks like. It's not exactly high tech,
+just two meters of foil
+[00:07] coated in black paste, all packed into this
+tiny 45 gram cylinder. But these are some of the
+best batteries we have.
+[00:15] They power everything from laptops and electric vehicles
+to orbiting satellites.
+[00:20] Yet when a battery fails, all that energy can get
+released in the wrong way.
+[00:26] - Oh my God. - [Reporter] The latest incident involving a lithium-ion battery. - So how did something
+so rudimentary looking
+[00:33] end up in almost every
+electronic device on the planet? And why don't we have anything better?
+[00:39] In the early 1980s, most
+rechargeable batteries were stuck at just 40 to
+60 watt hours per kilogram,
+[00:46] meaning you would need
+a kilogram of battery to power a 40 watt light
+bulb for just an hour.
+[00:52] As a result, when the first commercial mobile phone launched in 1983,
+it was pretty unimpressive.
+[00:58] It took 10 hours to charge for just 30 minutes of talk time. Laptops, cameras, even medical devices
+[01:04] all suffered from the
+same bulky batteries. Everyone from electronics giants to oil companies were trying
+to make a better battery,
+[01:11] because they knew that even just doubling the energy density could unlock a new era of portable electronics
+[01:17] and power the digital revolution. But what no one realized is that someone had
+already found the solution.
+[01:25] In 1972, a 32-year-old British chemist named Stanley Whittingham was studying how different
+materials store energy
+[01:32] at Exxon's research lab in New Jersey. Yes, that Exxon, the
+multinational oil giant,
+[01:38] then the largest oil company in the world. They were researching batteries.
+[01:45] The next year, war broke out between Egypt, Syria, and Israel. When the US backed Israel,
+[01:50] Arab oil producers cut off
+oil exports in retaliation. And on December 22nd,
+the price of crude oil
+[01:57] more than doubled from
+$5.12 a barrel to 11.65. In response, President
+Nixon created policies
+[02:04] to try to keep oil prices
+down, but they backfired and the shortage only got worse.
+[02:10] Americans were left queuing
+for hours at gas stations as the government introduced
+a rationing program.
+[02:16] It got so bad that they even dropped the national speed limit
+to 55 miles per hour just to cut consumption.
+[02:24] At Exxon, executives were worried that supplies would run out entirely, so they started looking
+seriously at alternatives,
+[02:30] like electricity. This wasn't a new idea. In fact, in 1900 when cars
+were first taking off,
+[02:37] the top selling car was electric, ahead of steam and gas powered cars.
+[02:42] But the problem with these electric cars was their batteries. They weighed 360 kilograms, around 40% of the car's weight,
+[02:50] but they could only take
+you around 60 kilometers. And the energy density wasn't just low, it also degraded over time.
+[02:57] Every time you recharged, it got worse. After fewer than 500 charges, your range would've dropped
+to about 40 kilometers.
+[03:05] So by 1924, gas powered cars outnumbered electric 10,000 to one.
+[03:11] But now that the oil
+supplies were running out, it seemed to Exxon that
+there was no other solution than to bring back the electric car,
+[03:17] and to do that, they needed a battery with a much higher energy density. So suddenly, Whittingham's side project
+[03:23] became a top priority. Exxon poured in resources,
+giving him free rein to, in his words, "Do pretty
+much what I wanted,
+[03:31] as long as it did not involve petroleum." The very first battery dates back
+[03:36] to a curious incident in the 1780s when Italian scientist Luigi Galvani
+[03:41] was dissecting a frog
+to study its anatomy. He anchored one side of
+the frog on a brass hook
+[03:47] and went to cut it open
+with a steel scalpel. But when he touched the
+scalpel to the frog's leg,
+[03:52] he noticed it suddenly twitched, as if it had come back to life. Galvani believed he'd discovered
+[03:58] a sort of animal electricity, a living force produced
+by the tissue itself.
+[04:03] But Galvani's rival
+Alessandro Volta disagreed. He thought it came from
+the metals themselves.
+[04:10] And you can see this with
+lots of different materials. Veritasium producer
+Gregor set up a version
+[04:15] of this experiment, minus
+the frog, to test it out. - [Gregor] I have zinc,
+magnesium, and iron here.
+[04:21] I can take any of these metals, stick them into one side of a lemon
+[04:27] and stick some copper on the other side. If I hook these up to a volt meter, I should be getting a voltage.
+[04:33] And we got around 0.8 volts. Now, the reason this happens is because some elements want to get rid
+[04:38] of their electrons more than others. So if you pair one that really
+doesn't want its electrons
+[04:44] with one that really wants some, well, then the electrons are
+gonna be traveling across.
+[04:49] - [Narrator] Let's look at the zinc. What's happening here is that
+zinc is losing its electrons. The zinc ions enter the juice,
+[04:56] and the electrons are forced
+to go through the circuit to get to the other side. There, hydrogen ions in the lemon juice
+[05:02] want those electrons, so they receive them and
+turn into hydrogen gas. You've got one side
+that gives up electrons,
+[05:09] that's the anode, and you've got one that receives them, that's the cathode. - But why do you need the lemon at all?
+[05:15] If there's no flow of the positive ions through to the other side, the electrons stop moving
+almost immediately.
+[05:22] This happens because all of the electrons now get bunched up in the copper, making it extremely negatively charged,
+[05:28] and that is just gonna push
+away any more electrons from coming over to the other side. - [Derek] That's because electrons
+[05:34] can't travel through lemon juice. Liquids like this don't have free electrons the way metals do, so electrons stay in the wire.
+[05:41] They'll only leave the
+circuit at the copper side if there's something in the juice, like hydrogen ions ready to take them,
+[05:47] and if the reaction releases enough energy to make that transfer happen. But positive ions in the juice can move.
+[05:53] They travel across to balance the charge, allowing the current to keep flowing. A solution that carries charge this way
+[05:59] by moving ions is called an electrolyte. - But we could also do
+this with the other metals
+[06:05] to get a similar reaction, and we can actually quantify how much each of these metals wants
+or doesn't want electrons.
+[06:13] With zinc, we already
+got around 0.9 volts, but if you try it with iron, for example,
+[06:18] you get something lower, 0.5 or 0.6 volts. Now, magnesium is tricky and
+it would be a bit higher,
+[06:24] but it oxidizes so quickly
+that even if I scrape some of the oxide from the surface, I'm still getting only around 0.7 volts.
+[06:34] The idea is that the larger
+the voltage on the volt meter, the more energy each electron has to give
+[06:39] as it passes through the circuit. But there's also a limit to this. See, this beaker is full of lemon juice
+[06:46] from the lemons we used earlier, and they're hooked up using spoons and these wires to a
+variable power source.
+[06:52] Now look what happens
+when I up the voltage. You'll actually start to see
+bubbles forming on both spoons,
+[07:00] and that's water in the lemon juice actually being broken down
+into oxygen and hydrogen gas.
+[07:06] This already starts
+happening at 1.23 volts, and that sets a limit on how much voltage
+[07:12] you can push through this electrolyte. - Up until the early 1970s, just about every commercial battery
+[07:19] used a water-based
+electrolyte, and as a result, none of these battery cells could push much beyond the 1.23 volt limit.
+[07:27] Now, the total energy a battery can store depends on how much energy
+each charge has to give
+[07:32] times how much charge can move, that is the battery's
+voltage times its capacity.
+[07:38] So if you can't increase the voltage, your only option is to make more battery, more cells or bigger cells,
+[07:44] but that won't increase
+the energy density. And this is exactly the problem
+[07:50] Whittingham was trying to solve. He was searching for materials that could store large amounts of energy in a compact space with light weight.
+[07:58] That led him to a class of compounds called transition metal dichalcogenides. He zeroed in on one in
+particular, titanium disulfide.
+[08:06] Titanium in this compound has effectively lost four electrons, two to each sulfur atom,
+[08:12] meaning it sits at a plus
+four oxidation state. That leaves it very electron hungry,
+[08:17] exactly what you want
+in a battery cathode. But titanium disulfide has
+a second key advantage,
+[08:24] this material is made of stacked layers held together by weak
+Van der Waals forces. This creates natural gaps
+between sheets of titanium
+[08:31] and sulfur atoms just wide enough to let certain ions
+slip between the layers, a process known as intercalation.
+[08:38] Better still, the structure can expand and contract repeatedly
+without breaking down.
+[08:43] Now Whittingham just had to
+decide which ions to use.
+[08:48] He initially looked at potassium, but it was just too reactive and far too dangerous to work with.
+[08:54] Oh, yeah! (laughs) - He turned to this, a soft, silvery metal called lithium.
+[09:03] What makes lithium unique is not the fact that it has one electron
+in its outer shell
+[09:08] that it wants to get rid of. No, that it shares with the
+other elements in its group. What sets it apart is how much energy
+[09:14] you can get out of lithium
+when it reacts in a battery. See, when it loses that outer electron,
+[09:20] it forms a tiny, incredibly
+stable positive ion, and so that reaction paired
+with the right cathode
+[09:27] releases more energy per
+electron than any other metal. That's why it produces the highest voltage
+[09:33] of any metal used in batteries. And because it's so small
+with just three protons,
+[09:39] lithium is also the least dense metal, at just 0.53 grams per cubic centimeter.
+[09:44] This combination of low
+density and the tendency to give away its electron
+made lithium perfect
+[09:50] for Whittingham's vision of this high energy density battery. But while lithium was easier
+to work with than potassium,
+[09:57] easier still didn't mean easy. I mean, they only let me
+hold it in this glove box, and matter of fact, here's what happens
+[10:04] to lithium if you put
+it in a glass of water. (water bubbles)
+(tense music)
+[10:11] Safe to say, you don't want this happening inside your battery. - So, Whittingham had to switch out
+[10:16] the water-based electrolyte
+for something else, and that change unlocked the
+possibility of higher voltages.
+[10:24] He turned to a solution of lithium salt in an organic solvent, and it worked,
+[10:30] but it came with serious risks. The solvent was volatile, the lithium salt was chemically unstable.
+[10:37] Together, they formed a
+mixture that could explode or release toxic fumes if mishandled. Everything had to be done
+with extreme caution.
+[10:44] A stray spark or a trace of moisture could destroy the
+experiment or start a fire.
+[10:49] But if you could get around the danger, this new electrolyte was a huge perk. It let lithium-ions shuttle
+[10:56] between electrodes without
+breaking down the solvent or the cell, at least not
+until much higher voltages.
+[11:02] Whittingham had unlocked
+lithium's potential, and in the process, he'd broken through the 1.23 volt ceiling.
+[11:09] His new chemistry delivered nearly double, a huge 2.4 volts per cell.
+[11:14] He now had a working prototype, a metallic lithium anode on one side, a titanium disulfide cathode on the other,
+[11:21] his new liquid electrolyte in between. There was also a thin porous separator that kept the electrodes apart,
+[11:26] so they couldn't touch and short circuit. Here's how it works. When you close the circuit,
+[11:32] lithium atoms at the anode
+give up their electrons. Those electrons travel
+through the external circuit toward the cathode, generating a current
+[11:39] that powers whatever's connected. At the same time, the lithium-ions are released into the electrolyte,
+[11:45] and then they pass through
+the porous separator and migrate toward the cathode. The electrons arriving through the circuit
+[11:51] are taken up by the titanium atoms and the titanium disulfide. The positive lithium-ions
+slide between the layers
+[11:57] to balance out the negative
+charge of the electrons, and they become locked in place. And this process is reversible.
+[12:04] When you apply a voltage to recharge, the extra electrons are
+stripped from the titanium and pulled back to the anode.
+[12:10] The lithium-ions are forced out of the titanium disulfide
+layers into the electrolyte, and they too migrate to the anode
+[12:16] where metallic lithium reforms. What Whittingham had created here was a rechargeable battery,
+one that worked reliably
+[12:24] cycle after cycle with
+incredible consistency. I don't normally think
+about batteries this way,
+[12:30] but what they really are
+is tiny little contained chemical reactions. And in a chemical reaction,
+[12:37] if you could get a 60% yield, that would be considered good. But in a battery,
+[12:42] especially one that you
+wanna recharge 1000 times, you need that reaction to
+be say 99.9% efficient,
+[12:49] because if it's not, the
+capacity of that battery rapidly deteriorates. If you have, say, a 95% yield,
+[12:56] then you'd lose a significant fraction of lithium-ions every cycle. After just 50 cycles, you'd only have 8%
+[13:02] of your original capacity left. So that's pretty incredible that every single lithium-ion
+[13:08] has to leave one electrode,
+pass through the electrolyte, and slot neatly into the
+layered crystal structure of titanium disulfide.
+[13:14] And then when you recharge it, they have to leave again
+cleanly without incident, without getting stuck, make their way
+[13:20] all the way back to the anode. Amazingly, despite just
+being an early prototype, Whittingham's battery
+came close to that 99%.
+[13:31] In the winter of 1973, Exxon's managers summoned Whittingham to the company's New York office.
+[13:37] Whittingham later said, "I
+went in there and explained it, five minutes, 10 minutes at the most, and within a week they said yes,
+[13:44] they wanted to invest in this." They got to work at the Exxon laboratory,
+[13:49] but it wasn't all smooth sailing. Firefighters had to be
+called out repeatedly. They were called so often,
+[13:55] they threatened to start charging the lab for the special chemicals needed to extinguish the burning lithium.
+[14:00] - The problem was the anode. Whittingham's design used pure lithium, which worked brilliantly, until it didn't.
+[14:07] - [Billy] We've made a special cell. We've made a transparent battery. - [Gregor] That's so cool. - But they're very, very small,
+[14:13] so we have a microscope lens just to allow us to see it. What you're seeing here
+is a piece of copper,
+[14:20] which we're gradually
+plating with lithium. So this is analogous
+to the first generation
+[14:25] lithium metal batteries, which use lithium metal as the anode. On this side, we have a piece of lithium.
+[14:32] As we charge the battery,
+we're stripping the lithium from that electrode and we're plating it. And actually what's happening right now
+[14:39] is the ideal reaction
+where it's very slow. We're getting a dense plate.
+[14:44] The challenge then
+becomes if we go too fast. - [Gregor] Oh, that is huge!
+[14:51] - Everything's fine until all of a sudden it's not fine. So we want the lithium to
+plate evenly across everywhere,
+[14:58] but instead, it forms
+in that one location, and that is what is a lithium dendrite.
+[15:04] That lithium dendrite can grow. The length scales of
+this is on the order of,
+[15:10] you know, millimeters, so that would've easily
+short circuited the battery. - [Gregor] And that dendrite
+can just keep growing,
+[15:17] and eventually it's gonna
+poke through the separator and reach to the other side. Now the electrons are
+gonna have a shortcut,
+[15:23] so instead of going through the circuit, they race straight from the anode to the cathode using the dendrite,
+[15:29] and that sudden surge of
+electrons cause intense heating, and that can trigger a chain
+reaction inside the battery,
+[15:36] leading to a fire, or even an explosion. - For all its promise,
+[15:42] Whittingham's battery
+was just too dangerous, and then the oil crisis ended. Prices dropped and Exxon's
+urgency evaporated.
+[15:50] The company shut down its
+lithium battery program. Whittingham published his design in 1976,
+[15:56] and Exxon licensed the patent
+to a few manufacturers, but with no funding and no momentum,
+[16:01] the first lithium battery revolution died before it had a chance to take off. Fortunately, a copy of Whittingham's paper
+[16:08] made it across the Atlantic to Oxford University in England, where it caught the attention
+of John B. Goodenough,
+[16:14] an American physicist leading
+a solid state chemistry group. As he read the paper, one thing stood out,
+[16:21] the cell voltage was being held back. The material Whittingham
+chose for the cathode,
+[16:26] titanium disulfide, capped
+the cell at just 2.4 volts, but Goodenough believed that
+[16:31] with a better cathode
+material, he could do better. He had previously worked
+[16:36] with compounds called
+transition metal oxides. They were more stable than sulfides, and some he knew were
+extremely hungry for electrons,
+[16:44] perfect for a cathode. He tried one of these
+compounds in his battery, and the voltage immediately spiked
+[16:49] from 2.4 volts to four volts. This jump was incredible. But what was even more
+surprising was the fact
+[16:56] that this compound
+already had lithium in it. The material was lithium cobalt oxide.
+[17:04] Lithium cobalt oxide is
+arranged so that the cobalt and oxygen atoms form
+tightly bonded layers,
+[17:09] with lithium-ions nestled in between. This means that your
+supply of lithium-ions
+[17:14] doesn't just have to come from the dangerous lithium
+metal on the anode side, it's already there
+prebuilt into the cathode.
+[17:21] So theoretically, you don't
+even need lithium metal at all. You could assemble the
+cell in a discharged state
+[17:27] with all your lithium-ions in the cathode, then when you connect it to a charger, these ions will get expelled
+[17:32] from the cathode crystal lattice
+and into the electrolyte. At the same time, nearby cobalt atoms will give up an electron
+to balance out the charge,
+[17:40] and those electrons
+then go through the wire to the anode to meet with the ions. If Goodenough could find an anode
+[17:46] that would replace lithium metal, the battery would become
+safe enough to leave the lab and actually power real world devices.
+[17:53] Goodenough was so excited about
+the potential of his design that he reached out to battery
+companies across the US,
+[17:59] the UK and Europe, but
+incredibly, no one was interested.
+[18:04] So he asked Oxford to file
+a patent, but they refused. So he took it to a
+government lab near Oxford,
+[18:12] the Atomic Energy Research Establishment, and finally, they agreed
+to fund the patent,
+[18:17] but only if Goodenough signed
+away his financial rights. Seeing no other option, he agreed,
+[18:24] and the lab patented
+the invention in 1981. Now, this should have been a gold mine,
+[18:30] but the lab didn't realize what they had. And so for the second time, the lithium battery revolution
+was boxed up and shelved.
+[18:38] This should have been a turning
+point for battery science, but bureaucracy and
+inertia stalled progress.
+[18:44] Every field has its bottlenecks. For batteries, it was
+slow moving institutions.
+[18:49] For developers today, it's
+slow moving code reviews. And I can relate. When we make these videos,
+[18:55] especially the ones with simulations or complex animations,
+it's rarely the ideas that slow us down, it is the reviews.
+[19:02] Developers face the same thing. They're writing code faster than ever, thanks to tools like Copilot and Cursor.
+[19:08] But code reviews, well, they're
+still manual and still slow. That's where this video's
+sponsor CodeRabbit comes in.
+[19:15] CodeRabbit automates code
+reviews with generative AI. Unlike basic tools, it
+understands your code base,
+[19:21] your architecture, standards,
+even naming conventions. It pulls context from over 40 sources
+[19:26] to give feedback that
+feels precise and human and tailored to your team,
+right in the Git workflow.
+[19:31] That's why it catches
+what other tools miss, logic errors, bad
+conditions, math mistakes, even security vulnerabilities,
+like SQL injections.
+[19:39] The result? Well, your senior engineers spend less time buried in reviews and more time solving the problems
+[19:45] that only humans can solve. Try it out at CodeRabbit.link/veritasium
+[19:50] to cut code review time and bugs in half. And if you're working
+on open source projects, it's completely free.
+[19:56] That's CodeRabbit.link/veritasium. I would like to thank CodeRabbit for sponsoring this part of the video.
+[20:01] And now back to Goodenough's design, a breakthrough with nowhere to go, yet.
+[20:07] While Goodenough's battery
+design was gathering dust, 10,000 kilometers away in Japan, a 34-year-old chemist named Akira Yoshino
+[20:14] was trying to find a safer battery anode, one that didn't require lithium metal.
+[20:19] Yoshino was actually looking at plastic. Now, normally plastic is an insulator,
+[20:24] but the kind Yoshino was
+looking at is different. It's called polyacetylene, and its carbon atoms are
+arranged in a repeating chain
+[20:32] of single and double bonds, a structure that gives it
+unusual electronic properties.
+[20:38] If you tweak polyacetylene by
+adding or removing electrons, electrons can actually move
+along this carbon chain.
+[20:45] So the plastic conducts
+electricity like a metal. And that got Yoshino thinking,
+[20:50] what if polyacetylene could
+work as a battery anode? During charging, it could absorb
+lithium-ions and electrons,
+[20:57] and then during discharge, it
+would give up those electrons to the circuit, just
+like lithium metal does.
+[21:02] If it worked, it could eliminate
+the most dangerous part of the battery, the metallic lithium.
+[21:08] But for months, Yoshino struggled. Obviously, since he removed
+lithium metal from the anode, he had to get lithium-ions
+from somewhere else
+[21:15] and he couldn't figure it out. And then just as he was losing hope, on the last workday of 1982
+while cleaning out his office,
+[21:22] he stumbled upon a 1980
+paper by John B. Goodenough. It described a cathode made
+of lithium cobalt oxide,
+[21:29] a cathode that already contained lithium. This was the missing piece.
+[21:35] He sketched out the reaction
+between lithium cobalt oxide and his lithium free anode, and then built a test cell
+using the two materials.
+[21:43] It worked safely and reliably, but Yoshino wasn't satisfied.
+[21:48] The material he used for the anode, the polyacetylene had an
+extremely low density. I mean, it couldn't
+pack in enough lithium,
+[21:56] so the energy density of
+the battery was terrible. Yoshino needed something
+more lightweight, compact,
+[22:02] conductive, and crucially, something that could reversibly accept and release lithium-ions
+within its structure
+[22:07] without breaking down. He tested material after material, and every single one failed,
+[22:13] until a breakthrough came
+from within his own company. Another team had developed
+a new form of carbon
+[22:19] with a unique crystalline structure. They called it vapor grown carbon fiber. He got his hands on a sample,
+[22:25] tried it in the lab, and it worked. To prove it, he placed a test cell
+[22:31] containing metallic
+lithium into a safety rig, one that's designed to test explosives.
+[22:36] Then he dropped a heavy iron rod onto it. It exploded violently.
+[22:42] Then he ran the same test again, but this time with his new design, using carbon as the anode.
+[22:47] He charged the cell, placed it in the rig, and dropped the rod but nothing happened.
+[22:53] The contrast was undeniable. Later, Yoshino would say,
+[22:59] "That was the moment when the
+lithium-ion battery was born." But his employer, Asahi Chemical,
+[23:05] well, they weren't a battery company, and they didn't know
+how to make batteries.
+[23:10] So in 1986, Asahi
+executive Isao Kuribayashi flew to Boston on a top secret mission,
+[23:17] carrying three jars containing cathode, anode and electrolyte materials. He handed them to a tiny firm
+called Battery Engineering,
+[23:25] working out of a converted truck garage, and he asked them to turn the materials into cylindrical cells,
+[23:31] like the kind you might
+buy for a flashlight. The team did just that, completely unaware of
+what they were handling.
+[23:38] It wasn't until 2020 that
+employees learned the truth that they had helped
+assemble the world's first
+[23:43] pre-production lithium-ion batteries. Two weeks later, Kuribayashi
+returned to Japan
+[23:49] with 200 finished perfectly
+functioning cells. Even then, Asahi's leadership hesitated.
+[23:56] Kuribayashi refused to give up. On the 21st of January, 1987, he visited Sony and he took
+one of the prototype cells
+[24:03] and rolled it across the
+conference table to the Sony execs, and at last, they saw its potential.
+[24:10] They reworked the design, swapping out Yoshino's carbon material for graphite that could better
+intercalate lithium-ions
+[24:16] between its layers. And in 1991, Sony launched the first commercial lithium-ion battery
+[24:22] inside this, the Sony Handycam. Their battery was compact,
+rechargeable, powerful,
+[24:28] and crucially, free of
+unstable lithium metal. It was Sony who first coined the name
+[24:34] lithium-ion and it stuck. But this wasn't just about one camcorder.
+[24:41] Competing companies like Panasonic and Sanyo raced to catch up. Lithium-ion batteries started appearing
+[24:47] in phones, CD players, laptops. Manufacturers actually began to advertise the use of lithium-ion batteries
+[24:53] as a key selling point of their products. - I'm showing my age here. I joined the industry
+when lithium-ion cells
+[24:58] were first introduced, and there was a Sony
+camcorder that was introduced, and then there was Dell computer.
+[25:04] And I still remember the
+ads when Dell computer introduced their lithium-ion battery, and they had eight hours of runtime,
+[25:10] so they had an advertisement in a magazine and it was eight pages long. Each one was an hour longer,
+so it was a big deal.
+[25:17] - But what's crazy is
+that even after all this, these batteries should never have worked. See, when you charge the
+battery for the first time,
+[25:24] lithium-ions move from the
+cathode to the graphite anode. And here, they react with the electrolyte
+[25:29] to form this weird complex
+patchwork of compounds that build up on the anode's surface.
+[25:35] These parasitic side reactions should keep going on indefinitely, using up all the lithium and destroying the cell but they don't.
+[25:44] Instead they form a thin protective layer known as the solid
+electrolyte interface, or SEI.
+[25:50] It's a kind of chemical shield protecting both the graphite anode and the electrolyte
+from further reactions.
+[25:56] But crucially, lithium-ions
+can still slip through it. When the SEI originally forms
+[26:02] during the first charging cycle, around 5% of the lithium in the cell actually gets stuck in this layer,
+[26:08] decreasing the battery's capacity. But this little trade off is what makes the battery stable enough
+[26:13] to be used for years or even decades, which is why today lithium-ion batteries are virtually everywhere.
+[26:20] From 1991 to 2023, the
+price per kilowatt hour dropped by 99% from nearly
+$9,000 to just $100.
+[26:29] At the same time, energy
+density and cycle life, how many times a battery can be charged and discharged before it wears
+out, improved dramatically,
+[26:37] crossing a critical threshold. Lithium-ion batteries had
+become powerful enough and finally cheap enough
+for something bigger,
+[26:44] the return of the electric car. Today, lithium-ion powers
+a $100 billion industry.
+[26:52] In 2019, Whittingham, Goodenough and Yoshino finally received the Nobel Prize in
+chemistry for an invention
+[26:58] that in the committee's words "Revolutionized our way of life." This made Goodenough the oldest
+Nobel laureate in history,
+[27:06] receiving the award at the age of 97. But lithium-ion isn't perfect.
+[27:12] - Scary moments aboard a JetBlue plane, a fire erupting after
+a passenger's backpack
+[27:18] suddenly exploded. - Every week, inside an airplane, there is at least one event of a battery,
+[27:24] of a phone, of an iPad
+or a toy or something that catches fire. - What, every week?
+[27:29] - Yeah, every week. - It's just the latest
+incident aboard a plane involving lithium-ion batteries.
+[27:35] - [Reporter] So far this year, 60 onboard battery incidents
+through early October. - Every flight in the US
+has a bag, a specialized bag
+[27:44] with very thick non-flammable materials where you put the phone inside,
+[27:49] and you close it, and
+you still have a hazard and you have to deal with these gases, but now you have put
+the fire ignition away
+[27:56] from anything else. And if it burst into fireworks, then at least it's in a container.
+[28:02] And then you tell the captain, "We need to land immediately." - [Derek] So what is actually happening
+[28:07] when a battery fails like that? - This is a classic lithium-ion battery, and today we're gonna do
+something I always wanted to do.
+[28:14] We're gonna tear one down. I guess safe to say don't do this at home. But what would happen
+if you were to do this
+[28:21] outside of the gloved box? - If you charged up the cell and then you tried to tear it up, then you could accidentally short it,
+[28:28] and then it could burn and it could even explode or fire. If you discharged it and you opened it up,
+[28:34] you'd release all the different gases and really toxic chemicals,
+and if you inhale those,
+[28:40] then you'd probably end up in hospitals. So at this point, we have
+what we call the jelly roll.
+[28:47] So that's a roll off the cathode, separates that anode. - [Gregor] Yeah. - Stuck together with bit of tape. So Li Ren's just gonna
+scalpel off the tape,
+[28:54] and then we should be able to
+unroll it into a nice sheet. - [Gregor] So these little
+patches are the electrolyte or?
+[29:00] - Yeah.
+- Okay. - [Derek S.] So as time goes by,
+it'll start evaporating out. - That is so cool.
+[29:05] It's so obvious when you see it, but I don't think anyone
+intuitively thinks that it's a rolled up like sheet
+[29:11] of anode and cathode inside. But these layers inside the battery, they're not gonna stay perfect forever.
+[29:17] Here's an electrode from a new cell compared to one from an old one. You can see that the
+lithium is building up
+[29:23] in all of the wrong places, and if this sort of
+degradation gets out of hand, well, we're about to push the cell
+[29:30] past its breaking point. How do we blow up a battery? - So today we've got a prismatic battery.
+[29:36] It's a small battery
+from sort of a power tool or a phone or something similar. We're gonna wrap it in some nichrome wire,
+[29:43] so we pass current through this wire. Something like 200 watts we pass through- - That's a lot.
+- This wire.
+[29:49] Yeah, and it's a significant battery. We want it to go and we want it to go pretty spectacularly.
+[29:54] (tense music) (scientists laughing) - [Gregor] Good luck, Harry. What we're simulating here
+[30:00] is a catastrophic battery failure, the kind that could happen if a cell is damaged or overheated,
+[30:06] or even just badly manufactured. It starts around 80 degrees Celsius when the protective SEI layer
+[30:12] on the anode starts to break down. It's gonna try to reform, but these reactions are
+gonna release more heat,
+[30:19] and if that heat can escape, the temperature is gonna keep rising.
+[30:24] How close is it to exploding now? What do you think? - It should burst very soon.
+- Seconds. - [Gregor] At roughly 130 degrees Celsius,
+[30:31] the polymer separator is gonna melt, and now the anode and cathode
+can come into direct contact,
+[30:37] and a massive internal short follows. The cathode itself starts to decompose.
+[30:42] And because transition metal oxides release oxygen from
+their crystal structure, they're gonna fuel the combustion,
+[30:49] and now the fire is just feeding itself. Oh.
+- Yes!
+[30:54] - Oh, oh my God. (dramatic music) That's really violent.
+[30:59] This is insane, from one
+small battery like that. - And it's only 50% state of charge.
+[31:05] - What we call ignition happens inside the battery, not
+outside the battery, and it requires a fuel
+[31:11] or a substance that
+will undergo a reaction, it requires an oxidizer or the equivalent oxidizer
+and it requires heat.
+[31:19] The battery contains these three inside, so it has its own
+equivalent to an oxidizer, its own equivalent to a fuel
+[31:25] and its own source of heat. - Yeah.
+- All of it in one device.
+[31:30] - So it's not actually lithium that burns. A modern lithium-ion battery like this one here contains
+[31:36] very little lithium, ironically. It's actually everything else
+inside here that's dangerous.
+[31:42] It must be really hard
+putting out a battery fire if it really has everything that it needs. - Yeah, exactly.
+[31:48] So you can still put the blanket and stop the oxygen from arriving, but you will not, the
+fire will not go to zero.
+[31:54] It will still, it will be smaller, but it will still be there. And then with water, yeah, water has the
+ability to take heat away,
+[32:00] so it is possible to take the heat away from the battery with water. The best thing is to put
+and immerse the battery
+[32:05] into a bath of water. - Yeah. - It's brutal. You can do it with one
+battery, with 10 batteries,
+[32:12] with 15 batteries, but when you have very
+large packs of batteries with thousands of batteries,
+[32:17] you cannot physically
+put that under water. - Yeah, one thing that is
+popping up recently as a threat
+[32:23] to cities is electric car fires. - [Guillermo] Well, we
+know a lot of water works. - Yeah, well, if there's a water source
+[32:29] nearby, I guess, yeah. - Yeah, I mean, this is what they do in some countries around the world. They have a truck, a specialist truck
+[32:36] full of water, and you just take the car that has been involved in electric fire and they dump it into it. - No way.
+- Yeah, they do.
+[32:42] But, and actually it works. - [Derek] So, how dangerous is it really?
+[32:47] - It's very rare. Every million batteries, there is a fire. - Okay.
+- Right. So that's very safe, that in the standards
+[32:53] of engineering, that's like,
+oh, you have a good system. One out of a million, that's fine. But batteries are everywhere.
+[32:59] We don't even think about it. So within our lifetimes, we
+are going to reach a point
+[33:04] where we would have been exposed to more than a million batteries, so we would be all of us experiencing
+[33:10] a fire of a battery. - With billions of
+batteries in circulation, even rare failures become inevitable.
+[33:17] Meanwhile, demand is skyrocketing. By 2030, we're projected to need over 17 million tons of
+battery grade materials,
+[33:25] and making lithium-ion
+batteries comes at a cost. Lithium only makes up around 20 parts per
+million of Earth's crust.
+[33:32] It's expensive and water
+intensive to extract, and 70% of cobalt, another key ingredient
+[33:38] in many lithium-ion designs comes from the Democratic
+Republic of Congo, much of it mined under hazardous,
+[33:43] often exploitative conditions. We need more batteries
+and we need them fast. We can't just rely on lithium alone.
+[33:51] - So it's not like lithium's
+as good as we're gonna get. Like that we're gonna get much better batteries in the future.
+[33:56] If our priorities are about saving the planet from
+runaway climate change, we need to have massive
+scale energy storage system
+[34:04] and electrify almost
+everything else that we do. - The hunt is still on
+for safer batteries,
+[34:10] for cheaper ones, ones that last longer, charge faster, and ones
+that store far more energy.
+[34:16] The lithium-ion battery changed the world, but the future of energy storage won't be about just
+conquering one element,
+[34:23] it'll be about mastering many. (whooshing)

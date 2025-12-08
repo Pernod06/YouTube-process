@@ -1,0 +1,682 @@
+Video B2482h_TNwg
+======================================================================
+
+[00:00] Inside every modern laptop, smartphone, desktop 
+computer, advanced AI server, or practically any
+[00:08] other high-tech device are cutting edge microchips 
+such as these CPU, GPU, SoC, DRAM, and SSD chips,
+[00:19] each with tens of billions of transistors inside 
+of them. The transistors inside these microchips
+[00:26] are incredibly small with the tiniest features 
+measuring around 10 nanometers or 45 silicon
+[00:33] atoms. This feat of science and engineering 
+may seem impossible because on one hand each
+[00:40] of these microchips is made from connecting 
+billions upon billions of transistors together,
+[00:46] and then on the other hand, each individual 
+transistor is only nanometers in size.
+[00:52] Additionally, these microchips are 
+everywhere and in everything, and therefore
+[00:57] they must be reliably mass produced. So how is 
+manufacturing such a microchip even possible?
+[01:05] These are photolithography tools, and they are 
+the key to manufacturing microchips. However,
+[01:12] it’s important to note that there are dozens 
+of different types of tools used in the various
+[01:17] steps for making microchips, and each one plays 
+a critical role in the manufacturing process. So,
+[01:23] to be accurate, photolithography tools are 
+the ones that are used to copy and imprint
+[01:29] the nanoscopic patterns of transistors and layers 
+of wires onto a microchip and therefore a useful
+[01:36] analogy is to think of these photolithography 
+tools as nanoscale microchip photocopiers.
+[01:44] Photolithography tools have been continuously 
+evolving to copy and imprint smaller and smaller
+[01:50] transistors and circuitry, and, in this video, 
+we’re going dive into this state-of-the-art
+[01:56] EUV Photolithography System and explore 
+the science and engineering inside of it.
+[02:02] So, let’s begin with a quick overview. To start, 
+the EUV Lithography Machine takes the design of a
+[02:09] single layer of a microchip on what’s called a 
+photomask and loads it into the machine. Next,
+[02:15] a 300 millimeter silicon wafer with a set of prior 
+processes applied to it is placed onto a wafer
+[02:23] carrier inside the machine. With both in place, 
+the machine uses extreme ultraviolet light or EUV
+[02:31] and a set of mirrors to copy the design from the 
+photomask onto a silicon wafer. The wafer moves
+[02:38] to the next position and the microchip design 
+is copied yet again. This copying happens over
+[02:44] and over until the wafer is filled with a hundred 
+or more microchips and then a new wafer comes in,
+[02:50] and the copying starts over. This is the 
+real-time speed of the lithography machine,
+[02:57] taking about 18 seconds to duplicate the same 
+microchip design around a hundred times across
+[03:04] the entire area of a 300-millimeter wafer.
+Let’s take a look at one of these microchips
+[03:10] and see what exactly we’re copying. Inside 
+this microchip are approximately 30 billion
+[03:17] transistors, and if you were wondering, it’s the 
+design of a GPU or graphics processing unit found
+[03:24] in the center of a graphics card. When we zoom 
+into a nanoscopic view of this microchip we find
+[03:30] a 3D maze of transistors and layers upon layers of 
+wires with the smallest dimensions of the bottom
+[03:37] most layers measuring around 10 nanometers 
+or around 45 silicon atoms. Specifically,
+[03:45] the EUV Photolithography System typically patterns 
+the lower layers with the smallest features,
+[03:52] whereas other photolithography tools are used 
+to pattern the higher layers. It might be
+[03:58] difficult to fully grasp the level of detail and 
+complexity inside a single layer of billions of
+[04:04] nanoscopic transistors, so let’s use a thought 
+experiment and pretend that instead of copying
+[04:10] transistors and wires, this EUV photolithography 
+system is used to copy the text from a book.
+[04:18] If the width of each line of a letter is 13 
+nanometers, then the word ‘Cat’ would take up
+[04:24] around 155 by 240 nanometers, a page of text 
+would be about the size of a red blood cell,
+[04:32] and a chapter of a book would be a grain of 
+pollen. When we zoom out to see the equivalent
+[04:38] area of a GPU chip, how many pages of text do you 
+think we could fit using these nanoscopic letters?
+[04:46] Well, we could print all 7 Harry Potter books 
+plus every book written by Stephen King,
+[04:53] the entirety of the text from the English 
+Wikipedia, and still have enough space to fit
+[04:59] every single book from your local public library.
+There’s an unbelievable quantity of nanoscopic
+[05:06] lines and details that can fit into the area 
+of a microchip, and it’s all photocopied by
+[05:13] this EUV Lithography System in less than 
+a second. It’s no exaggeration to say that
+[05:19] every piece of modern technology that you use is 
+made possible by this machine, and in this video,
+[05:26] we’re going to explore the key modules inside it 
+and see how they work. So, let’s jump right in.
+[05:41] This video is sponsored by ASML, the company 
+that designs and manufactures EUV Lithography
+[05:48] Systems. Throughout the video all the details 
+and facts were independently researched,
+[05:54] written, and animated. Additionally some 
+aspects are simplified, and due to the
+[06:00] proprietary knowledge and confidentiality 
+around EUV Lithography, some of the details
+[06:05] we present are approximated or modified.
+Before we open up and explore this EUV System,
+[06:12] let’s first spend a few minutes discussing 
+microchip manufacturing and semiconductor
+[06:17] fabrication plants or fabs for short and 
+the exact role of this machine. Inside our
+[06:25] example fab are hundreds of machines 
+of which a couple dozen or so are the   EUV Lithography machines we’ve been discussing.
+To make a microchip, 300-millimeter silicon wafers
+[06:37] are stacked inside a front-opening universal pod 
+or foup and carried from machine to machine using
+[06:44] an overhead transport system. The foup is lowered 
+onto a machine where each wafer is processed in
+[06:50] one way or another and, once the machine completes 
+its work, the wafers are returned to the foup,
+[06:57] the pod is picked up, carried to the next machine 
+and dropped off for the next step in the process.
+[07:04] Microchip manufacturing is incredibly complicated, 
+but a simple way to think about it is that it’s
+[07:11] kind of like spray painting a design through 
+a stencil, but instead of art this stencil
+[07:17] contains the nanoscopic patterns used to build 
+the transistors and wires. Inside the microchip
+[07:23] factory, some tools are used to build the stencil 
+such as the EUV lithography system, and many
+[07:29] of the other machines such as the deposition 
+tools or ion implanters are the spray paint.
+[07:36] So, let’s take a look at how we build the 
+stencil on the wafer which is technically   called a photoresist layer. To begin, the wafer 
+travels to a machine called a track tool where
+[07:48] a light sensitive material called photoresist or 
+just resist, is poured on and evenly spread across
+[07:55] a spinning wafer. Next the wafer is heated in 
+order to dry and solidify the resist thus forming
+[08:03] a flat blank stencil. The wafer then moves to 
+the photolithography tool where EUV or extreme
+[08:11] ultraviolet light is projected onto 
+the photomask, which is also called a   reticle but typically just a mask for short.
+When EUV light hits the mask, the patterned
+[08:21] information is imprinted in the light, and 
+this imprinted light then bounces off a set
+[08:26] of mirrored lenses in order to project a focused 
+and scaled down image of the mask onto the wafer.
+[08:33] Wherever the EUV light touches, the resist 
+is modified and thus the design is copied
+[08:39] from the mask onto the wafer. The wafer moves 
+to the next position and the EUV patterning
+[08:45] process repeats again until the entire wafer is 
+filled with copies of the design from the mask.
+[08:52] Next the wafer travels back to the track tool, 
+where the modified resist is washed away using a
+[08:58] developing solvent and the wafer is heated to form 
+a hardened stencil or completed photoresist mask
+[09:05] layer on the top of the wafer.
+Now that the wafer is patterned,   the wafer travels to the other spray paint-like 
+tools in the fab which are used to etch away the
+[09:16] uncovered areas, implant dopants such as boron 
+or phosphor, or deposit a layer of copper,
+[09:23] tungsten, or other metals, thereby building 
+a single layer of nanoscopic structures.
+[09:30] Note that there are additional process 
+steps that we’re not going to get into.
+[09:35] Now that we have a basic understanding of how 
+the stencil and spray paint like processes
+[09:40] form a single layer, let’s zoom into a nanoscopic 
+view inside a microchip where we can see how the
+[09:48] transistors and wires are incredibly complicated 
+3-dimensional structures. Each of these
+[09:54] layers are built one after the other starting 
+with the transistors at the bottom, moving up
+[09:59] to the small wires, and then wider and wider metal 
+layers further up. In essence, to build a complete
+[10:07] microchip, the stencil and spray paint process is 
+repeated over and over each time building only a
+[10:14] single layer, and therefore it’s more effective 
+to visualize these processes as a loop, where a
+[10:21] single pass of the loop forms one layer using 
+a single mask design in the lithography tool,
+[10:27] and then another layer is built using an entirely 
+different mask loaded in the machine. To complete
+[10:33] a GPU chip like this one, the series of process 
+steps or loops is repeated around 80 times
+[10:41] resulting in around a thousand individual process 
+steps and taking four or so months to complete.
+[10:48] Let’s go back to the nanoscopic view of the 
+microchip. Here we can see that the lower
+[10:54] layers are incredibly tiny and 13 nanometer EUV 
+light is used to build the pattern for these
+[11:01] layers. However, the upper wires are substantially 
+larger and are patterned using an entirely
+[11:08] different machine called a DUV or Deep Ultra 
+Violet Photolithography System which is also
+[11:15] built by ASML and uses deep ultraviolet wavelength 
+light. DUV lithography tools were introduced
+[11:23] in the 2000s and are still incredibly advanced 
+machines. Because DUV tools typically cost less
+[11:32] than EUV machines, it’s more cost-effective 
+to use EUV tools to pattern the transistors
+[11:38] and so-called critical layers, and then use DUV 
+tools to pattern the upper, wider, less-critical
+[11:46] layers. Additionally, less advanced chips that 
+don’t require the smallest transistors and wires
+[11:53] may forgo using EUV lithography altogether 
+and only use DUV wavelengths, such as 193,
+[12:03] 248 or 365 nanometers As a result, cutting 
+edge fabs typically utilize different types of
+[12:14] lithography tools, and all these machines work 
+as an intricate ecosystem to make a microchip.
+[12:21] With the basics of microchip manufacturing 
+covered, let’s open an EUV lithography system,
+[12:27] explore the incredible science and engineering 
+inside, and divide the system into its five key
+[12:34] parts: The light source, the illuminator, 
+the reticle handler and reticle stage,
+[12:40] the projection optics, and finally the wafer 
+handler and wafer stages. We’ll begin with the
+[12:46] light source which produces the EUV light, 
+but let’s first answer the question of why
+[12:52] we even need to use Extreme Ultraviolet Light.
+Well, a simple analogy is to think of the light
+[12:58] used to project and copy the pattern from the 
+photomask as the tip of a marker. And, as you’re
+[13:05] probably familiar with markers, if you want to 
+draw thin lines then you need a marker that also
+[13:10] has a thin tip. You can do tricks like angling the 
+marker, but if you want to draw lines that are 100
+[13:17] times thinner, well then you need to switch pens 
+and use a much smaller, fine tipped pen. Likewise,
+[13:25] to copy designs with dimensions only around 
+10 nanometers wide, we use 13 nanometer light,
+[13:33] which is in the extreme ultraviolet light 
+range of the electromagnetic spectrum.
+[13:38] The more technical answer deals with the 
+wavelike nature of light and what happens   when light hits these nanoscopic patterns 
+inside the photomask. These patterns are
+[13:48] made from nanoscopic EUV absorbing blockers on 
+top of a surface that reflects EUV light. We’ll
+[13:56] explore the photomask and how the system uses 
+reflective lenses a little later in this video,
+[14:01] but for now instead of using reflective optics, 
+it’s easier to visualize the photomask as through
+[14:08] beam optics in a setup similar to the well-known 
+double slit experiment. However, instead of the
+[14:14] double slit we’re showing light passing through 
+a complicated pattern of nanoscopic slits that
+[14:20] represents a small portion of the overall 
+photomask. So, what happens when we use a
+[14:26] wavelength of light that’s substantially 
+larger than the 13 nanometer EUV light,
+[14:32] such as this 450-nanometer blue light. Well, when 
+this large wavelength light hits the pattern,
+[14:40] the pattern is almost entirely lost. This is due 
+to the width of the holes in the pattern being
+[14:46] substantially smaller than the wavelength of light 
+hitting it. This limit to the resolving power of
+[14:52] the lithography machine is described in Rayleigh’s 
+Criterion Equation, which we will explain later.
+[15:00] So, let’s switch to 13 nanometer EUV light. 
+As the EUV light hits the pattern, the light
+[15:07] passes through and the pattern of the photomask is 
+imprinted into the light, and the light diffracts
+[15:13] similar to the double slit experiment. This 
+imprinted light then passes into projection optics
+[15:20] mirrored lenses which are used to focus and scale 
+down the pattern and project it onto the wafer.
+[15:26] So now that we understand the need for EUV 
+light, the next question is how do we produce
+[15:32] it? To start, two high-powered laser pulses run 
+through multiple amplifiers below the cleanroom
+[15:39] floor. These laser pulses grow in power and then 
+travel from the sub-fab using a pathway of mirrors
+[15:47] and up through the bottom of the tool and into a 
+chamber called the source vessel. The first laser,
+[15:53] called the pre-pulse, is around 5 kilowatts 
+in power and is targeted at a droplet of tin
+[15:59] using a set of actuated mirrors. This pre-pulse 
+laser turns the tin droplets into a pancake-like
+[16:07] shape. The second approximately 25-kilowatt main 
+laser pulse which is more than 10 times stronger
+[16:14] than the lasers used to cut steel, hits the tin 
+pancake, instantly vaporizing it and turning it
+[16:21] into glowing plasma. Within each of the tin atoms, 
+some electrons are ejected, and others are kicked
+[16:28] up to higher energy states. When electrons 
+drop back down from the 4F to 4D orbitals,
+[16:35] 13-nanometer EUV light is produced. Shooting two 
+laser pulses at a droplet of tin might seem like a
+[16:44] rather obscure process, however EUV light doesn’t 
+naturally occur on Earth and it’s one of the few
+[16:51] ways to efficiently produce over 500 Watts of 
+EUV Light. Additionally, the reason for using
+[16:58] tin is that its plasma produces a wide range of 
+wavelengths with a clear peak at 13 nanometers.
+[17:06] So, where does the tin droplet come from? Well 
+over here a solid ingot of ultra-pure tin is
+[17:13] melted and fed into a storage tank and then piped 
+towards a microscopic nozzle. A piezo electric
+[17:20] transducer squeezes the tip of the nozzle, and due 
+to high-pressure nitrogen inside the storage tank,
+[17:28] a droplet of tin is forced out at a 
+speed of 100 meters a second. Next,
+[17:33] high speed cameras measure and calculate the 
+trajectory of the droplet and feed the data to
+[17:39] a set of actuated mirrors in order to angle 
+the laser pulses to precisely hit the tin.
+[17:46] To control the amount of EUV light, sometimes 
+droplets are skipped by the lasers, and these
+[17:52] droplets are captured over here. This process 
+of producing high speed tin droplets and then
+[17:59] shooting them with 2 laser pulses to generate EUV 
+light happens at a rate of 50,000 times a second.
+[18:07] Now that we have EUV light, the first mirror 
+called the collector, focuses all the EUV
+[18:13] light to a small hole called the intermediate 
+focus, which only EUV light can pass through.
+[18:20] The light next enters into the illuminator, 
+which is composed of the field facet mirror,
+[18:26] the pupil facet mirror, and another set of 
+mirrors. These mirrors are so perfectly shaped
+[18:32] that there’s less than an atom’s deviation from 
+the surface. The illuminator takes this EUV light
+[18:39] and shapes it into a thin ribbon that has equal 
+uniformity across a well-defined range of angles
+[18:46] before it hits the photomask. Using an equal 
+uniformity of light at all angles is critical to
+[18:53] imprinting a perfect nanoscopic pattern from 
+the mask via the light and onto the wafer.
+[18:59] We want to take a short detour and mention that 
+this has been a rather challenging video to make
+[19:05] simply because there’s a mountain of science 
+and engineering inside these machines built   by ASML and this video only explores the tip of 
+the iceberg. Essentially, a lot of the details
+[19:17] had to be cut in order to keep this video a 
+manageable length. For example, EUV light is
+[19:24] incredibly difficult to work with because it’s 
+absorbed by atmospheric molecules, and therefore
+[19:30] the entire light path and wafer carrier stage is 
+connected to vacuum pumps, which remove all the
+[19:36] air. Additionally, EUV light is absorbed by glass 
+and practically all other materials, and therefore
+[19:43] to focus and transport the light, this system 
+uses mirrors rather than transmissive lenses.
+[19:50] However, these mirrors called Bragg Reflectors, 
+are nothing like the mirrors in your bathroom,
+[19:57] but rather they’re composed of dozens of 
+alternating layers of silicon and molybdenum,
+[20:02] each only a few nanometers thick. When EUV 
+light hits the surface of this Bragg Reflector,
+[20:09] only 3% is reflected at each boundary layer while 
+the rest passes through. But with so many layers
+[20:17] the cumulative 3% reflections add together using 
+constructive interference, resulting in a total
+[20:24] of 70% being reflected for a single mirror, while 
+30% of the light is lost and absorbed. However,
+[20:31] with more than 10 mirrors in the optical system, 
+and only 70% reflection at each one, the final
+[20:38] light hitting the wafer is less than 10 percent 
+the brightness of the light emitted by the tin
+[20:43] plasma, which is why the initial light from the 
+source vessel needs to be as bright as possible.
+[20:50] Another example of the incredible engineering 
+inside this machine is that this field facet
+[20:56] mirror is assembled from hundreds of independently 
+controlled mirrors that can be angled to direct
+[21:02] the light onto specific regions of the segmented 
+pupil facet mirror. Together, these two mirrors
+[21:09] take the cone of EUV light from the intermediate 
+focus and turn it into a complex pattern of
+[21:16] illumination. For example, this is called annular 
+illumination, here’s dipole illumination and
+[21:23] then here’s quasar illumination. You’re probably 
+wondering why we require such complicated patterns
+[21:30] of illumination. Well, when we look back at the 
+microchip, one layer of wires is running mostly
+[21:36] horizontally, the next layer is a set of cylinders 
+called vias, and then the following layers have
+[21:43] wires that run vertically, and each layer uses 
+a different mask. Earlier we said that the EUV
+[21:50] light is kind of like the tip of a fine tipped 
+pen. Having different patterns of illumination is
+[21:56] like holding the marker at different angles with 
+respect to the lines or circles that are being
+[22:02] patterned. Specifically, annular illumination is 
+best used to pattern the layers containing vias
+[22:09] and is like holding the marker straight up and 
+down, whereas dipole illumination like this is
+[22:16] best used to pattern lines running horizontally, 
+and then we rotate the dipole illumination for
+[22:22] patterning the vertically oriented wires.
+Imagine being at the forefront of this
+[22:28] groundbreaking science and engineering. Then 
+picture ASML, whose work powers the innovations
+[22:35] that solve some of humanity's toughest challenges 
+in energy, mobility, and healthcare. ASML is a
+[22:42] leader in photolithography systems, serving as the 
+backbone for the world's leading chipmakers and
+[22:48] enabling the technology that drives our future. 
+With over 44,000 talented individuals and growing,
+[22:56] ASML is headquartered in The Netherlands, with 
+major R&D and manufacturing sites in the U.S.
+[23:03] and Asia. Their sprawling campus is not just 
+a workplace; it’s an exceptional environment
+[23:09] where cutting-edge technology comes to life. To 
+keep pushing the boundaries of what's possible,
+[23:15] ASML seeks exceptional talent. They are looking 
+for scientists and engineers ready to design
+[23:22] the next-gen lithography systems, technicians 
+and logistics experts eager to build, ship,
+[23:28] and support these groundbreaking systems, and 
+software developers passionate about working
+[23:33] in a world of nanometers. ASML is the next step 
+for those ready to make an impact in an inspiring
+[23:40] setting. Together with their suppliers, partners, 
+and customers around the world, they are committed
+[23:47] to powering technology forward. Visit their 
+website using the link in the description to
+[23:52] learn more and start a journey with ASML today.
+Let’s move onto the next part of this EUV
+[24:00] Lithography tool and explore the photomask 
+or mask which is also called a reticle and
+[24:07] contains the entire design of a single layer of a 
+microchip. The mask starts in a doubly sealed pod
+[24:14] and is loaded onto the machine using an overhead 
+transport system. The outer protective carrier is
+[24:20] opened, and a robotic arm picks up the inner pod 
+and carries it to a vacuum load lock. The chamber
+[24:27] is sealed and pumped down to a vacuum, and the 
+inner door opens. Next the inner pod opens up and
+[24:34] a separate robotic arm carries the mask and base 
+to an inspection station. Each mask has half a
+[24:41] dozen different marks including a bar code as well 
+as fiducials, which are designs used to align the
+[24:48] mask with sub-nanometer level accuracy. The mask 
+is carried over to and loaded onto the reticle
+[24:55] stage which moves back and forth across the EUV 
+beam with incredible accuracy and at high speeds
+[25:02] with more than 7Gs of acceleration. This mask’s 
+surface is built from the same Bragg reflector
+[25:09] surface mentioned earlier but with a pattern of 
+absorbers on top that locally blocks the light in
+[25:16] order to create the detailed microchip layer 
+pattern. This 6 by 6-inch mask has a pattern
+[25:22] area of 104 by 132 millimeters and an absorber 
+pixel resolution of below 10 by 10 nanometers.
+[25:32] In the beginning of this video we showed a 
+variety of different chips with different sizes,
+[25:38] and shortly after we showed a GPU being 
+patterned across the wafer. The pattern
+[25:43] on the mask is 4 times larger than the microchip 
+and this GPU chip is close to the maximum size
+[25:51] chip that can fit on the mask, and therefore 
+only one copy fits, resulting in 90 GPU chips
+[25:58] fitting onto a 300-millimeter wafer. However, 
+CPU Chips are typically smaller and therefore,
+[26:06] in the following example, we can fit 2 copies 
+on the mask and a total of 185 chips on the
+[26:13] wafer. When we look at even smaller DRAM chips, 
+12 copies can fit on the mask, yielding 978 chips
+[26:22] on the wafer. Technically, the exposure field 
+is one scan of the mask onto the wafer, and an
+[26:29] exposure field can have anywhere from 1 to a dozen 
+or more die patterns on it, yielding around a 100
+[26:35] to a thousand or more chips on a single wafer.
+This mask contains an incredible amount of
+[26:41] information and, as mentioned in the intro, it 
+has the equivalent amount of detail as all the
+[26:47] text of Wikipedia plus all the books in an average 
+public library. This mask, which can cost around
+[26:54] 300,000 dollars, must be so perfect that using 
+our analogy there can’t be a single grammatical
+[27:02] error, spelling mistake, or even an extra curve 
+on a letter across 21 million pages of text,
+[27:10] otherwise it would damage every chip on the wafer. 
+Also, if you’re curious, here are the calculations
+[27:17] we used for the transistors to text and book 
+conversions. Pause the video to work it out.
+[27:24] The next topics we’ll explore are the 
+projection optics and how the wafer is   moved around the machine. But first we’d like 
+to mention that this video topic is incredibly
+[27:35] complicated and took hundreds of hours to 
+research, write, model, animate, and edit,
+[27:42] totaling over 1100 hours. So, if you could take 
+a few seconds to ‘Like’ this video, subscribe,
+[27:50] comment with a quick message below, and most 
+importantly, share it on social media and with
+[27:55] a friend, family, or work colleague, it would help 
+far more than you think! Additionally, we have a
+[28:02] Patreon page with AMAs and behind the scenes 
+footage, and, if you find what we do useful,
+[28:09] we would appreciate any support. Thank you.
+So, let’s move on to the projection optics.
+[28:17] These optics are composed of a series of mirrors 
+that are used to project and focus the patterned
+[28:23] EUV light onto the wafer with extremely high 
+accuracy, while minimizing wavefront aberrations,
+[28:30] and shrinking the image by a factor of 4. These 
+mirrors are designed and manufactured by Zeiss,
+[28:37] who is a longstanding partner of ASML and has 
+been a vital collaborator in the development of
+[28:43] the optics systems inside photolithography tools. 
+To understand the projection optics, we have to
+[28:50] discuss what determines exactly how small these 
+wires can be, and for this Rayleigh’s Criterion
+[28:57] Equation is used. This equation states that 
+the smallest dimension or critical dimension,
+[29:03] is equal to k1 times the wavelength of light or 
+Lamda divided by the numerical aperture, or NA.
+[29:11] The wavelength of EUV light is 13 nanometers. 
+K1 is the process factor, which relates to the
+[29:19] various illumination settings created by the field 
+and pupil facet mirrors that we discussed earlier,
+[29:26] along with the photoresist, and other factors 
+and is close to .3 for this machine. Finally,
+[29:33] numerical aperture or NA is a measure of the angle 
+and amount of light the mirrors in the projection
+[29:39] optics can capture and focus onto the wafer. 
+Numerical aperture isn’t just about increasing
+[29:45] the brightness of the EUV light, but rather it’s 
+more of a measure of the angles and amount of
+[29:52] constructive interference wave paths that hit the 
+mask, and then are projected onto the wafer. In
+[29:59] short, with a larger numerical aperture or NA, 
+which corresponds to a larger angle between the
+[30:05] projection mirrors and focal point, we can achieve 
+a smaller resolution. This tool has a numerical
+[30:12] aperture of 0.33, however the next generation of 
+EUV lithography systems called high NA, increases
+[30:21] this to 0.55 resulting in an 8-nanometer critical 
+dimension. Increasing the numerical aperture to
+[30:30] 0.55 requires significantly larger mirrors which 
+results in a redesign of the entire optics system
+[30:38] and other parts of the machine, thus considerably 
+increasing the size and cost of the system.
+[30:47] We could spend an entire video discussing 
+the next generation High NA tool,
+[30:52] but instead let’s move on to discuss the wafer 
+transport system and wafer stage and see how a
+[30:59] wafer makes its way to the EUV exposure station.
+Let’s start with a wafer that’s carried in a foup
+[31:06] on the overhead transport system. This foup lands 
+on the lithography cluster, which is a combination
+[31:13] of a wafer track tool and a lithography tool. 
+The wafer first enters the track tool where a
+[31:20] layer of photoresist or resist for short, is 
+evenly spread across the wafer. The wafer moves
+[31:27] to another area inside the track tool where it’s 
+heated in order to dry and solidify the resist.
+[31:34] Next, using robotic arms the wafer is carried 
+from the track tool into a vacuum load lock
+[31:41] inside the EUV tool. The pneumatically actuated 
+doors close and the chamber is pumped down to a
+[31:49] vacuum. Next the back doors of the load 
+lock open up and a different robotic arm
+[31:54] carries the wafer to one of the wafer stages.
+This system is called a TWINSCAN because there
+[32:01] are two complete wafer stages that concurrently 
+move two wafers around. The key idea is that
+[32:08] while one wafer is actively being patterned, 
+a second wafer is being loaded onto the wafer
+[32:13] stage and measured under an alignment sensor.
+Nanometer level accuracy is crucial with these
+[32:20] machines and one key philosophy of ASML 
+is “Meten is Weten” which is Dutch for
+[32:27] “To Measure Something is to Know something”. The 
+reason for requiring this level of perfection is
+[32:33] that when we look at the nanoscopic layers of 
+the microchip, which has wires and holes that
+[32:39] are only 10 to 20 nanometers wide, if one layer 
+is more than a couple nanometers off the previous
+[32:45] layer, then the electrical connections won’t 
+conduct electricity correctly, and if an entire
+[32:51] layer is off, then every single chip 
+will be catastrophically destroyed.
+[32:57] To make sure that the layer being patterned 
+is perfectly aligned with the previous layer,
+[33:02] the entire wafer is thoroughly measured by the 
+alignment sensor. On the wafer are hundreds of
+[33:09] alignment marks, which are reference patterns 
+that assist in determining the exact position
+[33:14] of the earlier layers of patterns. The alignment 
+sensor meticulously measures the X and Y positions
+[33:22] of every alignment mark on the wafer and builds a 
+highly accurate 2D map from the results. This map
+[33:30] shows some regions of the wafer being biased in 
+one direction by a few to dozens of nanometers,
+[33:36] and another region being biased in a different 
+direction. Additionally, the leveling sensor
+[33:42] uses grazing incident light to measure the exact 
+height of the wafer and builds a topological map
+[33:49] of the wafer which is critical for later bringing 
+the wafer stage to the position such that the EUV
+[33:56] light is perfectly focused onto the wafer.
+Now that we’ve measured and built the exact
+[34:02] alignment and height map for the wafer, the wafer 
+stage next moves to the EUV exposure station.
+[34:09] As the wafer is being patterned, the wafer stage 
+moves in perfect synchrony with the reticle stage,
+[34:16] but only a quarter of the distance due to 
+the 4 to 1 reduction. At the same time,
+[34:22] the stage makes nano-scale adjustments using the 
+alignment map so that the new layer perfectly
+[34:28] aligns with the previous layer. When the wafer 
+stage moves from one exposure field to the next,
+[34:35] it’s important that no EUV light hits the 
+wafer, and thus a shutter positioned up here,
+[34:42] near the reticle stage closes. Once the wafer 
+stage is positioned to pattern the next microchip,
+[34:49] the shutter opens and the wafer stage and 
+reticle stage move in perfect synchrony again.
+[34:55] This process repeats until the entire wafer is 
+patterned taking around 18 seconds in total.
+[35:03] So then, what actually happens as EUV light hits 
+the photoresist? Well, resist is a polymer mixed
+[35:12] with a Photo Acid Generator. When high energy 
+EUV photons hit the resist, the light ionizes it
+[35:19] releasing high energy electrons. These electrons 
+then hit the photo acid generator producing
+[35:25] an acid that breaks apart the polymer making 
+it weaker. As a result, the areas hit by the
+[35:32] EUV light become soluble and are washed away by a 
+developing liquid in the subsequent process step.
+[35:40] One detail is that the resist has an extremely 
+high contrast, meaning that at a certain level
+[35:46] of EUV light, the entirety of the resist hit by 
+that light is broken down. This is critical in
+[35:54] producing sharp patterns and walls on the resist.
+Let’s next explore how the wafer and wafer stage
+[36:01] move around. Specifically, the wafer stages 
+levitate on a large magnetic table composed of
+[36:08] more than a thousand magnets. Electromagnets 
+on the underside of the wafer stage move it
+[36:14] along this magnetic table both quickly and with 
+micrometer level accuracy while interferometers
+[36:20] on the top of the stage measure its exact position 
+and this setup is called the long-stroke stage.
+[36:27] In order to secure the wafer, it’s placed 
+on a plate which is technically called an
+[36:32] electrostatic clamp. The clamp cycles zones of 
+high voltage across the backside of the wafer
+[36:39] to keep it in place, a phenomenon similar 
+to sticking a ballon to a wall using static
+[36:44] electricity. To reach nanometer level accuracy 
+the plate is independently moved using smaller
+[36:52] motors which is called the short-stroke stage.
+By combining the long stroke and short stroke
+[36:58] stages along with measurement encoders, the 
+machine can quickly move the wafer as it’s
+[37:04] being patterned and maintain an accuracy of less 
+than 1 nanometer or approximately 4 silicon atoms.
+[37:12] Once all the microchip patterns are copied to the 
+wafer, the stage moves back towards the robotic
+[37:18] arms where the wafer is unloaded and placed 
+into one of the vacuum load locks, pumped back
+[37:24] to atmosphere, and then a separate robotic arm 
+brings the wafer back to the track tool, where the
+[37:30] patterned and modified resist is washed away using 
+a developing liquid. Finally, the wafer is heated
+[37:37] again to further harden the remaining resist. The 
+patterned wafer is then loaded back into the foup
+[37:44] which is picked up and brought to a different 
+tool to undergo processing in other ways.
+[37:50] Let’s close this tool and that’s it for 
+our journey into photolithography. If
+[37:56] you have any questions, feel free 
+to ask them in the comments below.  We’re thankful to all our Patreon and YouTube 
+Membership Sponsors for supporting our videos.
+[38:07] If you want to financially support our work, 
+you can find the links in the description below.
+[38:13] This is Branch Education, and we create 
+3D animations that dive deeply into the
+[38:19] technology that drives our modern 
+world. Watch another Branch video   by clicking one of these cards or click here 
+to subscribe. Thanks for watching to the end!

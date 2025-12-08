@@ -10,9 +10,54 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, 
 from reportlab.lib import colors
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from io import BytesIO
 import re
+import os
 from datetime import datetime
+
+
+def register_chinese_fonts():
+    """注册中文字体"""
+    # 尝试注册 CID 字体（内置支持）
+    try:
+        pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
+        return 'STSong-Light'
+    except:
+        pass
+    
+    # 尝试常见的系统中文字体路径
+    font_paths = [
+        # Ubuntu 已安装的中文字体
+        '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc',
+        '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
+        '/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc',
+        '/usr/share/fonts/truetype/wqy/wqy-microhei.ttc',
+        # Linux 其他常见路径
+        '/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc',
+        '/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf',
+        '/usr/share/fonts/opentype/noto/NotoSansSC-Regular.otf',
+        # 自定义路径
+        os.path.join(os.path.dirname(__file__), 'fonts', 'NotoSansSC-Regular.otf'),
+    ]
+    
+    for font_path in font_paths:
+        if os.path.exists(font_path):
+            try:
+                pdfmetrics.registerFont(TTFont('ChineseFont', font_path))
+                return 'ChineseFont'
+            except Exception as e:
+                print(f"[WARN] 无法加载字体 {font_path}: {e}")
+                continue
+    
+    # 如果都失败，返回默认字体
+    print("[WARN] 未找到中文字体，将使用默认字体（中文可能显示为方块）")
+    return 'Helvetica'
+
+
+# 全局注册字体
+CHINESE_FONT = register_chinese_fonts()
+CHINESE_FONT_BOLD = CHINESE_FONT  # 大多数中文字体没有粗体版本
 
 
 class VideoPDFGenerator:
@@ -20,6 +65,7 @@ class VideoPDFGenerator:
     
     def __init__(self):
         self.styles = getSampleStyleSheet()
+        self.chinese_font = CHINESE_FONT
         self._setup_styles()
     
     def _setup_styles(self):
@@ -32,7 +78,7 @@ class VideoPDFGenerator:
             textColor=colors.HexColor('#1a1a1a'),
             spaceAfter=30,
             alignment=TA_CENTER,
-            fontName='Helvetica-Bold'
+            fontName=self.chinese_font
         ))
         
         # 章节标题样式
@@ -43,7 +89,7 @@ class VideoPDFGenerator:
             textColor=colors.HexColor('#2c5aa0'),
             spaceAfter=12,
             spaceBefore=20,
-            fontName='Helvetica-Bold'
+            fontName=self.chinese_font
         ))
         
         # 时间戳样式
@@ -53,7 +99,7 @@ class VideoPDFGenerator:
             fontSize=10,
             textColor=colors.HexColor('#666666'),
             spaceAfter=8,
-            fontName='Helvetica-Oblique'
+            fontName=self.chinese_font
         ))
         
         # 内容样式
@@ -65,7 +111,7 @@ class VideoPDFGenerator:
             textColor=colors.HexColor('#333333'),
             spaceAfter=15,
             alignment=TA_JUSTIFY,
-            fontName='Helvetica'
+            fontName=self.chinese_font
         ))
         
         # 描述样式
@@ -76,7 +122,7 @@ class VideoPDFGenerator:
             textColor=colors.HexColor('#555555'),
             spaceAfter=20,
             alignment=TA_CENTER,
-            fontName='Helvetica-Oblique'
+            fontName=self.chinese_font
         ))
     
     def _clean_text(self, text):
@@ -152,8 +198,7 @@ class VideoPDFGenerator:
         
         info_table = Table(info_data, colWidths=[3*cm, 10*cm])
         info_table.setStyle(TableStyle([
-            ('FONTNAME', (0, 0), (0, -1), 'Helvetica-Bold'),
-            ('FONTNAME', (1, 0), (1, -1), 'Helvetica'),
+            ('FONTNAME', (0, 0), (-1, -1), self.chinese_font),
             ('FONTSIZE', (0, 0), (-1, -1), 10),
             ('TEXTCOLOR', (0, 0), (0, -1), colors.HexColor('#666666')),
             ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
@@ -174,16 +219,44 @@ class VideoPDFGenerator:
             section_title = section.get('title', f'Section {i+1}')
             story.append(Paragraph(f"{i+1}. {section_title}", self.styles['SectionTitle']))
             
-            # 时间戳
-            timestamp_start = section.get('timestampStart', '00:00')
-            timestamp_end = section.get('timestampEnd', '00:00')
-            timestamp_text = f"⏱ {timestamp_start} - {timestamp_end}"
-            story.append(Paragraph(timestamp_text, self.styles['Timestamp']))
+            # 获取内容列表
+            content_list = section.get('content', [])
             
-            # 内容
-            content = self._clean_text(section.get('content', ''))
-            if content:
-                story.append(Paragraph(content, self.styles['Content']))
+            # 计算章节时间范围
+            if isinstance(content_list, list) and len(content_list) > 0:
+                # 新格式：content 是列表
+                first_timestamp = content_list[0].get('timestampStart', '00:00:00') if isinstance(content_list[0], dict) else '00:00:00'
+                last_timestamp = content_list[-1].get('timestampStart', '00:00:00') if isinstance(content_list[-1], dict) else '00:00:00'
+                timestamp_text = f"⏱ {first_timestamp} - {last_timestamp}"
+                story.append(Paragraph(timestamp_text, self.styles['Timestamp']))
+                
+                # 遍历每个内容项
+                for item in content_list:
+                    if isinstance(item, dict):
+                        item_content = self._clean_text(item.get('content', ''))
+                        item_timestamp = item.get('timestampStart', '')
+                        if item_content:
+                            # 添加带时间戳的内容
+                            if item_timestamp:
+                                content_with_time = f"<b>[{item_timestamp}]</b> {item_content}"
+                            else:
+                                content_with_time = item_content
+                            story.append(Paragraph(content_with_time, self.styles['Content']))
+                    elif isinstance(item, str):
+                        # 兼容旧格式：content 项是字符串
+                        cleaned = self._clean_text(item)
+                        if cleaned:
+                            story.append(Paragraph(cleaned, self.styles['Content']))
+            elif isinstance(content_list, str):
+                # 兼容旧格式：content 是字符串
+                timestamp_start = section.get('timestampStart', '00:00')
+                timestamp_end = section.get('timestampEnd', '00:00')
+                timestamp_text = f"⏱ {timestamp_start} - {timestamp_end}"
+                story.append(Paragraph(timestamp_text, self.styles['Timestamp']))
+                
+                content = self._clean_text(content_list)
+                if content:
+                    story.append(Paragraph(content, self.styles['Content']))
             
             # 章节之间添加间距
             if i < len(sections) - 1:

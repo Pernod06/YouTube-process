@@ -82,11 +82,14 @@ def get_full_transcript(video_url: str, language: str = 'en'):
         url = 'https://transcriptapi.com/api/v2/youtube/transcript'
         params = {'video_url': video_id, 'format': 'json'}
         r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout = 30)
-        transcript = r.json()['transcript']
+        response_json = r.json()
+        transcript = response_json['transcript']
         
-        # 视频详情（youtube_transcript_api 不提供视频标题，使用 video_id）
+        # 从 API 响应中获取视频标题，如果没有则使用 video_id
+        video_title = response_json.get('title', f'Video {video_id}')
+        
         details = {
-            'title': f'Video {video_id}',
+            'title': video_title,
             'video_id': video_id,
             'duration': 0,
             'view_count': 0,

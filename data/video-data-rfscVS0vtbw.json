@@ -1,0 +1,352 @@
+{
+  "videoInfo": {
+    "title": "Learn Python - Full Course for Beginners [Tutorial]",
+    "videoId": "rfscVS0vtbw",
+    "description": "This video is a comprehensive beginner's course on Python programming, covering fundamental concepts from basic data types and user input to more advanced topics like functions, loops, modules, and object-oriented programming with classes. It aims to equip learners with the necessary skills to start coding in Python for various applications.",
+    "thumbnail": "https://img.youtube.com/vi/rfscVS0vtbw/maxresdefault.jpg",
+    "summary": "This comprehensive Python course introduces beginners to the fundamentals of programming, highlighting Python's popularity, ease of use, and versatility. It covers essential topics such as data types, user input, control flow, functions, lists, and object-oriented programming concepts like classes and objects. The course emphasizes practical application through examples and mini-projects like a calculator and a guessing game."
+  },
+  "sections": [
+    {
+      "id": "section1",
+      "title": "Introduction to Python & Course Overview",
+      "content": [
+        {
+          "content": "Python is introduced as a highly popular and sought-after programming language, ideal for jobs, automation, and scripting due to its power and ease of use.",
+          "timestampStart": "00:00:00"
+        },
+        {
+          "content": "It's highlighted as very beginner-friendly with a minimal learning curve, allowing users to start programming quickly.",
+          "timestampStart": "00:00:30"
+        },
+        {
+          "content": "The course is specifically designed for beginners, providing comprehensive knowledge and examples to get started with Python programming.",
+          "timestampStart": "00:00:54"
+        }
+      ]
+    },
+    {
+      "id": "section2",
+      "title": "Basic Data Types (Numbers & Booleans)",
+      "content": [
+        {
+          "content": "The video explains how to store numeric data, including both whole and decimal numbers, without the need for quotation marks.",
+          "timestampStart": "00:24:55"
+        },
+        {
+          "content": "It also introduces Boolean values (True or False), which are crucial for representing conditional data in programming.",
+          "timestampStart": "00:25:28"
+        }
+      ]
+    },
+    {
+      "id": "section3",
+      "title": "Getting User Input",
+      "content": [
+        {
+          "content": "Users learn how to retrieve input from a program's user by using the `input()` function in Python.",
+          "timestampStart": "00:48:25"
+        },
+        {
+          "content": "A prompt can be included within the `input()` function to guide the user on what information to enter, and this input can then be stored in a variable.",
+          "timestampStart": "00:49:15"
+        }
+      ]
+    },
+    {
+      "id": "section4",
+      "title": "List Manipulation",
+      "content": [
+        {
+          "content": "The `append()` function is demonstrated to add new items to the end of a list.",
+          "timestampStart": "01:13:07"
+        },
+        {
+          "content": "The `insert()` function is introduced for adding an item at a specific index within a list, shifting existing elements to the right.",
+          "timestampStart": "01:13:40"
+        }
+      ]
+    },
+    {
+      "id": "section5",
+      "title": "Functions and Return Statements",
+      "content": [
+        {
+          "content": "Functions are explained as blocks of code that can be called, and the `return` statement is crucial for a function to output or \"give back\" a value.",
+          "timestampStart": "01:36:43"
+        },
+        {
+          "content": "Without a `return` statement, a function might execute but won't provide an output value to the part of the code that called it.",
+          "timestampStart": "01:37:01"
+        }
+      ]
+    },
+    {
+      "id": "section6",
+      "title": "Building a Calculator & Type Conversion",
+      "content": [
+        {
+          "content": "This section demonstrates building a simple calculator to illustrate the practical application of if-statements.",
+          "timestampStart": "02:01:21"
+        },
+        {
+          "content": "A key aspect covered is converting user input, which is initially a string, into a numeric data type (like `float`) for mathematical operations.",
+          "timestampStart": "02:02:04"
+        }
+      ]
+    },
+    {
+      "id": "section7",
+      "title": "Guessing Game with While Loops and Limits",
+      "content": [
+        {
+          "content": "A guessing game project is presented to showcase the use of `while` loops, guess limits, and conditional logic.",
+          "timestampStart": "02:29:59"
+        },
+        {
+          "content": "The program tracks the number of guesses and determines win/loss conditions based on whether the user guesses correctly within the set limit.",
+          "timestampStart": "02:30:42"
+        }
+      ]
+    },
+    {
+      "id": "section8",
+      "title": "Refining Program Logic (Case Sensitivity in Translator)",
+      "content": [
+        {
+          "content": "The video addresses a problem in a translation program where uppercase input was not maintained in the output.",
+          "timestampStart": "02:58:59"
+        },
+        {
+          "content": "An additional `if` statement is used to check if a letter is uppercase and then apply the correct casing to the translated output.",
+          "timestampStart": "02:59:25"
+        }
+      ]
+    },
+    {
+      "id": "section9",
+      "title": "Comments in Python",
+      "content": [
+        {
+          "content": "A brief overview is provided on the use of comments in Python to document code and make it more understandable.",
+          "timestampStart": "03:00:17"
+        }
+      ]
+    },
+    {
+      "id": "section10",
+      "title": "Modules and Code Reusability",
+      "content": [
+        {
+          "content": "Modules are introduced as separate Python files containing useful functions or variables that can be imported and reused in other programs.",
+          "timestampStart": "03:28:17"
+        },
+        {
+          "content": "This concept highlights how modules enhance code reusability and simplify development by leveraging external tools.",
+          "timestampStart": "03:28:38"
+        }
+      ]
+    },
+    {
+      "id": "section11",
+      "title": "Classes and Objects (Creating Custom Data Types)",
+      "content": [
+        {
+          "content": "The video delves into object-oriented programming by explaining how to create custom data types using classes and objects.",
+          "timestampStart": "03:56:37"
+        },
+        {
+          "content": "Through a \"Student\" class example, learners understand how to model real-world entities with specific attributes, making Python programs more organized and powerful.",
+          "timestampStart": "03:57:01"
+        }
+      ]
+    },
+    {
+      "id": "section12",
+      "title": "Building a Multiple Choice Quiz",
+      "content": [
+        {
+          "content": "The final section introduces a project to build a multiple-choice quiz, where the program will track the user's score.",
+          "timestampStart": "03:57:40"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "timestamp": 0,
+      "title": "Introduction",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_20933.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPOTZHwKUztI_bFnMgfqb4fD_NTw"
+    },
+    {
+      "timestamp": 105,
+      "title": "Installing Python & PyCharm",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_114100.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDO-Z67zpss1DbHUhufsQ3Dtjr56w"
+    },
+    {
+      "timestamp": 400,
+      "title": "Setup & Hello World",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_414933.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBC6QCi2lFtNJJVdiGNvcRrK5blVA"
+    },
+    {
+      "timestamp": 623,
+      "title": "Drawing a Shape",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_629033.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA_isWHszTzk7oWHZvzme3aYWq1UA"
+    },
+    {
+      "timestamp": 906,
+      "title": "Variables & Data Types",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_923766.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDI1JvK1KeRcjHPA_5UVFtWIc58AA"
+    },
+    {
+      "timestamp": 1623,
+      "title": "Working With Strings",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_1639700.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAl9G72Jm_SFJ9fjGj65UE-MiZ5vA"
+    },
+    {
+      "timestamp": 2298,
+      "title": "Working With Numbers",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_2308900.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAXYKzGA_rW35sYPiQ6D_xbRQ9D8A"
+    },
+    {
+      "timestamp": 2906,
+      "title": "Getting Input From Users",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_2923866.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA_GvFuoJa9bBs7trpVm3yascY6ug"
+    },
+    {
+      "timestamp": 3157,
+      "title": "Building a Basic Calculator",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_3177933.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB0W-u7IQxmne2Rr4XoMCfvufW-9g"
+    },
+    {
+      "timestamp": 3507,
+      "title": "Mad Libs Game",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_3535866.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBHPUtde3YjD0eDzl1Euw0bRpRk5w"
+    },
+    {
+      "timestamp": 3790,
+      "title": "Lists",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_3796000.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCf3lDjomeGxdWQbZB-MoiyRiDfLw"
+    },
+    {
+      "timestamp": 4244,
+      "title": "List Functions",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_4252333.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLChPmXXgKP2yIeXFM0eKZFRc5jt3g"
+    },
+    {
+      "timestamp": 4737,
+      "title": "Tuples",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_4744133.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBlBxHEdFBxrA6pTwbAACyIcLusBg"
+    },
+    {
+      "timestamp": 5055,
+      "title": "Functions",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_5076000.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCjTOe7vVk3qLxJxLuR65cNZjohTQ"
+    },
+    {
+      "timestamp": 5651,
+      "title": "Return Statement",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_5667066.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB875jDws7nQd2sLuJHiy4OCY7_Ig"
+    },
+    {
+      "timestamp": 6006,
+      "title": "If Statements",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_6028000.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAVIU6k0mXKcKV2zIvcWLNM1m5hjw"
+    },
+    {
+      "timestamp": 6847,
+      "title": "If Statements & Comparisons",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_6853200.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCBo5mf8P8cnebfNHGElzJYWzqrA"
+    },
+    {
+      "timestamp": 7237,
+      "title": "Building a better Calculator",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_7242833.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCidUivwO4e_P0hXdhoEGSmbF3WNg"
+    },
+    {
+      "timestamp": 7637,
+      "title": "Dictionaries",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_7651900.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLADIQ25OkH39ytUepfzJN0TA6PbDg"
+    },
+    {
+      "timestamp": 8053,
+      "title": "While Loop",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_8066933.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAQcvGrcT1R7nuB9IbK51tYCVEx7g"
+    },
+    {
+      "timestamp": 8421,
+      "title": "Building a Guessing Game",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_8444133.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwOs0JAGRJD405He_tRKwHyDU3wA"
+    },
+    {
+      "timestamp": 9164,
+      "title": "For Loops",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_9171733.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNApZhySkFIxofRuyxqvFD9E01TQ"
+    },
+    {
+      "timestamp": 9680,
+      "title": "Exponent Function",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_9707933.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARqFnvYZ6UW7iUtq9npI2-kiihyQ"
+    },
+    {
+      "timestamp": 10033,
+      "title": "2D Lists & Nested Loops",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_10057800.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBEAMOmtNy61okdbE3xesTzymLBpw"
+    },
+    {
+      "timestamp": 10361,
+      "title": "Building a Translator",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_10387300.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZvgau5vStlcDrSenZXMmdflcUqQ"
+    },
+    {
+      "timestamp": 10818,
+      "title": "Comments",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_10823666.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClXXMtgcJ2phjGOkBTGWLgb3Vf0Q"
+    },
+    {
+      "timestamp": 11057,
+      "title": "Try / Except",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_11057000.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBdDGmen4hM2wfUrcRpfHcxbP8cvw"
+    },
+    {
+      "timestamp": 11561,
+      "title": "Reading Files",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_11578900.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBW20fjQ-m6k8Leia7tSD6nOqegPA"
+    },
+    {
+      "timestamp": 12086,
+      "title": "Writing to Files",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_12092333.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCP6eHrAUbXKcm6FQAwFg-Y6QDLYQ"
+    },
+    {
+      "timestamp": 12493,
+      "title": "Modules & Pip",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_12517066.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBoy0BGam29glZfYz1MMeV1uZqmlQ"
+    },
+    {
+      "timestamp": 13436,
+      "title": "Classes & Objects",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_13441866.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJpXu6-30zxApS4crK-RQV5fEXAA"
+    },
+    {
+      "timestamp": 14257,
+      "title": "Building a Multiple Choice Quiz",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_14271000.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOYM4a3QYl-DBbnez2BDWOinMy0A"
+    },
+    {
+      "timestamp": 14908,
+      "title": "Object Functions",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_14914233.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAY_-d67AU6s7ESwKzfWiawrt2cOg"
+    },
+    {
+      "timestamp": 15157,
+      "title": "Inheritance",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_15171766.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBRwe2bOulr90aGffWPjqC8suj6KA"
+    },
+    {
+      "timestamp": 15643,
+      "title": "Python Interpreter",
+      "thumbnail_url": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault_15661200.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDX4wBPPWwP8wg4-pKHVsbbPXcomA"
+    }
+  ]
+}

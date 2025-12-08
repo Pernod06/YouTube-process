@@ -1,0 +1,203 @@
+{
+  "videoInfo": {
+    "title": "How I Build Beautiful $5,000+ Websites in Minutes with AI (Gemini 3 Tutorial)",
+    "videoId": "dEk3LUPAg7s",
+    "description": "This video features design expert Ming demonstrating how to leverage AI tools, specifically the Gemini 3 model, to create stunning, 'vibecoded' websites and software designs quickly and efficiently, overcoming the typically poor aesthetics of AI-generated apps.",
+    "thumbnail": "https://img.youtube.com/vi/dEk3LUPAg7s/maxresdefault.jpg",
+    "summary": "Ming, a leading design expert, showcases how to utilize the Gemini 3 model to generate beautiful and sophisticated website designs, contrasting them with the generally poor aesthetics of many AI-coded apps. The video emphasizes a 'secret sauce' in prompting that allows users, including AI agency owners and SaaS builders, to achieve professional design outcomes rapidly. It demonstrates a live workflow, highlighting client collaboration, cost savings, and the ability to export functional code for further development."
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Introduction: The Need for Better AI-Generated Design",
+      "content": [
+        {
+          "content": "The video addresses the problem of 'vibecoded apps' often having poor design aesthetics despite their explosion in popularity.",
+          "timestampStart": "00:00:00"
+        },
+        {
+          "content": "Ming, an expert in design for these applications, is brought on to demonstrate how to achieve incredible design outcomes using the new Gemini 3 model with specific prompting techniques.",
+          "timestampStart": "00:00:05"
+        },
+        {
+          "content": "This skill is presented as essential for AI agency owners, those building client websites, and developers creating software or SaaS applications.",
+          "timestampStart": "00:00:27"
+        }
+      ]
+    },
+    {
+      "id": "valueAndCostSavings",
+      "title": "Value Proposition & Significant Cost Savings",
+      "content": [
+        {
+          "content": "Ming explains that Gemini 3 has raised design expectations, allowing users to create beautiful presentations with just a few prompts.",
+          "timestampStart": "00:03:35"
+        },
+        {
+          "content": "He demonstrates using a brand's colors and animations, noting that a typical designer would charge $5,000-$10,000 USD for a similar landing page.",
+          "timestampStart": "00:03:55"
+        }
+      ]
+    },
+    {
+      "id": "designWorkflowBasics",
+      "title": "Basic Design Workflow: Leveraging Image References",
+      "content": [
+        {
+          "content": "Ming shows how to prompt better by using an image, specifically a screenshot, as a template reference for building a landing page with specific colors for an AI consulting business.",
+          "timestampStart": "00:07:14"
+        },
+        {
+          "content": "The most basic starting point for new users is to take a screenshot or image of an existing design from sites like Mobin or favorite websites like Apple.com.",
+          "timestampStart": "00:07:53"
+        }
+      ]
+    },
+    {
+      "id": "clientCollaborationAndEfficiency",
+      "title": "Streamlined Client Collaboration and Design Speed",
+      "content": [
+        {
+          "content": "Visual elements like typography and images are crucial for exciting clients and can be searched by branding, web design, or specific colors.",
+          "timestampStart": "00:10:54"
+        },
+        {
+          "content": "The process is ideally done live with clients, reducing the traditional design feedback loop from days to just about 30 minutes with AI tools.",
+          "timestampStart": "00:11:25"
+        }
+      ]
+    },
+    {
+      "id": "liveExampleSetup",
+      "title": "Live Example: Defining Business Needs and Layout",
+      "content": [
+        {
+          "content": "The host pretends to be a client, raising the common challenge for non-designers in defining website sections and layouts (e.g., three-card splits, image-text combinations).",
+          "timestampStart": "00:14:36"
+        },
+        {
+          "content": "Ming confirms that the designer's tasteful eye is still crucial for selecting the right aesthetic elements.",
+          "timestampStart": "00:15:00"
+        },
+        {
+          "content": "He references traditional wireframing, stating that starting with a basic structural skeleton remains a valid approach even in the age of AI.",
+          "timestampStart": "00:15:18"
+        }
+      ]
+    },
+    {
+      "id": "craftingThePrompt",
+      "title": "Practical Application: Crafting a Detailed AI Prompt",
+      "content": [
+        {
+          "content": "Ming identifies the client's desired aesthetic (technical, clean, app-like, linear, bluish, dark mode) and uses a reference image.",
+          "timestampStart": "00:18:16"
+        },
+        {
+          "content": "He constructs a detailed prompt for a SaaS business called 'Outreach X,' an AI SDR for AI agencies, specifying its function, style, and inspiring from the chosen image.",
+          "timestampStart": "00:18:52"
+        },
+        {
+          "content": "The three key elements for descriptive prompting are the business name, what it does, and the desired style.",
+          "timestampStart": "00:20:00"
+        }
+      ]
+    },
+    {
+      "id": "aiGenerationAndRefinement",
+      "title": "AI Generation, Rapid Iteration, and Cost Efficiency",
+      "content": [
+        {
+          "content": "The AI quickly generates a landing page featuring a demo, animation, logo, and specified colors, effectively integrating the reference image's style.",
+          "timestampStart": "00:22:14"
+        },
+        {
+          "content": "After generation, users can easily remove or add elements and make quick, localized adjustments like changing fonts without re-prompting the entire design.",
+          "timestampStart": "00:22:46"
+        },
+        {
+          "content": "It's noted that each prompt incurs a cost (around 20 cents), making efficient prompting and targeted refinements important.",
+          "timestampStart": "00:23:26"
+        }
+      ]
+    },
+    {
+      "id": "versatilityAndAdvancedFeatures",
+      "title": "Versatility and Adding Advanced Animations",
+      "content": [
+        {
+          "content": "The demonstrated design skills are valuable for personal agency websites, client projects, or launching proprietary software, offering a 'foot in the door' to clients.",
+          "timestampStart": "00:25:51"
+        },
+        {
+          "content": "Ming emphasizes providing AI with 'ingredients' (specific instructions and references) to achieve proper results, akin to cooking a recipe.",
+          "timestampStart": "00:29:33"
+        },
+        {
+          "content": "He shows how a single prompt can add sophisticated animations like a fading-in effect, enhancing the perceived craftsmanship, even for subtle elements like progressive blur for readability.",
+          "timestampStart": "00:29:53"
+        }
+      ]
+    },
+    {
+      "id": "exportAndFurtherDevelopment",
+      "title": "Exporting Designs for Further Development",
+      "content": [
+        {
+          "content": "The generated design is contained within a single code file, which can be exported to HTML or copied directly.",
+          "timestampStart": "00:33:00"
+        },
+        {
+          "content": "This HTML code can then be brought into other development environments like Cursor or Lovable to build out the rest of the landing page or an application's UI/UX.",
+          "timestampStart": "00:33:19"
+        },
+        {
+          "content": "Users can continue to ask AI to adapt images, reference specific buttons, animations, or predefined sections to expand the initial template.",
+          "timestampStart": "00:33:46"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "timestamp": 0,
+      "title": "What We're Covering",
+      "thumbnail_url": "https://i.ytimg.com/vi/dEk3LUPAg7s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANn7cwD4OTiZJzsXmIBoztS56pyg"
+    },
+    {
+      "timestamp": 45,
+      "title": "Introducing Meng + the design problem",
+      "thumbnail_url": "https://i.ytimg.com/vi/dEk3LUPAg7s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANn7cwD4OTiZJzsXmIBoztS56pyg"
+    },
+    {
+      "timestamp": 185,
+      "title": "How to prompt Gemini 3 for great design",
+      "thumbnail_url": "https://i.ytimg.com/vi/dEk3LUPAg7s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANn7cwD4OTiZJzsXmIBoztS56pyg"
+    },
+    {
+      "timestamp": 465,
+      "title": "Using screenshots + references (the “taste” unlock)",
+      "thumbnail_url": "https://i.ytimg.com/vi/dEk3LUPAg7s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANn7cwD4OTiZJzsXmIBoztS56pyg"
+    },
+    {
+      "timestamp": 996,
+      "title": "Live build: Gemini 3 creates a SaaS landing page",
+      "thumbnail_url": "https://i.ytimg.com/vi/dEk3LUPAg7s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANn7cwD4OTiZJzsXmIBoztS56pyg"
+    },
+    {
+      "timestamp": 1450,
+      "title": "Adding animations + refining the design",
+      "thumbnail_url": "https://i.ytimg.com/vi/dEk3LUPAg7s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANn7cwD4OTiZJzsXmIBoztS56pyg"
+    },
+    {
+      "timestamp": 1710,
+      "title": "How agencies can sell these sites",
+      "thumbnail_url": "https://i.ytimg.com/vi/dEk3LUPAg7s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANn7cwD4OTiZJzsXmIBoztS56pyg"
+    },
+    {
+      "timestamp": 2069,
+      "title": "Why Gemini 3 raises the bar for everyone",
+      "thumbnail_url": "https://i.ytimg.com/vi/dEk3LUPAg7s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANn7cwD4OTiZJzsXmIBoztS56pyg"
+    }
+  ]
+}

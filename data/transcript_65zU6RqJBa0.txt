@@ -1,0 +1,656 @@
+Video 65zU6RqJBa0
+======================================================================
+
+[00:00] Hello everyone, I’m Si Wen.
+[00:01] The topic I’m going to talk about in this video is a bit esoteric. One thing
+[00:03] we have never mentioned in the video on the eight planets
+[00:06] is black holes
+[00:07] . On April 10, 2019,
+[00:09] humans announced for the first time a picture of 55 million years
+[00:12] ago. Photo of a black hole.
+[00:13] This black hole is at the center of the Virgo A galaxy M87.
+[00:16] It is a supermassive black hole.
+[00:18] Its mass is about 6.5 billion times the mass of the sun.
+[00:21] Its diameter is about more than 40 billion kilometers.
+[00:23] It is about 3.5 times the orbit of Pluto around the sun.
+[00:26] Although It was five years ago,
+[00:28] but I still remember when I saw this photo,
+[00:30] I was thinking,
+[00:31] isn't the gravity of a black hole so strong that even light cannot escape?
+[00:34] Then why can humans still see it
+[00:36] and even take it? How was the photo
+[00:38] taken?
+[00:39] Let's take a look at this picture
+[00:41] first. First, there is the black area in the middle.
+[00:43] This is where light cannot escape.
+[00:45] There is actually nothing in it.
+[00:47] All the matter in the black hole is concentrated in the innermost part
+[00:50] called the oddity. This is a point
+[00:51] with infinite mass and density
+[00:54] but infinitely small volume.
+[00:55] In this singularity,
+[00:56] our current physics will no longer be applicable
+[00:58] . Currently, humans cannot directly observe the singularity.
+[01:01] We can only use theory to speculate
+[01:03] and then finally Close to the black hole,
+[01:04] there is a boundary called the event horizon.
+[01:07] Once any material, including light,
+[01:08] crosses the event horizon, it is impossible to come out again
+[01:11] until it is sucked into the singularity.
+[01:12] Therefore, the event horizon is also called the surface of the black hole.
+[01:15] The outer circle is the photon of the black hole.
+[01:18] When light approaches a black hole,
+[01:19] it will be attracted by the strong gravity of the black hole
+[01:21] and bend towards the black hole,
+[01:23] allowing the light to rotate along the black hole
+[01:24] . However, this photon sphere is very unstable and
+[01:27] may fall into the black hole at any time,
+[01:28] and then the outermost layers of the black hole
+[01:30] . The material captured by the black hole's gravity
+[01:32] forms a ring-shaped structure like the rings of Saturn around the black hole
+[01:35] called an accretion disk.
+[01:36] This picture may not be clear.
+[01:38] Let's look at another picture.
+[01:40] This picture is also of M87 and
+[01:42] was taken two years ago. The highly resolved
+[01:44] image of a black hole under polarized light
+[01:46] released in March 2021.
+[01:47] These filaments are the material captured by the gravity of the black hole.
+[01:50] And you can see that
+[01:52] the black hole is not black. On the
+[01:53] contrary,
+[01:54] the material in the black hole accretion disk is
+[01:55] rotating and rubbing.
+[01:57] The temperature will become extremely high
+[01:59] and X-rays and electromagnetic radiation will be released outwards.
+[02:01] Therefore, the black hole as a whole is very bright in the universe.
+[02:04] To take this photo,
+[02:06] humans used a
+[02:08] telescope with an aperture as large as the earth.
+[02:09] Someone said, Si Wen, what you said. No,
+[02:11] how can there be a telescope with the same diameter as the earth?
+[02:14] Even if there is a telescope, where would you put it?
+[02:15] Let me tell you,
+[02:16] this telescope is not a single telescope that
+[02:19] we usually see
+[02:20] , but a combination of eight telescopes from all over the world
+[02:23] . The telescopes are combined together
+[02:25] to form a network,
+[02:26] and this network is a virtual telescope equivalent to the diameter of the Earth.
+[02:30] It is called the Event Horizon Telescope,
+[02:31] or EHT.
+[02:33] It is said that the resolution of this telescope
+[02:34] is so high.
+[02:35] You can clearly see
+[02:38] one in Los Angeles in New York. The date on the coin
+[02:39] . It is precisely because of this amazing resolution
+[02:41] that the EHT was able to observe the black hole in M87
+[02:44] and not only capture the appearance of the black hole.
+[02:46] The size of the halo in the photo
+[02:50] is almost the same
+[02:51] as predicted by Einstein's general theory of relativity. Many scientists say
+[02:53] that black holes are the last piece of the puzzle in Einstein's general theory of relativity.
+[03:01] In November 1783,
+[03:02] the British natural scientist John Mitchell
+[03:04] wrote a letter
+[03:07] to Cavendish, a very famous scientist at the time.
+[03:08] In the letter, he said
+[03:10] that light is also Affected by universal gravitation
+[03:11] , and he used the law of universal gravitation
+[03:13] to calculate a kind of celestial body.
+[03:14] This celestial body has a very large mass
+[03:16] , and its gravity is so
+[03:17] great that even light cannot escape.
+[03:19] As a result, this kind of celestial body looks completely black from the outside,
+[03:22] so humans can also see it in the universe. It wasn't
+[03:24] until Michelle called this kind of celestial body
+[03:26] a dark star
+[03:26] that it was the earliest understanding of black holes by humans.
+[03:29] In order to understand the dark star Michelle talked about,
+[03:31] let's first talk about a concept
+[03:32] : gravity.
+[03:33] We all know that on the earth,
+[03:35] we move towards the sky. If you throw a ball,
+[03:36] the ball
+[03:38] will eventually fall back into our hands
+[03:39] because our strength and speed are not enough.
+[03:41] If the ball you throw
+[03:43] can reach the first cosmic speed,
+[03:44] which is 7.9 kilometers per second
+[03:46] , then the ball can go around
+[03:48] If you have more power
+[03:50] and can make this ball reach the second cosmic speed
+[03:53] , which is 11.2 kilometers per second
+[03:55] , which is the escape velocity of the earth,
+[03:56] then it can fly out of the control of the earth's gravity like a rocket.
+[03:59] According to Michelle Calculate that
+[04:01] when the mass of a star is equivalent to 500 suns
+[04:04] , the escape velocity of the star
+[04:06] will exceed the speed of light
+[04:07] , which is 300,000 kilometers per second.
+[04:09] At this time,
+[04:10] even light will become a ball thrown towards us
+[04:12] forever. There is no way to escape
+[04:14] , but think about it,
+[04:15] can the speed of light be surpassed?
+[04:17] Not to mention that in 1783,
+[04:18] even in our current understanding,
+[04:20] the speed of light could not be surpassed.
+[04:21] So Michelle was a very powerful person.
+[04:23] His thinking at the time was too advanced
+[04:25] , so he was considered
+[04:27] One of the greatest unknown scientists in history.
+[04:29] Why is he called an unknown scientist?
+[04:31] It’s because he is too low-key
+[04:32] , so the world only knows Cavendish
+[04:35] and has almost forgotten John Michell.
+[04:37] But it is also because the concept of dark stars he proposed is too He was so ahead of
+[04:40] his time that when he was reading out his paper,
+[04:42] no one in the audience reacted at all
+[04:44] , not even those who objected.
+[04:46] In the next 100 years or so,
+[04:48] no one mentioned the concept of dark stars anymore,
+[04:54] although gravity was proposed by Newton.
+[04:56] But what exactly is gravity
+[04:57] and how is it produced?
+[04:59] Newton did not give an answer until
+[05:00] Einstein published his general theory of relativity
+[05:02] in December 1915,
+[05:04] which described gravity as a distortion of space for the first time.
+[05:07] Any object with mass will deform space-time,
+[05:09] and gravity is actually just space. What does the distorted external appearance
+[05:12] mean?
+[05:13] Let me give you an example.
+[05:14] If you put a sphere with a certain mass on a plane
+[05:17] like this
+[05:18] , then everyone will see that the plane will sink.
+[05:21] Einstein said
+[05:22] that this is gravity
+[05:22] , but this is just gravity. If a two-dimensional plane
+[05:24] is in a three-dimensional space,
+[05:26] then the sphere will be distorted all around.
+[05:28] This is what Einstein said. Universal
+[05:30] gravity is the distortion of space.
+[05:31] But when the general theory of relativity was first proposed,
+[05:34] almost everyone did not understand it and did not understand it. I believe that
+[05:36] there is only one person who understood Einstein’s theory
+[05:38] and that was Karl Schwarzschild.
+[05:40] But Karl Schwarzschild was not present
+[05:41] when Einstein lectured
+[05:43] because it was during the First World War.
+[05:46] Karl Schwarzschild was The person who was responsible for calculating the trajectory of artillery shells at the front
+[05:49] received Einstein's paper on general relativity
+[05:50] a month after the paper was published.
+[05:53] Then he wrote a letter to Einstein.
+[05:55] He said that
+[05:56] despite the continuous artillery fire
+[05:57] , the war was still very kind to me
+[05:59] . You can get away from it all
+[06:01] and take a stroll in the land of your thoughts.
+[06:03] When Einstein saw this letter,
+[06:04] he was completely stunned.
+[06:06] Because the letter also
+[06:08] contains an exact solution to the field equation
+[06:10] of general relativity. The nonlinear field equation in Einstein's paper
+[06:12] is very difficult to solve.
+[06:13] Even Einstein himself,
+[06:15] as the proposer of the theory, only gave an approximation
+[06:18] , and Karl It can be said to be a miracle that
+[06:20] Schwarzschild calculated the exact value
+[06:22] in just a few days
+[06:23] on a battlefield filled with
+[06:24] explosions and poison gas.
+[06:26] Schwarzschild’s calculations predict
+[06:28] that when a supermassive star collapses after death,
+[06:31] There will be an area around it
+[06:33] from which nothing,
+[06:34] whether light or
+[06:35] dust,
+[06:36] can escape.
+[06:37] This area is like opening a bottomless hole in the universe.
+[06:40] Light and matter can enter
+[06:41] but can never come out again,
+[06:43] so they will eventually be squeezed. Entering a singular point where the density and mass are infinite
+[06:46] but the volume is infinitesimal,
+[06:48] that is, a singularity.
+[06:49] Einstein did not believe
+[06:51] Schwarzschild’s calculation results
+[06:53] and said, could such a thing really exist in a universe
+[06:55] with infinite mass and infinitesimal volume ?
+[06:58] In fact, It wasn’t just Einstein who didn’t believe it.
+[06:59] The mainstream scientific community at the time didn’t believe it.
+[07:02] The British astrophysicist Arthur Eddington
+[07:04] directly stated in his book that
+[07:06] the singularity mentioned by Schwarzschild does not exist.
+[07:08] A star does not exist at all. It may collapse into a point
+[07:11] because the atoms are crushed
+[07:12] in such a state,
+[07:14] but I don’t believe it.
+[07:15] Einstein still approves
+[07:17] of Schwarzschild’s calculation method ,
+[07:19] but he can’t find the singularity that Schwarzschild said,
+[07:21] so Einstein finally believed
+[07:22] that his general theory of relativity must not be perfect enough
+[07:25] for Schwarzschild to calculate such outrageous results.
+[07:28] However, Schwarzschild did not hear these doubts because he actually wrote
+[07:31] to Einstein on the day he wrote the letter.
+[07:33] He already suffered from an incurable skin disease and
+[07:35] was covered in blisters.
+[07:37] Doctors said it might have been caused by poisonous gas on the battlefield.
+[07:39] He died
+[07:41] just over two months later
+[07:42] at the age of 42.
+[07:46] After Schwarzschild's death,
+[07:47] this theory was slow. It was slowly forgotten by people
+[07:50] until more than ten years later,
+[07:51] in 1930, there was an Indian-American physicist named Chandrasekhar.
+[07:55] He was Eddington’s student
+[07:56] and Yang Zhenning’s doctoral supervisor.
+[07:59] When he was 73 years old,
+[08:00] He won the Nobel Prize in Physics
+[08:03] for proposing the Chandrasekhar limit,
+[08:04] but this theory was proposed when he was 20 years old.
+[08:07] After graduating from college in 1930,
+[08:09] Chandrasekhar decided to continue his studies at Cambridge University
+[08:12] . It takes 18 days to take a boat from India to England.
+[08:15] Chandrasekhar felt bored on the boat
+[08:17] and began to study the evolution of stars.
+[08:19] What will happen to stars after they die?
+[08:21] The mainstream view in the scientific community is
+[08:23] that stars will die after their energy is exhausted. Due to
+[08:25] its own gravity, it begins to collapse
+[08:27] and eventually its volume will shrink to about the same size as the Earth.
+[08:29] At this time, its density will become very high
+[08:32] and it will emit weak white light
+[08:34] and become a white dwarf.
+[08:35] To put it bluntly,
+[08:36] they thought that the white dwarf was
+[08:38] the final result of the death of a star. status,
+[08:40] but after repeated calculations, Chandrasekhar found that
+[08:42] not all stars will eventually become white dwarfs,
+[08:45] but have a certain mass limit.
+[08:47] If the mass of the remaining core
+[08:49] of a star after exhausting its energy
+[08:51] exceeds 1.44 times the mass of the sun,
+[08:53] then the white dwarf star will It is no longer the final destination.
+[08:55] In this case,
+[08:56] the collapse caused by gravity will continue
+[08:58] and become more violent
+[08:59] , eventually leading to the destruction of the atomic structure
+[09:02] to form a neutron star.
+[09:03] This 1.44 times is called the Chandrasekhar limit
+[09:06] , and a neutron star is more powerful than a white dwarf. It is much smaller,
+[09:08] with a diameter of only about 20 kilometers,
+[09:10] and the density is astonishingly
+[09:11] high.
+[09:12] The spoon we usually use
+[09:14] has a mass of 1 billion tons
+[09:16] , and it rotates extremely fast,
+[09:18] so neutron stars are also called pulsars
+[09:20] . If the mass of the star's remaining core
+[09:23] exceeds 3.2 times the mass of the sun,
+[09:25] the neutron star will collapse under its own gravity.
+[09:27] There will be no force in the universe to block this collapse,
+[09:30] and it will inevitably collapse into a black hole.
+[09:32] But at that time, people were very concerned about neutron stars.
+[09:35] It can be said that he knows nothing
+[09:36] about black holes , so when Chandrasekhar
+[09:38] finished reading his paper
+[09:40] in 1935 , he was wildly ridiculed and criticized
+[09:43] by the mainstream scientific community. The person who suppressed him the most
+[09:45] was his mentor Eddington
+[09:46] . The physicist Eddington we just talked about who opposed the Schwarzschild
+[09:49] singularity disparaged Chandrasekhar's corollary in front of everyone
+[09:53] and even tore up his paper
+[09:55] because Eddington was at that time He is a very prestigious person in the scientific community,
+[09:58] so no one supported Chandrasekhar.
+[10:00] They also did not understand Chandrasekhar's inferences and calculations.
+[10:03] Moreover, it was during the Second World War that
+[10:05] the war caused many physics problems. Everyone has shifted their research goals
+[10:08] to military technology, and
+[10:09] they no longer even study general relativity.
+[10:11] Therefore, no one cares about whether stars collapse or not
+[10:13] . Everyone can think about
+[10:15] the impact of this experience
+[10:16] on a young man in his 20s.
+[10:18] How much damage was done to
+[10:19] Chandrasekhar's psychology
+[10:21] ? He later gave up research in this area
+[10:23] and left the UK in 1937.
+[10:25] Einstein himself also said
+[10:27] that those who studied general relativity were
+[10:29] not only questioned but also despised
+[10:30] at the time.
+[10:31] Many people thought they were crazy
+[10:33] , and this view did not change until Einstein's death.
+[10:39] Until the advent of computers
+[10:41] in the mid-1950s.
+[10:43] In 1964, John Wheeler used the most advanced computers at the time
+[10:46] to successfully simulate the approaching of massive stars.
+[10:49] The process of inward collapse at death.
+[10:50] He discovered that if a star is massive enough,
+[10:53] there is no force in the entire universe that can
+[10:56] block the gravity-induced collapse.
+[10:57] Eventually, a singularity will be formed
+[10:59] in which
+[11:00] physics will no longer apply
+[11:02] . Past, present, and The future will be chaotic.
+[11:05] This is completely beyond my cognition.
+[11:07] But I don’t understand it. It’s not important.
+[11:08] What’s important is that this is exactly the same as Schwarzschild and Chandrasekhar’s
+[11:11] predictions.
+[11:12] Wheeler was also different originally. He believed in the singularity
+[11:14] and studied the
+[11:16] theory of relativity just to overturn the starting point.
+[11:18] But he did not expect that he would eventually become a supporter of the singularity
+[11:21] , and he discovered that there is a boundary closest to the black hole,
+[11:24] which is the event horizon we just talked about
+[11:26] . If you cross the event horizon, it is impossible to come back.
+[11:29] Unless you escape faster than the speed of light,
+[11:31] then you can escape.
+[11:32] But everyone knows that this is impossible
+[11:34] , so once you cross the event horizon, you will keep falling.
+[11:37] If we enter the event horizon,
+[11:38] we are feet. When we rush down,
+[11:39] the pulling force on our feet will
+[11:41] be much greater than the pulling force on the head,
+[11:43] so our body will be stretched
+[11:45] like noodles
+[11:46] , but this is just a theory.
+[11:47] Although the human body has a certain degree of toughness
+[11:49] , under this kind of gravity,
+[11:50] I feel The cells have already been torn apart
+[11:52] before they are elongated
+[11:53] , and there is a rather magical phenomenon.
+[11:55] If you observe from the earth at this time,
+[11:57] you will see that the person stops at the moment he enters the event horizon
+[12:01] and does not fall into
+[12:02] the body. It was not stretched
+[12:03] but stopped there.
+[12:04] According to the general theory of relativity,
+[12:08] the time around the event horizon flows very slowly.
+[12:11] So from the earth,
+[12:12] the moment people enter the event world, they stop there.
+[12:15] However, people themselves see that they are still falling
+[12:18] until they enter the singularity.
+[12:19] On the other hand,
+[12:20] when we look at the event horizon from the outside, time is slow,
+[12:22] but when you look at the event horizon from the outside, Looking at the outer universe is like fast forwarding,
+[12:26] so theoretically
+[12:27] you can see the moment when the universe ends at the event horizon. In
+[12:31] 1967,
+[12:32] Wheeler officially used the term black hole in his speech.
+[12:35] Everyone felt that this term was too vivid
+[12:38] because It is like the Bermuda Triangle in the universe.
+[12:40] No matter what falls in, it will never come out.
+[12:42] However, although the results of computer analogies
+[12:44] have made more and more people believe in the existence of black holes
+[12:47] , whenever there is support, there will be opposition.
+[12:49] As the saying goes, seeing with the eyes To be honest,
+[12:51] no one has ever seen a black hole
+[12:53] in Neptune. At least after calculation, we can use telescopes to observe it
+[12:56] . But what about black holes?
+[12:57] You told me that there is a black hole.
+[12:58] Who has seen it ?
+[12:59] So scientists began to think about
+[13:01] how to find invisible black holes.
+[13:06] Until 1971 The 28 -
+[13:07] year-old astronomer Thomas Bolton announced that
+[13:11] he had found a black hole
+[13:12] . How did Bolton find the black hole?
+[13:14] This brings up a satellite.
+[13:15] In December 1970,
+[13:17] NASA launched the first X-ray astronomy satellite in human history
+[13:20] called the Uhuru satellite.
+[13:22] How is this satellite different
+[13:24] from other satellites and detectors launched by humans
+[13:26] ? The most important thing is that
+[13:27] it does not use a camera to take pictures,
+[13:29] but collects X-rays
+[13:31] , converts them into images and sounds,
+[13:33] and then studies
+[13:34] X-rays. Everyone knows the essence of X-rays. It’s a kind of light
+[13:37] , so we sometimes call it X-ray.
+[13:39] But we can’t see this kind of light.
+[13:41] The CT and chest X-rays we go to the hospital to take,
+[13:44] or the security checks in subways and airports all use X-rays.
+[13:47] In fact, they are everywhere in the universe. X-rays
+[13:49] The sun is also constantly emitting a large amount of X-rays.
+[13:52] The mission of Uhuru is to collect
+[13:54] various X-rays in the universe
+[13:56] and then transmit them back to humans for research.
+[13:58] Among the 339 X-ray sources he discovered,
+[14:00] there is one ray. The source was very strange.
+[14:02] The number of this ray source was Cygnus X-1
+[14:05] .
+Its X-ray intensity fluctuated several times per second.
+[14:09] So Bolton began to observe Cygnus X-1 with a telescope.
+[14:12] Soon he was at Cygnus X-1. It was discovered that a blue supergiant
+[14:16] mass is about 20 to 40 times the mass of the sun.
+[14:19] But the strange thing is
+[14:20] that the X-rays are not emitted from it
+[14:23] but near it,
+[14:24] and the trajectory of this blue giant star is also very special
+[14:26] . It's like orbiting a
+[14:28] massive companion star that is invisible
+[14:30] but can emit powerful X-rays.
+[14:32] It feels like Pluto and Charon.
+[14:34] After two months of observation and calculations,
+[14:36] Bolton found that the mass of this invisible companion star
+[14:39] turned out to be It is more than 15 times as
+[14:41] massive as the sun, invisible
+[14:42] and can emit powerful X-rays.
+[14:44] Isn't this a black hole?
+[14:45] So although it was not completely confirmed
+[14:47] , Bolton still bet on his career.
+[14:50] Soon he announced
+[14:51] Cygnus X-1 to the outside world. It is a black hole
+[14:53] , and he also said that this blue superstar is being
+[14:56] swallowed by the black hole next to it
+[14:58] . After the results were announced,
+[14:59] more and more scientists began to pay attention to Cygnus X-1.
+[15:03] Among them was a physicist
+[15:04] named Stephen Hawking .
+[15:06] I believe everyone is familiar with
+[15:07] his book "A Brief History of Time".
+[15:09] Many people may have bought it,
+[15:10] but everyone has read a few pages.
+[15:12] Has anyone finished it?
+[15:13] You can leave a message and tell me
+[15:14] that Hawking was studying the radiation of black holes
+[15:17] because of that At that time, most people thought
+[15:19] that black holes were like Pixiu, which
+[15:20] could only be entered and not exited
+[15:21] . But imagine a situation like this.
+[15:23] If there is a cup of hot water
+[15:24] and you throw it into the black hole,
+[15:26] would all the information about the cup of hot water disappear?
+[15:29] But this cup of hot water has entropy.
+[15:32] Everyone knows
+[15:33] that entropy never decreases in the universe.
+[15:36] After this cup of water enters a black hole,
+[15:37] the entropy of the hot water will inevitably disappear from the universe.
+[15:40] If black holes have no entropy,
+[15:41] then Doesn’t the entropy in the universe decrease?
+[15:43] This violates the second law of thermodynamics.
+[15:46] So at that time, there was an Israeli physicist named Bekenstein
+[15:49] who boldly proposed
+[15:51] that the entropy of a black hole is its surface area.
+[15:54] Both of these things are increasing forever. The unabated
+[15:56] Hawking initially opposed Bekenstein's conclusion
+[15:59] because there is no existence of heat in general relativity.
+[16:01] How can it be related to thermodynamics?
+[16:03] And if the black hole has entropy
+[16:05] , then the black hole will have temperature
+[16:06] . If there is temperature, there will be thermal radiation.
+[16:08] If there is thermal radiation, there will definitely be particles emitted outwards.
+[16:11] However, general relativity has proven that
+[16:12] a black hole is a celestial body that can only go in and out.
+[16:14] How can it be possible for particles to be emitted outwards from the inside?
+[16:17] Later, Hawking used quantum mechanics to study black holes and discovered
+[16:21] that black holes are really The surface area of ​​thermal radiation
+[16:23] is indeed entropy
+[16:24] , which also proves that Bekenstein's conclusion is correct
+[16:27] . We now call this phenomenon Hawking radiation. On
+[16:35] September 14, 2015,
+[16:36] the Gravitational Wave Observatory in Louisiana, USA,
+[16:39] detected the sound of a black hole
+[16:52] . The sound was very short,
+[16:54] lasting even a second
+[16:55] , but it also made the observatory staff very excited.
+[16:57] However, the observatory did not announce this discovery.
+[17:00] They were worried that it was a false signal
+[17:02] because the observatory had
+[17:04] such an own incident
+[17:05] before . In 2014,
+[17:06] they announced that they had discovered
+[17:09] the original gravitational waves generated
+[17:10] during the Big Bang , but it was later verified that
+[17:12] what they detected was only a false signal caused by interstellar dust
+[17:15] , so they were particularly cautious this time.
+[17:17] After several months of verification and research
+[17:19] until February 11, 2016
+[17:21] They just announced this discovery.
+[17:22] This is the gravitational wave produced when two black holes merge.
+[17:25] One black hole has a mass of about 36 times that of the sun.
+[17:27] The other black hole has a mass of about 29 times of the sun.
+[17:30] The two black holes gradually get closer to each other
+[17:33] under the influence of gravity . The energy released during the merger
+[17:35] is equivalent to the energy produced by the simultaneous explosion of countless nuclear bombs.
+[17:38] This energy spreads outward in the form of gravitational waves and traveled
+[17:40] 1.3 billion light-years before reaching the earth.
+[17:43] Some people may have questions about
+[17:44] such a powerful gravitational wave
+[17:46] waiting for it to reach the earth. Wouldn’t that
+[17:47] be the end of humanity?
+[17:49] In fact, you don’t have to worry.
+[17:51] If the earth is near these two black holes
+[17:53] , we will indeed not survive.
+[17:55] But this time the gravitational waves were generated when the two black holes merged 1.3 billion years ago.
+[17:59] 1.3 billion years ago,
+[18:00] after 1.3 billion years of attenuation,
+[18:02] it was already very weak when it reached the earth.
+[18:05] It is not as strong as the feeling when the wind blows through the hair,
+[18:08] so it is not felt by us at all.
+[18:15] After so many years of research,
+[18:16] humans have finally There is evidence of the existence of black holes
+[18:19] , but some people still say that only pictures can tell the truth.
+[18:21] If you can take a picture of a black hole
+[18:23] , then you have truly found a black hole.
+[18:25] But if you want to take a picture of a black hole, you have to think about two questions
+[18:28] : 1. How to take a picture
+[18:29] ; 2. Which one to take
+[18:30] first ? The first point is how to take pictures.
+[18:31] Traditional optical telescopes can only capture visible light,
+[18:34] but black holes are invisible.
+[18:36] Therefore, you cannot use optical telescopes to take pictures of black holes. You must
+[18:38] use radio telescopes.
+[18:40] Radio telescopes can capture a lot of
+[18:42] light that is invisible to the naked eye,
+[18:43] such as the large amount of radiation emitted by black holes.
+[18:44] It can be easily captured with a radio telescope
+[18:47] , but one radio telescope is not enough to
+[18:49] capture the entire picture of a black hole.
+[18:50] It is necessary to find a way to make the diameter of the telescope bigger, the better.
+[18:53] So scientists from all over the world have joined forces to create a virtual telescope network
+[18:57] called the event horizon. The abbreviation of the telescope,
+[18:58] EHT, is the one we mentioned at the beginning.
+[19:01] This virtual telescope is composed of eight radio telescopes
+[19:04] in the north, from Spain
+[19:05] to the south, and in Antarctica.
+[19:07] These eight telescopes cooperate with each other
+[19:08] to observe the same target
+[19:10] and record data.
+[19:11] Therefore, the classification of this virtual telescope The resolution is
+[19:13] equivalent to that of a radio telescope with the diameter of the earth.
+[19:17] How to take a good picture?
+[19:18] The second problem is to take a picture.
+[19:20] There are many black holes in the universe
+[19:22] and they are far away from the earth
+[19:23] , so be sure to choose a good shooting target.
+[19:25] The closer and bigger the target, the bigger
+[19:26] it must be taken. The better the effect.
+[19:28] In the end, scientists have locked on two targets.
+[19:30] One is the black hole Sagittarius A* in the center of the Milky Way.
+[19:33] This may be the largest black hole
+[19:34] closest to the earth.
+[19:36] Its mass is about 4.3 million times that of the sun.
+[19:38] The other is
+[19:39] quite large. The center of the Virgo A galaxy
+[19:41] M87
+[19:43] is the black hole we mentioned at the beginning. Its
+[19:44] mass is 6.5 billion times that of the sun. It is 55
+[19:46] million light years away from the earth.
+[19:48] After about two years,
+[19:50] on April 10, 2019,
+[19:51] humans finally obtained the first photo of a black hole
+[19:54] . We have already introduced
+[19:56] the imaging principle of the photo.
+[19:58] It is actually the same as the imaging principle
+[20:00] of the MRI in the hospital. So you can say that it is a computer-generated image.
+[20:02] On May 12, 2022,
+[20:04] humans took the second photo of a black hole
+[20:06] . Photo of Sagittarius A*,
+[20:08] the black hole at the center of our Milky Way.
+[20:10] This black hole is
+[20:11] more than 1,000 times smaller than M87,
+[20:13] and its mass is much smaller
+[20:14] . As a black hole in the Milky Way,
+[20:16] some people worry that we will be swallowed by this black hole.
+[20:19] In fact, there is no need to worry at all.
+[20:20] The Earth is very far away from the center of the Milky Way.
+[20:22] You don’t have to worry about being swallowed up.
+[20:24] Even if one day
+[20:26] humans may no longer be around,
+[20:27] the last picture of the black hole released in 2024
+[20:30] is this one
+[20:31] . It was taken in April 2018 and
+[20:33] has been analyzed for six years
+[20:35] . 2024 It was only officially announced
+[20:37] this year that
+[20:40] she photographed the M87 black hole in the Virgo A galaxy.
+[20:41] It seems that the two photos are the same.
+[20:43] Although there is indeed a difference in the brightness and shape of the halo if you look closely
+[20:46] , there is basically no big difference.
+[20:48] In fact, there is no difference at all. The good
+[20:50] results of these two observations show that
+[20:52] the mass of the black hole and the size of the halo are the same,
+[20:55] indicating that the black hole
+[20:57] has not changed significantly in
+[20:58] this year . This is the same
+[21:00] as the prediction of the size of the black hole by Einstein's general theory of relativity.
+[21:02] It is a black hole. The diameter depends on its mass.
+[21:04] As long as the mass of the black hole does not increase significantly
+[21:07] , the width of M87 should remain unchanged.
+[21:09] However, judging from the current accretion speed of M87,
+[21:12] its radius will not change again
+[21:13] in the history of mankind
+[21:15] . If there are other advanced civilizations in the future,
+[21:18] we may be able to see its changes
+[21:22] . The reason why humans like to study black holes so much
+[21:24] is not only because black holes themselves are mysterious,
+[21:26] but also related to the birth of the universe
+[21:28] . According to the Big Bang theory,
+[21:30] the birth of the universe originated from a miracle. There
+[21:32] happens
+[21:35] to be a singularity in a black hole. Isn't it the best research object to find the origin of the universe?
+[21:37] So far,
+[21:39] although humans have heard the sound of black holes
+[21:40] and taken photos of black holes
+[21:42] , their understanding of black holes is far from enough
+[21:44] . What is its ultimate fate
+[21:46] ? Will it disintegrate
+[21:47] ? What is inside a black hole?
+[21:49] Is it a wormhole or a white hole?
+[21:50] So in order to solve these problems,
+[21:52] scientists are also envisioning
+[21:53] and hoping that one day they can launch radio telescopes into space
+[21:56] because the size of the earth is limited
+[21:58] no matter how large the aperture is.
+[21:59] At most, it is a telescope as big as the EHT.
+[22:02] It cannot be bigger.
+[22:03] But if you can launch a radio telescope into space, it will be different.
+[22:06] You can form a telescope with a larger diameter.
+[22:08] Then you can observe more black holes
+[22:11] and even the secrets of the entire universe
+[23:03] .

@@ -94,24 +94,69 @@ class YouTubeClient:
         print(f"提取到视频ID: {video_id}")
         return self.get_video_details(video_id)
     
-    def search_videos(self, query: str, max_results: int = 10) -> List[Dict]:
+    def search_videos(self, query: str, max_results: int = 10, order: str = 'viewCount', 
+                      published_after: str = None, duration: str = 'long') -> List[Dict]:
         """
         搜索视频
         
         Args:
             query: 搜索关键词
             max_results: 返回结果的最大数量
+            order: 排序方式
+                - 'relevance': 相关性
+                - 'date': 发布日期（最新优先）
+                - 'viewCount': 观看次数（最高优先，默认）
+                - 'rating': 评分（最高优先）
+                - 'title': 标题（字母顺序）
+            published_after: 时间过滤
+                - 'hour': 最近1小时
+                - 'today': 最近24小时
+                - 'week': 最近7天
+                - 'month': 最近30天
+                - 'year': 最近1年
+                - 或 ISO 8601 格式日期 (如 '2024-01-01T00:00:00Z')
+            duration: 视频时长过滤
+                - 'any': 不过滤
+                - 'short': 少于4分钟
+                - 'medium': 4-20分钟
+                - 'long': 超过20分钟（默认）
             
         Returns:
             视频列表
         """
         try:
-            request = self.youtube.search().list(
-                q=query,
-                part='id,snippet',
-                maxResults=max_results,
-                type='video'
-            )
+            from datetime import datetime, timedelta
+            
+            # 构建搜索参数
+            search_params = {
+                'q': query,
+                'part': 'id,snippet',
+                'maxResults': max_results,
+                'type': 'video',
+                'order': order
+            }
+            
+            # 处理视频时长过滤
+            if duration and duration != 'any':
+                search_params['videoDuration'] = duration
+            
+            # 处理时间过滤
+            if published_after:
+                time_mapping = {
+                    'hour': timedelta(hours=1),
+                    'today': timedelta(days=1),
+                    'week': timedelta(days=7),
+                    'month': timedelta(days=30),
+                    'year': timedelta(days=365)
+                }
+                
+                if published_after in time_mapping:
+                    after_date = datetime.utcnow() - time_mapping[published_after]
+                    search_params['publishedAfter'] = after_date.strftime('%Y-%m-%dT%H:%M:%SZ')
+                elif 'T' in published_after:  # ISO 8601 格式
+                    search_params['publishedAfter'] = published_after
+            
+            request = self.youtube.search().list(**search_params)
             response = request.execute()
             
             videos = []
@@ -334,5 +379,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+
+    client = YouTubeClient()
+    Query = "Python 教程"
+    
+    results = client.search_videos(Query, max_results=10)
+    print(results)
 

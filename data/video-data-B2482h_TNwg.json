@@ -1,0 +1,278 @@
+{
+  "videoInfo": {
+    "title": "Video B2482h_TNwg",
+    "videoId": "B2482h_TNwg",
+    "description": "深入分析现代微芯片制造中的极紫外（EUV）光刻技术，从其核心原理、关键组件到精密工程挑战，揭示了微芯片如何实现纳米级图案化和大批量生产。",
+    "thumbnail": "https://img.youtube.com/vi/B2482h_TNwg/maxresdefault.jpg",
+    "summary": "该视频深入探讨了现代微芯片的制造过程，特别是极紫外（EUV）光刻技术。它解释了EUV光刻如何通过纳米级图案化实现数十亿晶体管的精确复制，并详细介绍了EUV光源的产生、光路中的挑战以及晶圆和掩模的精密处理，揭示了这一尖端技术如何支撑我们所有的现代科技产品。"
+  },
+  "sections": [
+    {
+      "id": "section1",
+      "title": "微芯片制造的挑战与光刻技术概览",
+      "content": [
+        {
+          "content": "现代笔记本电脑、智能手机、AI服务器等高科技设备的核心是包含数十亿个纳米级晶体管的微芯片，其制造是巨大的工程挑战。",
+          "timestampStart": "00:00:00"
+        },
+        {
+          "content": "光刻工具是制造微芯片的关键，它们用于将晶体管和导线的纳米级图案复制并印刻到微芯片上。",
+          "timestampStart": "00:01:05"
+        },
+        {
+          "content": "为了说明微芯片内部细节的惊人密度，视频用一个思想实验类比，一块GPU芯片的面积可以容纳相当于多部哈利·波特系列、斯蒂芬·金所有作品、英文维基百科及当地公共图书馆所有书籍的文字量。",
+          "timestampStart": "00:04:04"
+        },
+        {
+          "content": "极紫外（EUV）光刻系统能在不到一秒的时间内完成如此巨量的纳米级线条和细节的复制，是所有现代科技产品的基石。",
+          "timestampStart": "00:05:06"
+        }
+      ]
+    },
+    {
+      "id": "section2",
+      "title": "光刻工艺基础与EUV技术引入",
+      "content": [
+        {
+          "content": "光刻过程首先在旋转的晶圆上均匀涂布光刻胶并加热固化，形成一个平坦的空白模板。",
+          "timestampStart": "00:07:48"
+        },
+        {
+          "content": "随后，EUV光通过光掩模（或称掩模版）投影到晶圆上，光线触及之处的光刻胶被修改，从而将图案从掩模复制到晶圆上。",
+          "timestampStart": "00:08:03"
+        },
+        {
+          "content": "接下来，晶圆上的被修改光刻胶被显影液洗去，并通过加热形成一个硬化的光刻胶掩模层，为后续的刻蚀、掺杂等工艺做好准备。",
+          "timestampStart": "00:08:52"
+        },
+        {
+          "content": "尖端芯片制造厂通常会结合使用EUV工具处理最底层、最关键的图案，而使用深紫外（DUV）工具处理上层、宽度较大、不太关键的层。",
+          "timestampStart": "00:11:38"
+        },
+        {
+          "content": "一个EUV光刻系统主要由光源、照明器、掩模处理和掩模台、投影光学系统以及晶圆处理和晶圆台五大关键部分组成。",
+          "timestampStart": "00:12:21"
+        }
+      ]
+    },
+    {
+      "id": "section3",
+      "title": "为何需要极紫外光（EUV）",
+      "content": [
+        {
+          "content": "为了绘制更细的线条，需要使用波长更短的光；EUV光的13纳米波长比DUV光的193纳米波长短得多，能实现更精细的图案化，就好比用极细的笔尖绘图。",
+          "timestampStart": "00:12:52"
+        },
+        {
+          "content": "传统光刻技术无法达到10纳米级别的线宽，而EUV光因其超短波长，能够满足现代微芯片对极小特征尺寸的需求。",
+          "timestampStart": "00:14:15"
+        }
+      ]
+    },
+    {
+      "id": "section4",
+      "title": "EUV光的产生机制",
+      "content": [
+        {
+          "content": "EUV光的产生过程需要两束高功率激光脉冲：第一束预脉冲激光（约5千瓦）击中锡液滴，将其塑造成薄饼状。",
+          "timestampStart": "00:15:32"
+        },
+        {
+          "content": "随后，第二束约25千瓦的主脉冲激光击中锡薄饼，瞬间将其汽化并转化为发光的等离子体。",
+          "timestampStart": "00:16:07"
+        },
+        {
+          "content": "在锡等离子体中，当电子从4F轨道跃迁回4D轨道时，会产生波长为13纳米的EUV光；锡被选用是因为其等离子体能高效产生特定波长的EUV光。",
+          "timestampStart": "00:16:21"
+        }
+      ]
+    },
+    {
+      "id": "section5",
+      "title": "EUV光传输的工程挑战与布拉格反射镜",
+      "content": [
+        {
+          "content": "EUV光会被大气分子吸收，因此整个光路和晶圆载体阶段必须通过真空泵抽空，以确保光线传输不受干扰。",
+          "timestampStart": "00:19:24"
+        },
+        {
+          "content": "由于EUV光几乎被所有材料吸收，系统不使用透射式透镜，而是通过布拉格反射镜来聚焦和传输光线，这种镜子由数十层硅和钼纳米薄层交替构成。",
+          "timestampStart": "00:19:36"
+        },
+        {
+          "content": "布拉格反射镜单层反射率低，但通过多层结构产生的相长干涉，单面镜可实现70%的反射率；然而，光学系统中超过10面镜子会导致大量光线损失，最终到达晶圆的光线亮度不足初始光源的10%。",
+          "timestampStart": "00:20:02"
+        }
+      ]
+    },
+    {
+      "id": "section6",
+      "title": "ASML公司与光掩模的精密性",
+      "content": [
+        {
+          "content": "ASML公司致力于设计、建造和支持下一代光刻系统，正寻求科学家、工程师、技术人员和软件开发人员等各类人才，共同推动技术进步。",
+          "timestampStart": "00:23:09"
+        },
+        {
+          "content": "光掩模（或称网版）包含微芯片单个层面的完整设计，它通过自动化系统在双重密封的吊舱中装载到机器上，并进行精确检测。",
+          "timestampStart": "00:24:00"
+        },
+        {
+          "content": "光掩模的精度要求极高，即使是相当于2100万页文本中的一个微小错误，也会损坏晶圆上的所有芯片，因此需要进行半纳米级的缺陷检测。",
+          "timestampStart": "00:27:02"
+        }
+      ]
+    },
+    {
+      "id": "section7",
+      "title": "投影光学系统与晶圆处理",
+      "content": [
+        {
+          "content": "投影光学系统由蔡司公司设计和制造的一系列高精度镜子组成，能够以极高的准确性将图案化的EUV光投射并聚焦到晶圆上，同时将图像缩小四倍，并最大限度地减少波前像差。",
+          "timestampStart": "00:28:17"
+        },
+        {
+          "content": "晶圆通过FOUP（前端开放式晶圆传送盒）进入光刻集群，首先在涂布工具中均匀涂布光刻胶并加热干燥。",
+          "timestampStart": "00:31:06"
+        },
+        {
+          "content": "接着，通过机械臂将晶圆从涂布工具转移到EUV工具内部的真空装载锁中，抽真空后由另一个机械臂将晶圆运送到其中一个晶圆台。",
+          "timestampStart": "00:31:34"
+        },
+        {
+          "content": "EUV系统采用TWINSCAN技术，拥有两个完整的晶圆台，可同步移动两片晶圆，一片在进行曝光时，另一片则进行装载和测量，体现了ASML“度量即认知”的理念。",
+          "timestampStart": "00:32:01"
+        }
+      ]
+    },
+    {
+      "id": "section8",
+      "title": "晶圆扫描与EUV光刻胶作用机制",
+      "content": [
+        {
+          "content": "在曝光过程中，光掩模台和晶圆台以完美的同步性移动，通过扫描将图案印刻到整个晶圆上，一片晶圆的图案化大约需要18秒。",
+          "timestampStart": "00:34:44"
+        },
+        {
+          "content": "当高能EUV光子击中光刻胶时，会电离光刻胶，释放出高能电子，这些电子激活光酸发生剂，产生酸分解聚合物，使曝光区域变得可溶并被显影液洗去。",
+          "timestampStart": "00:35:03"
+        },
+        {
+          "content": "光刻胶具有极高的对比度，确保在特定EUV光照强度下，曝光区域的光刻胶能完全分解，从而产生清晰锐利的图案和壁结构。",
+          "timestampStart": "00:35:40"
+        },
+        {
+          "content": "晶圆台通过磁浮技术在由千余块磁铁组成的巨大磁台上移动，底部电磁铁以微米级精度驱动晶圆台，同时干涉仪持续测量其精确位置，确保纳米级的定位精度。",
+          "timestampStart": "00:36:01"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "timestamp": 0,
+      "title": "Exploring CPUs, GPUs, DRAM, SSDs, and SOCs",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_9966.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDwnSaAaA4zOfLINkB-tsm47Qpc0Q"
+    },
+    {
+      "timestamp": 67,
+      "title": "Introduction to the Photolithography Systems",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_78833.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLABC202vGx4yk5PxgHj5acNhqT5Zg"
+    },
+    {
+      "timestamp": 251,
+      "title": "Printing Nanoscopic Lines",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_271833.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9UIBzjDzJ7qxwJzS9bN_siK9qyA"
+    },
+    {
+      "timestamp": 369,
+      "title": "The Basics of CPU Manufacturing",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_397833.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCSqvAxNcTaZg_zqDA3WOb3t-ipUA"
+    },
+    {
+      "timestamp": 650,
+      "title": "Different Types of Lithography Tools EUV vs DUV",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_676866.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4S4Dh3IetvTrEmimrLccJ-YwVLg"
+    },
+    {
+      "timestamp": 771,
+      "title": "Why we use Extreme Ultra Violet Light",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_773833.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDWZykGfJbS3wRZHtAsTwTAB470mw"
+    },
+    {
+      "timestamp": 931,
+      "title": "Producing the EUV Light using Tin Droplets",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_951166.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBNTEEw-0_u-KfSARA2vAxKi--4hQ"
+    },
+    {
+      "timestamp": 1101,
+      "title": "The Illumination Optics",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1105233.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBry_o3QMebkuv6bd585p1Wh596vA"
+    },
+    {
+      "timestamp": 1149,
+      "title": "The Incredible Engineering inside EUV Lithography",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1154233.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfuY0Uk11CyffcPleI-XLXpE53HA"
+    },
+    {
+      "timestamp": 1189,
+      "title": "Bragg Reflections",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1189200.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCo7bNp8rypTWCRUS3i1j9YpBjCeA"
+    },
+    {
+      "timestamp": 1254,
+      "title": "Illumination Settings",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1254133.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDKpvYXlaVuiSD9hbByk-FN3-oufA"
+    },
+    {
+      "timestamp": 1350,
+      "title": "ASML Sponsorship",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1375000.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCxx2KEHTqOPdndfLXWKTEH31RY5g"
+    },
+    {
+      "timestamp": 1378,
+      "title": "Exploring the Photomask or Reticle",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1405033.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD8I0ogwfy3YjPXyvkEbZzmXzSZ5g"
+    },
+    {
+      "timestamp": 1505,
+      "title": "Chip Patterns on a 300mm Wafer",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1505000.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCgPEG6rOpz1SSnt9V-a7zWmes0HQ"
+    },
+    {
+      "timestamp": 1647,
+      "title": "Branch Education Hours of Work",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1647933.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBMeM00Jerkq1GGL7xoYw4gJQex4Q"
+    },
+    {
+      "timestamp": 1699,
+      "title": "Projection Optics Rayleigh's Criterion Equation",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1725966.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDll5wHjXlqlDdzxsWXxXoz7xL40g"
+    },
+    {
+      "timestamp": 1853,
+      "title": "Lithography Cluster",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1875900.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBGDu5ceUhldykbsnKYKctKWbF_6g"
+    },
+    {
+      "timestamp": 1947,
+      "title": "Wafer Alignment",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_1954833.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDv2ep6LLaxAo0YCCKNHGi0KLDOdw"
+    },
+    {
+      "timestamp": 2107,
+      "title": "Photoresist",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_2113800.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXMCjbCCNcjv6TWQu5pIXbItrdmw"
+    },
+    {
+      "timestamp": 2161,
+      "title": "Wafer Transport",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_2162900.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLj5J_WWeindoZ9SiBdip3R1n4HA"
+    },
+    {
+      "timestamp": 2272,
+      "title": "Outro",
+      "thumbnail_url": "https://i.ytimg.com/vi/B2482h_TNwg/hqdefault_2279766.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLABaY65b39DwsldgRcoKz7JWDWKnA"
+    }
+  ]
+}

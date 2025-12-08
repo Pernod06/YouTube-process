@@ -1,0 +1,282 @@
+{
+  "videoInfo": {
+    "title": "I Tried 325 AI Tools, These Are The Best.",
+    "videoId": "huariiK4_us",
+    "description": "This video provides an expert analysis of thousands of AI tools, identifying the most impactful ones for personal productivity, advanced business automation, and comprehensive enterprise transformation.",
+    "thumbnail": "https://img.youtube.com/vi/huariiK4_us/maxresdefault.jpg",
+    "summary": "The video's expert analyzes numerous AI tools, categorizing them by use case from boosting personal productivity to building complex business automations and transforming entire operations. It provides a curated list of top AI solutions, offering insights into their specific functionalities and how they can revolutionize work processes. The recommendations cover everything from voice-to-text and AI writing to advanced agent builders and enterprise-level AI integrations."
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Introduction to Essential AI Tools",
+      "content": [
+        {
+          "content": "The speaker, an expert in helping businesses use AI, introduces a curated list of the best AI tools from thousands tested, promising to save hours and revolutionize work.",
+          "timestampStart": "00:00:00"
+        },
+        {
+          "content": "These tools range from boosting personal productivity and building powerful AI automations to transforming entire business operations.",
+          "timestampStart": "00:00:22"
+        }
+      ]
+    },
+    {
+      "id": "personalProductivity",
+      "title": "Top AI Tools for Personal Productivity",
+      "content": [
+        {
+          "content": "Whisper Flow is a voice-to-text AI that works in any app, transcribing spoken words with perfect grammar, punctuation, and logical flow to boost productivity for tasks like emails.",
+          "timestampStart": "00:00:31"
+        },
+        {
+          "content": "ElevenLabs creates an AI version of your voice, capturing nuances like pauses and emphasis, useful for generating video courses, automating customer calls, or making audiobooks without manual recording.",
+          "timestampStart": "00:01:17"
+        },
+        {
+          "content": "ChatGPT's voice mode in its mobile app facilitates conversational brainstorming on the go, allowing users to discuss strategies and then summarize the entire discussion into a structured document.",
+          "timestampStart": "00:01:41"
+        },
+        {
+          "content": "Claude is highlighted as the best AI writer, capable of learning from uploaded examples (e.g., YouTube scripts, tutorials) to write content in a personalized style with perfect grammar.",
+          "timestampStart": "00:02:56"
+        },
+        {
+          "content": "Notion AI, built directly into Notion, understands the entire workspace to summarize meeting notes, extract action items, and write proposals in a consistent company format by referencing other pages and connected tools.",
+          "timestampStart": "00:03:03"
+        },
+        {
+          "content": "Google Gemini Image Editor creates natural-looking image edits quickly (1-2 seconds per image) and is currently free to use, offering 100 edits per day without common AI visual artifacts.",
+          "timestampStart": "00:03:49"
+        }
+      ]
+    },
+    {
+      "id": "aiStarterCourse",
+      "title": "Free AI Starter Course Promotion",
+      "content": [
+        {
+          "content": "The speaker promotes a free AI starter course designed to teach users about the AI tools landscape and how to implement them effectively into their workflow.",
+          "timestampStart": "00:04:08"
+        }
+      ]
+    },
+    {
+      "id": "buildingWithAIAutomation",
+      "title": "Building with AI: Integration and Automation Platforms",
+      "content": [
+        {
+          "content": "Traditional automation platforms like Zapier, Make, and N8N have become highly capable for building AI automations and agents, with Zapier being beginner-friendly and N8N offering open-source flexibility.",
+          "timestampStart": "00:04:30"
+        },
+        {
+          "content": "New AI-specific integration platforms such as Relay.app and Gumloop simplify building first AI automations for beginners, with their founders actively sharing useful use cases and templates.",
+          "timestampStart": "00:05:37"
+        }
+      ]
+    },
+    {
+      "id": "buildingWithAIPrompting",
+      "title": "Building with AI: Prompting and Data Tools",
+      "content": [
+        {
+          "content": "The Anthropic Prompt Generator helps users create effective prompts from a high-level idea, crucial for nailing AI output in automations.",
+          "timestampStart": "00:06:14"
+        },
+        {
+          "content": "Firecrawl makes any website readable for AI by converting messy web pages into clean, structured data, handling complexities like cookie banners and JavaScript for data extraction from single pages or entire sites.",
+          "timestampStart": "00:06:49"
+        }
+      ]
+    },
+    {
+      "id": "buildingWithAIAgentBuilders",
+      "title": "Building with AI: Dedicated AI Agent Builders",
+      "content": [
+        {
+          "content": "Lindy.ai is recommended for non-technical users to build AI agents by describing desired actions in plain English, featuring a 'computer mode' for human-like web interaction and meeting recording capabilities.",
+          "timestampStart": "00:07:21"
+        },
+        {
+          "content": "Browse.ai is suited for more advanced users, enabling the creation of AI agents that perform browser actions like data extraction, form filling, and LinkedIn automation.",
+          "timestampStart": "00:07:46"
+        },
+        {
+          "content": "Google AI Studio serves as a free playground for Gemini's features, allowing users to instantly build functional AI web applications by simply describing their idea, without requiring coding or API keys.",
+          "timestampStart": "00:08:23"
+        },
+        {
+          "content": "Bardeen is a no-code automation tool for browser actions, enabling tasks like extracting lead information from LinkedIn, handling logins, and compiling data into spreadsheets without any coding.",
+          "timestampStart": "00:09:23"
+        }
+      ]
+    },
+    {
+      "id": "buildingWithAINoCodeApps",
+      "title": "Building with AI: No-Code Business Apps",
+      "content": [
+        {
+          "content": "Zite is a no-code tool that uses AI to help design layouts and generate complete interfaces for real business apps like client portals and dashboards, connecting to existing tools such as Google Sheets.",
+          "timestampStart": "00:09:44"
+        }
+      ]
+    },
+    {
+      "id": "transformingBusinesses",
+      "title": "Transforming Entire Businesses with AI",
+      "content": [
+        {
+          "content": "Airtable now integrates AI to simplify business workflows, allowing for automatic data summarization, categorization, lead enrichment, content generation, and data extraction from PDFs.",
+          "timestampStart": "00:10:14"
+        },
+        {
+          "content": "MeetGeek is an AI meeting assistant that generates detailed, topic-organized notes with assigned action items, and offers AI-powered search across all meetings for specific information.",
+          "timestampStart": "00:10:52"
+        },
+        {
+          "content": "ATIO is an AI-native CRM that deploys AI for prospecting, lead routing, automatic tracking of email/calendar activities, and built-in call intelligence to capture sales insights.",
+          "timestampStart": "00:11:19"
+        },
+        {
+          "content": "Clay is a powerful tool for scaling sales outreach, acting as a 'spreadsheet on steroids' to find and enrich prospect lists with various data points from across the web using AI.",
+          "timestampStart": "00:11:47"
+        },
+        {
+          "content": "Braintrust allows businesses to build specialized AI assistants that deeply understand their specific knowledge base, syncing with existing tools to automate tasks like RFP responses and competitive analysis.",
+          "timestampStart": "00:12:24"
+        },
+        {
+          "content": "Super.work solves information scattering by providing an AI search across all company tools (Slack, Drive, Notion), instantly retrieving relevant information while maintaining secure access control for each user.",
+          "timestampStart": "00:12:53"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "timestamp": 0,
+      "title": "Introduction",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 33,
+      "title": "Wispr Flow",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 73,
+      "title": "Eleven Labs",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 103,
+      "title": "ChatGPT Voice Mode",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 146,
+      "title": "Claude Projects",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 185,
+      "title": "Notion AI",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 218,
+      "title": "Google NanoBanana",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 296,
+      "title": "Zapier",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 310,
+      "title": "Make",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 327,
+      "title": "n8n",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 344,
+      "title": "Relay.app & Gumloop",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 375,
+      "title": "Anthropic Prompt Generator",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 414,
+      "title": "Firecrawl",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 439,
+      "title": "Lindy",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 466,
+      "title": "Relevance AI",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 506,
+      "title": "Google AI Studio",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 559,
+      "title": "Airtop",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 588,
+      "title": "Zite",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 619,
+      "title": "Airtable AI",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 654,
+      "title": "Circleback",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 686,
+      "title": "Attio",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 712,
+      "title": "Clay",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 748,
+      "title": "Cassidy.ai",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 774,
+      "title": "Super",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    },
+    {
+      "timestamp": 807,
+      "title": "ChatGPT Agent Mode",
+      "thumbnail_url": "https://i.ytimg.com/vi/huariiK4_us/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGP20z_nghJras0ftp30_ajVzrFw"
+    }
+  ]
+}

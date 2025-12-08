@@ -1,0 +1,467 @@
+Video YESrXVkcCHY
+======================================================================
+
+[00:00] I have gone over a lot of AI tools on this channel.
+[00:03] I've made probably 30 plus videos at this point
+covering those various tools.
+[00:08] So in this video
+I want to talk to you about which ones
+[00:11] I actually use on a day by day basis as a developer,
+[00:15] what tools are open on my computer
+and are getting the most use, stick around.
+[00:20] I'm going to go through a bunch of them,
+[00:21] and you're probably going to learn about
+some new ones that you've never seen before.
+[00:24] So let's start with some of the obvious ones.
+[00:27] I have cursor and windsurf.
+[00:29] Now cursor is typically my go to IDE,
+especially if I'm working on something
+[00:34] that is a hybrid projects, or as a back end,
+a front end and a lot of different components.
+[00:39] Then I have windsurf,
+which is another editor that I use.
+[00:42] I was using windsurf a lot when it first came out,
+because I found that
+[00:46] it did actually perform better than cursor,
+but now cursor has just accelerated extremely fast.
+[00:52] And to be honest,
+[00:52] I mostly use cursor on a day by day basis
+because I find that now it is better than windsurf.
+[00:58] Again, these things change.
+[00:59] Maybe windsurf will come up with an update
+and then I'll start using it again.
+[01:03] At the beginning
+I had a bunch of features that cursor didn't have,
+[01:06] and then cursor pretty much copied all of them
+and added them to the IDE, and that's how it is now.
+[01:10] If you want to turn on these tools
+and you're not sure what they are, essentially
+[01:14] they are AI IDEs, which means
+you can go in this window and do something like, hey,
+[01:19] you know, change the title of my website,
+you can pick your model.
+[01:23] In this case I'm using GPT five.
+[01:25] And then I'm just going to go ahead
+and start actually writing code for you,
+[01:29] making changes and then allowing you to view
+those changes inside of the editor.
+[01:33] Now, because I am a real developer,
+I still like to have control of the code.
+[01:37] I like to modify things myself,
+move around the files, and I'm very comfortable
+[01:41] in these type of editors.
+[01:42] So that's why I prefer to use this
+most of the time when I'm developing.
+[01:46] However, there are a lot of other
+AI tools that aren't for Ides,
+[01:50] and I'm going to talk about later in this video.
+[01:52] Now, the next two on my list is by far
+the one that I use the most, and that is ChatGPT.
+[01:58] Pretty straightforward.
+[01:59] I'm sure all of you use this,
+[02:00] but I want to explain to you what I use it for
+and why it gets the most amount of use.
+[02:05] Now I use ChatGPT for pretty much everything,
+whether it's writing emails, responding
+[02:10] to queries, reviewing contracts,
+helping me manage dev, launch students,
+[02:14] reviewing resumes, just building in a lot of context,
+and getting really accurate replies.
+[02:20] It helps me script videos.
+[02:22] It helps me do accounting things.
+[02:23] It helps me answer random questions
+like I'll take a photo of,
+[02:26] you know, something in my bedroom
+or something and be like, what is this thing?
+[02:30] Why is this wall outlet look like this?
+[02:32] You guys get the idea.
+[02:34] But the thing is,
+because I've been using ChatGPT for so long,
+[02:38] like since it came out, it knows everything about me.
+[02:41] It knows what car I drive, it knows where I travel.
+[02:44] It knows the plans that I have because I feed it
+all of this information, which is probably not
+[02:49] a good thing security wise, but it happens anyways,
+so I might as well take advantage of it.
+[02:53] So when I go to ChatGPT and I ask it something,
+it has such relevant context
+[02:58] that a lot of these other
+AI tools just simply cannot have,
+[03:01] because I haven't been using them for two,
+three, four plus years.
+[03:04] So because of all of that context, it's something
+that I stick with pretty much every single day.
+[03:09] And even though it's not as good
+as a lot of the other tools at specific tasks,
+[03:13] it's just my go to tool.
+[03:14] I use it on my phone,
+I use it on the computer, and I have it open
+[03:18] multiple hours per day,
+almost always in a second monitor.
+[03:21] That's why and how I use it.
+[03:23] Let's move on to the next one.
+[03:24] Now, the next tool on my list
+has been a total game changer
+[03:28] for my coding productivity
+and just productivity in general.
+[03:31] And that's whisper flow.
+[03:33] Now this is hands down the faster
+and most accurate dictation tool that I've ever used.
+[03:38] It runs in the background, and with a quick keyboard
+shortcut, you can start dictating in real time.
+[03:43] Now I use it on windows, Mac, and even on my iPhone
+because it has like an iOS keyboard extension.
+[03:48] And unlike the built in voice modes or the OS level,
+[03:51] dictation flow works in any application.
+[03:55] It's quicker, more accurate,
+and even saves the history of all of the dictations,
+[03:59] which I find extremely useful
+so that I don't lose long prompts that I'm speaking.
+[04:03] And for me,
+this is legitimately three times my productivity.
+[04:07] Now I can normally type honestly,
+probably around 6070 words per minute.
+[04:11] I'm not a great typer, but with flow I can stream
+my thoughts at almost 200 words per minute.
+[04:17] I'll show you the tool here.
+[04:18] You can see I think it's like 190
+is my average of words per minute in the tool.
+[04:22] And that means that my
+AI prompts are way more detailed
+[04:25] and contextual without me having to slow down.
+[04:28] Now I use this everywhere.
+[04:29] So cursor Windsor, lovable ChatGPT, WhatsApp,
+discord, literally everything.
+[04:33] I'm just always speaking into my computer
+now, especially when I want to write longer messages.
+[04:38] And there's something new
+that's in this tool as well.
+[04:40] In cursor and windsurf flow
+can actually tag variables and files as you dictate.
+[04:46] So rather than the normal voice mode,
+which is pretty much just giving you
+[04:49] text in the editor,
+this knows what application you're working inside of.
+[04:53] And then it can actually tag individual files
+and use the built in features in that tool,
+[04:58] which is very useful
+for providing the right context for the AI.
+[05:02] Now, flow also has extras like a custom vocabulary,
+built in notes, team sharing.
+[05:06] But honestly, the biggest thing is that it just works
+every single time I want to use it.
+[05:11] And honestly, if you're not using voice right now,
+you're missing out on massive productivity gains.
+[05:15] And more importantly, you're probably not providing
+the best prompts that you could be to your AI models.
+[05:21] I know for me, when I speak,
+I always give more detail
+[05:23] because I'm just not as lazy
+as if I have to type it out.
+[05:26] Now, full disclosure
+[05:27] I was able to partner with Flo on this video,
+but I've been using them well before the partnership.
+[05:31] I've been using them for months now
+[05:33] and if you guys want to try it out for free,
+you can do so from the link in the description.
+[05:37] And I'm going to be going over
+a full tutorial of this tool soon.
+[05:40] Now the next item on my list is Deep
+Agent by Abacus AI.
+[05:45] Now this is something that I use whenever
+I need really complex, long running agent tasks
+[05:50] where I can go out, search the internet, build
+an app, generate a PowerPoint, make a document, etc.
+[05:56] there's a lot of use cases.
+[05:57] I made a lot of videos on this on the channel,
+so I'm not going to dive extremely in-depth.
+[06:01] But just to quickly show you a few things,
+I've got this to do for me.
+[06:03] I moved into a new apartment recently,
+so I got to do the full interior design
+[06:07] for that apartment based on the floor plan
+and kind of the preferences that I sent to it.
+[06:12] I got it to build a full application
+[06:15] that actually is a roadmap tracker
+for my dev launch students.
+[06:18] So I'm not going to run through the whole app.
+[06:19] But essentially it's like a custom platform
+that I can use to generate a roadmap
+[06:24] that I can give to students.
+[06:25] And then I gave it a bunch of other tasks.
+[06:27] One notable one is that, again,
+I moved into this apartment
+[06:30] and I noticed there's a lot of construction
+around me, so I wanted to see, okay,
+[06:34] how long are these buildings
+going to take to be built?
+[06:36] You know, how tall are they going to be?
+[06:38] Are they going to block my view
+or are they going to be noisy?
+[06:40] So I just told deep agent, hey, this is my address.
+[06:43] This is the apartment. This is the floor that I'm on.
+[06:45] You know what?
+[06:46] Buildings are near me
+that are going to be built soon.
+[06:48] Give me the timeline.
+[06:49] Give me the floors,
+tell me if it's going to block my view, etc..
+[06:52] Again.
+[06:53] Took a very long time, ran and was able
+to actually do that with very high accuracy,
+[06:57] which I'm
+not able to really do with something like ChatGPT.
+[07:01] I'm sure there's other AI tools
+that can do this as well, but my experience is deep.
+[07:04] It works really well for these very complex tasks,
+so that's what I use it for.
+[07:08] Now the next tool on my list is warp.
+[07:11] This is essentially an AI terminal.
+[07:13] I mean they're branding
+and it's like an a genetic AI editor,
+[07:16] but really it's a terminal
+with a bunch of AI inside of it.
+[07:19] And this allows you to actually generate code
+as well as run commands.
+[07:24] And it's really good for automation tasks or whenever
+you don't want to really dive into the code.
+[07:28] And you more so want to work purely
+kind of on the back end without a ton of visuals
+[07:32] and be automating a lot of stuff.
+[07:34] So recently
+I made a full discord bot, for example, using this
+[07:37] because there's a lot of deployment,
+a lot of configuration, containerization, etc.
+[07:41] that you need to do.
+[07:42] So it works really well in this terminal environment
+where you can just switch it to a normal terminal
+[07:47] and you can like run a command,
+and then you can like open
+[07:49] a file directly inside of here
+if you want to look at it.
+[07:52] Or I can switch it to agent mode
+and I can say, you know,
+[07:55] tell me what files are here
+[07:58] and then it will determine the commands
+and the task that it should actually run.
+[08:02] Something interesting about this
+is that you can run agents in parallel.
+[08:05] So I can open up a new tab here and say, hey,
+how are you or something.
+[08:09] Right.
+[08:10] And now both of these are running
+actually at the exact same time
+[08:13] or while this one's already finished,
+but you can run multiple of them at the same time.
+[08:16] Kind of like multithreaded agents,
+which I find is cool.
+[08:19] And again, it's what I like
+for kind of the terminal based AI editing.
+[08:23] It's not the only thing that I use.
+[08:25] Like I said, I still use cursor,
+I still use windsurf, I use a lot of the other tools,
+[08:29] but I'm working more in a deployment
+or a back end environment.
+[08:32] Then I'll open up warp
+and I'll use it as an agent like kind of terminal
+[08:35] where it can suggest commands for me, especially
+for like containerization, Kubernetes, etc.
+[08:40] and it's quite useful.
+[08:41] Now the next tool that I use is lovable.
+[08:44] Now this is only what I use
+when I want to generate simple frontends.
+[08:48] I do not build entire
+full stack applications with lovable.
+[08:52] Even though you can't do that,
+I simply use it for like landing
+[08:55] pages, basic design,
+or spinning up relatively simple sites.
+[09:00] Now, you guys might have seen recently
+that I actually launched my dev launch vault.
+[09:03] vault.devlaunch.us is the URL
+if you want to check it out,
+[09:07] and I use lovable to actually generate
+the entire landing page for that.
+[09:10] Then I brought it into Curser
+[09:12] and I made a few adjustments so you can see,
+like I'm inside of the lovable editor right now.
+[09:16] You can see
+there is a bunch of prompts that I went through,
+[09:18] and eventually I got it to create
+what I think is a really slick, simple website
+[09:22] just to promote, again,
+this kind of new product that we're launching,
+[09:25] which is a simple course for the people
+that can't afford dev launch, essentially.
+[09:29] I'm genuinely not trying to sell to you.
+[09:30] I'm just trying to show you
+that I use lovable to do that.
+[09:33] I got it to generate, like the privacy page,
+the disclaimer,
+[09:36] the company info, and I've used it
+for some other simple websites as well.
+[09:40] Again, typically
+when it's a few pages, it's relatively basic.
+[09:44] It doesn't have a ton of data or backend.
+[09:46] And then what I do is once it starts getting a bit
+more complicated, I take the code from GitHub,
+[09:51] I put it into Curser, and then I do
+the rest of the serious development work.
+[09:55] Lovable is really good
+for those simple design things.
+[09:58] Again, I don't think it's the best
+for like really complex applications,
+[10:01] which is why I don't use it for that,
+but for quick landing pages.
+[10:04] As you can see,
+I've made a few here. It's pretty good.
+[10:07] The next item on my list is one that I genuinely
+cannot live without, and that is HTML Divi.
+[10:13] Now, this is essentially a meeting recorder
+[10:16] where any time I join
+any kind of Google Meet or Zoom or whatever,
+[10:20] this AI bot
+automatically joins from me and records the meeting.
+[10:24] Now, it doesn't just do that, obviously,
+it generates the AI summary and notes.
+[10:27] It also allows me to provide a template
+so that based on the meeting type
+[10:31] that I'm having,
+I can have notes based on that template.
+[10:34] And then it gives me the full transcript.
+[10:36] And oftentimes
+what I end up doing is copying the transcript
+[10:39] into another tool like ChatGPT,
+and then having it analyze that for me
+[10:44] so that I can get kind of immediate answers
+and use that for, for example,
+[10:48] crafting a video or coming up with a roadmap
+or helping a student or whatever.
+[10:52] Now it has automations built in.
+[10:53] So I'm able to connect this with Zapier, for example.
+[10:55] So anytime a meeting is finished,
+[10:57] it automatically does a zap or whatever,
+and then it sends that recording to discord.
+[11:02] So my other team members can view it and I have
+I just use this all the time.
+[11:06] I literally use it multiple times per day.
+[11:07] It connects to all of my meetings.
+[11:09] I know there's a lot of AI kind of recorders
+out there, but for me this one works extremely well.
+[11:14] They've never sponsor my channel.
+[11:15] I'm just mentioning it because like,
+this is what I genuinely use
+[11:18] and that's the part of the video
+or that's the point of the video.
+[11:20] This next tool is one that I've been
+using more recently, and this is called blitzes.
+[11:25] Now this tool is significantly different
+than a lot of the other
+[11:28] AI tools that you've used before,
+because it emphasizes spending a lot of time
+[11:32] writing a prompt and understanding
+the context of the project before it does any work.
+[11:37] So rather than running in a few minutes or an hour,
+this tool
+[11:40] typically takes 1 to 3 days
+to actually come up with a response.
+[11:44] And it's specifically designed
+for software development.
+[11:47] So let me show you a quick example.
+[11:49] Essentially what will happen with Blitzy.
+[11:51] You'll upload your existing code base.
+[11:52] In my case, I uploaded my previous startup code base,
+which was quite large.
+[11:56] It will generate a massive like 200
+plus page technical doc
+[12:01] with all of the information, all of the architecture,
+all of the flowcharts and diagrams you can see.
+[12:07] Like it just generates a massive amount of context
+and really understands the project deeply.
+[12:12] And then you can press one of these buttons here
+and you can like add
+[12:15] a feature or refactor
+the code base or whatever you want to do.
+[12:18] But when you do that, you're expected
+to write a very detailed prompt or instruction,
+[12:24] essentially what you would pass
+like a junior developer, and then it will go away
+[12:29] and essentially start executing that task
+and take about five minutes per file to run.
+[12:34] So I've done tasks here that took four days.
+[12:36] I've done tasks that took eight hours, nine hours.
+[12:39] But it's very, very comprehensive.
+[12:41] And I've had it generate over 200,000 lines of code.
+[12:44] Even though they promote
+that it can generate over 3 million.
+[12:48] So just an interesting tool,
+something worth checking out.
+[12:50] And I've been using a recently,
+especially because these kind of context documents
+[12:54] are just extremely interesting to look through.
+[12:56] Next tool on my list is Zapier.
+[12:58] Those isn't really an AI tool,
+but I figured I'd mention it because it connects
+[13:02] to a lot of my AI tools.
+[13:04] Now, this is essentially something that you can use
+to build visual flows
+[13:08] and run all kinds of automations
+based on triggers or events.
+[13:12] So in this case,
+I was talking to you about the TV meeting recorded
+[13:16] and then like sending a message in discord.
+[13:18] So I have this hooked up to my TV.
+[13:20] I have these filter conditions
+like make sure this is a dev
+[13:23] launch strategy, call, for example,
+because that's the one I want to run this automation
+[13:26] on, and then send a message in the channel
+where it says,
+[13:29] hey, like this meeting was finished or completed,
+this was the date, this is who it's with.
+[13:34] You know, you can watch the meeting here.
+[13:36] And then I have another message
+I can't show you because it has some sensitive data,
+[13:39] but it sends me a direct message
+[13:40] with essentially information that I need in order
+to proceed to the next step with the student.
+[13:45] So Zapier. Super cool.
+[13:46] I have like 100 plus zaps in here.
+[13:48] Again, they're kind of confidential, so I can't
+show them all to you, but something I use a lot.
+[13:53] All right, so that is a pretty detailed list
+of most of the AI tools that I actually use.
+[13:57] Now, in terms of frameworks,
+I use a lot of AI frameworks to build
+[14:01] AI agents and build my own AI tools,
+and I'm going to quickly go through them.
+[14:05] Now. I pretty much always use Python, and then I use
+lang chain lang graph and then I have some notes.
+[14:11] So let me look at the side of my screen.
+[14:13] I use live kit.
+[14:14] This is for like voice agents I use VPI.
+[14:16] Same thing for voice agents
+depending on the type of ones I'm trying to build.
+[14:20] I use deep gram, another one for voice agents,
+and then I use all kinds of other tools like ingest,
+[14:25] for example, for AI orchestration, and probably
+a bunch of other ones that I'm forgetting.
+[14:29] But those are the main frameworks.
+[14:31] And typically I'm working with Lang Chain
+or lang graph and then connecting it up to something
+[14:35] like a chroma DB database and some other various
+kind of like helper modules and libraries.
+[14:41] There are so many AI tools out there,
+I use a lot of them, but these are
+[14:44] the ones that came to the top of my head
+when I was thinking of crafting this video.
+[14:48] Hopefully you found it useful.
+[14:50] You learned about an AI tool
+[14:51] that maybe you've never seen before,
+and now you're going to go play around with it
+[14:54] and kind of have some more productivity
+or some more usefulness.
+[14:57] I don't know from these tools.
+[14:58] Anyways, if you guys enjoyed the video,
+[15:00] make sure leave a like subscribe
+and I will see you in the next one.
