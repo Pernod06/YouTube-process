@@ -85,14 +85,24 @@ def get_full_transcript(video_url: str, language: str = 'en'):
         response_json = r.json()
         transcript = response_json['transcript']
         
-        # 从 API 响应中获取视频标题，如果没有则使用 video_id
-        video_title = response_json.get('title', f'Video {video_id}')
+        # 使用 YouTubeClient 获取视频标题
+        video_title = f'Video {video_id}'
+        try:
+            yt_client = YouTubeClient()
+            video_details = yt_client.get_video_details(video_id)
+            if video_details and video_details.get('title'):
+                video_title = video_details['title']
+                print(f"  ✓ 从 YouTube API 获取标题: {video_title}")
+        except Exception as e:
+            print(f"  ⚠️ 无法从 YouTube API 获取标题: {e}")
+            # 回退到 API 响应中的标题
+            video_title = response_json.get('title', f'Video {video_id}')
         
         details = {
             'title': video_title,
             'video_id': video_id,
-            'duration': 0,
-            'view_count': 0,
+            'duration': video_details.get('duration', 0) if video_details else 0,
+            'view_count': video_details.get('view_count', 0) if video_details else 0,
         }
         
         print(f"\n✓ 成功获取字幕")
@@ -180,12 +190,14 @@ def display_full_transcript(transcript, output_file=None, details=None):
             print("=" * 70)
         except Exception as e:
             print(f"\n❌ 保存文件失败: {e}")
+            
+    return output_lines
 
 
 def main():
     """主函数"""
     # 视频URL
-    video_url = "https://www.youtube.com/watch?v=DxL2HoqLbyA"
+    video_url = "https://www.youtube.com/watch?v=EdTPykGAe0Q"
     
     # 获取完整字幕
     transcript, details = get_full_transcript(video_url, language='en')

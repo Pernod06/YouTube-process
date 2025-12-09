@@ -247,7 +247,8 @@ Python versions 3.10+ (CPython) and 3.11+ (PyPy) are supported. Other
 versions and implementations may or may not work correctly.
 
 While all the other dependencies are optional, ffmpeg, ffprobe,
-yt-dlp-ejs and a JavaScript runtime are highly recommended
+yt-dlp-ejs and a supported JavaScript runtime/engine are highly
+recommended
 
 Strongly recommended
 
@@ -267,8 +268,8 @@ Strongly recommended
 -   yt-dlp-ejs - Required for deciphering YouTube n/sig values. Licensed
     under Unlicense, bundles MIT and ISC components.
 
-    A JavaScript runtime like deno (recommended), node.js, bun, or
-    QuickJS is also required to run yt-dlp-ejs. See the wiki.
+    A JavaScript runtime/engine like deno (recommended), node.js, bun,
+    or QuickJS is also required to run yt-dlp-ejs. See the wiki.
 
 Networking
 
@@ -289,7 +290,7 @@ may be required for some sites that employ TLS fingerprinting.
 -   curl_cffi (recommended) - Python binding for curl-impersonate.
     Provides impersonation targets for Chrome, Edge and Safari. Licensed
     under MIT
-    -   Can be installed with the curl-cffi group, e.g.
+    -   Can be installed with the curl-cffi extra, e.g.
         pip install "yt-dlp[default,curl-cffi]"
     -   Currently included in most builds except yt-dlp (Unix zipimport
         binary), yt-dlp_x86 (Windows 32-bit) and
@@ -343,7 +344,7 @@ will be built for the same CPU architecture as the Python used.
 
 You can run the following commands:
 
-    python devscripts/install_deps.py --include-group pyinstaller
+    python devscripts/install_deps.py --include-extra pyinstaller
     python devscripts/make_lazy_extractors.py
     python -m bundle.pyinstaller
 
@@ -580,7 +581,7 @@ Geo-restriction:
 
 Video Selection:
 
-    -I, --playlist-items ITEM_SPEC  Comma separated playlist_index of the items
+    -I, --playlist-items ITEM_SPEC  Comma-separated playlist_index of the items
                                     to download. You can specify a range using
                                     "[START]:[STOP][:STEP]". For backward
                                     compatibility, START-STOP is also supported.
@@ -1481,7 +1482,7 @@ have some special formatting:
 7.  More Conversions: In addition to the normal format types
     diouxXeEfFgGcrs, yt-dlp additionally supports converting to B =
     Bytes, j = json (flag # for pretty-printing, + for Unicode), h =
-    HTML escaping, l = a comma separated list (flag # for \n
+    HTML escaping, l = a comma-separated list (flag # for \n
     newline-separated), q = a string quoted for the terminal (flag # to
     split a list into different arguments), D = add Decimal suffixes
     (e.g. 10M) (flag # to use 1024 as factor), and S = Sanitize as
@@ -2223,9 +2224,9 @@ metadata:
 
   composer                  composer or composers
 
-  genre                     genre or genres
+  genre                     genre, genres, categories or tags
 
-  album                     album
+  album                     album or series
 
   album_artist              album_artist or album_artists
 
@@ -2297,7 +2298,7 @@ youtube
     available clients are web, web_safari, web_embedded, web_music,
     web_creator, mweb, ios, android, android_sdkless, android_vr, tv,
     tv_simply, tv_downgraded, and tv_embedded. By default,
-    tv,android_sdkless,web is used. If no JavaScript runtime is
+    tv,android_sdkless,web is used. If no JavaScript runtime/engine is
     available, then android_sdkless,web_safari,web is used. If logged-in
     cookies are passed to yt-dlp, then tv_downgraded,web_safari,web is
     used for free accounts and tv_downgraded,web_creator,web is used for
@@ -2363,7 +2364,7 @@ youtube
     without cookies. Note: this may have adverse effects if used
     improperly. If a session from a browser is wanted, you should pass
     cookies instead (which contain the Visitor ID)
--   po_token: Proof of Origin (PO) Token(s) to use. Comma seperated list
+-   po_token: Proof of Origin (PO) Token(s) to use. Comma-separated list
     of PO Tokens in the format CLIENT.CONTEXT+PO_TOKEN, e.g.
     youtube:po_token=web.gvs+XXX,web.player=XXX,web_safari.gvs+YYY.
     Context can be any of gvs (Google Video Server URLs), player
@@ -2375,18 +2376,20 @@ youtube
     requires one for the given context), never (never fetch a PO Token),
     or auto (default; only fetch a PO Token if the client requires one
     for the given context)
--   playback_wait: Duration (in seconds) to wait inbetween the
-    extraction and download stages in order to ensure the formats are
-    available. The default is 6 seconds
 -   jsc_trace: Enable debug logging for JS Challenge fetching. Either
     true or false (default)
+-   use_ad_playback_context: Skip preroll ads to eliminate the mandatory
+    wait period before download. Do NOT use this when passing premium
+    account cookies to yt-dlp, as it will result in a loss of premium
+    formats. Only effective with the web, web_safari, web_music and mweb
+    player clients. Either true or false (default)
 
 youtube-ejs
 
--   jitless: Run suported Javascript engines in JIT-less mode. Supported
-    runtimes are deno, node and bun. Provides better security at the
-    cost of performance/speed. Do note that node and bun are still
-    considered unsecure. Either true or false (default)
+-   jitless: Run supported Javascript engines in JIT-less mode.
+    Supported runtimes are deno, node and bun. Provides better security
+    at the cost of performance/speed. Do note that node and bun are
+    still considered insecure. Either true or false (default)
 
 youtubepot-webpo
 

@@ -15,6 +15,43 @@ from datetime import datetime
 from pathlib import Path
 import sys
 
+# Supabase 配置
+from supabase import create_client, Client
+
+SUPABASE_URL = "https://xxurqudxplxhignlshhy.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4dXJxdWR4cGx4aGlnbmxzaGh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyNDAxMjEsImV4cCI6MjA4MDgxNjEyMX0.afuHUdv5pDwKrMbEon5Tcy2W2EHTR9ZMlka8jiECGDY"
+
+def get_supabase_client() -> Client:
+    """获取 Supabase 客户端"""
+    return create_client(SUPABASE_URL, SUPABASE_KEY)
+
+def get_cached_video_from_supabase(video_id: str) -> dict | None:
+    """从 Supabase 获取缓存的视频数据"""
+    try:
+        client = get_supabase_client()
+        result = client.table("youtube_videos").select("*").eq("video_id", video_id).single().execute()
+        if result.data:
+            return result.data
+        return None
+    except Exception as e:
+        print(f"[WARN] 从 Supabase 获取缓存失败: {e}")
+        return None
+
+def save_video_to_supabase(video_id: str, video_data: dict, transcript: str = None, chapters: list = None):
+    """保存视频数据到 Supabase"""
+    try:
+        client = get_supabase_client()
+        record = {
+            "video_id": video_id,
+            "video_data": video_data,
+            "transcript": transcript,
+            "chapters": chapters
+        }
+        client.table("youtube_videos").upsert(record, on_conflict="video_id").execute()
+        print(f"[SUCCESS] 视频数据已保存到 Supabase: {video_id}")
+    except Exception as e:
+        print(f"[WARN] 保存到 Supabase 失败: {e}")
+
 # 添加以下代码来加载 .env 文件
 try:
     from dotenv import load_dotenv
@@ -109,15 +146,25 @@ def load_video_data():
 
 
 @app.get("/api/videos/{video_id}")
-async def get_video(video_id: str):
-    """获取视频数据"""
+async def get_video(video_id: str, language: str = None):
+    """获取视频数据，支持翻译为目标语言"""
     try:
-        data_path = DATA_DIR / f'video-data-{video_id}.json'
-        if not data_path.exists():
-            raise HTTPException(status_code=404, detail=f"视频数据文件不存在: video-data-{video_id}.json")
+        # 从 Supabase 获取视频数据
+        cached_record = get_cached_video_from_supabase(video_id)
         
-        with open(data_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
+        if not cached_record or not cached_record.get('video_data'):
+            raise HTTPException(status_code=404, detail=f"视频数据不存在: {video_id}")
+        
+        video_data = cached_record['video_data']
+        
+        # 如果指定了非英文语言，翻译数据
+        if language and language != 'en':
+            print(f"[INFO] 翻译视频数据为 {language}...")
+            video_data = translate_cached_data(video_data, language)
+        
+        return video_data
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -125,33 +172,44 @@ async def get_video(video_id: str):
 @app.get("/api/transcript/{video_id}")
 async def get_transcript(video_id: str):
     """获取视频字幕"""
-    transcript_file = DATA_DIR / f"transcript_{video_id}.txt"
-    
-    if not transcript_file.exists():
-        raise HTTPException(status_code=404, detail=f"字幕文件不存在: transcript_{video_id}.txt")
-    
     try:
-        with open(transcript_file, 'r', encoding='utf-8') as f:
-            content = f.read()
+        # 从 Supabase 获取字幕
+        cached_record = get_cached_video_from_supabase(video_id)
+        
+        if not cached_record or not cached_record.get('transcript'):
+            raise HTTPException(status_code=404, detail=f"字幕不存在: {video_id}")
+        
+        content = cached_record['transcript']
         return Response(content=content, media_type="text/plain; charset=utf-8")
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"读取字幕失败: {str(e)}")
 
 
 @app.get("/api/videos")
 async def get_videos():
-    """获取视频列表"""
-    videos = [
-        {
-            "videoId": "lQHK61IDFH4",
-            "title": "NVIDIA GTC Washington D.C. Keynote",
-            "description": "CEO Jensen Huang keynote",
-            "thumbnail": "https://img.youtube.com/vi/lQHK61IDFH4/maxresdefault.jpg",
-            "duration": "01:42:25",
-            "uploadDate": "2024-03-18"
-        }
-    ]
-    return videos
+    """获取视频列表（从 Supabase）"""
+    try:
+        client = get_supabase_client()
+        result = client.table("youtube_videos").select("video_id, video_data, created_at").order("created_at", desc=True).execute()
+        
+        videos = []
+        for record in result.data:
+            video_data = record.get('video_data', {})
+            video_info = video_data.get('videoInfo', {})
+            videos.append({
+                "videoId": record['video_id'],
+                "title": video_info.get('title', f"Video {record['video_id']}"),
+                "description": video_info.get('description', ''),
+                "thumbnail": video_info.get('thumbnail', f"https://img.youtube.com/vi/{record['video_id']}/maxresdefault.jpg"),
+                "summary": video_info.get('summary', ''),
+                "createdAt": record.get('created_at', '')
+            })
+        return videos
+    except Exception as e:
+        print(f"[ERROR] 获取视频列表失败: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/api/videos/{video_id}/comments")
@@ -666,7 +724,8 @@ async def process_video(request_data: ProcessVideoRequest):
     """
     处理前端传来的 YouTube 视频 URL：
     - 提取视频 ID
-    - 通过 get_full_transcript 获取完整字幕和视频信息
+    - 首先检查 data 目录是否有缓存数据，有则直接返回
+    - 无缓存则通过 get_full_transcript 获取完整字幕和视频信息
     - 将字幕写入 data/transcript_{video_id}.txt
     - 返回基本处理状态给前端
     """
@@ -680,6 +739,7 @@ async def process_video(request_data: ProcessVideoRequest):
         print(f"[INFO] 开始处理视频: {url}")
 
         import sys
+        import json
         sys.path.append(str(BASE_DIR))
 
         from get_full_transcript_ytdlp import get_full_transcript, display_full_transcript
@@ -689,6 +749,37 @@ async def process_video(request_data: ProcessVideoRequest):
         video_id = YouTubeClient.extract_video_id(url)
         if not video_id:
             raise HTTPException(status_code=400, detail='无法从URL提取视频ID')
+
+        # 从 Supabase 检查是否有缓存数据
+        cached_record = get_cached_video_from_supabase(video_id)
+        if cached_record and cached_record.get('video_data'):
+            print(f"[INFO] 从 Supabase 发现缓存数据: {video_id}")
+            try:
+                cached_data = cached_record['video_data']
+                
+                # 翻译缓存数据为目标语言
+                if language and language != 'en':
+                    print(f"[INFO] 正在将缓存数据翻译为 {language}...")
+                    cached_data = translate_cached_data(cached_data, language)
+                
+                # 获取缓存中的视频标题
+                video_title = cached_data.get('videoInfo', {}).get('title', '')
+                
+                print(f"[SUCCESS] 使用 Supabase 缓存数据返回，视频标题: {video_title}")
+                return {
+                    'success': True,
+                    'videoId': video_id,
+                    'title': video_title,
+                    'transcriptLength': len(cached_record.get('transcript', '') or ''),
+                    'dataFile': f"video-data-{video_id}.json",
+                    'chapters': cached_data.get('chapters', []),
+                    'sections': cached_data.get('sections', []),
+                    'videoInfo': cached_data.get('videoInfo', {}),
+                    'message': '视频处理成功（使用 Supabase 缓存数据）',
+                    'cached': True
+                }
+            except Exception as cache_error:
+                print(f"[WARN] 读取 Supabase 缓存数据失败: {cache_error}，将重新生成")
 
         # print(f"[INFO] 提取到视频 ID: {video_id}")
 
@@ -702,14 +793,6 @@ async def process_video(request_data: ProcessVideoRequest):
         # 再次检查解包后的值
         if not transcript or not details:
             raise HTTPException(status_code=500, detail='无法获取视频字幕或详情')
-
-        # 保存字幕到文件，供后续 /api/videos/<video_id> 使用
-        output_file = DATA_DIR / f"transcript_{video_id}.txt"
-        try:
-            display_full_transcript(transcript, output_file=str(output_file), details=details)
-            print(f"[SUCCESS] 字幕已写入文件: {output_file}")
-        except Exception as save_error:
-            print(f"[WARN] 保存字幕文件失败: {save_error}")
 
         # 使用 LLM 处理和结构化字幕
         try:
@@ -740,22 +823,41 @@ async def process_video(request_data: ProcessVideoRequest):
                 video_data_json['chapters'] = []
                 video_title = details.get('title', '') if details else ''
             
-            # 保存生成的 JSON 到 data 目录
-            json_output_file = DATA_DIR / f"video-data-{video_id}.json"
-            with open(json_output_file, 'w', encoding='utf-8') as f:
-                import json
-                json.dump(video_data_json, f, ensure_ascii=False, indent=2)
+            # 使用 display_full_transcript 获取格式化的字幕
+            from get_full_transcript_ytdlp import display_full_transcript
             
-            print(f"[SUCCESS] 视频数据已保存到: {json_output_file}")
+            output_lines = display_full_transcript(transcript, details=details)
+            
+            # 组装完整文本（标题 + 分隔线 + 内容）
+            video_title = video_data_json.get('videoInfo', {}).get('title', f'Video {video_id}')
+            transcript_text = f"{video_title}\n{'=' * 70}\n\n" + '\n'.join(output_lines)
+            
+            # 保存到 Supabase
+            save_video_to_supabase(
+                video_id=video_id,
+                video_data=video_data_json,
+                transcript=transcript_text,
+                chapters=video_data_json.get('chapters', [])
+            )
+            
+            
+            # 如果目标语言不是英文，翻译数据后返回
+            response_data = video_data_json
+            if language and language != 'en':
+                print(f"[INFO] 正在将生成的数据翻译为 {language}...")
+                response_data = translate_cached_data(video_data_json, language)
             
             return {
                 'success': True,
                 'videoId': video_id,
-                'title': video_title,
+                'title': response_data.get('videoInfo', {}).get('title', video_title),
                 'transcriptLength': len(transcript),
                 'dataFile': f"video-data-{video_id}.json",
-                'chapters': video_data_json.get('chapters', []),
-                'message': '视频处理成功'
+                'chapters': response_data.get('chapters', []),
+                'sections': response_data.get('sections', []),
+                'videoInfo': response_data.get('videoInfo', {}),
+                'message': '视频处理成功',
+                'cached': False
             }
         except Exception as llm_error:
             print(f"[WARN] LLM 处理失败: {llm_error}, 返回基本信息")
@@ -776,6 +878,92 @@ async def process_video(request_data: ProcessVideoRequest):
         raise HTTPException(status_code=500, detail=f'视频处理失败: {str(e)}')
 
 
+
+
+def translate_cached_data(cached_data: dict, target_language_code: str) -> dict:
+    """
+    使用 Gemini API 将缓存的视频数据翻译为目标语言
+    """
+    import json
+    import re
+    from google import genai
+
+    gemini_api_key = os.getenv('GEMINI_API_KEY')
+    if not gemini_api_key:
+        raise ValueError("GEMINI_API_KEY 未配置，请在 .env 文件中设置")
+
+    client = genai.Client(api_key=gemini_api_key)
+
+    # 语言映射
+    language_names = {
+        "zh": "Chinese (简体中文)",
+        "en": "English",
+        "ja": "Japanese (日本語)",
+        "ko": "Korean (한국어)",
+        "es": "Spanish (Español)",
+        "fr": "French (Français)",
+        "de": "German (Deutsch)",
+        "pt": "Portuguese (Português)",
+        "ru": "Russian (Русский)",
+        "ar": "Arabic (العربية)",
+    }
+    target_language = language_names.get(target_language_code, "English")
+
+    # 提取需要翻译的文本内容
+    video_info = cached_data.get('videoInfo', {})
+    sections = cached_data.get('sections', [])
+    
+    # 构建翻译提示
+    translation_prompt = f"""
+You are a professional translator. Translate the following video content JSON to {target_language}.
+
+IMPORTANT RULES:
+1. Translate ONLY the text content fields (title, description, summary, content)
+2. DO NOT translate or modify: videoId, thumbnail, id, timestampStart, timestamp, thumbnail_url
+3. Keep the exact same JSON structure
+4. Output valid JSON only, no markdown code blocks
+
+Original JSON:
+{json.dumps(cached_data, ensure_ascii=False, indent=2)}
+
+OUTPUT: Return the translated JSON with the same structure, all text in {target_language}
+"""
+
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash-lite",
+            contents=[translation_prompt],
+        )
+        
+        response_text = response.text.strip()
+        
+        # 移除可能的 markdown 代码块标记
+        response_text = re.sub(r'^```json\s*', '', response_text)
+        response_text = re.sub(r'^```\s*', '', response_text)
+        response_text = re.sub(r'\s*```$', '', response_text)
+        
+        # 提取纯 JSON
+        start_idx = response_text.find('{')
+        if start_idx != -1:
+            brace_count = 0
+            end_idx = start_idx
+            for i, char in enumerate(response_text[start_idx:], start_idx):
+                if char == '{':
+                    brace_count += 1
+                elif char == '}':
+                    brace_count -= 1
+                    if brace_count == 0:
+                        end_idx = i + 1
+                        break
+            response_text = response_text[start_idx:end_idx]
+        
+        translated_data = json.loads(response_text)
+        print(f"[SUCCESS] 缓存数据已翻译为 {target_language}")
+        return translated_data
+        
+    except Exception as e:
+        print(f"[WARN] 翻译缓存数据失败: {e}，返回原始数据")
+        return cached_data
 
 
 def chat_with_gemini(transcript, details, video_id, language):
@@ -874,7 +1062,6 @@ def chat_with_gemini(transcript, details, video_id, language):
     system_prompt = """
 You are an expert video content analyst. Your task is to deeply analyze this YouTube video transcript and extract the most valuable insights, creating a well-structured summary.
 
-**OUTPUT LANGUAGE: All text content MUST be written in """ + target_language + """**
 **SUMMARIZE, DON'T TRANSCRIBE**: Extract insights, arguments, and conclusions - NOT word-for-word transcript**
 
 Video Title: """ + title + """

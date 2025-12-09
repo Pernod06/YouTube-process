@@ -265,7 +265,7 @@ One of \[dq]default\[dq] (only when known to be useful),
 .SS Video Selection:
 .TP
 -I, --playlist-items \f[I]ITEM_SPEC\f[R]
-Comma separated playlist_index of the items to download.
+Comma-separated playlist_index of the items to download.
 You can specify a range using \[dq][START]:[STOP][:STEP]\[dq].
 For backward compatibility, START-STOP is also supported.
 Use negative indices to count from the right and negative STEP to
@@ -1513,7 +1513,7 @@ E.g.
 \f[V]diouxXeEfFgGcrs\f[R], yt-dlp additionally supports converting to
 \f[V]B\f[R] = \f[B]B\f[R]ytes, \f[V]j\f[R] = \f[B]j\f[R]son (flag
 \f[V]#\f[R] for pretty-printing, \f[V]+\f[R] for Unicode), \f[V]h\f[R] =
-HTML escaping, \f[V]l\f[R] = a comma separated \f[B]l\f[R]ist (flag
+HTML escaping, \f[V]l\f[R] = a comma-separated \f[B]l\f[R]ist (flag
 \f[V]#\f[R] for \f[V]\[rs]n\f[R] newline-separated), \f[V]q\f[R] = a
 string \f[B]q\f[R]uoted for the terminal (flag \f[V]#\f[R] to split a
 list into different arguments), \f[V]D\f[R] = add \f[B]D\f[R]ecimal
@@ -2582,12 +2582,13 @@ T}
 T{
 \f[V]genre\f[R]
 T}@T{
-\f[V]genre\f[R] or \f[V]genres\f[R]
+\f[V]genre\f[R], \f[V]genres\f[R], \f[V]categories\f[R] or
+\f[V]tags\f[R]
 T}
 T{
 \f[V]album\f[R]
 T}@T{
-\f[V]album\f[R]
+\f[V]album\f[R] or \f[V]series\f[R]
 T}
 T{
 \f[V]album_artist\f[R]
@@ -2695,7 +2696,7 @@ The currently available clients are \f[V]web\f[R], \f[V]web_safari\f[R],
 \f[V]android_sdkless\f[R], \f[V]android_vr\f[R], \f[V]tv\f[R],
 \f[V]tv_simply\f[R], \f[V]tv_downgraded\f[R], and \f[V]tv_embedded\f[R].
 By default, \f[V]tv,android_sdkless,web\f[R] is used.
-If no JavaScript runtime is available, then
+If no JavaScript runtime/engine is available, then
 \f[V]android_sdkless,web_safari,web\f[R] is used.
 If logged-in cookies are passed to yt-dlp, then
 \f[V]tv_downgraded,web_safari,web\f[R] is used for free accounts and
@@ -2801,7 +2802,7 @@ If a session from a browser is wanted, you should pass cookies instead
 (which contain the Visitor ID)
 .IP \[bu] 2
 \f[V]po_token\f[R]: Proof of Origin (PO) Token(s) to use.
-Comma seperated list of PO Tokens in the format
+Comma-separated list of PO Tokens in the format
 \f[V]CLIENT.CONTEXT+PO_TOKEN\f[R], e.g.
 \f[V]youtube:po_token=web.gvs+XXX,web.player=XXX,web_safari.gvs+YYY\f[R].
 Context can be any of \f[V]gvs\f[R] (Google Video Server URLs),
@@ -2818,20 +2819,23 @@ client requires one for the given context), \f[V]never\f[R] (never fetch
 a PO Token), or \f[V]auto\f[R] (default; only fetch a PO Token if the
 client requires one for the given context)
 .IP \[bu] 2
-\f[V]playback_wait\f[R]: Duration (in seconds) to wait inbetween the
-extraction and download stages in order to ensure the formats are
-available.
-The default is \f[V]6\f[R] seconds
-.IP \[bu] 2
 \f[V]jsc_trace\f[R]: Enable debug logging for JS Challenge fetching.
+Either \f[V]true\f[R] or \f[V]false\f[R] (default)
+.IP \[bu] 2
+\f[V]use_ad_playback_context\f[R]: Skip preroll ads to eliminate the
+mandatory wait period before download.
+Do NOT use this when passing premium account cookies to yt-dlp, as it
+will result in a loss of premium formats.
+Only effective with the \f[V]web\f[R], \f[V]web_safari\f[R],
+\f[V]web_music\f[R] and \f[V]mweb\f[R] player clients.
 Either \f[V]true\f[R] or \f[V]false\f[R] (default)
 .SS youtube-ejs
 .IP \[bu] 2
-\f[V]jitless\f[R]: Run suported Javascript engines in JIT-less mode.
+\f[V]jitless\f[R]: Run supported Javascript engines in JIT-less mode.
 Supported runtimes are \f[V]deno\f[R], \f[V]node\f[R] and \f[V]bun\f[R].
 Provides better security at the cost of performance/speed.
 Do note that \f[V]node\f[R] and \f[V]bun\f[R] are still considered
-unsecure.
+insecure.
 Either \f[V]true\f[R] or \f[V]false\f[R] (default)
 .SS youtubepot-webpo
 .IP \[bu] 2
@@ -3161,8 +3165,8 @@ Python versions 3.10+ (CPython) and 3.11+ (PyPy) are supported.
 Other versions and implementations may or may not work correctly.
 .PP
 While all the other dependencies are optional, \f[V]ffmpeg\f[R],
-\f[V]ffprobe\f[R], \f[V]yt-dlp-ejs\f[R] and a JavaScript runtime are
-highly recommended
+\f[V]ffprobe\f[R], \f[V]yt-dlp-ejs\f[R] and a supported JavaScript
+runtime/engine are highly recommended
 .SS Strongly recommended
 .IP \[bu] 2
 \f[B]ffmpeg\f[R] and \f[B]ffprobe\f[R] (https://www.ffmpeg.org) -
@@ -3194,7 +3198,7 @@ ISC (https://github.com/meriyah/meriyah/blob/main/LICENSE.md)
 components.
 .RS 2
 .PP
-A JavaScript runtime like \f[B]deno\f[R] (https://deno.land)
+A JavaScript runtime/engine like \f[B]deno\f[R] (https://deno.land)
 (recommended), \f[B]node.js\f[R] (https://nodejs.org),
 \f[B]bun\f[R] (https://bun.sh), or
 \f[B]QuickJS\f[R] (https://bellard.org/quickjs/) is also required to run
@@ -3237,7 +3241,7 @@ Licensed under
 MIT (https://github.com/lexiforest/curl_cffi/blob/main/LICENSE)
 .RS 2
 .IP \[bu] 2
-Can be installed with the \f[V]curl-cffi\f[R] group, e.g.
+Can be installed with the \f[V]curl-cffi\f[R] extra, e.g.
 \f[V]pip install \[dq]yt-dlp[default,curl-cffi]\[dq]\f[R]
 .IP \[bu] 2
 Currently included in most builds \f[I]except\f[R] \f[V]yt-dlp\f[R]
@@ -3326,7 +3330,7 @@ You can run the following commands:
 .IP
 .nf
 \f[C]
-python devscripts/install_deps.py --include-group pyinstaller
+python devscripts/install_deps.py --include-extra pyinstaller
 python devscripts/make_lazy_extractors.py
 python -m bundle.pyinstaller
 \f[R]

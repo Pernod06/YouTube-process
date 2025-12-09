@@ -50,7 +50,7 @@ complete --command yt-dlp --long-option geo-bypass-country
 complete --command yt-dlp --long-option geo-bypass-ip-block
 complete --command yt-dlp --long-option playlist-start
 complete --command yt-dlp --long-option playlist-end
-complete --command yt-dlp --long-option playlist-items --short-option I --description 'Comma separated playlist_index of the items to download. You can specify a range using "[START]:[STOP][:STEP]". For backward compatibility, START-STOP is also supported. Use negative indices to count from the right and negative STEP to download in reverse order. E.g. "-I 1:3,7,-5::2" used on a playlist of size 15 will download the items at index 1,2,3,7,11,13,15'
+complete --command yt-dlp --long-option playlist-items --short-option I --description 'Comma-separated playlist_index of the items to download. You can specify a range using "[START]:[STOP][:STEP]". For backward compatibility, START-STOP is also supported. Use negative indices to count from the right and negative STEP to download in reverse order. E.g. "-I 1:3,7,-5::2" used on a playlist of size 15 will download the items at index 1,2,3,7,11,13,15'
 complete --command yt-dlp --long-option match-title
 complete --command yt-dlp --long-option reject-title
 complete --command yt-dlp --long-option min-filesize --description 'Abort download if filesize is smaller than SIZE, e.g. 50k or 44.6M'

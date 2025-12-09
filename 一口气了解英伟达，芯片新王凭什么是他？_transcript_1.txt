@@ -1,0 +1,990 @@
+一口气了解英伟达，芯片新王凭什么是他？
+======================================================================
+
+[00:01] On May 24,
+[00:02] Nvidia released their first quarter earnings
+[00:04] Many investors are calling this an unprecedented
+[00:06] once in a lifetime release
+[00:08] Nvidia relied on
+[00:09] the dazzling data
+[00:10] giving Wall Street a slap in the face
+[00:12] The stock soared by 30% on the day
+[00:13] Market cap reached trillion of dollars
+[00:15] propelled Nvidia into becoming sixth-largest company in the world
+[00:17] surpassing Tesla
+[00:18] and approaching Amazon
+[00:19] Who would have thought that
+[00:20] a company selling graphics cards
+[00:22] would become the biggest winner
+[00:23] in the AI ​​war in 2023
+[00:26] For the past few years
+[00:27] Nvidia participated in almost all of global tech innovation
+[00:29] cloud computing
+[00:29] cryptocurrency
+[00:30] Metaverse
+[00:30] Artificial Intelligence
+[00:31] Nvidia is main player in all these
+[00:32] Majority of the AI model you’ve heard of
+[00:34] are trained with Nvidia graphics cards.
+[00:36] Not only are they an industry leader
+[00:37] but they monopolised global AI training industry
+[00:39] by occupying 95% market share
+[00:41] Even the quantity of owning
+[00:42] Nvidia A100 graphics cards
+[00:44] an indicator to measure a company’s computational power
+[00:47] The founder, Jensen Huang said
+[00:51] Sounds arrogant right
+[00:52] But that’s the truth
+[00:57] With his foresight from over 20 years
+[00:59] and his unchanging outfit style
+[01:01] becomes the Godfather of AI
+[01:03] You must be wondering
+[01:05] what’s so great about Nvidia
+[01:06] How did they monopolise?
+[01:07] Why nobody can compete against them
+[01:08] Today let Lin take you down a trip
+[01:10] to the story of Nvidia
+[01:11] We’ll also talk about the secret behind
+[01:13] graphic card and chip industry
+[01:17] Let’s begin with the rise of
+[01:19] Jensen Huang and Nvidia
+[01:21] In 1963
+[01:22] Jensen Huang was born in Tainan, Taiwan
+[01:24] which means he is 60 years old this year
+[01:26] At the age of 9, he moved to US
+[01:28] after graduating from college
+[01:29] he worked in two semiconductor companies
+[01:30] focusing on chip design
+[01:31] one of them is AMD
+[01:33] a company that fought with Jensen
+[01:34] for half of their lifetime
+[01:35] until now
+[01:38] After finishing his Master at Stanford, Jensen turned 30
+[01:40] With two other tech guys who were
+[01:42] also in their 30s with big ambition
+[01:44] they planned to do something big
+[01:46] They believed that 3D graphics processing
+[01:48] has great potential in the future
+[01:49] So in 1993
+[01:50] they established NVIDIA
+[01:52] specialises in graphic processing chip
+[01:54] Jensen Huang is the CEO.
+[01:56] he still is today
+[01:57] With recommendation from his former boss
+[01:58] he obtained $20 million capital investment
+[02:00] from Sequoia Capital
+[02:02] After all gaming industry needs real-time rendering when playing
+[02:04] You can’t say there’s no 3D games
+[02:06] but definitely can’t play with normal computer
+[02:07] Many games are quite classic
+[02:09] but the graphic
+[02:09] is basically, well as long as you can see a figure there
+[02:11] because this kind of 3D image processing
+[02:13] is computationally intensive
+[02:14] It was difficult for the CPU at that time
+[02:16] Normally they need a specific chip
+[02:18] to process the graphics
+[02:19] and this chip is graphic card
+[02:21] In the early days, the graphics card was very simple
+[02:23] it was a 3D accelerator card at most
+[02:26] Now when you hear 3D accelerator
+[02:28] It sounds like a small workshop business
+[02:29] That's right
+[02:30] actually at that time 3D games and
+[02:31] 3D rendering
+[02:32] was at seeding stage
+[02:33] Graphics card companies like Nvidia
+[02:35] are actually a lot
+[02:35] at least 50-60 companies
+[02:37] There was no uniform standard for both hardware and software
+[02:38] Whoever comes out with better research
+[02:39] can publish their own standard.
+[02:41] Often times
+[02:41] when you finally came up with a graphics card
+[02:43] but it actually is
+[02:44] not compatible with other people’s standard
+[02:46] Just one word
+[02:47] Chaotic
+[02:48] One of the most famous company at the time
+[02:50] is a company called 3dfx
+[02:51] It was established in 1994,
+[02:53] a year later than Nvidia
+[02:54] At that time, a graphics card called Voodoo
+[02:56] was all the rage
+[02:57] Many popular games during that time
+[02:58] relied on Voodoo graphic card
+[03:00] It wasn’t going so well with NVIDIA
+[03:02] Although they obtained capitals
+[03:03] and had very professional team
+[03:05] but their NV1 was not successful
+[03:07] NV2 was aborted
+[03:10] By 1997
+[03:11] NVIDIA was hanging on by a thread
+[03:12] 9 more months till they run out of money
+[03:14] The company downsized its staff from 100
+[03:15] till there were about 30 people left
+[03:17] Jensen Huang took a gamble
+[03:19] Just when the company only had
+[03:20] 6 months of operating capitals
+[03:21] They released Riva128 graphic card carrying NV3
+[03:24] With its good price/performance ratio,
+[03:25] they finally occupy a place in the market
+[03:28] and allow NVIDIA to survive
+[03:30] Actually Jensen and his team
+[03:32] are very strong in their R&D
+[03:33] After they figure out
+[03:34] the market direction
+[03:36] they managed to enter fast lane quickly
+[03:38] They reached a long-term strategic cooperation with TSMC
+[03:40] At the same time they cooperate closely with Microsoft
+[03:41] supported the Direct 3D display standard introduced by Microsoft
+[03:44] Finally they rose in the sea
+[03:46] of competition in graphics card industry
+[03:46] With RivaTNT
+[03:48] it helped
+[03:49] NVIDIA to become
+[03:50] industry leader in graphics card industry
+[03:52] In 1999, NVIDIA
+[03:53] successfully listed on NASDAQ
+[03:56] After listing
+[03:57] NVIDIA had more money and
+[03:58] in September 1999, they released
+[04:00] the epoch-making GeForce256
+[04:02] which made them the leading force among their competitors
+[04:05] I believe that gamers
+[04:06] should be familiar with
+[04:07] this GeForce series.
+[04:08] It has also become Nvidia’s
+[04:10] the flagship line of consumer graphics card
+[04:11] Jensen Huang named GeForce256
+[04:13] the world’s first GPU
+[04:15] The first truly dedicated graphics card
+[04:17] The claim is
+[04:18] basically accepted by everyone
+[04:19] Hence some people might generally claimed that
+[04:21] Nvidia invented the graphics card.
+[04:23] As for why this dedicated graphics card is so powerful,
+[04:25] we will talk about it later.
+[04:27] At that time, Microsoft happened to be working on Xbox
+[04:29] With GeForce 256
+[04:30] powerful performance, NVIDIA managed to
+[04:32] score $200 million worth of order
+[04:34] After building image processing hardware for Xbox
+[04:36] they then score another with Sony’s PS3
+[04:38] From 1999 to 2002,
+[04:40] Nvidia’s revenue
+[04:40] almost doubled every year to
+[04:42] $2 billion
+[04:43] becoming the only player in the market
+[04:45] They started to acquire
+[04:46] competitors in the same industry
+[04:47] one of them we mentioned earlier
+[04:49] the once popular 3dfx
+[04:51] Another major player in the market
+[04:53] ATi was acquired by AMD
+[04:56] And so in the early 2000s
+[04:57] after a series of merger and acquisition
+[04:59] happening in the market
+[05:01] There are only two players left in the market
+[05:03] Nvidia and AMD.
+[05:04] Until now, the dedicated graphics card market
+[05:06] has been dominated by these two companies.
+[05:08] I don’t know if you have heard of
+[05:09] the legendary N card and A card
+[05:11] actually refer to the graphics cards of these two companies.
+[05:13] Gamers started to argue
+[05:15] whether N card or A card is better
+[05:16] It doesn’t matter which one is better
+[05:17] after that there isn’t a
+[05:18] third company exists in the market
+[05:19] like B card of C card or X card
+[05:21] It’s a two-horse race
+[05:22] However NVIDIA is gradually
+[05:25] eating away AMD’s market share
+[05:27] from 60% in 2010
+[05:28] slowly expanded to
+[05:29] 80% in 2022.
+[05:30] becoming global GPU hegemon
+[05:33] The speed of development of GPU technology itself
+[05:35] is also jaw-dropping
+[05:36] The rapid development of gaming industry
+[05:38] has supported Nvidia,
+[05:39] At the same time, NVIDIA’s graphics card development
+[05:41] has promoted the development of the gaming industry.
+[05:43] Look at the new games coming out every year
+[05:44] so much improvement in image quality
+[05:46] Even if you don’t understand game
+[05:47] you can see the speed of progress
+[05:52] In fact, the overall graphics card market
+[05:55] is in a tripartite state
+[05:58] Three biggest player – INTEL, NVIDIA, AMD
+[06:00] Intel occupied 71% of market share
+[06:02] Nvidia is 17% and AMD is 12%.
+[06:05] You must be wondering
+[06:06] why is there Intel
+[06:07] and their market share is way higher
+[06:08] Didn’t you just say that Nvidia is the biggest player?
+[06:12] Actually
+[06:12] this graphics card is not the same graphics card
+[06:16] Because graphics card
+[06:17] is divided into dedicated and integrated graphics card
+[06:19] If you were to compare both
+[06:20] then Intel indeed is the biggest player
+[06:22] but they sell mostly integrated graphics card
+[06:24] Integrated graphics card is placed together with CPU
+[06:26] they share memory
+[06:27] So Intel taking advantage of their position in CPU industry
+[06:29] monopolise the integrated graphics card market share
+[06:31] However the integrated graphics card
+[06:33] is quite weak, I won’t explain in details here
+[06:35] Comparing with NVIDIA’s dedicated graphics card
+[06:36] although they are both graphics card but they don’t belong in same market
+[06:39] Just from dedicated graphics market POV
+[06:40] NVIDIA occupied 80% of the market share
+[06:41] Some of you might start to get bored now
+[06:43] Alright we know
+[06:44] NVIDIA designs graphics card and chips
+[06:46] they are very good at it
+[06:47] I’ve been talking a lot about
+[06:48] 3D rendering and gaming
+[06:49] How does it have anything to do with AI
+[06:51] Why are all these AI companies want to buy graphics card
+[06:52] and it has to be NVIDIA’s graphics card
+[06:55] Don’t worry, we’ll talk about graphics card characteristic
+[06:59] in a computer, Central Processing Unit
+[07:01] The purpose of its design is that
+[07:02] it can do everything
+[07:03] It’s sequential computing
+[07:04] and it can carry out very complex logical reasoning
+[07:06] However image processing
+[07:08] doesn’t care much about sequential computing
+[07:09] It’s more concerned with computational volume
+[07:10] For example, a 4k video
+[07:12] has 10 million pixels
+[07:13] Let’s say there’s 30 frames per second
+[07:14] then each pixel and frame
+[07:16] has to compute correspond colour
+[07:17] based on
+[07:18] shadow and action
+[07:20] This requires non-stop, very fast
+[07:22] and massive simple calculations
+[07:23] is Graphics Processing Unit
+[07:24] It’s especially designed to
+[07:26] do this kind of computation
+[07:27] The foundation of the chip design
+[07:29] is to optimise parallel computing
+[07:31] So for CPU
+[07:32] is 64 or 128 core at best
+[07:34] while GPU could have thousands of core
+[07:36] computing together at the same time
+[07:37] See this video is giving
+[07:38] a very good explanation
+[07:39] CPU is like a very precise
+[07:41] very strong gun firing one shot at a time
+[07:43] The shots are fired in clear order
+[07:45] but slow,
+[07:46] GPU on the other hand
+[07:47] is like having thousands of this gun
+[07:49] firing at the same time
+[07:55] Due to GPU special feature
+[07:56] Jensen Huang started to think about
+[07:58] how to maximise
+[07:59] its potential
+[08:00] It’s definitely as simple as 3D image processing
+[08:02] and rendering
+[08:03] Can they carry out
+[08:04] more of General Purpose Computing
+[08:06] General Purpose Computing
+[08:07] General Purpose Graphics Processing
+[08:14] But it’s not simple to use GPU
+[08:15] to do this kind of
+[08:16] general purpose computing
+[08:17] Because the purpose of its design is not for this
+[08:19] so the programming is very difficult
+[08:20] Not anyone can do this job
+[08:22] Jensen Huang was thinking that
+[08:22] if graphics card was to realise its greater potential
+[08:24] it needs to be programmable
+[08:26] By chance
+[08:27] he saw a project by a
+[08:28] PhD student in Stanford
+[08:29] Using C language programming
+[08:30] to let GPU do some computing
+[08:31] Jensen thought this idea is amazing
+[08:34] and offered this fella a job at NVIDIA
+[08:36] He appointed him with a very important job
+[08:38] and let him lead the team to carry out R&D
+[08:40] in making GPU programmable
+[08:44] Finally in 2006
+[08:46] NVIDIA officially released CUDA
+[08:47] making GPU programmable
+[08:49] In order to build this CUDA system,
+[08:50] NVIDIA invested a large and
+[08:53] unreasonable amount of
+[08:53] capitals and human resources into it
+[08:54] Originally those graphics card that
+[08:56] to support CUDA
+[08:57] Originally those graphics card that
+[08:59] specializes in 3D graphics processing
+[09:00] need many top engineers to
+[09:02] make it programmable
+[09:04] But now anyone can do it by
+[09:05] buying an NVIDIA graphics card
+[09:07] and use it with
+[09:08] CUDA library
+[09:09] Through CUDA
+[09:09] NVIDIA expanded the boundary of graphics card
+[09:11] from gaming and 3D image processing
+[09:13] to a whole realm of accelerated computing
+[09:15] Like aerospace, biopharmaceuticals
+[09:17] Weather forecasting, energy exploration and so on
+[09:19] are actually using large amount of NVIDIA graphics card
+[09:21] to carry out computation
+[09:22] Many have tried to create
+[09:23] software like CUDA
+[09:25] to challenge Nvidia’s position.
+[09:26] But Nvidia
+[09:27] has a monopoly on hardware itself.
+[09:28] They can try everything
+[09:30] to merge their hardware, graphics card
+[09:31] with the software, CUDA
+[09:33] and make them work really well with each other
+[09:33] Through hardware and software merger
+[09:35] they formed a very strong moat
+[09:37] Does this make you think of another company?
+[09:39] That’s Apple
+[09:39] They all build something
+[09:41] that’s had been bandied about in business world
+[09:42] an Ecosystem
+[09:42] Microsoft, Adobe
+[09:44] they all have their own strong ecosystem
+[09:46] The amount of capital Jensen invested in CUDA
+[09:48] might sound reasonable to you now
+[09:50] It makes sense
+[09:50] but if you look at short-term return
+[09:52] It is very unreasonable.
+[09:53] Wall Street is quite displeased with this thing
+[09:56] because although the computation performance of GPU
+[09:58] is outstanding
+[09:58] but their application is not much
+[10:00] For a long period of time
+[10:01] it can only focus on area
+[10:03] that requires massive computing
+[10:04] To put it bluntly, it's not profitable at all
+[10:05] Who would’ve thought that AI
+[10:07] could be so popular in 2023 right
+[10:09] In fact, it is not AI that first makes the
+[10:11] accelerated computing capabilities of graphics cards
+[10:12] realise its commercial value.
+[10:14] It was a coincidence
+[10:15] A trend that’s not related to AI at all
+[10:16] Something that even someone like Jensen
+[10:18] could not have expected
+[10:22] The explosion of Bitcoin
+[10:23] brought a huge demand for mining
+[10:24] Mining in essence is mindless computing
+[10:27] to encrypt and decrypt
+[10:28] In order to do mining
+[10:29] in faster way then you will need to use graphics card
+[10:30] and you have to use NVIDIA’s graphics card
+[10:32] I believe most of you
+[10:33] only know about using graphics card to do
+[10:35] computation from the mining part
+[10:38] The huge demand for mining
+[10:40] is like a godsend for NVIDIA
+[10:42] a big big gift
+[10:44] This  makes NVIDIA’s graphics card
+[10:45] in constant short supply for years
+[10:46] NVIDIA was very nice
+[10:48] they designed a GPU specifically for mining
+[10:49] Of course many would say
+[10:51] Mining pollutes the environment,
+[10:52] meaningless computation
+[10:53] all sorts of problems
+[10:54] Graphics card capability
+[10:55] was seen by many
+[10:57] and NVIDIA did make lots of money because of it
+[11:01] According to analysts
+[11:02] Between 2018 to 2021
+[11:03] a period when bitcoin was very popular
+[11:05] NVIDIA could earn up to
+[11:06] $1 to $3 billion annually
+[11:08] NVIDIA’s market cap even
+[11:10] surpassed the giant
+[11:12] Intel
+[11:12] During the time when bitcoin was very popular
+[11:13] their market cap even approached trillion dollars
+[11:21] Although mining has made NVIDIA a lot of money
+[11:23] but it is after all not its main business
+[11:25] After the crash of crypto market
+[11:26] NVIDIA’s stock plunged by 46%
+[11:29] So far mining is only
+[11:30] a sideshow at best
+[11:31] We all know
+[11:32] what’s really been helping NVIDIA lately
+[11:34] Artificial Intelligence
+[11:38] We mentioned that graphics card
+[11:40] massive parallel computing capability
+[11:41] is very suitable for deep learning and machine learning
+[11:45] AI
+[11:47] has to keep learning
+[11:48] up to billions of times
+[11:49] So GPU parallel computing capability
+[11:50] is where it fits in
+[11:51] Jensen Huang showed that
+[11:52] to train a large language model
+[11:54] in comparison with CPU
+[11:54] GPU server
+[11:55] can complete it at 4% of the cost
+[11:57] and 1.2% of power.
+[11:58] Therefore, GPU CPU
+[11:59] are not on the same level
+[12:00] This is determined by its underlying structure.
+[12:02] Jensen Huang
+[12:02] just wanted to subtly tell you that
+[12:04] to train large language model
+[12:06] only a fool would use CPU
+[12:07] You have to use GPU
+[12:08] If you use GPU, you’d better use CUDA.
+[12:10] Then you have to buy the graphics card from NVIDIA
+[12:13] Actually a decade ago
+[12:13] no one knows graphics card can be used in AI
+[12:15] AI itself
+[12:16] is more theoretical than practical
+[12:18] The change occurred in 2012.
+[12:19] At that time, there’s a
+[12:20] very famous computer competition
+[12:22] called ImageNet.
+[12:25] Everyone was competing
+[12:25] whose algorithm could better
+[12:27] recognise the content of the image
+[12:28] From No.2 to No.4
+[12:30] their error rate
+[12:31] is about 26% to 29%.
+[12:33] A team called AlexNet
+[12:34] made it to 16.4%
+[12:36] Ten points ahead of the second place
+[12:38] and won the comepetition
+[12:39] they used neural networks to train their models
+[12:41] with NVIDIA’s graphics card
+[12:45] We’ve talked about this in ChatGPT episode
+[12:47] the theory of neural network has been around for a long time
+[12:49] but it had not been realised
+[12:51] the problem was with computational power
+[12:52] Thanks to NVIDIA’s graphics card
+[12:54] the theory of neural network has been able to realise
+[12:56] It made a sensation in the academic world
+[12:57] Jensen is also very serious about
+[12:59] GPU’s application in AI
+[13:01] They went all in after 2012
+[13:03] and let NVIDIA’s graphics card
+[13:04] do accelerated calculations easily and conveniently
+[13:06] Apart from investment focused on CUDA
+[13:07] there are also optimisation on AI for graphics card
+[13:09] including software support
+[13:10] platform support and etc
+[13:11] Later there is a consensus in the field of AI
+[13:14] If you want to do AI
+[13:15] then no doubt
+[13:16] you have to buy NVIDIA’s graphics card
+[13:21] Google, Amazon, Microsoft, Baidu
+[13:24] all used NVIDIA’s graphics card
+[13:24] to train the models
+[13:26] The most famous one in this wave is
+[13:28] NVIDIA’s A100
+[13:30] ChatGPT was trained with over 10,000 of
+[13:31] graphics cards.
+[13:32] A100 has also
+[13:33] become the standard for training large model
+[13:35] For major AI companies
+[13:35] if they couldn’t come out with significant result
+[13:37] but still want to catch the wave
+[13:38] What do they do
+[13:39] They fight in owning graphics card
+[13:40] They’ll tell you
+[13:41] how many NVIDIA’s
+[13:42] A100 graphics card they bought
+[13:43] ranging from thousands to tens of thousands
+[13:44] So this caused NVIDIA’s graphics card
+[13:45] to be in short supply for a long time
+[13:47] Their price went up to ten of thousands of dollars
+[13:49] Last year NVIDIA released
+[13:50] upgraded version of A100, H100
+[13:51] It has four to six times the performance of the A100
+[13:56] So don’t think that
+[13:57] NVIDIA is just in luck
+[13:59] just because they soar the highest
+[14:00] They spent a decade
+[14:02] and a lot of money and effort
+[14:04] to build their own wings
+[14:05] Just waiting for the right wind
+[14:09] Now that the wings are completed
+[14:11] the wind has come
+[14:12] NVIDIA definitely will want to
+[14:14] fly high
+[14:17] This is A100 system board released by
+[14:19] Jensen Huang 3 years ago
+[14:20] a big guy over 20kg
+[14:21] became the world’s largest GPU
+[14:24] Looks intimidating
+[14:26] This year he released another thing
+[14:39] DGX GH200 supercomputer.
+[14:43] The size is in 1:1 ratio with the actual thing
+[14:47] They use 240km of optic cable
+[14:49] is kilometre
+[14:49] that’s 240,000 metres
+[14:51] Its weigh is equal to 4 adult elephants
+[14:53] with internal memory of 144TB
+[14:56] This GPU is connected using
+[14:59] technology like NVLink, NVSwitch
+[15:01] And these 4 elephants
+[15:02] is actually a mega graphics card
+[15:08] it is specifically used for AI computation
+[15:09] It's expected to be ready by the end of the year
+[15:11] Google Cloud, Meta, Microsoft
+[15:13] are the first to access it
+[15:14] With such big first-mover advantage
+[15:15] NVIDIA is not limited to making
+[15:17] only graphics card and chip design
+[15:18] In 2019, they spent $6.9 billion
+[15:20] to acquire an Israeli chip company
+[15:22] called Mellanox
+[15:22] and came up with something called DPU
+[15:24] This thing is very powerful too
+[15:25] Jensen Huang said that
+[15:26] this acquisition is the most
+[15:28] successful strategic decision he has ever made
+[15:29] NVIDIA has started to merge
+[15:31] GPU, CPU and DPU together
+[15:33] and created
+[15:33] a server with incredible computing power
+[15:35] Supercomputer
+[15:36] is slowly creeping towards CPU market
+[15:38] and launched a variety of products
+[15:39] The eighth supercomputer in the world
+[15:41] DGX BasePOD
+[15:42] Accelerated superchip
+[15:43] GPU Grace Hopper
+[15:44] computing platform
+[15:44] BlueField-3 DPU and so on
+[15:46] Good names right
+[15:47] but you probably don’t understand
+[15:50] In short, Nvidia
+[15:52] covers everything
+[15:53] from chips to supercomputers
+[15:55] they’ve got it all covered
+[15:55] What if you can’t afford it
+[15:57] or don’t want to buy so many hardware?
+[15:58] It’s okay
+[15:59] NVIDIA can lease it to you
+[16:01] just get connected online
+[16:01] and use NVIDIA’s server
+[16:03] This is AI cloud business
+[16:08] It provides services to end user
+[16:10] as well as upstream companies
+[16:11] They came up with a software called cuLitho
+[16:13] to help TSMC, ASML
+[16:14] these upstream chip makers
+[16:16] Improve the performance of Inverse lithography technology by up to 40 times
+[16:18] By the way,
+[16:19] I have a Spanish friend who told me
+[16:21] that the name cuLitho
+[16:22] in Spanish sounds like
+[16:23] a booty
+[16:28] One word
+[16:29] Incredible
+[16:31] See, NVIDIA expanding across hardware,
+[16:34] software, services and etc
+[16:36] becoming the biggest winner in this AI wave
+[16:41] US sanctions towards China
+[16:43] bans the sale of A100  and H100
+[16:44] to China.
+[16:45] The impact on Nvidia is actually quite big.
+[16:46] China occupies a quarter of
+[16:47] NVIDIA market
+[16:49] They don’t want the cake
+[16:50] fly away just because of US government
+[16:52] When a reporter interviewed
+[16:53] Jensen Huang asking him
+[16:55] how big is the impact of this for NVIDIA
+[16:56] His answer is impermeable
+[16:59] First we will definitely work closely
+[17:00] with US government’s policy
+[17:01] Express their position first
+[17:02] At the same time we are trying
+[17:04] within the rules
+[17:05] to satisfy the demand
+[17:07] of Chinese consumers
+[17:10] He offends neither side
+[17:10] NVIDIA released
+[17:12] A800 graphics card
+[17:13] bypass a bunch of sensitive technology that has been sanctioned
+[17:15] This is made especially just for China
+[17:16] Alright
+[17:17] we understand the entire background of Nvidia,
+[17:19] it’s very clear now when you look at their earnings report
+[17:21] Currently they divided their business into 4 segments
+[17:23] Gaming, data centre
+[17:24] automotive, professional graphics processing
+[17:26] Previously NVIDIA’s ace business was gaming
+[17:28] and data center is about accelerated computing
+[17:31] lAI, Cloud service and etc
+[17:32] are all in this segment
+[17:33] These two segments are the main ones
+[17:34] In 2018,
+[17:35] Gaming occupied half of their business
+[17:37] Data center is a quarter
+[17:38] by 2022,
+[17:39] Data center occupies 56% of their business
+[17:41] Gaming dropped to 33%
+[17:43] The earning report released on 24th May
+[17:45] their revenue dropped significantly due
+[17:47] to sluggish global demand in gaming
+[17:48] This is actually what Wall Street expected.
+[17:50] However data center segment
+[17:51] is strong
+[17:52] 18% growth from previous quarter
+[17:54] Most importantly the revenue in second quarter
+[17:55] blinded Wall Street
+[17:58] Wall Street predicted that
+[17:59] their revenue for Q2 would be $7.2 billion
+[18:01] but NVIDIA came out and said
+[18:02] Your estimation is incorrect
+[18:03] Our revenue is $11 billion, 50% more
+[18:06] For automotive segment
+[18:08] it is a segment with great potential
+[18:09] Not only have to do chip for cars
+[18:11] also need to create car system
+[18:11] Another big cake
+[18:13] But this is at initial stage
+[18:15] It’s difficult to say what’s going to happen in future
+[18:16] So we’ll not discuss it
+[18:17] Before this NVIDIA released Omniverse
+[18:19] to bet on Metaverse
+[18:20] Although we haven’t seen much return yet
+[18:22] but I’ve watched the promotional video
+[18:23] It really is quite cool
+[18:24] If Metaverse ushered in explosive period
+[18:26] Then NVIDIA will again be on of the biggest winner
+[18:28] It’s definite
+[18:31] Anyway, the general picture is that
+[18:33] gaming needs graphics card
+[18:34] mining needs graphics card
+[18:35] AI computing needs graphics card
+[18:37] Need graphics card look for NVIDIA
+[18:40] NVIDIA stock price
+[18:40] rose by over 1000 fold
+[18:42] from its initial IPO
+[18:43] becoming the sixth largest company in the world
+[18:45] And it looks like it's just getting started
+[18:56] From the stories earlier
+[18:58] you would’ve believe Jensen is almost godlike
+[18:59] Every step is so precise.
+[19:01] but he actually made a lot of mistakes along the way
+[19:02] For the continuity of the story
+[19:04] I ignored it
+[19:04] In the early 2000s
+[19:06] There was a series of graphics card failures
+[19:07] almost defeated by ATI
+[19:08] there were also insider trading committed by employees
+[19:09] SEC did a thorough investigation on them
+[19:11] There was also problem with over-marketing
+[19:12] They even tried to enter mobile phone chip market
+[19:14] but it was all a failure
+[19:15] Looking at their stock price
+[19:17] Although it has risen so much as a whole
+[19:18] but in 2002 it dropped by 90%
+[19:20] 2008 dropped 80%
+[19:21] with more than 50% of retracement
+[19:23] This occurs every 3 to 5 years
+[19:24] Everyone knows
+[19:26] Jensen is great
+[19:27] but he is no fortune-teller
+[19:28] His obsession with leather jacket
+[19:30] I don’t know what else to say
+[19:33] Alright
+[19:34] Let’s talk a little bit about NVIDIA’s stock price
+[19:36] I’m worried that many would rush
+[19:37] to buy
+[19:38] NVIDIA’s stock after this video
+[19:39] I wouldn’t say you cannot buy
+[19:40] but just don’t go buy it
+[19:42] on a whim
+[19:43] The estimated value for NVIDIA
+[19:44] is too high from every perspectives
+[19:46] Their Price to Earning ratio is over 200
+[19:47] Price to Sales ratio is 38
+[19:48] For Apple, Microsoft and Google
+[19:50] their Price to Earning is less than 40
+[19:51] Tesla is only over 70
+[19:52] Compare them with those in same industry
+[19:53] Their revenue
+[19:55] is less than half of Intel’s
+[19:56] but market cap is 7 times more than Intel
+[19:59] revenue is similar to AMD
+[20:00] but market cap is 5 times more than AMD
+[20:02] One word
+[20:03] Expensive
+[20:04] Of course they are expensive for a reason
+[20:05] For a company in an industry like this
+[20:06] moreover it’s a monopolistic company
+[20:07] Its valuation is no longer one of the
+[20:10] main criteria for judging stock price
+[20:10] One of the main reason
+[20:12] do you know what it is?
+[20:12] There are some professional institutions
+[20:14] dare not to not invest in NVIDIA
+[20:16] because AI is the biggest wave
+[20:17] with biggest opportunity in the market
+[20:18] And NVIDIA is the biggest player
+[20:20] in this AI wave
+[20:21] When these funds invested in NVIDIA
+[20:22] even if the stock price fall
+[20:23] investors wouldn’t complain much
+[20:25] but if NVIDIA stock price keeps rising
+[20:27] and they didn’t invest because the price is expensive
+[20:29] then investors would really be pissed
+[20:32] Cathie Wood
+[20:34] liquidated NVIDIA stocks
+[20:36] in January through her ETF
+[20:37] Lately NVIDIA stock price is rising
+[20:38] she was reviled in the
+[20:40] investment circle
+[20:41] Choosing to not invest in this type of company
+[20:42] would risk fund their reputation
+[20:45] There’s a term in English
+[20:45] that best describe this behaviour
+[20:47] It is FoMO
+[20:48] Fear of Missing Out
+[20:50] They fear losing the potential rise
+[20:52] more than buying at expensive price
+[20:54] This is similar to Tesla two years ago
+[20:56] EV has great future
+[20:57] and Tesla was
+[20:59] the only option
+[21:00] even if its valuation
+[21:01] is astronomical compare to
+[21:02] other automotive companies
+[21:03] but funds still continued to buy
+[21:05] The behaviour of FoMo
+[21:07] in turn pushes the stock price
+[21:08] of these companies to an even higher position
+[21:09] You can say that
+[21:10] for these type of companies
+[21:11] they just have huge risk premium
+[21:13] but just because of this
+[21:14] you can’t say that their stock price is too high
+[21:16] That's not necessarily true
+[21:16] Because it they can sustain this momentum
+[21:18] and maintain this development trend
+[21:19] Then their stock price will continue to rise
+[21:22] There's a metaphor that many people often use
+[21:24] The wave we mentioned
+[21:25] is similar to gold rush
+[21:27] It’s hard to bet where the gold is
+[21:28] or who will find the gold
+[21:30] but there is a sure-fire deal
+[21:31] and that is you can sell shovels
+[21:32] Nvidia
+[21:33] is like selling a shovel at digital age
+[21:35] at AI age
+[21:36] This metaphor sounds right
+[21:37] and quite reasonable
+[21:39] But whenever I hear this analogy
+[21:40] it doesn’t seems right
+[21:42] Those who understand economy would know that
+[21:43] if you sell shovel during gold rush
+[21:46] could you be making a fortune?
+[21:47] The first one would perhaps earn a little
+[21:49] but if more people are selling it
+[21:50] and it’s easy to make shovel
+[21:51] then the marginal profit would quickly be eaten up
+[21:53] so in most industries
+[21:54] if you sell this so-called shovel
+[21:55] the upstream production tool
+[21:57] Due to its low entry barrier
+[21:58] the competition in the industry will be very fierce
+[22:00] so the profit margin will be low
+[22:02] However for NVIDIA
+[22:03] they can achieve a monopoly and a market value
+[22:05] of trillions by doing this so-called shovel
+[22:06] Its similar to TSMC
+[22:08] more basic than shovel, they make hammer
+[22:10] a tool to make shovel
+[22:11] And they can monopolise that
+[22:12] Have you ever thought why?
+[22:15] We’ll get deep into the
+[22:17] feature of chip industry
+[22:18] Have you heard of Moore’s Law?
+[22:21] On an integrated circuit
+[22:23] the number of transistors that can be accommodated
+[22:24] double up every 18 months
+[22:26] You can understand it as
+[22:27] The speed of chip can be faster every 18 months
+[22:29] Actually for the past few years
+[22:30] The speed of CPU evolution
+[22:31] is difficult to catch up with Moore’s law
+[22:33] However Jensen found that
+[22:34] the advancement of GPU dedicated graphics card
+[22:37] is faster than prediction of Moore’s Law
+[22:39] Performance increase more than triples every 2 years
+[22:41] This pattern even has
+[22:42] its own term
+[22:43] Huang's Law
+[22:48] No matter which law it is
+[22:49] This is a distinctive feature
+[22:49] in chip industry
+[22:51] The initial cost to invest is very high
+[22:53] and requires a lot of talents and equipment
+[22:54] The problem is that
+[22:55] the iteration rate is too fast
+[22:57] This is an industry that is constantly running
+[23:01] the iteration rate of this industry is too fast
+[23:03] From business perspective
+[23:05] this pose a tricky problem
+[23:06] it’s difficult for company to build their own moat
+[23:08] Moat is very important
+[23:10] to a company
+[23:11] For a traditional company
+[23:11] if they spent a lot of money to build a factory, a railroad
+[23:13] then they have large-scale advantage
+[23:15] and cost advantage
+[23:15] These advantages work as a moat
+[23:17] This moat will protect the company for a long time
+[23:19] The moat of internet company is stronger
+[23:20] Once a network effect is established
+[23:22] Wechat, Tiktok, Facebook
+[23:23] users are your strong moat.
+[23:27] For chip industry
+[23:28] there are Moore’s Law, Huang’s Law
+[23:30] No matter how good of a chip you release today
+[23:32] it’ll be outdated in two years
+[23:34] You won’t know who’ll make it next year
+[23:35] and take you down with his new technology
+[23:37] In the 90s
+[23:38] during the graphics card war
+[23:40] A company established less than two years
+[23:41] 3DFX
+[23:42] quickly became the industry standard
+[23:44] with their Voodoo graphics card
+[23:45] 5 years later they became dreary
+[23:46] and was acquired by NVIDIA
+[23:47] This is because their moat
+[23:49] hasn’t finished building and was destroyed
+[23:50] In this industry, it’s difficult to rely on a single product
+[23:52] or a single technology
+[23:54] to form a moat that lasts more than 2 years
+[23:55] Of course you can slowly accumulate many patents
+[23:57] to defend yourself
+[23:58] but the truth is
+[24:00] people will always find a way
+[24:01] to get around those patents
+[24:02] it doesn’t provide much protection
+[24:04] You have to keep running
+[24:06] and run faster than everyone
+[24:08] This running ability is your moat
+[24:10] In chip industry
+[24:11] the moat is R&D
+[24:12] You have to develop a complete set of
+[24:14] talents, facilities, organisation structure
+[24:16] These form the moat for chip company
+[24:20] This is why R&D is expensive
+[24:21] First is the initial cost is very high
+[24:23] requires a lot of talents
+[24:24] most importantly you have to continuously
+[24:26] keep the iteration and running speed high
+[24:27] Not a lot of people can stand it
+[24:29] Those tech giants are
+[24:30] actually very focused on technological innovation
+[24:32] Amazon, Google, Microsoft
+[24:34] their R&D investment is 10% to 15%
+[24:35] of their revenue
+[24:36] For NVIDIA
+[24:37] they have to keep invest around
+[24:38] 25% of their revenue for R&D
+[24:41] The Huang’s Law
+[24:42] is not a natural phenomenon
+[24:44] It is the result of
+[24:45] a rat race he created
+[24:47] If we were to tell a story
+[24:48] we can say NVIDIA
+[24:48] has been monopolising graphics card market since 2006
+[24:50] end in just one sentence
+[24:51] However for many times
+[24:52] they overturned
+[24:53] their own framework and technology
+[24:55] They pushed themselves to release
+[24:56] new generation of chip every 6 months
+[24:58] For example their latest ray tracing RTX technology
+[25:01] completely overturned
+[25:02] the program accumulated before
+[25:03] They use deep learning method
+[25:04] through 1 pixel
+[25:05] they guess what the other 8 pixels surround it looks like
+[25:08] to speed up image processing.
+[25:08] This intense running speed
+[25:10] makes only those who run fastest
+[25:12] with largest pool of talent
+[25:13] and wealthiest companies
+[25:15] can make money.
+[25:16] The rest could only run behind
+[25:17] This is why we often see that
+[25:19] after a war in chip industry
+[25:20] it always ends in acquisition
+[25:21] It's not just the difficulty of developing chips
+[25:24] it’s mainly because it’s not economical
+[25:25] Even those tech giants
+[25:26] with plentiful talents
+[25:27] won't set foot in the chip industry
+[25:28] unless they are forced to
+[25:30] But things are different now
+[25:32] The AI field is one of the biggest possible
+[25:33] battleground for the tech giants
+[25:35] In this battle, graphics card is too important
+[25:37] after all it determines computing speed
+[25:38] Non of them wish to be
+[25:40] strangled by NVIDIA
+[25:41] during AI era right
+[25:44] Although currently they are
+[25:45] NVIDIA’s biggest customer
+[25:46] but at the same time they delve into
+[25:48] R&D and chip making in full swing
+[25:50] Google already developed a chip
+[25:51] specifically designed for AI training called TPU
+[25:54] According to them,
+[25:54] it is more efficient than Nvidia's graphics card.
+[25:56] In 2017, Meta already used
+[25:58] over 20,000 NVIDIA's graphics cards
+[26:00] for AI training
+[26:01] but now they are also
+[26:02] all in in researching chip, calling it MTIA
+[26:05] Actually from 2020
+[26:06] NVIDIA has been actively seeking
+[26:08] Masayoshi Son’s Softbank
+[26:09] to acquire their chip company ARM
+[26:11] at the price of $40 billion
+[26:13] But Qualcomm, Microsoft and Google
+[26:15] are all strongly against it
+[26:17] The deal fell through
+[26:18] From here you can see that those tech giants
+[26:19] are actually very afraid of Nvidia.
+[26:24] Emerging from the early days graphics card industry
+[26:27] is his ability
+[26:28] Having laid out CUDA since 20 years ago
+[26:31] is his vision
+[26:32] Continuous monopoly in graphics card industry
+[26:34] is his endurance
+[26:35] Meeting the demand for massive computing power in mining
+[26:37] is his luck
+[26:39] The unchanged fashion style
+[26:41] is his devotion
+[26:45] When long accumulation period
+[26:47] meets the AI wave
+[26:48] NVIDIA naturally obtain
+[26:49] first-mover advantage
+[26:51] Facing new vast potential market
+[26:53] and competitors looking to get in on the action
+[26:55] Can NVIDIA fight their
+[26:56] way out again in this
+[26:58] new wave of AI fight?
+[26:59] It’s hard to say
