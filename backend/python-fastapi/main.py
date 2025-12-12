@@ -65,6 +65,9 @@ except ImportError:
 from pdf_generator import generate_video_pdf
 from video_frame_extractor import extract_frame_at_timestamp, extract_youtube_chapters, extract_multiple_frames
 
+# 导入 LangChain LLM 服务
+from llm_server import get_llm_service
+
 app = FastAPI(
     title="视频内容平台 API",
     description="动态视频内容管理系统",
@@ -238,7 +241,6 @@ async def get_comments(video_id: str, maxResults: Optional[int] = Query(20)):
         
         if comments:
             print(f"[SUCCESS] 成功获取 {len(comments)} 条评论")
-            print(comments)
             return {
                 'success': True,
                 'videoId': video_id,
@@ -396,18 +398,31 @@ async def health_check():
 
 
 @app.post("/api/chat")
-async def chat(chat_request: ChatRequest):
+async def chat(chat_request: ChatRequest, request: Request):
     """
-    LLM 聊天接口
+    LLM 聊天接口 - 使用 LangChain（支持用户隔离）
     """
     user_message = chat_request.message
     video_context = chat_request.video_context
 
-    print(f"Video context: {video_context}", flush=True)
+    # 获取用户标识（优先使用 X-Session-ID header，否则用 IP）
+    user_id = request.headers.get("X-Session-ID") or request.client.host or "anonymous"
+    
+    print(f"[INFO] Chat request - User: {user_id}, Video context: {video_context}", flush=True)
 
     try:
-        # 调用 OpenAI API 进行聊天
-        response = chat_with_openai(user_message, video_context)
+        # 使用 LangChain LLM 服务
+        llm_service = get_llm_service()
+        
+        # 从视频上下文获取 video_id
+        video_id = video_context.get('videoId', 'default') if video_context else 'default'
+        
+        response = llm_service.chat_with_video(
+            user_message=user_message,
+            video_context=video_context,
+            video_id=video_id,
+            user_id=user_id  # 传入用户标识实现隔离
+        )
 
         return {
             'success': True,
@@ -416,6 +431,7 @@ async def chat(chat_request: ChatRequest):
         }
 
     except Exception as e:
+        print(f"[ERROR] Chat failed: {e}")
         raise HTTPException(
             status_code=500,
             detail={
@@ -425,35 +441,58 @@ async def chat(chat_request: ChatRequest):
         )
 
 
+class PDFExportRequest(BaseModel):
+    notes: list = []
+    videoTitle: str = ""
+
+@app.post("/api/generate-pdf/{video_id}")
+async def generate_pdf_post(video_id: str, request: PDFExportRequest = None):
+    """
+    生成视频数据的 PDF 文档（支持包含笔记）
+    
+    Args:
+        video_id: YouTube 视频 ID
+        request: 可选的请求体，包含 notes 和 videoTitle
+    """
+    return await _generate_pdf_internal(video_id, request)
+
 @app.get("/api/generate-pdf/{video_id}")
 async def generate_pdf(video_id: str):
     """
-    生成视频数据的 PDF 文档
+    生成视频数据的 PDF 文档（GET 方式，向后兼容）
     
     Args:
         video_id: YouTube 视频 ID
     """
+    return await _generate_pdf_internal(video_id, None)
+
+async def _generate_pdf_internal(video_id: str, request: PDFExportRequest = None):
+    """
+    内部 PDF 生成函数
+    """
     try:
         print(f'[INFO] 开始生成 PDF for video {video_id}...')
         
-        # 加载视频数据
-        data_path = DATA_DIR / f'video-data-{video_id}.json'
+        # 从 Supabase 获取视频数据
+        cached_record = get_cached_video_from_supabase(video_id)
         
-        if not data_path.exists():
+        if not cached_record or not cached_record.get('video_data'):
             raise HTTPException(
                 status_code=404,
                 detail={
                     'success': False,
                     'error': 'Video data not found',
-                    'message': f'视频数据文件不存在: video-data-{video_id}.json'
+                    'message': f'视频数据不存在: {video_id}'
                 }
             )
         
-        with open(data_path, 'r', encoding='utf-8') as f:
-            video_data = json.load(f)
+        video_data = cached_record['video_data']
         
-        # 生成 PDF（在内存中）
-        pdf_buffer = generate_video_pdf(video_data, output_path=None)
+        # 提取笔记数据
+        notes = request.notes if request else []
+        
+        # 生成 PDF（在内存中），传入笔记
+        pdf_buffer = generate_video_pdf(video_data, output_path=None, notes=notes)
         
         # 生成文件名
         video_title = video_data.get('videoInfo', {}).get('title', 'video')
@@ -665,60 +704,6 @@ async def get_video_frames_batch(video_id: str, request: VideoFramesRequest):
 
 
 
-def chat_with_openai(user_message, video_context):
-    """
-    使用 Gemini API 进行聊天（不需要代理，可直连）
-    """
-    from google import genai
-    
-    gemini_api_key = os.getenv('GEMINI_API_KEY')
-    if not gemini_api_key:
-        raise ValueError("GEMINI_API_KEY 未配置，请在 .env 文件中设置")
-    
-    client = genai.Client(api_key=gemini_api_key)
-    
-    system_prompt = """You are a video assistant PageOn-Video assistant, helping users understand and find video content.
-Your key abilities are:
-1. **deep Analysis**: Provide accurate and detailed response based on the complete video transcript and chapter information.
-2. **Timestamp**: Mark precise timestamps for relevant content within your answers to facilitate user navigation.
-3. **Contextual Understanding**: Comprehend the overall structure of the video to provide valuable insights.
-
-Response Format Requirements:
-1. Use the [Timestamp] format to cite key information points. For example:
--[05:30] mention a key concept
--[12:45] demonstrated a specific case
--[1:08:20] summarized the core viewpoints
-
-2. If the user's inquiry involves multiple relevant sections, list all corresponding timestamps:
-Example:
-"This topic is mentioned multiple times in the video:
--[05:30] Introduced the concept for the first time
--[15:20] Explained the principle in depth
--[28:40] Showed practical application"
-
-3. Provide concise yet informative responses, highlighting key takeaways.
-
-4. If the video does not contain relevant content, explicitly inform the user.
-
-5. Adopt a friendly and professional tone, acting as a knowledgeable guide who understands the full scope of the video"""
-    
-    # 构建完整提示
-    full_prompt = system_prompt
-    
-    if video_context:
-        full_prompt += f"\n\nVideo information: {json.dumps(video_context, ensure_ascii=False)}"
-    
-    full_prompt += f"\n\nUser question: {user_message}"
-    
-    # 调用 Gemini API
-    response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
-        contents=[full_prompt]
-    )
-    
-    return response.text
-
-
 @app.post('/api/process-video')
 async def process_video(request_data: ProcessVideoRequest):
     """
@@ -794,11 +779,13 @@ async def process_video(request_data: ProcessVideoRequest):
         if not transcript or not details:
             raise HTTPException(status_code=500, detail='无法获取视频字幕或详情')
 
-        # 使用 LLM 处理和结构化字幕
+        # 使用 LangChain LLM 服务处理和结构化字幕
         try:
-            print(f"[INFO] 开始使用 LLM 处理字幕...")
-            video_data_json = chat_with_gemini(transcript, details, video_id, language)
-            print(f"[INFO] 生成的 JSON language: {language}")
+            print(f"[INFO] 开始使用 LangChain 处理字幕...")
+            llm_service = get_llm_service()
+            video_analysis = llm_service.analyze_video_transcript(transcript, details, video_id)
+            video_data_json = video_analysis.model_dump()
+            print(f"[INFO] LangChain 生成结构化数据，language: {language}")
             
             # 获取章节缩略图和视频标题
             video_title = ''
@@ -878,273 +865,255 @@ async def process_video(request_data: ProcessVideoRequest):
         raise HTTPException(status_code=500, detail=f'视频处理失败: {str(e)}')
 
 
+@app.post('/api/process-video/stream')
+async def process_video_stream(request_data: ProcessVideoRequest):
+    """
+    流式处理 YouTube 视频 URL - 直接输出 LLM 生成的内容
+    
+    返回 Server-Sent Events (SSE) 格式：
+    - 直接发送 LLM 生成的文本片段（无前缀）
+    - data: [DONE] 完整JSON结果
+    - data: [CACHED] 缓存的完整JSON结果  
+    - data: [ERROR] 错误消息
+    """
+    import time
+    url = request_data.url
+    language = request_data.language
+    
+    print(f"[STREAM] 📥 收到请求: url={url}, language={language}", flush=True)
+
+    async def generate():
+        try:
+            sys.path.append(str(BASE_DIR))
+            from get_full_transcript_ytdlp import get_full_transcript, display_full_transcript
+            from youtube_client import YouTubeClient
+
+            # 提取视频 ID
+            video_id = YouTubeClient.extract_video_id(url)
+            print(f"[STREAM] 🎬 视频ID: {video_id}", flush=True)
+            if not video_id:
+                print(f"[STREAM] ❌ 无法提取视频ID", flush=True)
+                yield 'data: [ERROR] 无法从URL提取视频ID\n\n'
+                return
+
+            # 检查缓存
+            print(f"[STREAM] 🔍 检查缓存...", flush=True)
+            cached_record = get_cached_video_from_supabase(video_id)
+            if cached_record and cached_record.get('video_data'):
+                print(f"[STREAM] ✅ 命中缓存，直接返回", flush=True)
+                cached_data = cached_record['video_data']
+                if language and language != 'en':
+                    cached_data = translate_cached_data(cached_data, language)
+                yield f'data: [CACHED] {json.dumps(cached_data, ensure_ascii=False)}\n\n'
+                return
+
+            # 获取字幕
+            print(f"[STREAM] 📝 开始获取字幕...", flush=True)
+            start_time = time.time()
+            result = get_full_transcript(url, language='en')
+            print(f"[STREAM] 📝 字幕获取完成，耗时: {time.time() - start_time:.2f}s", flush=True)
+            
+            if not result or result == (None, None):
+                print(f"[STREAM] ❌ 无法获取字幕", flush=True)
+                yield 'data: [ERROR] 无法获取视频字幕\n\n'
+                return
+
+            transcript, details = result
+            if not transcript or not details:
+                print(f"[STREAM] ❌ 字幕或详情为空", flush=True)
+                yield 'data: [ERROR] 字幕或详情为空\n\n'
+                return
+            
+            print(f"[STREAM] 📝 字幕条数: {len(transcript)}", flush=True)
+
+            # 流式 LLM 分析 - 使用分段事件流
+            print(f"[STREAM] 🤖 开始 LLM 流式分析...", flush=True)
+            llm_start = time.time()
+            llm_service = get_llm_service()
+            full_response = ""
+            chunk_count = 0
+            
+            # 增量解析状态
+            video_info_sent = False
+            sent_section_ids = set()
+            
+            def send_event(event_type: str, data: dict):
+                """发送结构化事件"""
+                event = {"type": event_type, "data": data}
+                return f'data: {json.dumps(event, ensure_ascii=False)}\n\n'
+            
+            def try_parse_video_info(content: str):
+                """尝试从累积内容中解析 videoInfo"""
+                import re
+                # 清理 markdown
+                text = re.sub(r'^```json?\s*', '', content.strip())
+                
+                # 查找 videoInfo 对象
+                match = re.search(r'"videoInfo"\s*:\s*(\{)', text)
+                if not match:
+                    return None
+                
+                start = match.end() - 1  # { 的位置
+                depth = 0
+                for i in range(start, len(text)):
+                    if text[i] == '{':
+                        depth += 1
+                    elif text[i] == '}':
+                        depth -= 1
+                        if depth == 0:
+                            try:
+                                return json.loads(text[start:i+1])
+                            except:
+                                return None
+                return None
+            
+            def try_parse_sections(content: str, seen_ids: set):
+                """尝试从累积内容中解析新的 sections"""
+                import re
+                text = re.sub(r'^```json?\s*', '', content.strip())
+                
+                # 查找 sections 数组
+                match = re.search(r'"sections"\s*:\s*\[', text)
+                if not match:
+                    return []
+                
+                start = match.end()
+                new_sections = []
+                
+                # 查找每个 section 对象
+                i = start
+                while i < len(text):
+                    # 跳过空白和逗号
+                    while i < len(text) and text[i] in ' \t\n\r,':
+                        i += 1
+                    if i >= len(text) or text[i] == ']':
+                        break
+                    if text[i] != '{':
+                        i += 1
+                        continue
+                    
+                    # 找到对象开始，寻找闭合
+                    obj_start = i
+                    depth = 0
+                    for j in range(i, len(text)):
+                        if text[j] == '{':
+                            depth += 1
+                        elif text[j] == '}':
+                            depth -= 1
+                            if depth == 0:
+                                try:
+                                    section = json.loads(text[obj_start:j+1])
+                                    if section.get('id') and section['id'] not in seen_ids:
+                                        new_sections.append(section)
+                                        seen_ids.add(section['id'])
+                                except:
+                                    pass
+                                i = j + 1
+                                break
+                    else:
+                        break  # 对象未闭合，等待更多数据
+                
+                return new_sections
+            
+            async for chunk in llm_service.analyze_video_transcript_stream(transcript, details, video_id):
+                if chunk == "\n[STREAM_END]":
+                    continue
+                full_response += chunk
+                chunk_count += 1
+                
+                # 尝试增量解析并发送事件
+                if not video_info_sent:
+                    video_info = try_parse_video_info(full_response)
+                    if video_info:
+                        print(f"[STREAM] 📤 发送 video_info 事件", flush=True)
+                        yield send_event("video_info", video_info)
+                        video_info_sent = True
+                
+                # 尝试解析新的 sections
+                new_sections = try_parse_sections(full_response, sent_section_ids)
+                for section in new_sections:
+                    print(f"[STREAM] 📤 发送 section 事件: {section.get('id')}", flush=True)
+                    yield send_event("section", section)
+                
+                if chunk_count % 20 == 0:
+                    print(f"[STREAM] 🔄 chunk#{chunk_count}, 长度:{len(full_response)}", flush=True)
+            
+            print(f"[STREAM] 🤖 LLM 流式输出完成，耗时: {time.time() - llm_start:.2f}s, 总chunks: {chunk_count}", flush=True)
+
+            # === 解析完整结果 ===
+            print(f"[STREAM] 📊 解析完整 JSON...", flush=True)
+            try:
+                video_analysis = llm_service.parse_analysis_result(full_response)
+                video_data_json = video_analysis.model_dump()
+                print(f"[STREAM] ✅ JSON 解析成功，sections: {len(video_data_json.get('sections', []))}", flush=True)
+            except Exception as parse_error:
+                print(f"[STREAM] ⚠️ JSON 解析失败，使用原始响应: {parse_error}", flush=True)
+                try:
+                    import re
+                    text = re.sub(r'^```json?\s*', '', full_response.strip())
+                    text = re.sub(r'\s*```$', '', text)
+                    video_data_json = json.loads(text)
+                except:
+                    video_data_json = {"videoInfo": {"title": details.get('title', ''), "videoId": video_id}, "sections": []}
+
+            # 获取章节
+            try:
+                video_title, chapters = extract_youtube_chapters(video_id)
+                if video_title:
+                    video_data_json['videoInfo']['title'] = video_title
+                video_data_json['chapters'] = chapters or []
+            except:
+                video_data_json['chapters'] = []
+
+            # 发送完整的 JSON 给前端（与 [CACHED] 格式保持一致）
+            yield f'data: [DONE] {json.dumps(video_data_json, ensure_ascii=False)}\n\n'
+            print(f"[STREAM] 📤 已发送 [DONE] 完整 JSON", flush=True)
+
+            # 保存到 Supabase（后台处理，不阻塞前端）
+            print(f"[STREAM] 💾 保存到 Supabase...", flush=True)
+            output_lines = display_full_transcript(transcript, details=details)
+            video_title = video_data_json.get('videoInfo', {}).get('title', f'Video {video_id}')
+            transcript_text = f"{video_title}\n{'=' * 70}\n\n" + '\n'.join(output_lines)
+            
+            save_video_to_supabase(
+                video_id=video_id,
+                video_data=video_data_json,
+                transcript=transcript_text,
+                chapters=video_data_json.get('chapters', [])
+            )
+            print(f"[STREAM] ✅ 处理完成", flush=True)
+
+        except Exception as e:
+            import traceback
+            print(f"[STREAM] ❌ 异常: {e}", flush=True)
+            traceback.print_exc()
+            yield f'data: [ERROR] {str(e)}\n\n'
+
+    return StreamingResponse(
+        generate(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no"
+        }
+    )
 
 
 def translate_cached_data(cached_data: dict, target_language_code: str) -> dict:
     """
-    使用 Gemini API 将缓存的视频数据翻译为目标语言
+    使用 LangChain 翻译缓存数据
     """
-    import json
-    import re
-    from google import genai
-
-    gemini_api_key = os.getenv('GEMINI_API_KEY')
-    if not gemini_api_key:
-        raise ValueError("GEMINI_API_KEY 未配置，请在 .env 文件中设置")
-
-    client = genai.Client(api_key=gemini_api_key)
-
-    # 语言映射
-    language_names = {
-        "zh": "Chinese (简体中文)",
-        "en": "English",
-        "ja": "Japanese (日本語)",
-        "ko": "Korean (한국어)",
-        "es": "Spanish (Español)",
-        "fr": "French (Français)",
-        "de": "German (Deutsch)",
-        "pt": "Portuguese (Português)",
-        "ru": "Russian (Русский)",
-        "ar": "Arabic (العربية)",
-    }
-    target_language = language_names.get(target_language_code, "English")
-
-    # 提取需要翻译的文本内容
-    video_info = cached_data.get('videoInfo', {})
-    sections = cached_data.get('sections', [])
+    if target_language_code == 'en':
+        return cached_data
     
-    # 构建翻译提示
-    translation_prompt = f"""
-You are a professional translator. Translate the following video content JSON to {target_language}.
-
-IMPORTANT RULES:
-1. Translate ONLY the text content fields (title, description, summary, content)
-2. DO NOT translate or modify: videoId, thumbnail, id, timestampStart, timestamp, thumbnail_url
-3. Keep the exact same JSON structure
-4. Output valid JSON only, no markdown code blocks
-
-Original JSON:
-{json.dumps(cached_data, ensure_ascii=False, indent=2)}
-
-OUTPUT: Return the translated JSON with the same structure, all text in {target_language}
-"""
-
     try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
-            contents=[translation_prompt],
-        )
-        
-        response_text = response.text.strip()
-        
-        # 移除可能的 markdown 代码块标记
-        response_text = re.sub(r'^```json\s*', '', response_text)
-        response_text = re.sub(r'^```\s*', '', response_text)
-        response_text = re.sub(r'\s*```$', '', response_text)
-        
-        # 提取纯 JSON
-        start_idx = response_text.find('{')
-        if start_idx != -1:
-            brace_count = 0
-            end_idx = start_idx
-            for i, char in enumerate(response_text[start_idx:], start_idx):
-                if char == '{':
-                    brace_count += 1
-                elif char == '}':
-                    brace_count -= 1
-                    if brace_count == 0:
-                        end_idx = i + 1
-                        break
-            response_text = response_text[start_idx:end_idx]
-        
-        translated_data = json.loads(response_text)
-        print(f"[SUCCESS] 缓存数据已翻译为 {target_language}")
-        return translated_data
-        
+        llm_service = get_llm_service()
+        return llm_service.translate_video_data(cached_data, target_language_code)
     except Exception as e:
-        print(f"[WARN] 翻译缓存数据失败: {e}，返回原始数据")
+        print(f"[WARN] 翻译失败: {e}，返回原始数据")
         return cached_data
 
-
-def chat_with_gemini(transcript, details, video_id, language):
-    """
-    使用Gemini API 将视频字幕转换为结构化 JSON
-    """
-    import os
-    import json
-    import re
-    from google import genai
-
-    gemini_api_key = os.getenv('GEMINI_API_KEY')
-    if not gemini_api_key:
-        raise ValueError("GEMINI_API_KEY 未配置，请在 .env 文件中设置")
-
-    client = genai.Client(api_key=gemini_api_key)
-
-
-    # 时间戳转换函数
-    def seconds_to_timestamp(seconds):
-        """将秒数转换为时间戳格式 HH:MM:SS"""
-        try:
-            total_seconds = int(float(seconds))
-            hours = total_seconds // 3600
-            minutes = (total_seconds % 3600) // 60
-            secs = total_seconds % 60
-            return f"{hours:02d}:{minutes:02d}:{secs:02d}"
-        except:
-            return "00:00:00"
-    
-    # 准备字幕文本（时间戳转换为 MM:SS 或 HH:MM:SS 格式）
-    transcript_text = "\n".join([f"[{seconds_to_timestamp(item['start'])}] {item['text']}" for item in transcript])
-    
-    # 构建 prompt，避免 f-string 嵌套问题
-    title = details.get('title', 'Unknown')
-    
-    def sample_transcript(transcript_text, max_chars=15000, num_segments=10):
-      """
-      按行均匀采样文本：保持完整的 [时间戳] 文字 格式
-      """
-      lines = transcript_text.strip().split('\n')
-      total_lines = len(lines)
-      
-      # 如果总字符数不超过限制，返回完整文本
-      if len(transcript_text) <= max_chars:
-        return transcript_text
-      
-      # 计算每个片段应该包含的行数
-      lines_per_segment = max(1, total_lines // num_segments)
-      chars_per_segment = max_chars // num_segments
-      
-      sampled_parts = []
-      for i in range(num_segments):
-        # 计算每个片段的起始行（均匀分布）
-        if num_segments > 1:
-          start_line = i * (total_lines - lines_per_segment) // (num_segments - 1)
-        else:
-          start_line = 0
-        
-        # 收集该片段的完整行，直到达到字符限制
-        segment_lines = []
-        segment_chars = 0
-        for j in range(start_line, min(start_line + lines_per_segment * 2, total_lines)):
-          line = lines[j]
-          if segment_chars + len(line) > chars_per_segment and segment_lines:
-            break
-          segment_lines.append(line)
-          segment_chars += len(line) + 1  # +1 for newline
-        
-        if segment_lines:
-          sampled_parts.append('\n'.join(segment_lines))
-
-      separator = "\n\n[...]\n\n"
-      return separator.join(sampled_parts)
-      
-      
-      
-    transcript_preview = sample_transcript(transcript_text, max_chars=15000, num_segments=10)
-    thumbnail_url = f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg"
-    
-    # 语言映射
-    language_names = {
-        "zh": "Chinese (简体中文)",
-        "en": "English",
-        "ja": "Japanese (日本語)",
-        "ko": "Korean (한국어)",
-        "es": "Spanish (Español)",
-        "fr": "French (Français)",
-        "de": "German (Deutsch)",
-        "pt": "Portuguese (Português)",
-        "ru": "Russian (Русский)",
-        "ar": "Arabic (العربية)",
-    }
-    target_language = language_names.get(language, "English")
-    
-    system_prompt = """
-You are an expert video content analyst. Your task is to deeply analyze this YouTube video transcript and extract the most valuable insights, creating a well-structured summary.
-
-**SUMMARIZE, DON'T TRANSCRIBE**: Extract insights, arguments, and conclusions - NOT word-for-word transcript**
-
-Video Title: """ + title + """
-Video ID: """ + video_id + """
-
-Transcript (format: [HH:MM:SS] text):
-""" + transcript_preview + """
-
-Generate JSON with this structure:
-{
-  "videoInfo": {
-    "title": "Video Title",
-    "videoId": \"""" + video_id + """\",
-    "description": "Brief topic description",
-    "thumbnail": \"""" + thumbnail_url + """\",
-    "summary": "2-3 sentence summary"
-  },
-  "sections": [
-    {
-      "id": "section1",
-      "title": "Section Title",
-      "content": [
-        {"content": "Key point (1-2 sentences)", "timestampStart": "00:00:00"}
-      ]
-    }
-  ]
-}
-
-REQUIREMENTS:
-- **MUST cover the ENTIRE video from beginning to end**
-- Create sections based on natural topic changes in the video
-- Each content item: 1-2 concise sentences (focus on key insights)
-- **timestampStart format: "HH:MM:SS" (e.g., "00:05:30", "01:23:45")**
-- **COPY timestamps EXACTLY from the transcript [HH:MM:SS] - DO NOT invent timestamps**
-
-OUTPUT: Valid JSON only, no markdown code blocks or extra text
-"""
-
-    try:
-        # 生成内容
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=[system_prompt],
-        )
-        
-        # 提取响应文本
-        response_text = response.text.strip()
-        
-        # 移除可能的 markdown 代码块标记
-        response_text = re.sub(r'^```json\s*', '', response_text)
-        response_text = re.sub(r'^```\s*', '', response_text)
-        response_text = re.sub(r'\s*```$', '', response_text)
-        
-        # 提取纯 JSON（处理 LLM 在 JSON 后面添加额外文字的情况）
-        # 找到第一个 { 和最后一个匹配的 }
-        start_idx = response_text.find('{')
-        if start_idx != -1:
-            # 使用括号匹配找到完整的 JSON 对象
-            brace_count = 0
-            end_idx = start_idx
-            for i, char in enumerate(response_text[start_idx:], start_idx):
-                if char == '{':
-                    brace_count += 1
-                elif char == '}':
-                    brace_count -= 1
-                    if brace_count == 0:
-                        end_idx = i + 1
-                        break
-            response_text = response_text[start_idx:end_idx]
-        
-        # 解析 JSON
-        video_data_json = json.loads(response_text)
-        
-        print(f"[SUCCESS] LLM 成功生成结构化数据，包含 {len(video_data_json.get('sections', []))} 个章节")
-        return video_data_json
-        
-    except json.JSONDecodeError as e:
-        print(f"[ERROR] JSON 解析失败: {e}")
-        print(f"[DEBUG] 原始响应: {response_text[:500]}")
-        raise ValueError(f"LLM 返回的不是有效的 JSON: {str(e)}")
-    except Exception as e:
-        print(f"[ERROR] Gemini API 调用失败: {e}")
-        raise
 
 # 提供静态文件
 @app.get("/")
@@ -1162,8 +1131,9 @@ app.mount("/data", StaticFiles(directory=str(STATIC_DIR / "data")), name="data")
 
 if __name__ == "__main__":
     import uvicorn
-    print("🚀 Server is running on http://localhost:5000")
-    print("📊 API endpoint: http://localhost:5000/api")
-    print("📚 API docs: http://localhost:5000/docs")
-    print("🌐 Frontend: http://localhost:5000")
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+    print("🚀 Server is running on http://localhost:5500")
+    print("📊 API endpoint: http://localhost:5500/api")
+    print("📚 API docs: http://localhost:5500/docs")
+    print("🌐 Frontend: http://localhost:5500")
+    # 测试环境api端口为5500
+    uvicorn.run(app, host="0.0.0.0", port=5500)

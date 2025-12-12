@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+*.pyo
+my_env/
+.git
+.gitignore
+*.md
+tmp_data/
+*.txt
+!requirements.txt
+

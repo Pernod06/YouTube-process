@@ -124,6 +124,49 @@ class VideoPDFGenerator:
             alignment=TA_CENTER,
             fontName=self.chinese_font
         ))
+        
+        # 笔记标题样式
+        self.styles.add(ParagraphStyle(
+            name='NotesSectionTitle',
+            parent=self.styles['Heading2'],
+            fontSize=18,
+            textColor=colors.HexColor('#b45309'),
+            spaceAfter=15,
+            spaceBefore=25,
+            fontName=self.chinese_font
+        ))
+        
+        # 笔记内容预览样式
+        self.styles.add(ParagraphStyle(
+            name='NotePreview',
+            parent=self.styles['Normal'],
+            fontSize=9,
+            textColor=colors.HexColor('#666666'),
+            fontStyle='italic',
+            spaceAfter=4,
+            fontName=self.chinese_font
+        ))
+        
+        # 笔记正文样式
+        self.styles.add(ParagraphStyle(
+            name='NoteText',
+            parent=self.styles['Normal'],
+            fontSize=11,
+            leading=15,
+            textColor=colors.HexColor('#1f2937'),
+            spaceAfter=8,
+            fontName=self.chinese_font
+        ))
+        
+        # 笔记时间样式
+        self.styles.add(ParagraphStyle(
+            name='NoteDate',
+            parent=self.styles['Normal'],
+            fontSize=8,
+            textColor=colors.HexColor('#9ca3af'),
+            spaceAfter=12,
+            fontName=self.chinese_font
+        ))
     
     def _clean_text(self, text):
         """清理文本中的特殊字符和引用标记"""
@@ -140,17 +183,20 @@ class VideoPDFGenerator:
         text = re.sub(r'\s+', ' ', text)
         return text.strip()
     
-    def generate_pdf(self, video_data, output_path=None):
+    def generate_pdf(self, video_data, output_path=None, notes=None):
         """
         生成 PDF 文档
         
         Args:
             video_data: 视频数据字典
             output_path: 输出文件路径，如果为 None 则返回 BytesIO 对象
+            notes: 用户笔记列表，每个笔记包含 sectionId, sentenceIndex, contentPreview, noteText, createdAt
             
         Returns:
             如果 output_path 为 None，返回 BytesIO 对象；否则返回文件路径
         """
+        if notes is None:
+            notes = []
         # 创建 PDF 文档
         if output_path:
             doc = SimpleDocTemplate(
@@ -227,7 +273,7 @@ class VideoPDFGenerator:
                 # 新格式：content 是列表
                 first_timestamp = content_list[0].get('timestampStart', '00:00:00') if isinstance(content_list[0], dict) else '00:00:00'
                 last_timestamp = content_list[-1].get('timestampStart', '00:00:00') if isinstance(content_list[-1], dict) else '00:00:00'
-                timestamp_text = f"⏱ {first_timestamp} - {last_timestamp}"
+                timestamp_text = f"[{first_timestamp} - {last_timestamp}]"
                 story.append(Paragraph(timestamp_text, self.styles['Timestamp']))
                 
                 # 遍历每个内容项
@@ -251,7 +297,7 @@ class VideoPDFGenerator:
                 # 兼容旧格式：content 是字符串
                 timestamp_start = section.get('timestampStart', '00:00')
                 timestamp_end = section.get('timestampEnd', '00:00')
-                timestamp_text = f"⏱ {timestamp_start} - {timestamp_end}"
+                timestamp_text = f"[{timestamp_start} - {timestamp_end}]"
                 story.append(Paragraph(timestamp_text, self.styles['Timestamp']))
                 
                 content = self._clean_text(content_list)
@@ -261,6 +307,43 @@ class VideoPDFGenerator:
             # 章节之间添加间距
             if i < len(sections) - 1:
                 story.append(Spacer(1, 0.2*inch))
+        
+        # 添加笔记部分（如果有笔记）
+        if notes and len(notes) > 0:
+            story.append(Spacer(1, 0.3*inch))
+            story.append(self._create_line())
+            story.append(Spacer(1, 0.2*inch))
+            
+            # 笔记标题
+            story.append(Paragraph("my notes", self.styles['NotesSectionTitle']))
+            story.append(Spacer(1, 0.1*inch))
+            
+            # 遍历每个笔记
+            for note in notes:
+                # 笔记内容预览（引用的原文）
+                content_preview = note.get('contentPreview', '')
+                if content_preview:
+                    preview_text = f'"{self._clean_text(content_preview[:100])}..."'
+                    story.append(Paragraph(preview_text, self.styles['NotePreview']))
+                
+                # 笔记正文
+                note_text = self._clean_text(note.get('noteText', ''))
+                if note_text:
+                    story.append(Paragraph(note_text, self.styles['NoteText']))
+                
+                # 笔记时间
+                created_at = note.get('createdAt', '')
+                if created_at:
+                    try:
+                        # 尝试解析 ISO 格式时间
+                        from datetime import datetime as dt
+                        date_obj = dt.fromisoformat(created_at.replace('Z', '+00:00'))
+                        date_str = date_obj.strftime('%Y-%m-%d %H:%M')
+                    except:
+                        date_str = created_at
+                    story.append(Paragraph(date_str, self.styles['NoteDate']))
+                
+                story.append(Spacer(1, 0.1*inch))
         
         # 添加页脚信息
         story.append(Spacer(1, 0.3*inch))
@@ -290,19 +373,20 @@ class VideoPDFGenerator:
         )
 
 
-def generate_video_pdf(video_data, output_path=None):
+def generate_video_pdf(video_data, output_path=None, notes=None):
     """
     便捷函数：生成视频 PDF
     
     Args:
         video_data: 视频数据字典
         output_path: 输出文件路径，如果为 None 则返回 BytesIO 对象
+        notes: 用户笔记列表
         
     Returns:
         如果 output_path 为 None，返回 BytesIO 对象；否则返回文件路径
     """
     generator = VideoPDFGenerator()
-    return generator.generate_pdf(video_data, output_path)
+    return generator.generate_pdf(video_data, output_path, notes=notes)
 
 
 # 测试代码

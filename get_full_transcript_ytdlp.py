@@ -109,13 +109,13 @@ def get_full_transcript(video_url: str, language: str = 'en'):
         print(f"  总段数: {len(transcript)}")
         
         # 计算统计信息
-        if transcript:
-            total_duration = sum(entry['duration'] for entry in transcript)
-            total_chars = sum(len(entry['text']) for entry in transcript)
+        # if transcript:
+        #     total_duration = sum(entry['duration'] for entry in transcript)
+        #     total_chars = sum(len(entry['text']) for entry in transcript)
             
-            print(f"  总时长: {format_timestamp(total_duration)}")
-            print(f"  总字符: {total_chars:,}")
-            print(f"  平均每段: {total_duration/len(transcript):.2f}秒")
+        #     print(f"  总时长: {format_timestamp(total_duration)}")
+        #     print(f"  总字符: {total_chars:,}")
+        #     print(f"  平均每段: {total_duration/len(transcript):.2f}秒")
         
         return transcript, details
         
@@ -142,7 +142,7 @@ def get_full_transcript(video_url: str, language: str = 'en'):
 
 def display_full_transcript(transcript, output_file=None, details=None):
     """
-    显示完整字幕内容
+    格式化字幕内容（不打印到控制台）
     
     Args:
         transcript: 字幕列表
@@ -150,12 +150,7 @@ def display_full_transcript(transcript, output_file=None, details=None):
         details: 视频详情
     """
     if not transcript:
-        print("没有字幕数据")
-        return
-    
-    print("\n" + "=" * 70)
-    print(f"完整字幕内容（共 {len(transcript)} 段）")
-    print("=" * 70 + "\n")
+        return []
     
     # 准备输出内容
     output_lines = []
@@ -163,17 +158,11 @@ def display_full_transcript(transcript, output_file=None, details=None):
     for i, entry in enumerate(transcript, 1):
         timestamp = format_timestamp(entry['start'])
         text = entry['text']
-        duration = entry['duration']
         
         # 格式化输出
         line1 = f"[{timestamp}] {text}"
-        line2 = f"       持续: {duration:.2f}秒 | 起始: {entry['start']:.2f}秒"
         
-        print(line1)
-        print(line2)
-        print()
-        
-        # 保存到列表（用于文件输出）
+        # 保存到列表
         output_lines.append(line1)
     
     # 如果指定了输出文件，保存到文件
@@ -184,12 +173,8 @@ def display_full_transcript(transcript, output_file=None, details=None):
                     f.write(f"{details.get('title', 'Unknown Title')}\n")
                     f.write("=" * 70 + "\n\n")
                 f.write('\n'.join(output_lines))
-            
-            print("\n" + "=" * 70)
-            print(f"✓ 字幕已保存到: {output_file}")
-            print("=" * 70)
         except Exception as e:
-            print(f"\n❌ 保存文件失败: {e}")
+            pass  # 静默处理文件保存错误
             
     return output_lines
 
