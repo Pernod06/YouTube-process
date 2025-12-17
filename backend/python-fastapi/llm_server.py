@@ -1,16 +1,19 @@
 """
-LangChain Server
+LangChain Server - OpenRouter Integration
 """
 import os
 
 from typing import Optional, Dict, Any, List, AsyncIterator
 import json
 from pydantic import BaseModel, Field
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import PydanticOutputParser, StrOutputParser
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
-from langchain.memory import ConversationBufferWindowMemory
+from collections import deque
+
+# OpenRouter 配置
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 # == Pydantic 输出模型 ==
 
@@ -37,42 +40,73 @@ class VideoAnalysisResult(BaseModel):
     videoInfo: VideoInfo
     sections: List[Section] = Field(description="视频章节列表")
 
+class Theme(BaseModel):
+    """视频主题 - 跨章节聚合的内容主题"""
+    id: str = Field(description="主题 ID，如 theme1")
+    title: str = Field(description="主题标题")
+    description: str = Field(description="主题简要描述")
+    content: List[ContentItem] = Field(description="该主题相关的内容列表，从各章节聚合")
+
+class ThemeResult(BaseModel):
+    """主题生成结果"""
+    themes: List[Theme] = Field(description="2-5个主题列表")
+
 # ========= LLM Server =========
 
 class LLMService:
-    """统一 LLM 服务"""
+    """统一 LLM 服务 - OpenRouter"""
     def __init__(self):
-        api_key = os.getenv('GEMINI_API_KEY')
+        api_key = os.getenv('OPENROUTER_API_KEY')
         if not api_key:
-            raise ValueError("GEMINI_API_KEY is not set")
+            raise ValueError("OPENROUTER_API_KEY is not set")
         
-        # 主模型 (用与复杂任务，transcript解析)
-        self.llm = ChatGoogleGenerativeAI(
+        # 主模型 (用于复杂任务，transcript解析)
+        # OpenRouter 模型格式: provider/model-name
+        self.llm = ChatOpenAI(
             api_key=api_key,
-            model="gemini-3-pro-preview",
+            base_url=OPENROUTER_BASE_URL,
+            model="google/gemini-2.5-flash-lite",  # 或 "anthropic/claude-3.5-sonnet"
             temperature=0.3,
-            streaming=True,  # 启用流式输出
+            streaming=True,
+            default_headers={
+                "HTTP-Referer": "https://your-app.com",  # 可选：你的应用 URL
+                "X-Title": "YouTube Process API",        # 可选：应用名称
+            }
         )
 
         # 轻量模型 用于chat和翻译
-        self.llm_lite = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash-lite",
-            google_api_key=api_key,
+        self.llm_lite = ChatOpenAI(
+            api_key=api_key,
+            base_url=OPENROUTER_BASE_URL,
+            model="google/gemini-2.5-flash-lite",  # 或 "openai/gpt-4o-mini"
             temperature=0.7,
+            default_headers={
+                "HTTP-Referer": "https://your-app.com",
+                "X-Title": "YouTube Process API",
+            }
         )
 
-        # 聊天记录（保留最近对话）
-        self._chat_memories: Dict[str, ConversationBufferWindowMemory] = {}
+        # 聊天记录（保留最近对话）- 使用简单的 deque 实现
+        self._chat_memories: Dict[str, deque] = {}
+        self._memory_window_size = 5  # 保留最近5轮对话
 
-    def _get_memory(self, video_id: str, user_id: str = "anonymous") -> ConversationBufferWindowMemory:
+    def _get_memory(self, video_id: str, user_id: str = "anonymous") -> deque:
         """获取或创建用户+视频的聊天记录（用户隔离）"""
         memory_key = f"{user_id}:{video_id}"
         if memory_key not in self._chat_memories:
-            self._chat_memories[memory_key] = ConversationBufferWindowMemory(
-                k=5,
-                return_messages=True,
-            )
+            self._chat_memories[memory_key] = deque(maxlen=self._memory_window_size * 2)
         return self._chat_memories[memory_key]
+    
+    def _add_to_memory(self, video_id: str, user_id: str, human_msg: str, ai_msg: str):
+        """添加对话到记忆"""
+        memory = self._get_memory(video_id, user_id)
+        memory.append(HumanMessage(content=human_msg))
+        memory.append(AIMessage(content=ai_msg))
+    
+    def _get_memory_messages(self, video_id: str, user_id: str = "anonymous") -> List:
+        """获取记忆中的消息列表"""
+        memory = self._get_memory(video_id, user_id)
+        return list(memory)
     
     def clear_user_memory(self, video_id: str, user_id: str = "anonymous"):
         """清除指定用户的视频聊天记录"""
@@ -290,14 +324,25 @@ Transcript:
 
 Your abilities:
 1. **Deep Analysis**: Provide accurate responses based on video transcript and chapters
-2. **Timestamps**: Mark precise timestamps in format [MM:SS] or [HH:MM:SS]
+2. **Time Clips**: Identify precise video segments with start and end timestamps
 3. **Contextual Understanding**: Comprehend overall video structure
 
 Response Format:
-- Use [05:30] format to cite timestamps
-- List all relevant timestamps if topic appears multiple times
+- When referencing video moments, use TIME CLIPS format:
+[START - END] Description
+  Example: [02:30 - 04:15] Explanation of the main concept
+  
+- For single moments: [05:30] Brief description
+- List all relevant clips if topic appears multiple times
 - Be concise yet informative
-- Friendly and professional tone"""
+- Friendly and professional tone
+
+Example Response:
+"The video discusses AI in these segments:
+[01:20 - 03:45] Introduction to machine learning basics
+[08:10 - 12:30] Deep learning applications
+[15:00 - 15:45] Future predictions"
+"""
 
         # 构建 prompt
         prompt = ChatPromptTemplate.from_messages([
@@ -307,8 +352,7 @@ Response Format:
         ])
 
         # 获取用户+视频的独立记忆
-        memory = self._get_memory(video_id, user_id)
-        chat_history = memory.chat_memory.messages
+        chat_history = self._get_memory_messages(video_id, user_id)
 
         # 创建 Chain
         chain = prompt | self.llm_lite | StrOutputParser()
@@ -321,8 +365,7 @@ Response Format:
         })
 
         # 保存到记忆
-        memory.chat_memory.add_user_message(user_message)
-        memory.chat_memory.add_ai_message(result)
+        self._add_to_memory(video_id, user_id, user_message, result)
 
         return result
 
@@ -352,25 +395,216 @@ Response Format:
         
         prompt = ChatPromptTemplate.from_messages([
             ("system", """You are a professional translator. 
-Translate the video content JSON to {target_language}.
+Translate ALL text content in the JSON to {target_language}.
 
-RULES:
-1. Translate ONLY text fields (title, description, summary, content)
-2. DO NOT translate: videoId, thumbnail, id, timestampStart, timestamp
-3. Keep exact same JSON structure
-4. Output valid JSON only"""),
+CRITICAL - YOU MUST TRANSLATE:
+- videoInfo.title (视频标题 - MUST be translated!)
+- videoInfo.description
+- videoInfo.summary
+- All sections[].title
+- All sections[].content
+- All chapters[].title (if exists)
+
+DO NOT TRANSLATE (keep original):
+- videoId, id, thumbnail, thumbnail_url
+- timestampStart, timestamp, any numbers/URLs
+
+OUTPUT:
+- Return the complete JSON with translated text
+- Keep exact same structure
+- Output valid JSON only, no explanation"""),
             ("human", "{json_data}")
         ])
         
         chain = prompt | self.llm_lite | StrOutputParser()
+        
+        print(f"[Translate] 🔄 开始翻译到 {target_lang}...")
+        print(f"[Translate] 📝 原始标题: {cached_data.get('videoInfo', {}).get('title', 'N/A')[:50]}...")
         
         response = chain.invoke({
             "target_language": target_lang,
             "json_data": json.dumps(cached_data, ensure_ascii=False)
         })
         
+        print(f"[Translate] 📥 LLM 响应长度: {len(response)}")
+        print(f"[Translate] 📥 LLM 响应前200字符: {response[:200]}...")
+        
         # 解析 JSON
-        return self._extract_json(response)
+        result = self._extract_json(response)
+        
+        if not result:
+            print(f"[Translate] ❌ JSON 解析失败，返回原始数据")
+            return cached_data
+        
+        print(f"[Translate] ✅ 翻译完成，标题: {result.get('videoInfo', {}).get('title', 'N/A')[:50]}...")
+        return result
+
+
+    # ==== theme 生成 ====
+    
+    # 语言名称映射
+    LANGUAGE_NAMES = {
+        "zh": "Chinese (简体中文)",
+        "en": "English",
+        "ja": "Japanese (日本語)",
+        "ko": "Korean (한국어)",
+        "es": "Spanish (Español)",
+        "fr": "French (Français)",
+        "de": "German (Deutsch)",
+    }
+
+    def generate_themes(
+        self,
+        video_data: dict,
+        language: str = "en",
+    ) -> ThemeResult:
+        """
+        根据视频分析 JSON 生成 2-5 个主题
+        
+        Args:
+            video_data: 视频分析结果 JSON，包含 videoInfo 和 sections
+            language: 输出语言代码（默认英语）
+            
+        Returns:
+            ThemeResult: 包含 2-5 个主题的结果
+        """
+        parser = PydanticOutputParser(pydantic_object=ThemeResult)
+        target_lang = self.LANGUAGE_NAMES.get(language, "English")
+        
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", """You are an expert content analyst. Analyze the video content and identify 2-5 major THEMES.
+
+**OUTPUT LANGUAGE**: Generate ALL text content (title, description, content) in {target_language}.
+
+**THEME vs SECTION**: 
+- Sections are chronological (time-based)
+- Themes are conceptual (topic-based, cross-cutting)
+
+**Your Task**:
+1. Identify 2-5 distinct themes based on content richness
+2. For each theme, aggregate relevant content from ALL sections
+3. Keep original timestamps for each content item
+
+{format_instructions}
+
+**REQUIREMENTS**:
+- Generate 2-5 themes based on content depth (more content = more themes)
+- Each theme should have a clear, descriptive title IN {target_language}
+- Include a brief description explaining the theme IN {target_language}
+- Aggregate content items from different sections if they relate to the same theme
+- ALL content text must be in {target_language}
+- Preserve original timestampStart values (do NOT translate timestamps)
+- Theme IDs: theme1, theme2, etc."""),
+            ("human", """Video Title: {title}
+
+Video Content (sections):
+{sections_json}
+
+Generate themes in {target_language}:""")
+        ])
+        
+        chain = prompt | self.llm | parser
+        
+        # 准备 sections JSON
+        sections_json = json.dumps(video_data.get('sections', []), ensure_ascii=False, indent=2)
+        
+        result = chain.invoke({
+            "title": video_data.get('videoInfo', {}).get('title', 'Unknown'),
+            "sections_json": sections_json,
+            "format_instructions": parser.get_format_instructions(),
+            "target_language": target_lang,
+        })
+        
+        return result
+
+    async def generate_themes_stream(
+        self,
+        video_data: dict,
+        language: str = "en",
+    ) -> AsyncIterator[str]:
+        """
+        流式生成主题
+        
+        Args:
+            video_data: 视频分析结果 JSON
+            language: 输出语言代码（默认英语）
+            
+        Yields:
+            str: 流式输出的 JSON 片段
+        """
+        target_lang = self.LANGUAGE_NAMES.get(language, "English")
+        
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", """You are an expert content analyst. Analyze the video content and identify 2-5 major THEMES.
+
+**OUTPUT LANGUAGE**: Generate ALL text content (title, description, content) in {target_language}.
+
+**THEME vs SECTION**: 
+- Sections are chronological (time-based)
+- Themes are conceptual (topic-based, cross-cutting)
+
+Generate JSON with this EXACT structure:
+{{
+  "themes": [
+    {{
+      "id": "theme1",
+      "title": "Theme Title in {target_language}",
+      "description": "Brief description in {target_language}",
+      "content": [
+        {{"content": "Key point in {target_language}", "timestampStart": "00:05:30"}}
+      ]
+    }}
+  ]
+}}
+
+**REQUIREMENTS**:
+- Generate 2-5 themes based on content depth
+- Each theme: clear title + description + aggregated content
+- ALL text must be in {target_language}
+- Preserve original timestampStart values (do NOT translate timestamps)
+- Output valid JSON only, no markdown code blocks"""),
+            ("human", """Video Title: {title}
+
+Video Content (sections):
+{sections_json}
+
+Generate themes in {target_language}:""")
+        ])
+        
+        sections_json = json.dumps(video_data.get('sections', []), ensure_ascii=False, indent=2)
+        
+        print(f"[LLM] 开始流式生成主题，语言: {target_lang}...", flush=True)
+        full_response = ""
+        chunk_idx = 0
+        
+        async for chunk in (prompt | self.llm).astream({
+            "title": video_data.get('videoInfo', {}).get('title', 'Unknown'),
+            "sections_json": sections_json,
+            "target_language": target_lang,
+        }):
+            content = chunk.content if hasattr(chunk, 'content') else str(chunk)
+            if content:
+                chunk_idx += 1
+                full_response += content
+                if chunk_idx <= 3:
+                    print(f"[LLM] theme chunk#{chunk_idx}: {repr(content[:50])}", flush=True)
+                yield content
+        
+        print(f"[LLM] 主题生成完成，总chunks:{chunk_idx}", flush=True)
+        yield "\n[STREAM_END]"
+
+    def parse_themes_result(self, raw_text: str) -> ThemeResult:
+        """
+        解析流式输出的主题结果
+        
+        Args:
+            raw_text: LLM 生成的原始 JSON 文本
+            
+        Returns:
+            ThemeResult: 解析后的主题结果
+        """
+        data = self._extract_json(raw_text.replace('[STREAM_END]', '').strip())
+        return ThemeResult(**data)
 
 
     # ==== 工具方法 ====

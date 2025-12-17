@@ -77,13 +77,39 @@ def get_full_transcript(video_url: str, language: str = 'en'):
     print(f"🔍 正在获取字幕...")
     
     try:
-        # 创建 API 实例
-        API_KEY = os.getenv('TranscriptAPI_KEY')
+        # 获取 API 密钥（支持新旧两种环境变量名）
+        API_KEY = os.getenv('TranscriptAPI_KEY') or os.getenv('TRANSCRIPT_API_KEY')
+        if not API_KEY:
+            print(f"⚠️ 环境变量 TranscriptAPI_KEY 未设置，使用默认密钥...")
+            # 默认密钥（可能有使用限制）
+            API_KEY = 'sk_xEEnrdnWKBMM4zt6wI8klBfnaX3KspU86fGw1V0oMnU'
+            
         url = 'https://transcriptapi.com/api/v2/youtube/transcript'
         params = {'video_url': video_id, 'format': 'json'}
-        r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout = 30)
+        r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout=30)
         response_json = r.json()
+        
+        # 检查 API 是否返回错误
+        if 'error' in response_json:
+            print(f"❌ TranscriptAPI 错误: {response_json.get('error')}")
+            print(f"   详情: {response_json.get('message', 'N/A')}")
+            return None, None
+        
+        # 检查是否有 detail 字段（API v2 错误格式）
+        if 'detail' in response_json and 'transcript' not in response_json:
+            print(f"❌ TranscriptAPI 错误: {response_json.get('detail')}")
+            return None, None
+        
+        if 'transcript' not in response_json:
+            print(f"❌ API 响应中没有 transcript 字段")
+            print(f"   响应内容: {str(response_json)[:200]}...")
+            return None, None
+            
         transcript = response_json['transcript']
+        
+        if not transcript or len(transcript) == 0:
+            print(f"❌ 该视频没有可用的字幕")
+            return None, None
         
         # 使用 YouTubeClient 获取视频标题
         video_title = f'Video {video_id}'
@@ -182,7 +208,7 @@ def display_full_transcript(transcript, output_file=None, details=None):
 def main():
     """主函数"""
     # 视频URL
-    video_url = "https://www.youtube.com/watch?v=EdTPykGAe0Q"
+    video_url = "https://www.youtube.com/watch?v=98DcoXwGX6I"
     
     # 获取完整字幕
     transcript, details = get_full_transcript(video_url, language='en')
@@ -198,6 +224,14 @@ def main():
     else:
         print("\n❌ 无法获取字幕")
 
+def test():
+    import os, requests
+    API_KEY = os.getenv('API_KEY', 'sk_xEEnrdnWKBMM4zt6wI8klBfnaX3KspU86fGw1V0oMnU')
+    url = 'https://transcriptapi.com/api/v2/youtube/transcript'
+    params = {'video_url': '98DcoXwGX6I', 'format': 'json'}
+    r = requests.get(url, params=params, headers={'Authorization': 'Bearer ' + API_KEY}, timeout=30)
+    r.raise_for_status()
+    print(r.json()['transcript'])
 
 if __name__ == "__main__":
-    main()
+    test()

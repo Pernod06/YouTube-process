@@ -1,0 +1,395 @@
+2025-12-15 03:48:20,367 - main - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 06:10:03,329 - main - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 06:16:18,496 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 06:16:55,202 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 06:17:21,294 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.NM1hSguZ4fI "HTTP/2 406 Not Acceptable"
+2025-12-15 06:17:22,587 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:17:25,424 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 06:18:12,638 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 06:18:14,551 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.NM1hSguZ4fI "HTTP/2 200 OK"
+2025-12-15 06:18:14,556 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:19:59,154 - main - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 06:22:31,340 - main - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 06:32:48,566 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:34:03,893 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.dHknQINzPdg "HTTP/2 406 Not Acceptable"
+2025-12-15 06:34:04,367 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:34:07,051 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 06:34:51,568 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 06:38:45,917 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.dHknQINzPdg "HTTP/2 200 OK"
+2025-12-15 06:38:47,510 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.dHknQINzPdg "HTTP/2 200 OK"
+2025-12-15 06:38:47,902 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:41:35,139 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.2C8zYFArnKY "HTTP/2 406 Not Acceptable"
+2025-12-15 06:41:35,614 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:41:37,876 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 06:42:39,704 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 06:42:40,345 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.2C8zYFArnKY "HTTP/2 200 OK"
+2025-12-15 06:42:40,448 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:43:26,846 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.2C8zYFArnKY "HTTP/2 200 OK"
+2025-12-15 06:43:27,526 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.2C8zYFArnKY "HTTP/2 200 OK"
+2025-12-15 06:43:27,535 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:47:57,312 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.dX9CGRZwD-w "HTTP/2 406 Not Acceptable"
+2025-12-15 06:47:57,680 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:48:00,405 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 06:48:38,372 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 06:48:39,726 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.dX9CGRZwD-w "HTTP/2 200 OK"
+2025-12-15 06:48:39,730 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:56:41,488 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.-UrdExQW0cs "HTTP/2 406 Not Acceptable"
+2025-12-15 06:56:42,703 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 06:56:45,262 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 06:57:20,420 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 06:57:20,991 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.-UrdExQW0cs "HTTP/2 200 OK"
+2025-12-15 06:57:21,122 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 07:03:09,825 - main - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 07:04:31,585 - main - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 07:04:46,373 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.AaZ_RSt0KP8 "HTTP/2 406 Not Acceptable"
+2025-12-15 07:04:47,781 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 07:04:48,645 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 07:04:54,004 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 07:04:55,302 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.AaZ_RSt0KP8 "HTTP/2 200 OK"
+2025-12-15 07:04:55,306 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 07:07:26,352 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.uD4izuDMUQA "HTTP/2 406 Not Acceptable"
+2025-12-15 07:07:26,723 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 07:07:27,211 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 07:07:34,155 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 07:07:34,742 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.uD4izuDMUQA "HTTP/2 200 OK"
+2025-12-15 07:07:35,120 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 07:09:08,098 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.cUzklzVXJwo "HTTP/2 406 Not Acceptable"
+2025-12-15 07:09:09,388 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 07:09:10,159 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 07:09:17,040 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 07:09:18,442 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.cUzklzVXJwo "HTTP/2 200 OK"
+2025-12-15 07:09:18,446 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 07:10:08,789 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.lcjdwSY2AzM "HTTP/2 406 Not Acceptable"
+2025-12-15 07:10:09,980 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 07:10:10,534 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 07:10:19,803 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 07:10:21,198 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.lcjdwSY2AzM "HTTP/2 200 OK"
+2025-12-15 07:10:21,201 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 08:16:52,998 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.lcjdwSY2AzM "HTTP/2 200 OK"
+2025-12-15 08:16:53,481 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 08:30:57,246 - main - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 08:31:22,962 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 08:42:57,646 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 08:43:04,151 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 08:43:51,248 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.K5KVEU3aaeQ "HTTP/2 406 Not Acceptable"
+2025-12-15 08:43:52,771 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 08:43:53,986 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 08:44:11,170 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 08:44:13,384 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.K5KVEU3aaeQ "HTTP/2 200 OK"
+2025-12-15 08:44:13,640 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 08:49:00,422 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.9vM4p9NN0Ts "HTTP/2 406 Not Acceptable"
+2025-12-15 08:49:01,985 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 08:49:02,825 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 08:49:13,797 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 08:49:15,926 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.9vM4p9NN0Ts "HTTP/2 200 OK"
+2025-12-15 08:49:16,933 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 08:51:43,046 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.9vM4p9NN0Ts "HTTP/2 200 OK"
+2025-12-15 08:51:44,972 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.9vM4p9NN0Ts "HTTP/2 200 OK"
+2025-12-15 08:51:45,210 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 08:52:06,938 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-15 08:52:07,299 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 09:27:00,815 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-15 09:27:01,115 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 09:38:00,710 - main - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 09:38:12,347 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.k2pD3k1485A "HTTP/2 406 Not Acceptable"
+2025-12-15 09:38:13,515 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 09:38:14,400 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 09:38:20,562 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 09:38:22,075 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.k2pD3k1485A "HTTP/2 200 OK"
+2025-12-15 09:38:22,079 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 09:38:57,360 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.k2pD3k1485A "HTTP/2 200 OK"
+2025-12-15 09:38:57,728 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 09:59:51,915 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-15 10:02:11,750 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.nSrj1J6ODoM "HTTP/2 406 Not Acceptable"
+2025-12-15 10:02:12,790 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 10:02:13,663 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-15 10:02:20,788 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-15 10:02:22,430 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.nSrj1J6ODoM "HTTP/2 200 OK"
+2025-12-15 10:02:22,435 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-15 10:02:45,189 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.nSrj1J6ODoM "HTTP/2 200 OK"
+2025-12-15 10:02:45,511 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 02:58:31,740 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-16 06:19:47,286 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.UhROnu4GPv0 "HTTP/2 406 Not Acceptable"
+2025-12-16 06:19:47,802 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 06:19:48,406 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 06:19:56,564 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-16 06:19:57,919 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.UhROnu4GPv0 "HTTP/2 200 OK"
+2025-12-16 06:19:57,924 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 06:20:26,160 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.UhROnu4GPv0 "HTTP/2 200 OK"
+2025-12-16 06:20:27,883 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.UhROnu4GPv0 "HTTP/2 200 OK"
+2025-12-16 06:20:27,888 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 06:20:41,312 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.UhROnu4GPv0 "HTTP/2 200 OK"
+2025-12-16 06:20:42,125 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 08:01:19,876 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-16 08:01:39,328 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-16 08:01:39,932 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 08:02:19,651 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-16 08:02:20,014 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 08:13:46,011 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-16 08:15:23,856 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.UFjtj01CV-I "HTTP/2 406 Not Acceptable"
+2025-12-16 08:15:55,535 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.UFjtj01CV-I "HTTP/2 406 Not Acceptable"
+2025-12-16 08:31:58,353 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.ykfQD1_WPBQ "HTTP/2 406 Not Acceptable"
+2025-12-16 08:31:58,844 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 08:31:59,506 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 08:32:09,201 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-16 08:32:10,583 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.ykfQD1_WPBQ "HTTP/2 200 OK"
+2025-12-16 08:32:10,587 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 08:33:52,227 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-16 08:33:53,322 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-16 08:34:10,338 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-16 08:34:11,155 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-16 08:34:29,169 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.hKQtjY2koyk "HTTP/2 200 OK"
+2025-12-16 08:34:30,222 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.hKQtjY2koyk "HTTP/2 200 OK"
+2025-12-16 08:34:50,504 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.hKQtjY2koyk "HTTP/2 200 OK"
+2025-12-16 08:34:51,079 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.hKQtjY2koyk "HTTP/2 200 OK"
+2025-12-16 08:35:52,955 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.HAnw168huqA "HTTP/2 406 Not Acceptable"
+2025-12-16 08:36:25,668 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.HAnw168huqA "HTTP/2 406 Not Acceptable"
+2025-12-16 08:38:17,026 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-16 08:38:24,542 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.HAnw168huqA "HTTP/2 406 Not Acceptable"
+2025-12-16 08:40:25,302 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-16 08:41:46,252 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-16 08:41:59,891 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.HAnw168huqA "HTTP/2 406 Not Acceptable"
+2025-12-16 08:42:12,383 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.98DcoXwGX6I "HTTP/2 406 Not Acceptable"
+2025-12-16 08:42:35,773 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.5MgBikgcWnY "HTTP/2 406 Not Acceptable"
+2025-12-16 08:42:36,275 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 08:42:37,146 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 08:42:42,368 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-16 08:42:43,306 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/user_usage "HTTP/2 401 Unauthorized"
+2025-12-16 08:42:45,006 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.5MgBikgcWnY "HTTP/2 200 OK"
+2025-12-16 08:42:45,010 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 08:42:48,703 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.5MgBikgcWnY "HTTP/2 200 OK"
+2025-12-16 08:42:49,005 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 08:42:51,989 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.98DcoXwGX6I "HTTP/2 406 Not Acceptable"
+2025-12-16 08:43:03,522 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.98DcoXwGX6I "HTTP/2 406 Not Acceptable"
+2025-12-16 08:49:44,903 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.98DcoXwGX6I "HTTP/2 406 Not Acceptable"
+2025-12-16 08:57:13,389 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.98DcoXwGX6I "HTTP/2 406 Not Acceptable"
+2025-12-16 09:12:33,715 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.5MgBikgcWnY "HTTP/2 200 OK"
+2025-12-16 09:12:34,872 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.5MgBikgcWnY "HTTP/2 200 OK"
+2025-12-16 09:12:34,876 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 09:13:44,880 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.cUzklzVXJwo "HTTP/2 200 OK"
+2025-12-16 09:13:46,254 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.cUzklzVXJwo "HTTP/2 200 OK"
+2025-12-16 09:13:46,258 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 09:16:06,349 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-16 09:16:07,640 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-16 09:16:07,644 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 09:16:19,582 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 09:26:25,797 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-16 09:52:00,750 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 09:55:37,407 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 406 Not Acceptable"
+2025-12-16 10:14:19,569 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:29:11,780 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:29:15,752 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.rfscVS0vtbw "HTTP/2 200 OK"
+2025-12-16 10:29:17,171 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:29:20,099 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.rfscVS0vtbw "HTTP/2 200 OK"
+2025-12-16 10:31:34,094 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.5MgBikgcWnY "HTTP/2 200 OK"
+2025-12-16 10:31:35,236 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.5MgBikgcWnY "HTTP/2 200 OK"
+2025-12-16 10:31:35,240 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:31:50,928 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 406 Not Acceptable"
+2025-12-16 10:33:15,603 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.98DcoXwGX6I "HTTP/2 406 Not Acceptable"
+2025-12-16 10:40:10,732 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:40:19,247 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.JXxkYfT-ihY "HTTP/2 406 Not Acceptable"
+2025-12-16 10:40:30,898 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-16 10:40:31,188 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:40:32,222 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-16 10:40:42,995 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:40:50,766 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.VUoa94WUtWA "HTTP/2 406 Not Acceptable"
+2025-12-16 10:40:51,248 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:40:51,874 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 10:40:57,947 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-16 10:40:59,566 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.VUoa94WUtWA "HTTP/2 200 OK"
+2025-12-16 10:40:59,570 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 10:41:24,442 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 406 Not Acceptable"
+2025-12-16 11:17:55,945 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.QBznUHAopxU "HTTP/2 406 Not Acceptable"
+2025-12-16 11:17:56,573 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 11:17:57,311 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 11:18:09,557 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-16 11:18:11,253 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.QBznUHAopxU "HTTP/2 200 OK"
+2025-12-16 11:18:11,512 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 11:18:23,534 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.QBznUHAopxU "HTTP/2 200 OK"
+2025-12-16 11:18:24,114 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-16 11:20:20,329 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 11:20:32,524 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 11:20:53,441 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-16 11:20:57,904 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.Hz3RWxJck68 "HTTP/2 406 Not Acceptable"
+2025-12-16 11:21:02,522 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:19:01,724 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:19:15,524 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:19:36,014 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 01:19:42,877 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:19:53,686 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:20:01,808 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:22:57,960 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:24:27,051 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:24:37,628 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:37:22,088 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:46:08,573 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 406 Not Acceptable"
+2025-12-17 01:46:11,779 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:46:12,557 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 01:46:18,897 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-17 01:46:19,778 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/user_usage "HTTP/2 401 Unauthorized"
+2025-12-17 01:46:20,956 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 01:46:20,961 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:46:26,251 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 01:46:26,605 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 01:48:11,007 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 01:48:11,654 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 01:48:11,658 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:48:28,554 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.Iq0Y5QN8WQE "HTTP/2 406 Not Acceptable"
+2025-12-17 01:48:32,259 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:48:32,774 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 01:48:38,576 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-17 01:48:39,621 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.Iq0Y5QN8WQE "HTTP/2 200 OK"
+2025-12-17 01:48:39,624 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:55:44,674 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 01:55:46,074 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 01:55:46,077 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 01:59:46,076 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 01:59:47,236 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 01:59:47,242 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 02:00:12,861 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 02:00:13,135 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 02:00:14,221 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 02:00:47,750 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 02:00:48,864 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.4-079YIasck "HTTP/2 200 OK"
+2025-12-17 02:00:48,868 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 02:05:04,324 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-17 02:05:04,993 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:10:09,732 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-17 02:10:10,157 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:12:28,674 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-17 02:12:29,318 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:13:09,115 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-17 02:13:09,611 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:13:17,293 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-17 02:13:17,692 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:13:25,510 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.EWFFaKxsz_s "HTTP/2 200 OK"
+2025-12-17 02:13:25,840 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:39:51,216 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 02:40:25,080 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-17 02:40:27,045 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:40:38,869 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-17 02:40:39,249 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:54:35,583 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 02:55:56,781 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-17 02:55:57,549 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:56:06,215 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-17 02:56:06,633 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:57:03,726 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 02:57:14,692 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-17 02:57:15,408 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:57:26,369 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-17 02:57:26,798 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:57:36,686 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 02:59:07,155 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.DxL2HoqLbyA "HTTP/2 200 OK"
+2025-12-17 02:59:07,519 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 03:02:53,454 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:10:08,650 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:10:24,461 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:10:33,768 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:10:38,322 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:11:26,319 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:11:53,701 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.rfscVS0vtbw "HTTP/2 200 OK"
+2025-12-17 03:11:55,760 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.rfscVS0vtbw "HTTP/2 200 OK"
+2025-12-17 03:11:56,186 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:21:07,350 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:21:22,125 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 03:24:27,661 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:24:34,815 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 03:24:40,887 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.dhxxY5XpFFQ "HTTP/2 406 Not Acceptable"
+2025-12-17 03:24:47,390 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:05:11,863 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 06:19:51,868 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:20:00,164 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:20:08,379 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:20:10,509 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:24:30,144 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 06:37:49,893 - httpx - INFO - HTTP Request: GET https://serpapi.com/search?search_query=robot&engine=youtube&gl=us&hl=en&api_key=cbb377802f608630a90fc02ba84e66e3b28b956e4c3125354a1aaa16e81d4ecf "HTTP/1.1 200 OK"
+2025-12-17 06:38:02,773 - httpx - INFO - HTTP Request: GET https://serpapi.com/search?search_query=robot&engine=youtube&gl=us&hl=en&api_key=cbb377802f608630a90fc02ba84e66e3b28b956e4c3125354a1aaa16e81d4ecf "HTTP/1.1 200 OK"
+2025-12-17 06:38:21,438 - httpx - INFO - HTTP Request: GET https://serpapi.com/search?search_query=robot&engine=youtube&gl=us&hl=en&api_key=cbb377802f608630a90fc02ba84e66e3b28b956e4c3125354a1aaa16e81d4ecf "HTTP/1.1 200 OK"
+2025-12-17 06:38:39,414 - httpx - INFO - HTTP Request: GET https://serpapi.com/search?search_query=robot&engine=youtube&gl=us&hl=en&api_key=cbb377802f608630a90fc02ba84e66e3b28b956e4c3125354a1aaa16e81d4ecf "HTTP/1.1 200 OK"
+2025-12-17 06:38:55,084 - httpx - INFO - HTTP Request: GET https://serpapi.com/search?search_query=robot&engine=youtube&gl=us&hl=en&api_key=cbb377802f608630a90fc02ba84e66e3b28b956e4c3125354a1aaa16e81d4ecf "HTTP/1.1 200 OK"
+2025-12-17 06:39:07,190 - httpx - INFO - HTTP Request: GET https://serpapi.com/search?search_query=python&engine=youtube&gl=us&hl=en&api_key=cbb377802f608630a90fc02ba84e66e3b28b956e4c3125354a1aaa16e81d4ecf "HTTP/1.1 200 OK"
+2025-12-17 06:39:27,320 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.b093aqAZiPU "HTTP/2 406 Not Acceptable"
+2025-12-17 06:39:30,565 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:39:31,783 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 06:39:39,694 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-17 06:39:40,574 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/user_usage "HTTP/2 401 Unauthorized"
+2025-12-17 06:39:40,874 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:39:42,155 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.b093aqAZiPU "HTTP/2 200 OK"
+2025-12-17 06:39:44,479 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.b093aqAZiPU "HTTP/2 200 OK"
+2025-12-17 06:39:44,789 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 06:50:34,427 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 406 Not Acceptable"
+2025-12-17 06:50:38,214 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:50:38,883 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 06:50:44,880 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?on_conflict=video_id "HTTP/2 201 Created"
+2025-12-17 06:50:45,731 - httpx - INFO - HTTP Request: POST https://xxurqudxplxhignlshhy.supabase.co/rest/v1/user_usage "HTTP/2 401 Unauthorized"
+2025-12-17 06:50:47,628 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 06:50:47,632 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 06:57:22,212 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 06:57:22,584 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:01:49,351 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 07:04:18,021 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:04:18,726 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:04:27,217 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:05:25,526 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:05:26,895 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:05:26,900 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 07:05:31,341 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:05:31,657 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:05:46,244 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 07:06:06,011 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 07:06:14,584 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:06:17,552 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:06:18,208 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:09:24,318 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 07:10:00,035 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:10:02,529 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:10:03,124 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:11:53,954 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 07:12:41,843 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:12:42,434 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:12:53,907 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:12:54,192 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:14:50,305 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 07:15:43,907 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 07:15:52,052 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:15:54,754 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:15:55,380 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:16:48,816 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:18:12,940 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:18:13,738 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:18:13,742 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 07:18:40,528 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 07:29:10,437 - __main__ - INFO - === 应用启动，日志系统初始化完成 ===
+2025-12-17 07:29:51,912 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:29:55,375 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 07:29:55,384 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 07:29:59,178 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 08:04:16,690 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:04:17,652 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:04:17,657 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 08:06:34,956 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:06:35,896 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:06:35,901 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 08:08:52,271 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:08:53,767 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:08:53,771 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 08:09:14,073 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 08:14:37,422 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 08:15:04,912 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 08:16:03,059 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:16:04,687 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:16:04,692 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 08:16:26,736 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 08:17:23,173 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:17:24,595 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:17:24,600 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 08:17:42,223 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 08:18:57,727 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:18:58,722 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:18:58,727 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 08:20:34,575 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 08:21:41,678 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:21:42,624 - httpx - INFO - HTTP Request: GET https://xxurqudxplxhignlshhy.supabase.co/rest/v1/youtube_videos?select=%2A&video_id=eq.0Yh0wExU_VM "HTTP/2 200 OK"
+2025-12-17 08:21:42,628 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-12-17 08:22:18,630 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"

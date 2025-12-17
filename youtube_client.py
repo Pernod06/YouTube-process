@@ -97,7 +97,7 @@ class YouTubeClient:
     def search_videos(self, query: str, max_results: int = 10, order: str = 'viewCount', 
                       published_after: str = None, duration: str = 'long') -> List[Dict]:
         """
-        搜索视频
+        搜索视频（包含时长和观看量信息）
         
         Args:
             query: 搜索关键词
@@ -122,7 +122,7 @@ class YouTubeClient:
                 - 'long': 超过20分钟（默认）
             
         Returns:
-            视频列表
+            视频列表（包含 duration 和 view_count）
         """
         try:
             from datetime import datetime, timedelta
@@ -159,12 +159,17 @@ class YouTubeClient:
             request = self.youtube.search().list(**search_params)
             response = request.execute()
             
-            videos = []
+            # 收集视频ID用于获取详细信息
+            video_ids = []
+            search_results = {}
+            
             for item in response.get('items', []):
+                video_id = item['id']['videoId']
+                video_ids.append(video_id)
                 # 提取缩略图信息
                 thumbnails = item['snippet'].get('thumbnails', {})
-                video_data = {
-                    'video_id': item['id']['videoId'],
+                search_results[video_id] = {
+                    'video_id': video_id,
                     'title': item['snippet']['title'],
                     'description': item['snippet']['description'],
                     'channel_title': item['snippet']['channelTitle'],
@@ -177,13 +182,66 @@ class YouTubeClient:
                         'maxres': thumbnails.get('maxres', {}).get('url')
                     }
                 }
-                videos.append(video_data)
             
+            # 获取视频详细信息（包括时长和观看量）
+            if video_ids:
+                details_request = self.youtube.videos().list(
+                    part='contentDetails,statistics',
+                    id=','.join(video_ids)
+                )
+                details_response = details_request.execute()
+                
+                for item in details_response.get('items', []):
+                    video_id = item['id']
+                    if video_id in search_results:
+                        # 添加时长（ISO 8601 格式，如 PT1H2M3S）
+                        iso_duration = item['contentDetails'].get('duration', '')
+                        search_results[video_id]['duration'] = iso_duration
+                        search_results[video_id]['duration_formatted'] = self._format_duration(iso_duration)
+                        
+                        # 添加统计信息
+                        stats = item.get('statistics', {})
+                        search_results[video_id]['view_count'] = int(stats.get('viewCount', 0))
+                        search_results[video_id]['like_count'] = int(stats.get('likeCount', 0))
+            
+            # 按原始顺序返回结果
+            videos = [search_results[vid] for vid in video_ids if vid in search_results]
             return videos
         
         except HttpError as e:
             print(f"发生HTTP错误: {e}")
             return []
+    
+    def _format_duration(self, iso_duration: str) -> str:
+        """
+        将 ISO 8601 时长格式转换为可读格式
+        
+        Args:
+            iso_duration: ISO 8601 格式时长 (如 PT1H2M3S)
+            
+        Returns:
+            可读格式时长 (如 1:02:03 或 2:03)
+        """
+        import re
+        
+        if not iso_duration:
+            return ""
+        
+        # 解析 ISO 8601 时长格式
+        pattern = r'PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?'
+        match = re.match(pattern, iso_duration)
+        
+        if not match:
+            return iso_duration
+        
+        hours = int(match.group(1) or 0)
+        minutes = int(match.group(2) or 0)
+        seconds = int(match.group(3) or 0)
+        
+        if hours > 0:
+            return f"{hours}:{minutes:02d}:{seconds:02d}"
+        else:
+            return f"{minutes}:{seconds:02d}"
     
     def get_video_details(self, video_id: str) -> Optional[Dict]:
         """

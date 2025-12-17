@@ -6,10 +6,18 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
       - YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
       - TranscriptAPI_KEY=${TranscriptAPI_KEY}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - SERP_API_KEY=${SERP_API_KEY}
     volumes:
       - ./data:/app/data
+      - ./logs:/app/logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
     restart: unless-stopped
 

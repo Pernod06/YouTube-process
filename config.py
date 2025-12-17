@@ -25,6 +25,15 @@ if not YOUTUBE_API_KEY or YOUTUBE_API_KEY == 'YOUR_API_KEY_HERE':
 else:
     print(f"[Config] YouTube API 密钥已加载（长度: {len(YOUTUBE_API_KEY)}）")
 
+# SerpAPI 配置（用于 YouTube 搜索）
+SERP_API_KEY = os.getenv('SERP_API_KEY')
+
+if not SERP_API_KEY or SERP_API_KEY == 'YOUR_SERP_API_KEY_HERE':
+    print("[WARNING] SERP API 密钥未配置！")
+    print("[提示] 请在 .env 文件中设置: SERP_API_KEY=你的密钥")
+else:
+    print(f"[Config] SERP API 密钥已加载（长度: {len(SERP_API_KEY)}）")
+
 # API配置
 API_SERVICE_NAME = "youtube"
 API_VERSION = "v3"

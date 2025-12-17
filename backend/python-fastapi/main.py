@@ -3,6 +3,46 @@ Python + FastAPI 后端示例
 安装依赖: pip install fastapi uvicorn python-multipart
 """
 
+import logging
+from logging.handlers import RotatingFileHandler
+import os as _os
+from pathlib import Path as _Path
+
+# ========== 日志配置 ==========
+# 自动检测运行环境：Docker 使用 /app/logs，本地使用项目目录下的 logs
+if _os.path.exists("/app"):
+    LOG_DIR = "/app/logs"
+else:
+    LOG_DIR = str(_Path(__file__).parent.parent.parent / "logs")
+_os.makedirs(LOG_DIR, exist_ok=True)
+
+# 文件日志处理器
+_file_handler = RotatingFileHandler(
+    f"{LOG_DIR}/app.log",
+    maxBytes=50*1024*1024,  # 50MB
+    backupCount=5,
+    encoding='utf-8'
+)
+_file_handler.setFormatter(logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+))
+
+# 控制台日志处理器
+_console_handler = logging.StreamHandler()
+_console_handler.setFormatter(logging.Formatter(
+    '%(asctime)s - %(levelname)s - %(message)s'
+))
+
+# 配置根日志
+logging.basicConfig(
+    level=logging.INFO,
+    handlers=[_file_handler, _console_handler]
+)
+
+logger = logging.getLogger(__name__)
+logger.info("=== 应用启动，日志系统初始化完成 ===")
+# ==============================
+
 from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -52,6 +92,27 @@ def save_video_to_supabase(video_id: str, video_data: dict, transcript: str = No
     except Exception as e:
         print(f"[WARN] 保存到 Supabase 失败: {e}")
 
+def record_user_usage(user_id: str, video_id: str, video_title: str = None, action_type: str = "analysis"):
+    """记录用户使用分析功能"""
+    if not user_id:
+        print(f"[Usage] 匿名用户，跳过使用记录")
+        return False
+    
+    try:
+        client = get_supabase_client()
+        record = {
+            "user_id": user_id,
+            "video_id": video_id,
+            "video_title": video_title,
+            "action_type": action_type
+        }
+        client.table("user_usage").insert(record).execute()
+        print(f"[Usage] ✅ 已记录用户 {user_id[:8]}... 分析视频: {video_id}")
+        return True
+    except Exception as e:
+        print(f"[Usage] ⚠️ 记录使用失败: {e}")
+        return False
+
 # 添加以下代码来加载 .env 文件
 try:
     from dotenv import load_dotenv
@@ -68,6 +129,16 @@ from video_frame_extractor import extract_frame_at_timestamp, extract_youtube_ch
 # 导入 LangChain LLM 服务
 from llm_server import get_llm_service
 
+# 导入 YouTube 搜索服务 (SerpAPI)
+from youtube_search_service import (
+    get_youtube_search_service,
+    SearchYouTubeParams,
+    YouTubeSearchError
+)
+
+# 导入 Chat 路由
+from chat import router as chat_router
+
 app = FastAPI(
     title="视频内容平台 API",
     description="动态视频内容管理系统",
@@ -82,6 +153,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# 注册 Chat 路由
+app.include_router(chat_router)
 
 # 配置路径
 BASE_DIR = Path(__file__).parent.parent.parent
@@ -120,6 +194,10 @@ class SearchResult(BaseModel):
     title: str
     thumbnail: str
     url: str
+    duration: Optional[str] = None  # 格式化时长 (如 "1:02:03")
+    channel: Optional[str] = None  # 频道名称
+    views: Optional[int] = None  # 观看次数
+    publishedDate: Optional[str] = None  # 发布日期
 
 
 class SearchResponse(BaseModel):
@@ -127,9 +205,9 @@ class SearchResponse(BaseModel):
     total: int
 
 
-class ChatRequest(BaseModel):
-    message: str
-    video_context: Optional[Dict[str, Any]] = None
+class GenerateThemesRequest(BaseModel):
+    video_id: str
+    stream: bool = False  # 是否使用流式输出
 
 
 class VideoFramesRequest(BaseModel):
@@ -139,6 +217,7 @@ class VideoFramesRequest(BaseModel):
 class ProcessVideoRequest(BaseModel):
     url: str
     language: str = "en"  # 默认英语，支持: zh, en, ja, ko, es, fr, de, pt, ru, ar
+    user_id: Optional[str] = None  # 用户ID（可选，用于记录使用次数）
 
 
 def load_video_data():
@@ -363,11 +442,42 @@ async def search(
             thumbnails = video.get('thumbnails', {})
             thumbnail = thumbnails.get('high') or thumbnails.get('medium') or thumbnails.get('default') or f'https://img.youtube.com/vi/{video_id}/maxresdefault.jpg'
             
+            # 格式化发布日期
+            published_at = video.get('published_at', '')
+            published_date = None
+            if published_at:
+                try:
+                    from datetime import datetime
+                    pub_dt = datetime.fromisoformat(published_at.replace('Z', '+00:00'))
+                    now = datetime.now(pub_dt.tzinfo)
+                    diff = now - pub_dt
+                    if diff.days == 0:
+                        published_date = "Today"
+                    elif diff.days == 1:
+                        published_date = "Yesterday"
+                    elif diff.days < 7:
+                        published_date = f"{diff.days} days ago"
+                    elif diff.days < 30:
+                        weeks = diff.days // 7
+                        published_date = f"{weeks} week{'s' if weeks > 1 else ''} ago"
+                    elif diff.days < 365:
+                        months = diff.days // 30
+                        published_date = f"{months} month{'s' if months > 1 else ''} ago"
+                    else:
+                        years = diff.days // 365
+                        published_date = f"{years} year{'s' if years > 1 else ''} ago"
+                except:
+                    published_date = published_at[:10] if published_at else None
+            
             results.append({
                 "videoId": video_id,
                 "title": video.get('title', ''),
                 "thumbnail": thumbnail,
-                "url": f"https://www.youtube.com/watch?v={video_id}"
+                "url": f"https://www.youtube.com/watch?v={video_id}",
+                "duration": video.get('duration_formatted', ''),  # 格式化时长
+                "channel": video.get('channel_title', ''),  # 频道名称
+                "views": video.get('view_count', 0),  # 观看次数
+                "publishedDate": published_date  # 格式化发布日期
             })
         
         print(f"[SUCCESS] 找到 {len(results)} 个视频")
@@ -397,48 +507,341 @@ async def health_check():
     }
 
 
-@app.post("/api/chat")
-async def chat(chat_request: ChatRequest, request: Request):
-    """
-    LLM 聊天接口 - 使用 LangChain（支持用户隔离）
-    """
-    user_message = chat_request.message
-    video_context = chat_request.video_context
+# ==================== SerpAPI YouTube 搜索 ====================
 
-    # 获取用户标识（优先使用 X-Session-ID header，否则用 IP）
-    user_id = request.headers.get("X-Session-ID") or request.client.host or "anonymous"
+class SerpAPISearchRequest(BaseModel):
+    """SerpAPI YouTube 搜索请求模型"""
+    search_query: str
+    gl: Optional[str] = None  # 国家/地区代码 (如 "us", "cn")
+    hl: Optional[str] = None  # 语言代码 (如 "en", "zh-CN")
+    duration: Optional[str] = None  # 视频时长: any, short(<20min), medium(20min-1hour), long(>1hour)
+    limit: Optional[int] = None  # 返回结果数量限制
+
+
+class SerpAPIVideoResult(BaseModel):
+    """SerpAPI 视频结果模型"""
+    position: Optional[int] = None
+    title: str
+    videoId: str
+    link: str
+    thumbnail: Optional[str] = None
+    channel: Optional[str] = None
+    channelLink: Optional[str] = None
+    publishedDate: Optional[str] = None
+    views: Optional[int] = None
+    length: Optional[str] = None
+    description: Optional[str] = None
+
+
+class SerpAPISearchResponse(BaseModel):
+    """SerpAPI 搜索响应模型"""
+    success: bool
+    results: List[SerpAPIVideoResult]
+    total: int
+    cached: bool = False
+
+
+@app.post("/api/search-youtube", response_model=SerpAPISearchResponse)
+async def search_youtube_serpapi(request: SerpAPISearchRequest):
+    """
+    使用 SerpAPI 搜索 YouTube 视频
     
-    print(f"[INFO] Chat request - User: {user_id}, Video context: {video_context}", flush=True)
-
-    try:
-        # 使用 LangChain LLM 服务
-        llm_service = get_llm_service()
-        
-        # 从视频上下文获取 video_id
-        video_id = video_context.get('videoId', 'default') if video_context else 'default'
-        
-        response = llm_service.chat_with_video(
-            user_message=user_message,
-            video_context=video_context,
-            video_id=video_id,
-            user_id=user_id  # 传入用户标识实现隔离
-        )
-
-        return {
-            'success': True,
-            'response': response,
-            'timestamp': datetime.now().isoformat()
+    与 NestJS 版本 SearchYouTubeService 功能一致:
+    - 支持 search_query 搜索关键词
+    - 10分钟缓存机制
+    - 返回 video_results 列表
+    
+    Request Body:
+        {
+            "search_query": "搜索关键词",
+            "gl": "us",  // 可选，国家/地区代码
+            "hl": "en"   // 可选，语言代码
         }
-
-    except Exception as e:
-        print(f"[ERROR] Chat failed: {e}")
+    
+    Response:
+        {
+            "success": true,
+            "results": [...],
+            "total": 10,
+            "cached": false
+        }
+    """
+    try:
+        print(f"[INFO] SerpAPI YouTube 搜索: {request.search_query}, duration={request.duration}, limit={request.limit}")
+        
+        # 获取搜索服务
+        service = get_youtube_search_service()
+        
+        # 构建搜索参数
+        params = SearchYouTubeParams(
+            search_query=request.search_query,
+            engine="youtube",
+            gl=request.gl,
+            hl=request.hl,
+            duration=request.duration,
+            limit=request.limit
+        )
+        
+        # 执行搜索
+        response = await service.search_youtube(params)
+        
+        # 转换为前端友好的格式
+        results = []
+        for video in response.video_results:
+            # 提取视频 ID（从链接中）
+            video_id = ""
+            link = video.get('link', '')
+            if 'watch?v=' in link:
+                video_id = link.split('watch?v=')[1].split('&')[0]
+            
+            # 提取缩略图
+            thumbnail = ""
+            thumb_data = video.get('thumbnail', {})
+            if isinstance(thumb_data, dict):
+                thumbnail = thumb_data.get('static', '') or thumb_data.get('rich', '')
+            elif isinstance(thumb_data, str):
+                thumbnail = thumb_data
+            
+            # 提取频道信息
+            channel_data = video.get('channel', {})
+            channel_name = ""
+            channel_link = ""
+            if isinstance(channel_data, dict):
+                channel_name = channel_data.get('name', '')
+                channel_link = channel_data.get('link', '')
+            elif isinstance(channel_data, str):
+                channel_name = channel_data
+            
+            results.append(SerpAPIVideoResult(
+                position=video.get('position'),
+                title=video.get('title', ''),
+                videoId=video_id,
+                link=link,
+                thumbnail=thumbnail,
+                channel=channel_name,
+                channelLink=channel_link,
+                publishedDate=video.get('published_date'),
+                views=video.get('views'),
+                length=video.get('length'),
+                description=video.get('description')
+            ))
+        
+        print(f"[SUCCESS] SerpAPI 搜索成功，找到 {len(results)} 个视频")
+        
+        return SerpAPISearchResponse(
+            success=True,
+            results=results,
+            total=len(results),
+            cached=False  # 缓存状态由服务内部处理
+        )
+        
+    except YouTubeSearchError as e:
+        print(f"[ERROR] SerpAPI 搜索失败: {e.message}")
         raise HTTPException(
             status_code=500,
             detail={
-                'error': str(e),
-                'response': 'sorry, please try again later.'
+                'success': False,
+                'error': e.message,
+                'message': 'YouTube 搜索失败'
             }
         )
+    except Exception as e:
+        print(f"[ERROR] SerpAPI 搜索异常: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=500,
+            detail={
+                'success': False,
+                'error': str(e),
+                'message': 'YouTube 搜索失败'
+            }
+        )
+
+
+@app.get("/api/search-youtube/cache-stats")
+async def get_youtube_search_cache_stats():
+    """获取 YouTube 搜索缓存统计信息"""
+    service = get_youtube_search_service()
+    return {
+        'success': True,
+        'stats': service.get_cache_stats()
+    }
+
+
+@app.delete("/api/search-youtube/cache")
+async def clear_youtube_search_cache():
+    """清空 YouTube 搜索缓存"""
+    service = get_youtube_search_service()
+    service.clear_cache()
+    return {
+        'success': True,
+        'message': '缓存已清空'
+    }
+
+
+# Chat 路由已迁移到 chat.py
+
+
+@app.post("/api/generate-themes/{video_id}")
+async def generate_themes(
+    video_id: str, 
+    stream: bool = Query(False, description="是否使用流式输出"),
+    language: str = Query("en", description="输出语言: en, zh, ja, ko, es, fr, de")
+):
+    """
+    根据视频分析数据生成 2-5 个主题
+    
+    Args:
+        video_id: YouTube 视频 ID
+        stream: 是否使用流式输出（默认 False）
+        language: 输出语言代码（默认英语）
+    
+    Returns:
+        - 非流式：直接返回完整的主题 JSON
+        - 流式：返回 SSE 流
+    """
+    try:
+        print(f"[INFO] 生成主题 - 视频ID: {video_id}, stream: {stream}, language: {language}")
+        
+        # 从 Supabase 获取视频数据
+        cached_record = get_cached_video_from_supabase(video_id)
+        
+        if not cached_record or not cached_record.get('video_data'):
+            raise HTTPException(
+                status_code=404,
+                detail={'success': False, 'error': 'Video data not found', 'message': f'视频数据不存在: {video_id}'}
+            )
+        
+        video_data = cached_record['video_data']
+        
+        if not video_data.get('sections'):
+            raise HTTPException(
+                status_code=400,
+                detail={'success': False, 'error': 'No sections found', 'message': '视频数据中没有章节信息'}
+            )
+        
+        llm_service = get_llm_service()
+        
+        if stream:
+            # 流式输出
+            async def generate_stream():
+                try:
+                    full_response = ""
+                    async for chunk in llm_service.generate_themes_stream(video_data, language):
+                        if chunk == "\n[STREAM_END]":
+                            continue
+                        full_response += chunk
+                        yield f"data: {chunk}\n\n"
+                    
+                    # 解析最终结果
+                    try:
+                        theme_result = llm_service.parse_themes_result(full_response)
+                        yield f'data: [DONE] {json.dumps(theme_result.model_dump(), ensure_ascii=False)}\n\n'
+                    except Exception as parse_error:
+                        print(f"[WARN] 主题解析失败: {parse_error}")
+                        yield f'data: [DONE] {full_response}\n\n'
+                        
+                except Exception as e:
+                    print(f"[ERROR] 流式生成主题失败: {e}")
+                    yield f'data: [ERROR] {str(e)}\n\n'
+            
+            return StreamingResponse(
+                generate_stream(),
+                media_type="text/event-stream",
+                headers={
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive",
+                    "X-Accel-Buffering": "no"
+                }
+            )
+        else:
+            # 非流式输出
+            theme_result = llm_service.generate_themes(video_data, language)
+            
+            print(f"[SUCCESS] 生成了 {len(theme_result.themes)} 个主题")
+            
+            return {
+                'success': True,
+                'videoId': video_id,
+                'themes': theme_result.model_dump()['themes'],
+                'total': len(theme_result.themes)
+            }
+            
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"[ERROR] 生成主题失败: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=500,
+            detail={'success': False, 'error': str(e), 'message': '生成主题失败'}
+        )
+
+
+@app.post("/api/generate-themes")
+async def generate_themes_from_json(request: Request):
+    """
+    根据传入的视频 JSON 数据直接生成主题（无需视频ID）
+    
+    Request Body:
+        {
+            "video_data": { ... 视频分析 JSON ... },
+            "stream": false
+        }
+    """
+    try:
+        body = await request.json()
+        video_data = body.get('video_data')
+        stream = body.get('stream', False)
+        
+        if not video_data:
+            raise HTTPException(status_code=400, detail={'success': False, 'message': '缺少 video_data'})
+        
+        if not video_data.get('sections'):
+            raise HTTPException(status_code=400, detail={'success': False, 'message': '视频数据中没有 sections'})
+        
+        print(f"[INFO] 从 JSON 生成主题, sections 数量: {len(video_data.get('sections', []))}")
+        
+        llm_service = get_llm_service()
+        
+        if stream:
+            async def generate_stream():
+                try:
+                    full_response = ""
+                    async for chunk in llm_service.generate_themes_stream(video_data):
+                        if chunk == "\n[STREAM_END]":
+                            continue
+                        full_response += chunk
+                        yield f"data: {chunk}\n\n"
+                    
+                    try:
+                        theme_result = llm_service.parse_themes_result(full_response)
+                        yield f'data: [DONE] {json.dumps(theme_result.model_dump(), ensure_ascii=False)}\n\n'
+                    except:
+                        yield f'data: [DONE] {full_response}\n\n'
+                except Exception as e:
+                    yield f'data: [ERROR] {str(e)}\n\n'
+            
+            return StreamingResponse(
+                generate_stream(),
+                media_type="text/event-stream",
+                headers={"Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no"}
+            )
+        else:
+            theme_result = llm_service.generate_themes(video_data)
+            return {
+                'success': True,
+                'themes': theme_result.model_dump()['themes'],
+                'total': len(theme_result.themes)
+            }
+            
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"[ERROR] 生成主题失败: {e}")
+        raise HTTPException(status_code=500, detail={'success': False, 'error': str(e)})
 
 
 class PDFExportRequest(BaseModel):
@@ -879,8 +1282,9 @@ async def process_video_stream(request_data: ProcessVideoRequest):
     import time
     url = request_data.url
     language = request_data.language
+    user_id = request_data.user_id  # 可选：用于记录使用次数
     
-    print(f"[STREAM] 📥 收到请求: url={url}, language={language}", flush=True)
+    print(f"[STREAM] 📥 收到请求: url={url}, language={language}, user_id={user_id[:8] + '...' if user_id else 'anonymous'}", flush=True)
 
     async def generate():
         try:
@@ -1081,6 +1485,16 @@ async def process_video_stream(request_data: ProcessVideoRequest):
                 transcript=transcript_text,
                 chapters=video_data_json.get('chapters', [])
             )
+            
+            # 记录用户使用（如果有 user_id）
+            if user_id:
+                record_user_usage(
+                    user_id=user_id,
+                    video_id=video_id,
+                    video_title=video_title,
+                    action_type="analysis"
+                )
+            
             print(f"[STREAM] ✅ 处理完成", flush=True)
 
         except Exception as e:
@@ -1098,6 +1512,57 @@ async def process_video_stream(request_data: ProcessVideoRequest):
             "X-Accel-Buffering": "no"
         }
     )
+
+
+@app.post("/api/translate-themes")
+async def translate_themes(request: Request):
+    """翻译 themes 数据为目标语言"""
+    try:
+        data = await request.json()
+        themes = data.get('themes', [])
+        target_language = data.get('language', 'en')
+        
+        if target_language == 'en' or not themes:
+            return {"success": True, "themes": themes}
+        
+        # 使用 LLM 翻译 themes
+        llm_service = get_llm_service()
+        
+        # 构建翻译请求
+        themes_text = json.dumps(themes, ensure_ascii=False)
+        
+        language_names = {
+            'zh': 'Chinese',
+            'ja': 'Japanese', 
+            'ko': 'Korean',
+            'es': 'Spanish',
+            'fr': 'French',
+        }
+        target_lang_name = language_names.get(target_language, target_language)
+        
+        prompt = f"""Translate the following JSON themes data to {target_lang_name}. 
+Keep the JSON structure exactly the same, only translate the text content (title, description, content fields).
+Do NOT translate field names like "id", "title", "content", "timestampStart", "color".
+Return ONLY the translated JSON array, no explanation.
+
+{themes_text}"""
+        
+        translated_text = llm_service.llm.invoke(prompt).content.strip()
+        
+        # 清理可能的 markdown 代码块
+        if translated_text.startswith('```'):
+            translated_text = translated_text.split('\n', 1)[1] if '\n' in translated_text else translated_text[3:]
+        if translated_text.endswith('```'):
+            translated_text = translated_text[:-3]
+        translated_text = translated_text.strip()
+        
+        translated_themes = json.loads(translated_text)
+        print(f"[SUCCESS] 翻译了 {len(translated_themes)} 个 themes 到 {target_language}")
+        
+        return {"success": True, "themes": translated_themes}
+    except Exception as e:
+        print(f"[ERROR] 翻译 themes 失败: {e}")
+        return {"success": False, "error": str(e), "themes": data.get('themes', [])}
 
 
 def translate_cached_data(cached_data: dict, target_language_code: str) -> dict:
@@ -1131,9 +1596,32 @@ app.mount("/data", StaticFiles(directory=str(STATIC_DIR / "data")), name="data")
 
 if __name__ == "__main__":
     import uvicorn
-    print("🚀 Server is running on http://localhost:5500")
-    print("📊 API endpoint: http://localhost:5500/api")
-    print("📚 API docs: http://localhost:5500/docs")
-    print("🌐 Frontend: http://localhost:5500")
-    # 测试环境api端口为5500
-    uvicorn.run(app, host="0.0.0.0", port=5500)
+    import os 
+
+    # SSL 证书路径
+    ssl_keyfile = "/home/ubuntu/PageOn_video_web/ssl/server.key"
+    ssl_certfile = "/home/ubuntu/PageOn_video_web/ssl/server.crt"
+
+    # 检查是否存在 SSL 证书
+    use_https = os.path.exists(ssl_keyfile) and os.path.exists(ssl_certfile)
+
+
+    if use_https:
+        print("🔒 Server is running on https://localhost:5500 (HTTPS)")
+        print("📊 API endpoint: https://localhost:5500/api")
+        print("📚 API docs: https://localhost:5500/docs")
+        uvicorn.run(
+            app, 
+            host="0.0.0.0", 
+            port=5500,
+            ssl_keyfile=ssl_keyfile,
+            ssl_certfile=ssl_certfile
+        )
+    else:
+        print("🚀 Server is running on http://localhost:5500 (HTTP)")
+        print("📊 API endpoint: http://localhost:5500/api")
+        print("📚 API docs: http://localhost:5500/docs")
+        print("⚠️  No SSL certificates found. To enable HTTPS, create:")
+        print(f"    - {ssl_keyfile}")
+        print(f"    - {ssl_certfile}")
+        uvicorn.run(app, host="0.0.0.0", port=5500)
