@@ -23,9 +23,12 @@ RUN mkdir -p /app/data
 # 设置工作目录
 WORKDIR /app/backend/python-fastapi
 
-# 暴露端口
-EXPOSE 5000
+# 创建 SSL 目录
+RUN mkdir -p /app/ssl
 
-# 启动命令
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
+# 暴露端口
+EXPOSE 5500
+
+# 启动命令 - 使用 Python 启动以支持动态 HTTPS 检测
+CMD ["python", "main.py"]
 

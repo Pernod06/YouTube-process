@@ -930,7 +930,7 @@ class VideoPageApp {
             if (errorMessage.includes('API 密钥')) {
                 errorHint = '请在后端 .env 文件中配置 OPENAI_API_KEY';
             } else if (errorMessage.includes('网络') || errorMessage.includes('fetch')) {
-                errorHint = '请检查后端服务是否运行在 http://localhost:5000';
+                errorHint = '请检查后端服务是否运行在 http://localhost:5500';
             } else if (errorMessage.includes('空') || errorMessage.includes('undefined')) {
                 errorHint = 'AI 生成内容失败，可能是 API 配额不足或网络问题，请重试';
             }

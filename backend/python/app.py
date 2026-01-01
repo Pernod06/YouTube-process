@@ -707,8 +707,8 @@ def chat_with_openai(user_message, video_context):
     return response.choices[0].message.content
 
 if __name__ == '__main__':
-    print('🚀 Server is running on http://localhost:5000')
-    print('📊 API endpoint: http://localhost:5000/api')
-    print('🌐 Frontend: http://localhost:5000/index.html')
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    print('🚀 Server is running on http://localhost:5500')
+    print('📊 API endpoint: http://localhost:5500/api')
+    print('🌐 Frontend: http://localhost:5500/index.html')
+    app.run(debug=True, host='0.0.0.0', port=5500)
 

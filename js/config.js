@@ -4,7 +4,13 @@ const CONFIG = {
     API: {
         // 开发环境
         development: {
-            BASE_URL: 'http://localhost:6000/api',
+            BASE_URL: 'http://localhost:5500/api',
+            VIDEO_ENDPOINT: '/videos',
+            SECTIONS_ENDPOINT: '/sections'
+        },
+        // 测试环境
+        testing: {
+            BASE_URL: 'http://localhost:5500/api',
             VIDEO_ENDPOINT: '/videos',
             SECTIONS_ENDPOINT: '/sections'
         },
@@ -14,8 +20,8 @@ const CONFIG = {
             VIDEO_ENDPOINT: '/videos',
             SECTIONS_ENDPOINT: '/sections'
         },
-        // 当前使用的环境
-        current: 'development'
+        // 当前使用的环境 (testing 模式)
+        current: 'testing'
     },
 
     // 本地数据配置（开发阶段）

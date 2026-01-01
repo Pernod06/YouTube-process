@@ -10,7 +10,7 @@ const path = require('path');
 const fs = require('fs').promises;
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3500;  // 测试模式端口
 
 // 中间件
 app.use(cors());

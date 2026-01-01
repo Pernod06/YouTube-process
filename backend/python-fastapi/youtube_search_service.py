@@ -59,6 +59,18 @@ class SearchYouTubeParams(BaseModel):
     # 自定义过滤参数（后端过滤，非 SerpAPI 参数）
     duration: Optional[str] = None  # 视频时长: any, short(<20min), medium(20min-1hour), long(>1hour)
     limit: Optional[int] = None  # 返回结果数量限制
+    has_cc: Optional[bool] = None  # 是否只返回有 CC 字幕的视频
+
+
+# YouTube sp 过滤器编码值
+# 来源: YouTube 搜索过滤器的 base64 编码
+SP_FILTERS = {
+    "cc": "EgIoAQ%3D%3D",  # 有字幕/CC
+    "4k": "EgJwAQ%3D%3D",  # 4K 分辨率
+    "hd": "EgIgAQ%3D%3D",  # HD 高清
+    "live": "EgJAAQ%3D%3D",  # 直播
+    "creative_commons": "EgIwAQ%3D%3D",  # CC 许可证
+}
 
 
 class YouTubeSearchError(Exception):
@@ -157,6 +169,7 @@ class SearchYouTubeService:
         # 提取自定义过滤参数
         duration_filter = params.duration
         limit = params.limit or 50  # 默认获取更多结果以便过滤
+        has_cc_filter = True  # 硬编码：只返回有 CC 字幕的视频
         
         # 将 params 转为 dict 用于缓存键计算（包含过滤参数）
         params_dict = params.model_dump(exclude_none=True)
@@ -168,8 +181,13 @@ class SearchYouTubeService:
             return self._cache[cache_key]
         
         # 构建请求参数（排除自定义过滤参数，这些不是 SerpAPI 参数）
-        serp_params = {k: v for k, v in params_dict.items() if k not in ['duration', 'limit']}
+        serp_params = {k: v for k, v in params_dict.items() if k not in ['duration', 'limit', 'has_cc']}
         serp_params['api_key'] = self.serp_api_key
+        
+        # 如果需要 CC 过滤，添加 sp 参数
+        if has_cc_filter:
+            serp_params['sp'] = SP_FILTERS.get('cc', 'EgIoAQ%3D%3D')
+            print(f"[YouTube Search] 启用 CC 字幕过滤")
         
         try:
             async with httpx.AsyncClient(timeout=30.0) as client:
@@ -209,9 +227,12 @@ class SearchYouTubeService:
                     search_parameters=data.get('search_parameters')
                 )
                 
-                # 存入缓存
-                self._cache[cache_key] = result
-                print(f"[YouTube Search] 搜索成功: {params.search_query[:30]}..., 结果数: {len(result.video_results)}")
+                # 只有有结果时才存入缓存（避免缓存空结果）
+                if len(result.video_results) > 0:
+                    self._cache[cache_key] = result
+                    print(f"[YouTube Search] 搜索成功并缓存: {params.search_query[:30]}..., 结果数: {len(result.video_results)}")
+                else:
+                    print(f"[YouTube Search] 搜索无结果，不缓存: {params.search_query[:30]}...")
                 
                 return result
                 

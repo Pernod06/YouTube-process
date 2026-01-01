@@ -139,6 +139,79 @@ from youtube_search_service import (
 # 导入 Chat 路由
 from chat import router as chat_router
 
+
+def parse_timestamp_to_seconds(timestamp_str: str) -> int:
+    """
+    将时间戳字符串转换为秒数
+    支持格式: "MM:SS", "HH:MM:SS", "1:30", "01:30:45"
+    """
+    if not timestamp_str:
+        return 0
+    
+    # 移除可能的空格
+    timestamp_str = timestamp_str.strip()
+    
+    parts = timestamp_str.split(':')
+    try:
+        parts = [int(p) for p in parts]
+        if len(parts) == 2:  # MM:SS
+            return parts[0] * 60 + parts[1]
+        elif len(parts) == 3:  # HH:MM:SS
+            return parts[0] * 3600 + parts[1] * 60 + parts[2]
+        else:
+            return 0
+    except (ValueError, TypeError):
+        return 0
+
+
+def add_section_thumbnails(main_body: list, chapters: list) -> list:
+    """
+    为每个 main_body section 添加对应的章节缩略图
+    
+    Args:
+        main_body: main_body sections 列表
+        chapters: YouTube 章节列表 [{timestamp, title, thumbnail_url}, ...]
+    
+    Returns:
+        更新后的 main_body 列表，每个 section 增加 thumbnail_url 字段
+    """
+    if not main_body or not chapters:
+        return main_body
+    
+    # 过滤出有缩略图的章节
+    chapters_with_thumbnails = [ch for ch in chapters if ch.get('thumbnail_url')]
+    
+    if not chapters_with_thumbnails:
+        print("[INFO] 没有找到带缩略图的章节")
+        return main_body
+    
+    print(f"[INFO] 为 {len(main_body)} 个 section 匹配缩略图（共 {len(chapters_with_thumbnails)} 个章节有缩略图）")
+    
+    for section in main_body:
+        timestamp_ref = section.get('timestamp_ref', '00:00')
+        section_seconds = parse_timestamp_to_seconds(timestamp_ref)
+        
+        # 找到最接近的章节
+        closest_chapter = None
+        min_diff = float('inf')
+        
+        for chapter in chapters_with_thumbnails:
+            chapter_seconds = chapter.get('timestamp', 0)
+            diff = abs(chapter_seconds - section_seconds)
+            
+            if diff < min_diff:
+                min_diff = diff
+                closest_chapter = chapter
+        
+        if closest_chapter and closest_chapter.get('thumbnail_url'):
+            section['thumbnail_url'] = closest_chapter['thumbnail_url']
+            print(f"  - Section '{section.get('section_title', '')[:30]}' ({timestamp_ref}) -> 章节 '{closest_chapter.get('title', '')[:20]}' (误差 {min_diff}s)")
+        else:
+            section['thumbnail_url'] = None
+    
+    return main_body
+
+
 app = FastAPI(
     title="视频内容平台 API",
     description="动态视频内容管理系统",
@@ -229,7 +302,7 @@ def load_video_data():
 
 @app.get("/api/videos/{video_id}")
 async def get_video(video_id: str, language: str = None):
-    """获取视频数据，支持翻译为目标语言"""
+    """获取视频数据，支持翻译为目标语言 - V2.0 格式"""
     try:
         # 从 Supabase 获取视频数据
         cached_record = get_cached_video_from_supabase(video_id)
@@ -238,6 +311,20 @@ async def get_video(video_id: str, language: str = None):
             raise HTTPException(status_code=404, detail=f"视频数据不存在: {video_id}")
         
         video_data = cached_record['video_data']
+        
+        # 确保 V2.0 格式也有 videoInfo（用于 videoId 和兼容性）
+        if 'videoInfo' not in video_data and 'meta' in video_data:
+            # V2.0 格式：从 meta 中获取标题，添加 videoInfo 兼容层
+            meta = video_data.get('meta', {}) or {}
+            summary_box = video_data.get('summary_box', {}) or {}
+            video_data['videoInfo'] = {
+                "videoId": video_id,
+                "title": meta.get('title', f"Video {video_id}"),
+                "description": "",
+                "thumbnail": f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg",
+                "summary": summary_box.get('key_insight', '')
+            }
+            print(f"[INFO] V2.0 格式：添加 videoInfo 兼容层")
         
         # 如果指定了非英文语言，翻译数据
         if language and language != 'en':
@@ -270,28 +357,76 @@ async def get_transcript(video_id: str):
 
 
 @app.get("/api/videos")
-async def get_videos():
-    """获取视频列表（从 Supabase）"""
+async def get_videos(user_id: str = Query(None)):
+    """获取视频列表（从 Supabase）- V2.0 格式，包含点赞信息"""
     try:
         client = get_supabase_client()
-        result = client.table("youtube_videos").select("video_id, video_data, created_at").order("created_at", desc=True).execute()
+        # 同时选择 like_counts 字段（从 youtube_videos 表）
+        result = client.table("youtube_videos").select("video_id, video_data, created_at, like_counts").order("created_at", desc=True).execute()
         
-        videos = []
+        # 先收集所有视频数据
+        video_records = []
+        video_ids = []
         for record in result.data:
-            video_data = record.get('video_data', {})
-            video_info = video_data.get('videoInfo', {})
+            video_ids.append(record['video_id'])
+            video_records.append(record)
+        
+        # 批量查询用户是否已点赞（只需要查询用户点赞状态）
+        user_likes_set = set()
+        
+        if video_ids and user_id:
+            try:
+                # 如果用户已登录，批量查询用户是否已点赞
+                user_likes = client.table("video_likes").select("video_id").in_("video_id", video_ids).eq("user_id", user_id).execute()
+                user_likes_set = {like.get('video_id') for like in user_likes.data if like.get('video_id')}
+            except Exception as e:
+                # 表不存在或其他错误，使用默认值（不打印警告，避免日志污染）
+                error_msg = str(e).lower()
+                if "could not find the table" not in error_msg and "pgrst205" not in error_msg:
+                    print(f"[WARN] 批量获取用户点赞状态失败: {e}")
+        
+        # 构建视频列表
+        videos = []
+        for record in video_records:
+            video_data = record.get('video_data', {}) or {}
+            video_id = record['video_id']
+            
+            # 尝试从 videoInfo 获取（V1.0 或 V2.0 兼容层）
+            video_info = video_data.get('videoInfo', {}) or {}
+            
+            # 如果没有 videoInfo，尝试从 V2.0 meta 字段获取
+            if not video_info.get('title'):
+                meta = video_data.get('meta', {}) or {}
+                summary_box = video_data.get('summary_box', {}) or {}
+                video_info = {
+                    'title': meta.get('title', f"Video {video_id}"),
+                    'description': '',
+                    'thumbnail': f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg",
+                    'summary': summary_box.get('key_insight', '')
+                }
+            
+            # 从 youtube_videos 表的 like_counts 字段获取点赞数（如果不存在则默认为 0）
+            like_count = record.get('like_counts', 0) or 0
+            is_liked = video_id in user_likes_set if user_id else False
+            
             videos.append({
-                "videoId": record['video_id'],
-                "title": video_info.get('title', f"Video {record['video_id']}"),
+                "videoId": video_id,
+                "title": video_info.get('title', f"Video {video_id}"),
                 "description": video_info.get('description', ''),
-                "thumbnail": video_info.get('thumbnail', f"https://img.youtube.com/vi/{record['video_id']}/maxresdefault.jpg"),
+                "thumbnail": video_info.get('thumbnail', f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg"),
                 "summary": video_info.get('summary', ''),
-                "createdAt": record.get('created_at', '')
+                "createdAt": record.get('created_at', ''),
+                "like_count": like_count,
+                "is_liked": is_liked
             })
         return videos
     except Exception as e:
         print(f"[ERROR] 获取视频列表失败: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# 点赞功能已移至前端直接操作 Supabase，不再需要后端 API
+# 前端使用 likeService.ts 直接操作 youtube_videos.like_counts 字段
 
 
 @app.get("/api/videos/{video_id}/comments")
@@ -516,6 +651,7 @@ class SerpAPISearchRequest(BaseModel):
     hl: Optional[str] = None  # 语言代码 (如 "en", "zh-CN")
     duration: Optional[str] = None  # 视频时长: any, short(<20min), medium(20min-1hour), long(>1hour)
     limit: Optional[int] = None  # 返回结果数量限制
+    has_cc: Optional[bool] = None  # 是否只返回有 CC 字幕的视频
 
 
 class SerpAPIVideoResult(BaseModel):
@@ -567,7 +703,7 @@ async def search_youtube_serpapi(request: SerpAPISearchRequest):
         }
     """
     try:
-        print(f"[INFO] SerpAPI YouTube 搜索: {request.search_query}, duration={request.duration}, limit={request.limit}")
+        print(f"[INFO] SerpAPI YouTube 搜索: {request.search_query}, duration={request.duration}, limit={request.limit}, has_cc={request.has_cc}")
         
         # 获取搜索服务
         service = get_youtube_search_service()
@@ -579,7 +715,8 @@ async def search_youtube_serpapi(request: SerpAPISearchRequest):
             gl=request.gl,
             hl=request.hl,
             duration=request.duration,
-            limit=request.limit
+            limit=request.limit,
+            has_cc=request.has_cc
         )
         
         # 执行搜索
@@ -715,10 +852,11 @@ async def generate_themes(
         
         video_data = cached_record['video_data']
         
-        if not video_data.get('sections'):
+        # V2.0 格式：需要 main_body
+        if not video_data.get('main_body'):
             raise HTTPException(
                 status_code=400,
-                detail={'success': False, 'error': 'No sections found', 'message': '视频数据中没有章节信息'}
+                detail={'success': False, 'error': 'No main_body found', 'message': '视频数据中没有主体内容 (V2.0 main_body)'}
             )
         
         llm_service = get_llm_service()
@@ -799,10 +937,10 @@ async def generate_themes_from_json(request: Request):
         if not video_data:
             raise HTTPException(status_code=400, detail={'success': False, 'message': '缺少 video_data'})
         
-        if not video_data.get('sections'):
-            raise HTTPException(status_code=400, detail={'success': False, 'message': '视频数据中没有 sections'})
+        if not video_data.get('main_body'):
+            raise HTTPException(status_code=400, detail={'success': False, 'message': '视频数据中没有 main_body (V2.0)'})
         
-        print(f"[INFO] 从 JSON 生成主题, sections 数量: {len(video_data.get('sections', []))}")
+        print(f"[INFO] 从 JSON 生成主题, main_body 数量: {len(video_data.get('main_body', []))}")
         
         llm_service = get_llm_service()
         
@@ -1161,7 +1299,7 @@ async def process_video(request_data: ProcessVideoRequest):
                     'transcriptLength': len(cached_record.get('transcript', '') or ''),
                     'dataFile': f"video-data-{video_id}.json",
                     'chapters': cached_data.get('chapters', []),
-                    'sections': cached_data.get('sections', []),
+                    'main_body': cached_data.get('main_body', []),
                     'videoInfo': cached_data.get('videoInfo', {}),
                     'message': '视频处理成功（使用 Supabase 缓存数据）',
                     'cached': True
@@ -1244,7 +1382,7 @@ async def process_video(request_data: ProcessVideoRequest):
                 'transcriptLength': len(transcript),
                 'dataFile': f"video-data-{video_id}.json",
                 'chapters': response_data.get('chapters', []),
-                'sections': response_data.get('sections', []),
+                'main_body': response_data.get('main_body', []),
                 'videoInfo': response_data.get('videoInfo', {}),
                 'message': '视频处理成功',
                 'cached': False
@@ -1306,6 +1444,42 @@ async def process_video_stream(request_data: ProcessVideoRequest):
             if cached_record and cached_record.get('video_data'):
                 print(f"[STREAM] ✅ 命中缓存，直接返回", flush=True)
                 cached_data = cached_record['video_data']
+                
+                # 确保 V2.0 格式也有 videoInfo（用于 videoId 和兼容性）
+                if 'videoInfo' not in cached_data and 'meta' in cached_data:
+                    meta = cached_data.get('meta', {}) or {}
+                    summary_box = cached_data.get('summary_box', {}) or {}
+                    cached_data['videoInfo'] = {
+                        "videoId": video_id,
+                        "title": meta.get('title', f"Video {video_id}"),
+                        "description": "",
+                        "thumbnail": f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg",
+                        "summary": summary_box.get('key_insight', '')
+                    }
+                    print(f"[STREAM] 📦 V2.0 缓存：添加 videoInfo 兼容层", flush=True)
+                
+                # 为缓存的 main_body 添加缩略图（如果没有的话）
+                if cached_data.get('main_body'):
+                    # 检查是否已有缩略图
+                    has_thumbnails = any(
+                        section.get('thumbnail_url') 
+                        for section in cached_data.get('main_body', [])
+                    )
+                    if not has_thumbnails:
+                        print(f"[STREAM] 🖼️ 为缓存的 main_body 添加缩略图...", flush=True)
+                        try:
+                            _, chapters = extract_youtube_chapters(video_id)
+                            if chapters:
+                                cached_data['main_body'] = add_section_thumbnails(
+                                    cached_data['main_body'], 
+                                    chapters
+                                )
+                                # 同时更新 chapters（如果缓存中没有）
+                                if not cached_data.get('chapters'):
+                                    cached_data['chapters'] = chapters
+                        except Exception as thumb_err:
+                            print(f"[STREAM] ⚠️ 缓存缩略图获取失败: {thumb_err}", flush=True)
+                
                 if language and language != 'en':
                     cached_data = translate_cached_data(cached_data, language)
                 yield f'data: [CACHED] {json.dumps(cached_data, ensure_ascii=False)}\n\n'
@@ -1371,73 +1545,21 @@ async def process_video_stream(request_data: ProcessVideoRequest):
                                 return None
                 return None
             
-            def try_parse_sections(content: str, seen_ids: set):
-                """尝试从累积内容中解析新的 sections"""
-                import re
-                text = re.sub(r'^```json?\s*', '', content.strip())
-                
-                # 查找 sections 数组
-                match = re.search(r'"sections"\s*:\s*\[', text)
-                if not match:
-                    return []
-                
-                start = match.end()
-                new_sections = []
-                
-                # 查找每个 section 对象
-                i = start
-                while i < len(text):
-                    # 跳过空白和逗号
-                    while i < len(text) and text[i] in ' \t\n\r,':
-                        i += 1
-                    if i >= len(text) or text[i] == ']':
-                        break
-                    if text[i] != '{':
-                        i += 1
-                        continue
-                    
-                    # 找到对象开始，寻找闭合
-                    obj_start = i
-                    depth = 0
-                    for j in range(i, len(text)):
-                        if text[j] == '{':
-                            depth += 1
-                        elif text[j] == '}':
-                            depth -= 1
-                            if depth == 0:
-                                try:
-                                    section = json.loads(text[obj_start:j+1])
-                                    if section.get('id') and section['id'] not in seen_ids:
-                                        new_sections.append(section)
-                                        seen_ids.add(section['id'])
-                                except:
-                                    pass
-                                i = j + 1
-                                break
-                    else:
-                        break  # 对象未闭合，等待更多数据
-                
-                return new_sections
-            
+            # V2.0: 完整 JSON 由 LLM 一次性生成，无需增量解析 sections
             async for chunk in llm_service.analyze_video_transcript_stream(transcript, details, video_id):
                 if chunk == "\n[STREAM_END]":
                     continue
                 full_response += chunk
                 chunk_count += 1
+
+                yield f'data: {json.dumps({"type": "delta", "content": chunk}, ensure_ascii=False)}\n\n'
                 
-                # 尝试增量解析并发送事件
+                # 尝试增量解析并发送 video_info 事件
                 if not video_info_sent:
                     video_info = try_parse_video_info(full_response)
                     if video_info:
-                        print(f"[STREAM] 📤 发送 video_info 事件", flush=True)
-                        yield send_event("video_info", video_info)
+                        yield f'data: {json.dumps({"type": "video_info", "data": video_info}, ensure_ascii=False)}\n\n'
                         video_info_sent = True
-                
-                # 尝试解析新的 sections
-                new_sections = try_parse_sections(full_response, sent_section_ids)
-                for section in new_sections:
-                    print(f"[STREAM] 📤 发送 section 事件: {section.get('id')}", flush=True)
-                    yield send_event("section", section)
                 
                 if chunk_count % 20 == 0:
                     print(f"[STREAM] 🔄 chunk#{chunk_count}, 长度:{len(full_response)}", flush=True)
@@ -1447,18 +1569,63 @@ async def process_video_stream(request_data: ProcessVideoRequest):
             # === 解析完整结果 ===
             print(f"[STREAM] 📊 解析完整 JSON...", flush=True)
             try:
-                video_analysis = llm_service.parse_analysis_result(full_response)
-                video_data_json = video_analysis.model_dump()
-                print(f"[STREAM] ✅ JSON 解析成功，sections: {len(video_data_json.get('sections', []))}", flush=True)
+                # 先尝试直接解析为 JSON（V2.0 格式）
+                import re
+                text = re.sub(r'^```json?\s*', '', full_response.strip())
+                text = re.sub(r'\s*```$', '', text)
+                text = text.replace('[STREAM_END]', '').strip()
+                
+                # 提取 JSON
+                start = text.find('{')
+                if start != -1:
+                    brace_count = 0
+                    end = start
+                    for i, c in enumerate(text[start:], start):
+                        if c == '{': brace_count += 1
+                        elif c == '}': 
+                            brace_count -= 1
+                            if brace_count == 0:
+                                end = i + 1
+                                break
+                    json_str = text[start:end]
+                    video_data_json = json.loads(json_str)
+                    
+                    # 如果是 V2.0 格式，直接使用（包含 main_body）
+                    if 'main_body' in video_data_json:
+                        print(f"[STREAM] ✅ JSON 解析成功 (V2.0)，main_body: {len(video_data_json.get('main_body', []))}", flush=True)
+                    else:
+                        # V1.0 格式，已包含 videoInfo 和 sections
+                        print(f"[STREAM] ✅ JSON 解析成功 (V1.0)，sections: {len(video_data_json.get('sections', []))}", flush=True)
+                else:
+                    raise ValueError("No JSON found in response")
             except Exception as parse_error:
-                print(f"[STREAM] ⚠️ JSON 解析失败，使用原始响应: {parse_error}", flush=True)
+                print(f"[STREAM] ⚠️ JSON 解析失败，使用备用解析: {parse_error}", flush=True)
                 try:
-                    import re
-                    text = re.sub(r'^```json?\s*', '', full_response.strip())
-                    text = re.sub(r'\s*```$', '', text)
-                    video_data_json = json.loads(text)
+                    video_analysis = llm_service.parse_analysis_result(full_response)
+                    video_data_json = video_analysis.model_dump()
+                    # 将 sections 转换为 main_body（如果需要）
+                    if 'sections' in video_data_json and 'main_body' not in video_data_json:
+                        video_data_json['main_body'] = [
+                            {
+                                "section_title": s.get('title', ''),
+                                "content_markdown": s.get('content', [{}])[0].get('content', '') if s.get('content') else '',
+                                "timestamp_ref": s.get('content', [{}])[0].get('timestampStart', '00:00') if s.get('content') else '00:00'
+                            }
+                            for s in video_data_json.get('sections', [])
+                        ]
                 except:
-                    video_data_json = {"videoInfo": {"title": details.get('title', ''), "videoId": video_id}, "sections": []}
+                    video_data_json = {"videoInfo": {"title": details.get('title', ''), "videoId": video_id}, "main_body": []}
+
+            # 确保 V2.0 格式也有 videoInfo（用于 videoId 和兼容性）
+            if 'videoInfo' not in video_data_json:
+                # V2.0 格式：从 meta 中获取标题，添加 videoInfo
+                video_title_v2 = video_data_json.get('meta', {}).get('title', details.get('title', ''))
+                video_data_json['videoInfo'] = {
+                    "videoId": video_id,
+                    "title": video_title_v2,
+                    "summary": video_data_json.get('summary_box', {}).get('key_insight', '')
+                }
+                print(f"[STREAM] 📦 V2.0 格式：添加 videoInfo 兼容层", flush=True)
 
             # 获取章节
             try:
@@ -1466,12 +1633,83 @@ async def process_video_stream(request_data: ProcessVideoRequest):
                 if video_title:
                     video_data_json['videoInfo']['title'] = video_title
                 video_data_json['chapters'] = chapters or []
-            except:
+                
+                # 为 main_body 的每个 section 添加缩略图
+                if video_data_json.get('main_body') and chapters:
+                    print(f"[STREAM] 🖼️ 为 main_body sections 添加缩略图...", flush=True)
+                    video_data_json['main_body'] = add_section_thumbnails(
+                        video_data_json['main_body'], 
+                        chapters
+                    )
+            except Exception as chapter_error:
+                print(f"[STREAM] ⚠️ 章节/缩略图获取失败: {chapter_error}", flush=True)
                 video_data_json['chapters'] = []
 
+            # 在发送 [DONE] 之前，生成 Key Takeaways 图像（阻塞等待，避免假生成）
+            from supabase import create_client
+            import os
+            import asyncio
+            import base64
+            import json as _json
+            
+            # 从 SUPABASE_KEY 中提取项目 URL
+            supabase_key = os.getenv('SUPABASE_KEY') or os.getenv('SUPABASE_SERVICE_ROLE_KEY')
+            supabase_url = os.getenv('SUPABASE_URL')
+            
+            # 如果没有直接设置 URL，尝试从 JWT 中解析
+            if not supabase_url and supabase_key:
+                try:
+                    # JWT 格式: header.payload.signature
+                    payload = supabase_key.split('.')[1]
+                    # 添加 padding
+                    payload += '=' * (4 - len(payload) % 4)
+                    decoded = base64.urlsafe_b64decode(payload)
+                    jwt_data = _json.loads(decoded)
+                    project_ref = jwt_data.get('ref')
+                    if project_ref:
+                        supabase_url = f"https://{project_ref}.supabase.co"
+                except Exception as e:
+                    print(f"[STREAM] ⚠️ 无法从 JWT 解析项目 URL: {e}", flush=True)
+            
+            supabase_client = None
+            
+            print(f"[STREAM] 🔍 检查 Supabase 配置: URL={'已设置' if supabase_url else '未设置'}, KEY={'已设置' if supabase_key else '未设置'}", flush=True)
+            
+            if supabase_url and supabase_key:
+                try:
+                    supabase_client = create_client(supabase_url, supabase_key)
+                    print(f"[STREAM] ✅ Supabase 客户端创建成功", flush=True)
+                except Exception as db_error:
+                    print(f"[STREAM] ⚠️ 创建 Supabase 客户端失败: {db_error}", flush=True)
+                    import traceback
+                    traceback.print_exc()
+            
+            # 生成 Key Takeaways 图像（阻塞等待完成，但不立即保存到 key_takeaways_images 表）
+            # 因为需要先保存 youtube_videos 表，避免外键约束错误
+            print(f"[STREAM] 🎨 开始生成 Key Takeaways 图像...", flush=True)
+            image_url = None
+            image_gen_status = None  # 'completed' or 'failed'
+            try:
+                # 不立即保存，等 youtube_videos 保存完成后再保存
+                image_url = await llm_service._generate_key_takeaways_image(full_response, video_id=video_id, save_to_db=False)
+                if image_url:
+                    print(f"[STREAM] ✅ Key Takeaways 图像生成成功: {image_url[:50]}...", flush=True)
+                    # 将图像 URL 添加到 video_data_json 中
+                    video_data_json['key_takeaways_image_url'] = image_url
+                    image_gen_status = 'completed'
+                else:
+                    print(f"[STREAM] ⚠️ 图像生成返回空 URL", flush=True)
+                    image_gen_status = 'failed'
+            except Exception as e:
+                print(f"[STREAM] ⚠️ Key Takeaways 图像生成失败: {e}", flush=True)
+                import traceback
+                traceback.print_exc()
+                image_gen_status = 'failed'
+            
             # 发送完整的 JSON 给前端（与 [CACHED] 格式保持一致）
+            # 此时图像 URL 已经包含在 video_data_json 中（如果生成成功）
             yield f'data: [DONE] {json.dumps(video_data_json, ensure_ascii=False)}\n\n'
-            print(f"[STREAM] 📤 已发送 [DONE] 完整 JSON", flush=True)
+            print(f"[STREAM] 📤 已发送 [DONE] 完整 JSON（包含图像URL: {'是' if image_url else '否'}）", flush=True)
 
             # 保存到 Supabase（后台处理，不阻塞前端）
             print(f"[STREAM] 💾 保存到 Supabase...", flush=True)
@@ -1485,6 +1723,17 @@ async def process_video_stream(request_data: ProcessVideoRequest):
                 transcript=transcript_text,
                 chapters=video_data_json.get('chapters', [])
             )
+            
+            # 现在 youtube_videos 表已保存，可以安全地保存 key_takeaways_images 表（仅保存成功状态）
+            if image_gen_status == 'completed' and image_url:
+                print(f"[STREAM] 💾 保存图像状态到 key_takeaways_images 表...", flush=True)
+                llm_service.save_key_takeaways_image_status(
+                    video_id=video_id,
+                    status='completed',
+                    image_url=image_url
+                )
+            elif image_gen_status == 'failed':
+                print(f"[STREAM] ⚠️ 图像生成失败，不保存到 key_takeaways_images 表", flush=True)
             
             # 记录用户使用（如果有 user_id）
             if user_id:
@@ -1580,6 +1829,175 @@ def translate_cached_data(cached_data: dict, target_language_code: str) -> dict:
         return cached_data
 
 
+class GenerateKeyTakeawaysImageRequest(BaseModel):
+    """生成 Key Takeaways 图像请求模型"""
+    video_id: str
+    force_regenerate: bool = False  # 是否强制重新生成（忽略缓存）
+
+
+@app.post("/api/generate-key-takeaways-image")
+async def generate_key_takeaways_image(request: GenerateKeyTakeawaysImageRequest):
+    """
+    生成视频的 Key Takeaways 图像
+    
+    Request Body:
+        {
+            "video_id": "xxx",
+            "force_regenerate": false  // 可选，是否强制重新生成
+        }
+    
+    Response:
+        {
+            "success": true,
+            "video_id": "xxx",
+            "image_url": "https://...",
+            "cached": false
+        }
+    """
+    video_id = request.video_id
+    force_regenerate = request.force_regenerate
+    
+    try:
+        print(f"[API] 🎨 生成 Key Takeaways 图像 - video_id: {video_id}, force: {force_regenerate}", flush=True)
+        
+        # 如果不强制重新生成，先检查是否已有缓存
+        if not force_regenerate:
+            cached_record = get_cached_video_from_supabase(video_id)
+            if cached_record and cached_record.get('video_data'):
+                video_data = cached_record['video_data']
+                existing_image_url = video_data.get('key_takeaways_image_url')
+                if existing_image_url:
+                    print(f"[API] ✅ 使用缓存的图像 URL", flush=True)
+                    return {
+                        "success": True,
+                        "video_id": video_id,
+                        "image_url": existing_image_url,
+                        "cached": True
+                    }
+        
+        # 获取视频数据
+        cached_record = get_cached_video_from_supabase(video_id)
+        if not cached_record or not cached_record.get('video_data'):
+            raise HTTPException(
+                status_code=404,
+                detail={"success": False, "error": "Video data not found", "message": f"视频数据不存在: {video_id}"}
+            )
+         
+        video_data = cached_record['video_data']
+        
+        # 将视频数据转换为 JSON 字符串，供 _generate_key_takeaways_image 解析
+        video_data_json_str = json.dumps(video_data, ensure_ascii=False)
+        
+        # 调用 LLM 服务生成图像（不立即保存到 key_takeaways_images，等 youtube_videos 更新后再保存）
+        llm_service = get_llm_service()
+        image_url = await llm_service._generate_key_takeaways_image(video_data_json_str, video_id=video_id, save_to_db=False)
+        
+        if not image_url:
+            return {
+                "success": False,
+                "video_id": video_id,
+                "error": "图像生成失败",
+                "message": "无法生成 Key Takeaways 图像，请检查视频数据是否包含 summary_box.bullet_points"
+            }
+        
+        # 更新 video_data 中的图像 URL 并保存到 youtube_videos 表
+        video_data['key_takeaways_image_url'] = image_url
+        try:
+            client = get_supabase_client()
+            client.table("youtube_videos").update({
+                "video_data": video_data
+            }).eq("video_id", video_id).execute()
+            print(f"[API] ✅ 图像 URL 已保存到 youtube_videos 表", flush=True)
+        except Exception as save_error:
+            print(f"[API] ⚠️ 保存图像 URL 到 youtube_videos 失败: {save_error}", flush=True)
+        
+        # 现在 youtube_videos 表已更新，可以安全地保存 key_takeaways_images 表
+        print(f"[API] 💾 保存图像状态到 key_takeaways_images 表...", flush=True)
+        llm_service.save_key_takeaways_image_status(
+            video_id=video_id,
+            status='completed',
+            image_url=image_url
+        )
+        
+        print(f"[API] ✅ Key Takeaways 图像生成成功: {image_url[:50]}...", flush=True)
+        
+        return {
+            "success": True,
+            "video_id": video_id,
+            "image_url": image_url,
+            "cached": False
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"[API] ❌ 生成图像失败: {e}", flush=True)
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=500,
+            detail={"success": False, "error": str(e), "message": "生成 Key Takeaways 图像失败"}
+        )
+
+
+@app.get("/api/key-takeaways-image/{video_id}")
+async def get_key_takeaways_image(video_id: str):
+    """
+    获取视频的 Key Takeaways 图像生成状态和 URL
+    """
+    try:
+        from supabase import create_client
+        import os
+        supabase_url = os.getenv('SUPABASE_URL')
+        supabase_key = os.getenv('SUPABASE_SERVICE_ROLE_KEY')
+        
+        if not supabase_url or not supabase_key:
+            return {"success": False, "error": "Supabase 配置未设置"}
+        
+        supabase = create_client(supabase_url, supabase_key)
+        
+        # 查询图像生成记录
+        result = supabase.table('key_takeaways_images').select('*').eq('video_id', video_id).execute()
+        
+        if result.data and len(result.data) > 0:
+            image_data = result.data[0]
+            return {
+                "success": True,
+                "status": image_data.get('status'),
+                "image_url": image_data.get('image_url') if image_data.get('status') == 'completed' else None,
+                "error_message": image_data.get('error_message'),
+                "created_at": image_data.get('created_at'),
+                "updated_at": image_data.get('updated_at')
+            }
+        else:
+            # 如果没有记录，检查 video_data 中是否有图像 URL（向后兼容）
+            video_result = supabase.table('youtube_videos').select('video_data').eq('video_id', video_id).execute()
+            if video_result.data and len(video_result.data) > 0:
+                video_data = video_result.data[0].get('video_data', {})
+                image_url = video_data.get('key_takeaways_image_url')
+                if image_url:
+                    return {
+                        "success": True,
+                        "status": "completed",
+                        "image_url": image_url,
+                        "error_message": None,
+                        "created_at": None,
+                        "updated_at": None
+                    }
+            
+            return {
+                "success": True,
+                "status": "pending",
+                "image_url": None,
+                "error_message": None,
+                "created_at": None,
+                "updated_at": None
+            }
+    except Exception as e:
+        print(f"[API] ⚠️ 获取图像信息失败: {e}", flush=True)
+        return {"success": False, "error": str(e)}
+
+
 # 提供静态文件
 @app.get("/")
 async def root():
@@ -1598,30 +2016,47 @@ if __name__ == "__main__":
     import uvicorn
     import os 
 
-    # SSL 证书路径
-    ssl_keyfile = "/home/ubuntu/PageOn_video_web/ssl/server.key"
-    ssl_certfile = "/home/ubuntu/PageOn_video_web/ssl/server.crt"
+    # SSL 证书路径（支持 Docker 和本地开发环境）
+    # Docker 环境：/app/ssl/
+    # 本地开发环境：/home/ubuntu/PageOn_video_web/ssl/
+    docker_ssl_key = "/app/ssl/server.key"
+    docker_ssl_cert = "/app/ssl/server.crt"
+    local_ssl_key = "/home/ubuntu/PageOn_video_web/ssl/server.key"
+    local_ssl_cert = "/home/ubuntu/PageOn_video_web/ssl/server.crt"
+    
+    # 优先使用 Docker 路径，其次使用本地路径
+    if os.path.exists(docker_ssl_key) and os.path.exists(docker_ssl_cert):
+        ssl_keyfile = docker_ssl_key
+        ssl_certfile = docker_ssl_cert
+    elif os.path.exists(local_ssl_key) and os.path.exists(local_ssl_cert):
+        ssl_keyfile = local_ssl_key
+        ssl_certfile = local_ssl_cert
+    else:
+        ssl_keyfile = None
+        ssl_certfile = None
 
-    # 检查是否存在 SSL 证书
-    use_https = os.path.exists(ssl_keyfile) and os.path.exists(ssl_certfile)
+    # 检查环境变量是否强制启用 HTTPS
+    use_https_env = os.environ.get("USE_HTTPS", "false").lower() == "true"
+    use_https = (ssl_keyfile is not None) and (use_https_env or os.path.exists(ssl_keyfile))
 
+    port = 5000  # 5000：生产模式端口 | 5500：测试模式端口
 
-    if use_https:
-        print("🔒 Server is running on https://localhost:5500 (HTTPS)")
-        print("📊 API endpoint: https://localhost:5500/api")
-        print("📚 API docs: https://localhost:5500/docs")
+    if use_https and ssl_keyfile and ssl_certfile:
+        print(f"🔒 Server is running on https://0.0.0.0:{port} (HTTPS)")
+        print(f"📊 API endpoint: https://localhost:{port}/api")
+        print(f"📚 API docs: https://localhost:{port}/docs")
         uvicorn.run(
             app, 
             host="0.0.0.0", 
-            port=5500,
+            port=port,
             ssl_keyfile=ssl_keyfile,
             ssl_certfile=ssl_certfile
         )
     else:
-        print("🚀 Server is running on http://localhost:5500 (HTTP)")
-        print("📊 API endpoint: http://localhost:5500/api")
-        print("📚 API docs: http://localhost:5500/docs")
-        print("⚠️  No SSL certificates found. To enable HTTPS, create:")
-        print(f"    - {ssl_keyfile}")
-        print(f"    - {ssl_certfile}")
-        uvicorn.run(app, host="0.0.0.0", port=5500)
+        print(f"🚀 Server is running on http://0.0.0.0:{port} (HTTP)")
+        print(f"📊 API endpoint: http://localhost:{port}/api")
+        print(f"📚 API docs: http://localhost:{port}/docs")
+        if not ssl_keyfile:
+            print("⚠️  No SSL certificates found. To enable HTTPS, create:")
+            print(f"    - {docker_ssl_key} (Docker) or {local_ssl_key} (Local)")
+        uvicorn.run(app, host="0.0.0.0", port=port)

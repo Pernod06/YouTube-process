@@ -11,9 +11,11 @@ services:
       - TranscriptAPI_KEY=${TranscriptAPI_KEY}
       - SUPABASE_KEY=${SUPABASE_KEY}
       - SERP_API_KEY=${SERP_API_KEY}
+      - USE_HTTPS=true
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs
+      - /home/ubuntu/PageOn_video_web/ssl:/app/ssl:ro
     logging:
       driver: "json-file"
       options:
