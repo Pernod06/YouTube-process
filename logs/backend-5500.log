@@ -1,0 +1,5 @@
+2026-03-04 15:26:20,609 - INFO - === 应用启动，日志系统初始化完成 ===
+INFO:     Started server process [23537]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5500 (Press CTRL+C to quit)

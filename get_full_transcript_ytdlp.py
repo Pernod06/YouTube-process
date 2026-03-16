@@ -113,6 +113,7 @@ def get_full_transcript(video_url: str, language: str = 'en'):
         
         # 使用 YouTubeClient 获取视频标题
         video_title = f'Video {video_id}'
+        video_details = None
         try:
             yt_client = YouTubeClient()
             video_details = yt_client.get_video_details(video_id)

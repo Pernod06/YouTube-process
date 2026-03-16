@@ -14,6 +14,7 @@ from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from io import BytesIO
 import re
 import os
+import html
 from datetime import datetime
 
 
@@ -182,6 +183,25 @@ class VideoPDFGenerator:
         # 清理多余的空格
         text = re.sub(r'\s+', ' ', text)
         return text.strip()
+
+    def _markdown_to_pdf_blocks(self, markdown_text):
+        """将 V2 markdown 内容转换为适合 PDF 段落的纯文本块。"""
+        if not markdown_text:
+            return []
+
+        text = markdown_text.replace("\r\n", "\n")
+        text = re.sub(r'^\s*#{1,6}\s*', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^\s*>\s*', '', text, flags=re.MULTILINE)
+        text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
+        text = re.sub(r'`([^`]+)`', r'\1', text)
+        text = re.sub(r'^\s*-\s*', '- ', text, flags=re.MULTILINE)
+        text = re.sub(r'\n{3,}', '\n\n', text)
+
+        blocks = [block.strip() for block in re.split(r'\n{2,}', text) if block.strip()]
+        return [
+            html.escape(self._clean_text(block)).replace('\n', '<br/>')
+            for block in blocks
+        ]
     
     def generate_pdf(self, video_data, output_path=None, notes=None):
         """
@@ -223,23 +243,24 @@ class VideoPDFGenerator:
         story = []
         
         # 添加标题
-        video_info = video_data.get('videoInfo', {})
-        title = video_info.get('title', 'Video Document')
+        meta = video_data.get('meta', {}) or {}
+        summary_box = video_data.get('summary_box', {}) or {}
+        title = meta.get('title', 'Video Document')
         story.append(Paragraph(title, self.styles['CustomTitle']))
         story.append(Spacer(1, 0.3*inch))
         
         # 添加描述
-        description = video_info.get('description', '')
+        description = summary_box.get('key_insight', '')
         if description:
             story.append(Paragraph(description, self.styles['Description']))
             story.append(Spacer(1, 0.2*inch))
         
         # 添加视频信息表格
-        video_id = video_info.get('videoId', 'N/A')
+        video_id = video_data.get('video_id', 'N/A')
         info_data = [
             ['Video ID:', video_id],
             ['Generated:', datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
-            ['Total Sections:', str(len(video_data.get('sections', [])))]
+            ['Total Sections:', str(len(video_data.get('main_body', [])))]
         ]
         
         info_table = Table(info_data, colWidths=[3*cm, 10*cm])
@@ -259,50 +280,22 @@ class VideoPDFGenerator:
         story.append(Spacer(1, 0.2*inch))
         
         # 添加章节内容
-        sections = video_data.get('sections', [])
+        sections = video_data.get('main_body', [])
         for i, section in enumerate(sections):
             # 章节标题
-            section_title = section.get('title', f'Section {i+1}')
+            section_title = section.get('section_title', f'Section {i+1}')
             story.append(Paragraph(f"{i+1}. {section_title}", self.styles['SectionTitle']))
-            
-            # 获取内容列表
-            content_list = section.get('content', [])
-            
-            # 计算章节时间范围
-            if isinstance(content_list, list) and len(content_list) > 0:
-                # 新格式：content 是列表
-                first_timestamp = content_list[0].get('timestampStart', '00:00:00') if isinstance(content_list[0], dict) else '00:00:00'
-                last_timestamp = content_list[-1].get('timestampStart', '00:00:00') if isinstance(content_list[-1], dict) else '00:00:00'
-                timestamp_text = f"[{first_timestamp} - {last_timestamp}]"
-                story.append(Paragraph(timestamp_text, self.styles['Timestamp']))
-                
-                # 遍历每个内容项
-                for item in content_list:
-                    if isinstance(item, dict):
-                        item_content = self._clean_text(item.get('content', ''))
-                        item_timestamp = item.get('timestampStart', '')
-                        if item_content:
-                            # 添加带时间戳的内容
-                            if item_timestamp:
-                                content_with_time = f"<b>[{item_timestamp}]</b> {item_content}"
-                            else:
-                                content_with_time = item_content
-                            story.append(Paragraph(content_with_time, self.styles['Content']))
-                    elif isinstance(item, str):
-                        # 兼容旧格式：content 项是字符串
-                        cleaned = self._clean_text(item)
-                        if cleaned:
-                            story.append(Paragraph(cleaned, self.styles['Content']))
-            elif isinstance(content_list, str):
-                # 兼容旧格式：content 是字符串
-                timestamp_start = section.get('timestampStart', '00:00')
-                timestamp_end = section.get('timestampEnd', '00:00')
-                timestamp_text = f"[{timestamp_start} - {timestamp_end}]"
-                story.append(Paragraph(timestamp_text, self.styles['Timestamp']))
-                
-                content = self._clean_text(content_list)
-                if content:
-                    story.append(Paragraph(content, self.styles['Content']))
+
+            timestamp_text = section.get('timestamp_ref', '00:00')
+            if timestamp_text:
+                story.append(Paragraph(f"[{timestamp_text}]", self.styles['Timestamp']))
+
+            for block in self._markdown_to_pdf_blocks(section.get('content_markdown', '')):
+                story.append(Paragraph(block, self.styles['Content']))
+
+            visual_break = section.get('visual_break', {}) or {}
+            if visual_break.get('content'):
+                story.append(Paragraph(self._clean_text(visual_break['content']), self.styles['Description']))
             
             # 章节之间添加间距
             if i < len(sections) - 1:
@@ -403,4 +396,3 @@ if __name__ == '__main__':
     output_path = Path(__file__).parent / 'test_output.pdf'
     generate_video_pdf(video_data, str(output_path))
     print(f"PDF generated: {output_path}")
-

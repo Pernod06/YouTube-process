@@ -12,6 +12,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import PydanticOutputParser, StrOutputParser
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 from collections import deque
+from supabase_utils import get_supabase_client, get_supabase_config
 
 # 导入 MCP Tools
 try:
@@ -20,33 +21,32 @@ try:
 except ImportError:
     MCP_TOOLS_AVAILABLE = False
 
-# OpenRouter 配置
-OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+# LLM API 配置（支持通过环境变量覆盖默认 OpenRouter 地址）
+OPENROUTER_BASE_URL = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
+IS_NEWAI_GATEWAY = "newapi.deepwisdom.ai" in OPENROUTER_BASE_URL
+
+
+def _env_flag(name: str, default: bool = False) -> bool:
+    """Parse common truthy/falsey env values."""
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+# 模型配置：new-api 通常使用不带 provider 前缀的模型名
+DEFAULT_MAIN_MODEL = "gemini-3-flash-preview"
+DEFAULT_LITE_MODEL = "gemini-2.5-flash"
+DEFAULT_IMAGE_MODEL = "gemini-3-pro-image-preview"
+MAIN_MODEL = os.getenv("OPENROUTER_MODEL_MAIN", DEFAULT_MAIN_MODEL)
+LITE_MODEL = os.getenv("OPENROUTER_MODEL_LITE", DEFAULT_LITE_MODEL)
+IMAGE_MODEL = os.getenv("OPENROUTER_MODEL_IMAGE", DEFAULT_IMAGE_MODEL)
+KEY_TAKEAWAYS_IMAGE_ENABLED = _env_flag("ENABLE_KEY_TAKEAWAYS_IMAGE", default=True)
 
 # == Pydantic 输出模型 ==
 
 class ContentItem(BaseModel):
     content: str = Field(description="关键点内容（1-2句话）")
     timestampStart: str = Field(description="时间戳，格式： HH:MM:SS")
-
-class Section(BaseModel):
-    """视频章节"""
-    id: str = Field(description="章节 ID，如 section1")
-    title: str = Field(description="章节标题")
-    content: List[ContentItem] = Field(description="章节内容列表")
-
-class VideoInfo(BaseModel):
-    """视频基本信息"""
-    title: str = Field(description="视频标题")
-    videoId: str = Field(description="视频 ID")
-    description: str = Field(description="简短描述")
-    thumbnail: str = Field(description="缩略图 URL")
-    summary: str = Field(description="2-3句话总结")
-
-class VideoAnalysisResult(BaseModel):
-    """视频分析结果"""
-    videoInfo: VideoInfo
-    sections: List[Section] = Field(description="视频章节列表")
 
 class Theme(BaseModel):
     """视频主题 - 跨章节聚合的内容主题"""
@@ -185,7 +185,7 @@ class LLMService:
         self.llm = ChatOpenAI(
             api_key=api_key,
             base_url=OPENROUTER_BASE_URL,
-            model="google/gemini-3-flash-preview",  # 或 "anthropic/claude-3.5-sonnet"
+            model=MAIN_MODEL,  # 或 "anthropic/claude-3.5-sonnet"
             temperature=0.3,
             streaming=True,
             default_headers={
@@ -198,7 +198,7 @@ class LLMService:
         self.llm_lite = ChatOpenAI(
             api_key=api_key,
             base_url=OPENROUTER_BASE_URL,
-            model="google/gemini-2.5-flash-lite",  # 或 "openai/gpt-4o-mini"
+            model=LITE_MODEL,  # 或 "openai/gpt-4o-mini"
             temperature=0.7,
             default_headers={
                 "HTTP-Referer": "https://your-app.com",
@@ -410,15 +410,30 @@ Thumbnail: {thumbnail}
         
         # 注意：图像生成已移至 main.py 中异步处理，不阻塞主要内容流式输出
 
-    def parse_analysis_result(self, raw_text: str) -> VideoAnalysisResult:
+    async def analyze_video_transcript(
+        self,
+        transcript: List[dict],
+        details: dict,
+        video_id: str,
+    ) -> StructuredArticleV2:
         """
-        解析流式输出的结果为结构化对象
+        非流式分析入口：复用流式链路并返回完整 V2 schema
+        """
+        full_response = ""
+        async for chunk in self.analyze_video_transcript_stream(transcript, details, video_id):
+            if chunk != "\n[STREAM_END]":
+                full_response += chunk
+        return self.parse_analysis_result(full_response)
+
+    def parse_analysis_result(self, raw_text: str) -> StructuredArticleV2:
+        """
+        解析流式输出的结果为 V2 结构化对象
         
         Args:
             raw_text: LLM 生成的原始 JSON 文本
             
         Returns:
-            VideoAnalysisResult: 解析后的结构化结果
+            StructuredArticleV2: 解析后的结构化结果
         """
         # 清理文本
         import re
@@ -444,8 +459,10 @@ Thumbnail: {thumbnail}
         json_str = text[start:end]
         data = json.loads(json_str)
         
-        # 转换为 Pydantic 模型
-        return VideoAnalysisResult(**data)
+        if "main_body" not in data:
+            raise ValueError("LLM response is not a valid V2 article: missing main_body")
+
+        return StructuredArticleV2(**data)
 
 
     # === chat ===
@@ -576,7 +593,7 @@ OUTPUT FORMAT:
         translate_llm = ChatOpenAI(
             api_key=os.getenv("OPENROUTER_API_KEY"),
             base_url=OPENROUTER_BASE_URL,
-            model="google/gemini-2.5-flash-lite",
+            model=LITE_MODEL,
             temperature=0.3,
             max_tokens=16384,
             default_headers={
@@ -595,7 +612,6 @@ OUTPUT FORMAT:
         # 需要翻译的字段列表（按优先级）
         translate_sections = [
             'meta',           # 标题、标签等元数据
-            'videoInfo',      # 视频信息
             'header_hook',    # 开头引言
             'summary_box',    # 摘要框
             'main_body',      # 主要内容（最大的部分）
@@ -671,7 +687,7 @@ OUTPUT FORMAT:
         根据视频分析 JSON 生成 2-5 个主题
         
         Args:
-            video_data: 视频分析结果 JSON，包含 videoInfo 和 sections
+            video_data: 视频分析结果 JSON，使用 V2 main_body schema
             language: 输出语言代码（默认英语）
             
         Returns:
@@ -1074,6 +1090,12 @@ Clean up the transcript while preserving ALL timestamps and structure.
         Returns:
             str: 生成的图像 URL，如果失败则返回 None
         """
+        if not KEY_TAKEAWAYS_IMAGE_ENABLED:
+            print(
+                "[Key Takeaways Image] ⏸️ 功能已禁用 (ENABLE_KEY_TAKEAWAYS_IMAGE=false)，跳过图像生成",
+                flush=True,
+            )
+            return None
         
         def _save_image_status(status: str, image_url: str = '', error_message: str = ''):
             """保存图像生成状态到数据库（仅保存成功状态，失败时不保存）"""
@@ -1091,22 +1113,14 @@ Clean up the transcript while preserving ALL timestamps and structure.
                 print(f"[Key Takeaways Image] ⚠️ 未提供 video_id，跳过保存", flush=True)
                 return
             try:
-                from supabase import create_client
-                # 优先使用 SERVICE_ROLE_KEY（绕过 RLS），如果没有则使用 anon key
-                supabase_url = os.getenv('SUPABASE_URL') or "https://xxurqudxplxhignlshhy.supabase.co"
-                supabase_key = os.getenv('SUPABASE_SERVICE_ROLE_KEY') or os.getenv('SUPABASE_KEY') or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4dXJxdWR4cGx4aGlnbmxzaGh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyNDAxMjEsImV4cCI6MjA4MDgxNjEyMX0.afuHUdv5pDwKrMbEon5Tcy2W2EHTR9ZMlka8jiECGDY"
-                
-                if not supabase_url or not supabase_key:
-                    print(f"[Key Takeaways Image] ⚠️ Supabase 配置缺失，跳过保存", flush=True)
-                    return
-                
-                # 检查是否使用了 SERVICE_ROLE_KEY
-                is_service_role = 'SUPABASE_SERVICE_ROLE_KEY' in os.environ or 'service_role' in supabase_key.lower()
+                supabase_url, supabase_key = get_supabase_config(prefer_service_role=True)
+                # 检查是否使用了 SERVICE_ROLE_KEY（仅日志用途）
+                is_service_role = 'SUPABASE_SERVICE_ROLE_KEY' in os.environ or 'service_role' in supabase_key.lower() or supabase_key.startswith("sb_secret_")
                 if not is_service_role:
                     print(f"[Key Takeaways Image] ⚠️ 使用 anon key，可能因 RLS 策略无法写入", flush=True)
                 
                 print(f"[Key Takeaways Image] 💾 开始保存状态到数据库: video_id={video_id}, status={status}, image_url={'已设置' if image_url else '未设置'}, key_type={'SERVICE_ROLE' if is_service_role else 'ANON'}", flush=True)
-                client = create_client(supabase_url, supabase_key)
+                client = get_supabase_client(prefer_service_role=True)
                 result = client.table('key_takeaways_images').upsert({
                     'video_id': video_id,
                     'image_url': image_url,
@@ -1211,7 +1225,7 @@ When provided with a user's text description, your job is to analyze the informa
                 
                 def run_openrouter_image():
                     return client.chat.completions.create(
-                        model="google/gemini-3-pro-image-preview",
+                        model=IMAGE_MODEL,
                         messages=[
                             {"role": "user", "content": image_prompt}
                         ],
@@ -1349,22 +1363,14 @@ When provided with a user's text description, your job is to analyze the informa
             return
         
         try:
-            from supabase import create_client
-            # 优先使用 SERVICE_ROLE_KEY（绕过 RLS），如果没有则使用 anon key
-            supabase_url = os.getenv('SUPABASE_URL') or "https://xxurqudxplxhignlshhy.supabase.co"
-            supabase_key = os.getenv('SUPABASE_SERVICE_ROLE_KEY') or os.getenv('SUPABASE_KEY') or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4dXJxdWR4cGx4aGlnbmxzaGh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyNDAxMjEsImV4cCI6MjA4MDgxNjEyMX0.afuHUdv5pDwKrMbEon5Tcy2W2EHTR9ZMlka8jiECGDY"
-            
-            if not supabase_url or not supabase_key:
-                print(f"[Key Takeaways Image] ⚠️ Supabase 配置缺失，跳过保存", flush=True)
-                return
-            
-            # 检查是否使用了 SERVICE_ROLE_KEY
-            is_service_role = 'SUPABASE_SERVICE_ROLE_KEY' in os.environ or 'service_role' in supabase_key.lower()
+            supabase_url, supabase_key = get_supabase_config(prefer_service_role=True)
+            # 检查是否使用了 SERVICE_ROLE_KEY（仅日志用途）
+            is_service_role = 'SUPABASE_SERVICE_ROLE_KEY' in os.environ or 'service_role' in supabase_key.lower() or supabase_key.startswith("sb_secret_")
             if not is_service_role:
                 print(f"[Key Takeaways Image] ⚠️ 使用 anon key，可能因 RLS 策略无法写入", flush=True)
             
             print(f"[Key Takeaways Image] 💾 开始保存状态到数据库: video_id={video_id}, status={status}, image_url={'已设置' if image_url else '未设置'}, key_type={'SERVICE_ROLE' if is_service_role else 'ANON'}", flush=True)
-            client = create_client(supabase_url, supabase_key)
+            client = get_supabase_client(prefer_service_role=True)
             result = client.table('key_takeaways_images').upsert({
                 'video_id': video_id,
                 'image_url': image_url,
@@ -1392,4 +1398,3 @@ def get_llm_service() -> LLMService:
     if _llm_service is None:
         _llm_service = LLMService()
     return _llm_service
-
