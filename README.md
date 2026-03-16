@@ -1,300 +1,162 @@
-# 🎥 YouTube 视频处理应用 - 动态前端架构
+# YouTube Process
 
-一个现代化的视频内容展示系统，支持动态加载、后端API集成、实时交互等功能。
+`YouTube-process` 是 PageOn 视频分析体系的后端和脚本仓库。它负责拉取字幕与视频信息、调用 LLM 生成结构化文章、提供搜索与聊天接口、输出 PDF/图片，并把结果缓存到 Supabase。
 
-## ✨ 特性
+前端仓库是同级目录下的 `../PageOn_video_web`。这两个仓库通常一起使用。
 
-- 🎨 **现代化UI** - 响应式三栏布局（导航、内容、视频）
-- 🔄 **动态数据加载** - 支持本地JSON和远程API两种模式
-- 🔌 **模块化架构** - 清晰的代码组织，易于扩展
-- 🚀 **开箱即用** - 提供完整的前后端示例
-- 📱 **响应式设计** - 支持桌面、平板、移动设备
-- 🎯 **交互丰富** - 章节导航、时间戳跳转、实时高亮
+## 仓库包含什么
 
-## 📁 项目结构
+- FastAPI 服务：对外提供 `/api/*` 接口
+- YouTube 处理脚本：字幕提取、HTML 生成、数据导入
+- LLM 分析链路：结构化文章、聊天、翻译、图片摘要
+- Supabase 缓存与用户数据读写
+- 静态页面与样式资源，便于独立调试
 
+## 主要能力
+
+- 根据 YouTube URL 提取视频 ID、字幕和视频元数据
+- 用 LLM 生成 V2 结构化文章数据
+- 支持流式分析输出，供前端结果页实时消费
+- 基于 SerpAPI 搜索 YouTube，并带缓存与时长过滤
+- 提供聊天、翻译、PDF 导出、章节缩略图、视频帧提取
+- 将分析结果缓存到 Supabase，减少重复处理
+
+## 目录概览
+
+```text
+YouTube-process/
+├── backend/python-fastapi/     # 主后端服务
+├── backend/nodejs/             # 旧 Node 示例
+├── backend/python/             # 旧 Flask 示例
+├── data/                       # 已生成的数据
+├── tmp_data/                   # 临时处理数据
+├── logs/                       # 后端日志
+├── css/ js/ index.html         # 静态调试页面
+├── get_full_transcript_ytdlp.py
+├── generate_video_page.py
+├── import_to_supabase.py
+└── docker-compose.yml
 ```
-youtube-process/
-├── 📄 video_page_dynamic.html      # 动态页面入口
-├── 📄 start-dev.sh                 # 快速启动脚本
-│
-├── 📁 css/                         # 样式文件
-│   └── styles.css
-│
-├── 📁 js/                          # JavaScript模块
-│   ├── config.js                   # 配置管理
-│   ├── api.js                      # API服务层
-│   └── app.js                      # 应用逻辑
-│
-├── 📁 data/                        # 数据文件
-│   └── video-data.json             # 视频数据
-│
-├── 📁 backend-examples/            # 后端示例
-│   ├── nodejs/                     # Node.js + Express
-│   └── python/                     # Python + Flask
-│
-└── 📁 docs/                        # 文档
-    ├── README_DYNAMIC.md           # 详细说明
-    └── ARCHITECTURE.md             # 架构文档
-```
 
-## 🚀 快速开始
+## 环境变量
 
-### 方式1: 使用启动脚本（推荐）
+建议在仓库根目录放 `.env`。常用变量如下：
 
 ```bash
-# 默认在8000端口启动
-./start-dev.sh
+# LLM
+OPENROUTER_API_KEY=
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+OPENROUTER_MODEL_MAIN=gemini-3-flash-preview
+OPENROUTER_MODEL_LITE=gemini-2.5-flash
+OPENROUTER_MODEL_IMAGE=gemini-3-pro-image-preview
 
-# 指定端口启动
-./start-dev.sh 3000
+# YouTube / 搜索
+YOUTUBE_API_KEY=
+SERP_API_KEY=
+TranscriptAPI_KEY=
 
-# 然后访问: http://localhost:8000/video_page_dynamic.html
+# Supabase
+SUPABASE_URL=
+SUPABASE_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+
+# 运行开关
+USE_HTTPS=false
+ENABLE_KEY_TAKEAWAYS_IMAGE=true
 ```
 
-### 方式2: 手动启动
+说明：
 
-**使用Python:**
-```bash
-# Python 3
-python3 -m http.server 8000
+- `OPENROUTER_API_KEY`：分析、聊天、翻译等 LLM 能力必需
+- `SERP_API_KEY`：首页搜索视频必需
+- `YOUTUBE_API_KEY`：补充视频详情、章节等能力建议配置
+- `SUPABASE_*`：缓存、用户行为记录、前后端联动建议配置
+- `TranscriptAPI_KEY`：字幕抓取辅助能力可选
 
-# Python 2
-python -m SimpleHTTPServer 8000
-```
+## 本地启动
 
-**使用Node.js:**
-```bash
-npx http-server -p 8000
-```
+### 1. 安装依赖
 
-## 🔧 配置
-
-编辑 `js/config.js` 来配置应用行为：
-
-```javascript
-// 使用本地JSON数据（开发模式）
-CONFIG.APP.USE_LOCAL_DATA = true;
-
-// 使用远程API（生产模式）
-CONFIG.APP.USE_LOCAL_DATA = false;
-CONFIG.API.production.BASE_URL = 'https://your-api.com/api';
-```
-
-## 🔌 后端集成
-
-### 选择1: Node.js + Express
+本仓库有历史依赖文件并存，按当前 Docker 和主服务代码，最稳妥的本地安装方式是：
 
 ```bash
-cd backend-examples/nodejs
-npm install
-npm start
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r backend/python-fastapi/requirements.txt
+pip install supabase youtube-transcript-api google-api-python-client google-genai
 ```
 
-### 选择2: Python + Flask
+### 2. 启动主服务
 
 ```bash
-cd backend-examples/python
-pip install -r requirements.txt
-python app.py
+python backend/python-fastapi/main.py
 ```
 
-两种实现都提供相同的RESTful API接口，详见 `backend-examples/README.md`
+默认地址：
 
-## 📡 API端点
+- API: `http://localhost:5000/api`
+- Docs: `http://localhost:5000/docs`
 
-| 方法 | 端点 | 描述 |
-|------|------|------|
-| GET | `/api/videos` | 获取所有视频 |
-| GET | `/api/sections` | 获取所有章节 |
-| GET | `/api/sections/:id` | 获取特定章节 |
-| POST | `/api/sections/search` | 搜索章节 |
-| POST | `/api/notes` | 保存笔记 |
+如果检测到证书且 `USE_HTTPS=true`，服务会改为：
 
-## 🎯 功能特性
+- API: `https://localhost:5000/api`
+- Docs: `https://localhost:5000/docs`
 
-### 1. 章节导航
-- 左侧导航栏显示所有章节
-- 点击跳转到对应章节
-- 滚动时自动高亮当前章节
+### 3. 联调前端
 
-### 2. 视频控制
-- 右侧嵌入YouTube播放器
-- 点击时间戳跳转到对应时间点
-- 支持自动播放和自定义参数
+前端仓库 `../PageOn_video_web` 默认把 `/api` 代理到 `https://localhost:5000`。  
+如果你这里跑的是 HTTP，请同步修改前端的 `VITE_BACKEND_TARGET`。
 
-### 3. 数据管理
-- 支持本地JSON数据（开发）
-- 支持远程API（生产）
-- 一键切换数据源
+## Docker
 
-### 4. 扩展功能（可选）
-- 用户笔记功能
-- 全文搜索
-- 书签管理
-- 进度追踪
-
-## 📚 文档
-
-- **[详细使用说明](README_DYNAMIC.md)** - 完整的使用和开发指南
-- **[架构文档](ARCHITECTURE.md)** - 系统架构和设计说明
-- **[后端示例](backend-examples/README.md)** - 后端实现指南
-
-## 🎨 自定义
-
-### 修改样式
-
-编辑 `css/styles.css` 来自定义外观：
-
-```css
-/* 修改主题色 */
-.sidebar-left nav a {
-    color: #0077b6;  /* 改成你喜欢的颜色 */
-}
-
-/* 调整布局比例 */
-.sidebar-left { width: 20%; }
-.main-content { margin-left: 20%; margin-right: 28%; }
-.sidebar-right { width: 28%; }
-```
-
-### 添加新功能
-
-在 `js/app.js` 中扩展 `VideoPageApp` 类：
-
-```javascript
-class VideoPageApp {
-    // 添加你的新功能
-    async customFeature() {
-        // 实现代码
-    }
-}
-```
-
-## 🔐 安全建议
-
-生产环境部署时请注意：
-
-1. ✅ 使用HTTPS
-2. ✅ 实现用户认证（JWT/OAuth2）
-3. ✅ 添加CSRF防护
-4. ✅ 验证和清理用户输入
-5. ✅ 设置适当的CORS策略
-6. ✅ 使用环境变量管理敏感信息
-
-## 📱 浏览器支持
-
-- Chrome/Edge (最新版)
-- Firefox (最新版)
-- Safari (最新版)
-- 移动浏览器 (iOS Safari, Chrome Mobile)
-
-## 🐛 故障排除
-
-### 问题1: 页面显示"加载中..."不消失
-
-**解决方案:**
-1. 检查浏览器控制台的错误信息
-2. 确认 `data/video-data.json` 文件存在
-3. 检查是否使用HTTP服务器（而不是直接打开HTML文件）
-
-### 问题2: CORS错误
-
-**解决方案:**
 ```bash
-# 使用http-server并启用CORS
-npx http-server -p 8000 --cors
+docker compose up --build
 ```
 
-### 问题3: API请求失败
+默认端口：
 
-**解决方案:**
-1. 检查 `js/config.js` 中的API配置
-2. 确认后端服务器正在运行
-3. 检查网络请求的响应状态
+- `5000:5000`
 
-## 🔄 从静态页面迁移
+`docker-compose.yml` 会把 `data/` 和 `logs/` 挂进去，并读取根目录环境变量。
 
-如果你有现有的静态页面：
+## 关键接口
 
-1. 将内容提取到 `data/video-data.json`
-2. 按以下格式组织数据：
+最常用的一组接口：
 
-```json
-{
-  "videoInfo": {
-    "title": "视频标题",
-    "videoId": "YouTube视频ID",
-    "description": "描述"
-  },
-  "sections": [
-    {
-      "id": "section1",
-      "title": "章节标题",
-      "timestampStart": "00:00",
-      "timestampEnd": "02:54",
-      "content": "章节内容..."
-    }
-  ]
-}
-```
+- `POST /api/process-video`
+- `POST /api/process-video/stream`
+- `POST /api/search-youtube`
+- `POST /api/chat`
+- `POST /api/translate-themes`
+- `GET /api/generate-pdf/{video_id}`
+- `POST /api/generate-pdf/{video_id}`
+- `GET /api/video-info/{video_id}`
+- `GET /api/video-chapters/{video_id}`
+- `GET /api/health`
 
-3. 使用 `video_page_dynamic.html` 作为新模板
+## 常用脚本
 
-## 📦 部署
+根目录还保留了一些离线处理脚本：
 
-### 静态部署（仅前端）
+- `get_full_transcript_ytdlp.py`：抓取完整字幕
+- `generate_video_page.py`：生成带播放器和字幕的 HTML 页面
+- `generate_video_page_thumbnail.py`：生成缩略图相关页面或数据
+- `import_to_supabase.py`：把本地 `data/` 导入 Supabase
 
-部署到任何静态托管服务：
+这些脚本多数属于历史工具链，主业务入口仍然是 `backend/python-fastapi/main.py`。
 
-- **Netlify**: 拖放文件夹即可
-- **Vercel**: `vercel deploy`
-- **GitHub Pages**: 推送到仓库
-- **AWS S3**: 上传到S3并配置静态网站托管
+## 与前端的配合
 
-### 全栈部署（前端+后端）
+典型开发顺序：
 
-**使用Docker:**
+1. 在本仓库启动 FastAPI
+2. 在 `../PageOn_video_web` 启动 Vite
+3. 访问前端首页，用关键词搜索或直接分析 YouTube 链接
 
-```dockerfile
-# 示例Dockerfile
-FROM node:18
-WORKDIR /app
-COPY . .
-RUN cd backend-examples/nodejs && npm install
-EXPOSE 3000 8000
-CMD ["node", "backend-examples/nodejs/server.js"]
-```
+前端侧的搜索、分析、聊天、翻译、PDF、图片摘要都依赖这里的接口。
 
-**使用云服务:**
-- AWS (EC2, Elastic Beanstalk, Lambda)
-- Google Cloud (App Engine, Cloud Run)
-- Heroku
-- DigitalOcean
+## 当前状态说明
 
-## 🤝 贡献
-
-欢迎提交Issue和Pull Request！
-
-## 📄 许可
-
-MIT License - 自由使用、修改和分发
-
-## 🙏 致谢
-
-感谢所有开源项目和社区的贡献！
-
----
-
-## 📞 获取帮助
-
-- 📖 阅读 [详细文档](README_DYNAMIC.md)
-- 🏗️ 查看 [架构说明](ARCHITECTURE.md)
-- 💡 查看 [后端示例](backend-examples/README.md)
-
-**开始构建你的视频应用吧！** 🚀
-
----
-
-**当前版本:** 1.0.0  
-**最后更新:** 2024
+- 仓库内同时保留了多套历史实现，当前主线是 `backend/python-fastapi/`
+- 根目录脚本、旧 Node/Flask 示例和静态页面仍有参考价值，但不是主运行路径
+- `README` 已按当前主服务和真实目录结构重写
